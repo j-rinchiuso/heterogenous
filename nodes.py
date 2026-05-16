@@ -30,7 +30,8 @@ from detector import Detector
 from sequence.qkd.BB84 import BB84
 from sequence.qkd.cascade import Cascade
 from sequence.resource_management.resource_manager import ResourceManager
-from network_manager import NewNetworkManager, NetworkManager
+# from network_manager import NewNetworkManager, NetworkManager
+from sequence.network_management.network_manager import NetworkManager
 from encoding import *
 from sequence.utils import log
 from sequence.components.bsm import SingleAtomBSM, SingleHeraldedBSM, PolarizationBSM
@@ -220,7 +221,7 @@ class HetQR(Node):
             memo_arr_name (str): the name of the memory array.
         """
         resource_manager = ResourceManager(self, memo_arr_name)
-        network_manager = NewNetworkManager(self, memo_arr_name)
+        network_manager = NetworkManager.create(self, memo_arr_name)
         self.set_resource_manager(resource_manager)
         self.set_network_manager(network_manager)
 

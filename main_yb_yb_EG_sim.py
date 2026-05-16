@@ -85,7 +85,8 @@ def main():
     # log_filename = f'tmp/data/dc/dc={detector_dark_count}.log'
     log_filename = 'tmp/crap.log'
     log.set_logger(__name__, tl, log_filename)
-    log.set_logger_level('WARNING')
+    # log.set_logger_level('WARNING')
+    log.set_logger_level('DEBUG')
     log.track_module('main_yb_yb_EG_sim')
     log.track_module('generation')
     log.track_module('bsm')
