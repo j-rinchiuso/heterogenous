@@ -30,7 +30,7 @@ def main():
     parser.add_argument('-dtctor_dc', '--detectordarkcount', type=float, default=11.0, help="Dark count rate, in Hz, for the detector in the BSM.")
     parser.add_argument('-dtctor_eff', '--detectorefficiency', type=float, default=0.85, help="Efficiency for the detector in the BSM.") # default should be 0.85 according to Joaquin
     parser.add_argument('-bsm_wvln', '--bsm_operating_wavelength', type=int, default=746, help="Photon wavelength BSM ideally operates at.")
-    parser.add_argument('-qfc_eff', '--qfc_efficiency', type=float, default=0.99, help="Efficiency of our quantum frequency converters.")
+    parser.add_argument('-qfc_eff', '--qfc_efficiency', type=float, default=1.0, help="Efficiency of our quantum frequency converters.")
     parser.add_argument('-qfc_noise', '--qfc_noise', type=float, default=0.005, help="Noise, in number of noise photons per signal photon, in our QFC.")
     parser.add_argument('-uw_noise', '--transducer_noise', type=float, default=0.047, help="Noise, in number of photons added to signal during MO transduction.")
     parser.add_argument('-uw_efficiency', '--transducer_efficiency', type=float, default=0.6, help= "Efficiency of uW node, aka probability signal gets converted.")
@@ -80,12 +80,12 @@ def main():
 
 
     #### logging added here ####
-    log_filename = f'tmp/data/qfc_noise/qfc_noise={qfc_noise}.log'
+    # log_filename = f'tmp/data/qfc_noise/qfc_noise={qfc_noise}.log'
     # log_filename = f'tmp/data/qfc_eff/qfc_eff={qfc_eff}.log'
     # log_filename = f'tmp/data/uw_eff/uw_eff={uW_efficiency}.log'
     # log_filename = f'tmp/data/uw_noise/uw_noise={uW_noise}.log'
     # log_filename = f'tmp/data/coherence/coherence={transmon_coherence}.log'
-    # log_filename = 'tmp/checking_het.log'
+    log_filename = 'tmp/checking_het.log'
     log.set_logger(__name__, tl, log_filename)
     log.set_logger_level('WARNING')
     log.track_module('main_yb_uW_EG_sim')

@@ -24,9 +24,9 @@ from apps import HetRequestApp
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-pce', '--photoncollectionefficiency', type=float, default=0.05, help='efficiency of photon collection into fiber')
+    parser.add_argument('-pce', '--photoncollectionefficiency', type=float, default=0.5, help='efficiency of photon collection into fiber')
     parser.add_argument('-wavelength', '--photonwavelength', type=int, default=1389, help='wavelength of emmitted photons')
-    parser.add_argument('-n', '--numtrials', type=int, default=100, help="number of entangled pairs we generated")
+    parser.add_argument('-n', '--numtrials', type=int, default=200, help="number of entangled pairs we generated")
     parser.add_argument('-dtctor_dc', '--detectordarkcount', type=float, default=11.0, help="Dark count rate, in Hz, for the detector in the BSM.")
     parser.add_argument('-dtctor_eff', '--detectorefficiency', type=float, default=0.85, help="Efficiency for the detector in the BSM.") # default should be 0.85 according to Joaquin
     parser.add_argument('-bsm_wvln', '--bsm_operating_wavelength', type=int, default=1389, help="Photon wavelength BSM ideally operates at.")
@@ -85,8 +85,8 @@ def main():
     # log_filename = f'tmp/data/dc/dc={detector_dark_count}.log'
     log_filename = 'tmp/crap.log'
     log.set_logger(__name__, tl, log_filename)
-    # log.set_logger_level('WARNING')
-    log.set_logger_level('DEBUG')
+    log.set_logger_level('WARNING')
+    # log.set_logger_level('DEBUG')
     log.track_module('main_yb_yb_EG_sim')
     log.track_module('generation')
     log.track_module('bsm')

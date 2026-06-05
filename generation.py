@@ -1,45 +1,47 @@
-"""Code for Barrett-Kok entanglement Generation protocol
+"""Code for Barrett-Kok entanglement generation protocol in a heterogenous network. # NOTE HM DONE 
 
-This module defines code to support entanglement generation between single-atom memories on distant nodes.
-Also defined is the message type used by this implementation.
+This module defines two classes, HetEGA and HetEGBm, which inherit from SeQUeNCe's EntanglementGenerationA and EntanglementGenerationB classes.
+These classes enable entanglement generation between heterogenous memories on distant nodes.
+
 Entanglement generation is asymmetric:
-
-* EntanglementGenerationA should be used on the QuantumRouter (with one node set as the primary) and should be started via the "start" method
-* EntanglementGenerationB should be used on the BSMNode and does not need to be started
-* EntanglementGenerationB should be used on the QuantumRoute (with on enode set as the primary) and should be started via the "start" method,
-    it is the analog to EntanglementGenerationA, but with time_bin photons
+* HetEGA should be used on the QuantumRouter (with one node set as the primary) and should be started via the "start" method
+* HetEGB should be used on the BSMNode and does not need to be started
 """
 
-from __future__ import annotations
-from enum import Enum, auto
+# from __future__ import annotations
 from math import sqrt
-from typing import List, TYPE_CHECKING, Dict, Any
+from typing import TYPE_CHECKING, Dict, Any
 
 if TYPE_CHECKING:
     from memory import Memory
-    from sequence.components.bsm import SingleAtomBSM
     from nodes import Node
     from sequence.components.bsm import BSM
     from nodes import Node
 
 from sequence.resource_management.memory_manager import MemoryInfo
 from sequence.entanglement_management.generation.generation_base import EntanglementGenerationA, EntanglementGenerationB
-from sequence.message import Message
 from sequence.kernel.event import Event
 from sequence.kernel.process import Process
 from sequence.components.circuit import Circuit
 from sequence.utils import log
 from sequence.entanglement_management.generation import GenerationMsgType
 from sequence.entanglement_management.generation import EntanglementGenerationMessage
-# from encoding import time_bin
 from math import e
 from sequence.components.bsm import _set_state_with_fidelity
 from message import HetEntanglementGenerationMessage
 from sequence.constants import BARRET_KOK
 
 class HetEGA(EntanglementGenerationA):
+    """Primary entanglement generaiton protocol in a heterogenous network.
 
-    # Desired Bell States
+    Inherits from EntanglementGenerationA, and thus lives on a QuantumRouter node.
+    Communicates with HetEGB protocol on BSM node to generate entanglement between memories on different nodes.
+
+    Attributes:
+        ??
+    """
+
+    # Desired Bell States # NOTE do we want to be using both psi states? should investigate. 
     _psi_plus = [complex(0), complex(sqrt(1 / 2)), complex(sqrt(1 / 2)), complex(0)]
     _psi_minus = [complex(0), complex(sqrt(1 / 2)), -complex(sqrt(1 / 2)), complex(0)]
 
@@ -51,67 +53,67 @@ class HetEGA(EntanglementGenerationA):
         self.early_bin = [-1, -1]
         self.late_bin = [-1, -1]
 
-    _plus_state = [sqrt(1/2), sqrt(1/2)]
-    _flip_circuit = Circuit(1)
-    _flip_circuit.x(0)
-    _z_circuit = Circuit(1)
-    _z_circuit.z(0)
+    # _plus_state = [sqrt(1/2), sqrt(1/2)]
+    # _flip_circuit = Circuit(1)
+    # _flip_circuit.x(0)
+    # _z_circuit = Circuit(1)
+    # _z_circuit.z(0)
 
-    def __init__(self, owner: "Node", name: str, middle: str, other: str, memory: "Memory", encoding, loop: str = False, retrap_num: int = 128):
-        """Constructor for entanglement generation A class.
+    # def __init__(self, owner: "Node", name: str, middle: str, other: str, memory: "Memory", encoding, loop: str = False, retrap_num: int = 128):
+    #     """Constructor for entanglement generation A class.
 
-        Args:
-            owner (Node): node to attach protocol to.
-            name (str): name of protocol instance.
-            middle (str): name of middle measurement node.
-            other (str): name of other node.
-            memory (Memory): memory to entangle.
-        """
+    #     Args:
+    #         owner (Node): node to attach protocol to.
+    #         name (str): name of protocol instance.
+    #         middle (str): name of middle measurement node.
+    #         other (str): name of other node.
+    #         memory (Memory): memory to entangle.
+    #     """
 
-        super().__init__(owner, name)
-        self.middle: str = middle
-        self.remote_node_name: str = other
-        self.remote_protocol_name: str = None
+        # super().__init__(owner, name)
+        # self.middle: str = middle
+        # self.remote_node_name: str = other
+        # self.remote_protocol_name: str = None
 
-        # memory info
-        self.memory: Memory = memory
-        self.remote_memo_id: str = ""  # memory index used by corresponding protocol on other node
+        # # memory info
+        # self.memory: Memory = memory
+        # self.remote_memo_id: str = ""  # memory index used by corresponding protocol on other node
         
-        self.original_memory_efficiency = self.owner.original_mem_eff
+        # self.original_memory_efficiency = self.owner.original_mem_eff
 
-        # network and hardware info
-        self.fidelity: float = memory.raw_fidelity
-        self.qc_delay: int = 0
-        self.expected_time: int = -1   # expected time for middle BSM node to receive the photon
+        # # network and hardware info
+        # self.fidelity: float = memory.raw_fidelity
+        # self.qc_delay: int = 0
+        # self.expected_time: int = -1   # expected time for middle BSM node to receive the photon
 
-        # memory internal info
-        self.ent_round = 0  # keep track of current stage of protocol
-        self.psi_sign = -1
-        self.last_res = [0,-1]  # keep track of bsm measurements to distinguish Psi+ and Psi-
+        # # memory internal info
+        # self.ent_round = 0  # keep track of current stage of protocol
+        # self.psi_sign = -1
+        # self.last_res = [0,-1]  # keep track of bsm measurements to distinguish Psi+ and Psi-
 
-        self.scheduled_events = []
+        # self.scheduled_events = []
 
-        # misc
-        self.primary: bool = False  # one end node is the "primary" that initiates negotiation
+        # # misc
+        # self.primary: bool = False  # one end node is the "primary" that initiates negotiation
 
-        self._qstate_key: int = self.memory.qstate_key
+        # self._qstate_key: int = self.memory.qstate_key
 
-        self.encoding = encoding
-        self.encoding_type = self.encoding['name']
-        self.photon_bin_separation = self.encoding['bin_separation']
+        # self.encoding = encoding
+        # self.encoding_type = self.encoding['name']
+        # self.photon_bin_separation = self.encoding['bin_separation']
         
-        self.loop = loop # this is true if we want to continue gunning for entanglement
-        # self.attempts = 0
+        # self.loop = loop # this is true if we want to continue gunning for entanglement
+        # # self.attempts = 0
 
-        # self.atom_lost = False
-        self.retrap_num = retrap_num
-        self.detector_resolution = None
+        # # self.atom_lost = False
+        # self.retrap_num = retrap_num
+        # self.detector_resolution = None
         
-        self.early_click_types = [] # list of booleans determining whether early clicks were signals or not
-        self.early_detectors = [] # list of detectors clicked in early time bin
+        # self.early_click_types = [] # list of booleans determining whether early clicks were signals or not
+        # self.early_detectors = [] # list of detectors clicked in early time bin
 
-        self.late_click_types = [] # list of booleans determining whether late clicks were signals or not
-        self.late_detectors = [] # list of detectors clicked in late time bin
+        # self.late_click_types = [] # list of booleans determining whether late clicks were signals or not
+        # self.late_detectors = [] # list of detectors clicked in late time bin
 
         self.detector_resolution = None
         
@@ -139,7 +141,7 @@ class HetEGA(EntanglementGenerationA):
 
         # self.attempts += 1
 
-        self.owner.attempts += 1
+        # self.owner.attempts += 1
         self.memory.attempts += 1
 
         log.logger.info(f"{self.name} protocol start with partner {self.remote_protocol_name}")
@@ -148,28 +150,28 @@ class HetEGA(EntanglementGenerationA):
         if self not in self.owner.protocols:
             return
         
-        if self.owner.attempts == 1:
-            self.memory.efficiency = self.original_memory_efficiency
-            self.owner.atom_lost = False
+        # if self.owner.attempts == 1:
+        #     self.memory.efficiency = self.original_memory_efficiency
+        #     self.owner.atom_lost = False
 
-        # update memory, and if necessary start negotiations for round
-        if self.update_memory() and self.primary:
-            self.qc_delay = self.owner.qchannels[self.middle].delay
-            frequency = self.memory.frequency
-            message = EntanglementGenerationMessage(GenerationMsgType.NEGOTIATE, self.remote_protocol_name,
-                                                    qc_delay=self.qc_delay, frequency=frequency)
-            self.memory
-            if self.owner.attempts == 1:
-                send = Process(self.owner, 'send_message', [self.remote_node_name, message])
-                send_event = Event(self.owner.timeline.now() + self.encoding['retrap_time'], send)
-                self.owner.timeline.schedule(send_event)
-                self.scheduled_events.append(send_event)
-            else:
-                # send NEGOTIATE message
-                self.owner.send_message(self.remote_node_name, message)
+        # # update memory, and if necessary start negotiations for round
+        # if self.update_memory() and self.primary:
+        #     self.qc_delay = self.owner.qchannels[self.middle].delay
+        #     frequency = self.memory.frequency
+        #     message = EntanglementGenerationMessage(GenerationMsgType.NEGOTIATE, self.remote_protocol_name,
+        #                                             qc_delay=self.qc_delay, frequency=frequency)
+        #     self.memory
+        #     if self.owner.attempts == 1:
+        #         send = Process(self.owner, 'send_message', [self.remote_node_name, message])
+        #         send_event = Event(self.owner.timeline.now() + self.encoding['retrap_time'], send)
+        #         self.owner.timeline.schedule(send_event)
+        #         self.scheduled_events.append(send_event)
+        #     else:
+        #         # send NEGOTIATE message
+        #         self.owner.send_message(self.remote_node_name, message)
             
-        if self.owner.attempts == self.retrap_num:
-            self.owner.attempts = 0
+        # if self.owner.attempts == self.retrap_num:
+        #     self.owner.attempts = 0
 
         # update memory, and if necessary start negotiations for round
         if self.update_memory() and self.primary:
@@ -295,19 +297,19 @@ class HetEGA(EntanglementGenerationA):
         self.owner.timeline.schedule(event)
         self.scheduled_events.append(event)
 
-        if self.ent_round == 1:
-            self.memory.update_state(self._plus_state)
-        else:
-            raise ValueError('Entanglement protocol isn\'t single-heralded as desired.')
+        # if self.ent_round == 1:
+        #     self.memory.update_state(self._plus_state)
+        # else:
+        #     raise ValueError('Entanglement protocol isn\'t single-heralded as desired.')
         
-        if (not self.owner.atom_lost):
-            prob_atom_lost = .9708
-            if self.owner.generator.random() > prob_atom_lost:
-                log.logger.info('Atom on ' + self.owner.name + ' lost in sequence attempt ' + str(self.owner.attempts))
-                self.memory.efficiency = 0
-                self.owner.atom_lost = True
+        # if (not self.owner.atom_lost):
+        #     prob_atom_lost = .9708
+        #     if self.owner.generator.random() > prob_atom_lost:
+        #         log.logger.info('Atom on ' + self.owner.name + ' lost in sequence attempt ' + str(self.owner.attempts))
+        #         self.memory.efficiency = 0
+        #         self.owner.atom_lost = True
 
-        self.memory.excite(self.encoding_type, self.middle)
+        # self.memory.excite(self.encoding_type, self.middle)
 
     def received_message(self, src: str, msg: HetEntanglementGenerationMessage) -> None:
         """Method to receive messages.
@@ -492,22 +494,22 @@ class HetEGA(EntanglementGenerationA):
         self.memory.entangled_memory["memo_id"] = self.remote_memo_id
         self.memory.fidelity = self.memory.raw_fidelity
 
-        self.update_resource_manager(self.memory, MemoryInfo.ENTANGLED)
+        # self.update_resource_manager(self.memory, MemoryInfo.ENTANGLED)
 
-        if self.primary:
-            result, basis = self.memory.measure()
-            rm1 = self.owner.timeline.get_entity_by_name('node1').resource_manager
-            rm2 = self.owner.timeline.get_entity_by_name('node2').resource_manager
-            rm1.fid_measurement(result, basis)
-            rm2.fid_measurement(result, basis)
+        # if self.primary:
+        #     result, basis = self.memory.measure()
+        #     rm1 = self.owner.timeline.get_entity_by_name('node1').resource_manager
+        #     rm2 = self.owner.timeline.get_entity_by_name('node2').resource_manager
+        #     rm1.fid_measurement(result, basis)
+        #     rm2.fid_measurement(result, basis)
           
 
-        a = 0
-        for event in self.owner.timeline.events:
-            if event.process.activation == 'add_dark_count':
-                a += 1
-            if event.process.activation != 'update_memory':
-                self.owner.timeline.remove_event(event)
+        # a = 0
+        # for event in self.owner.timeline.events:
+        #     if event.process.activation == 'add_dark_count':
+        #         a += 1
+        #     if event.process.activation != 'update_memory':
+        #         self.owner.timeline.remove_event(event)
         
         # real_events = 0
         # for event in self.owner.timeline.events:
