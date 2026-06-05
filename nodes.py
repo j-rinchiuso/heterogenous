@@ -24,7 +24,6 @@ from sequence.topology.node import Node
 from memory import HetMemoryArray
 from time_bin_bsm import HetTimeBinBSM
 from resource_manager import ResourceManager
-from encoding import *
 from generation import HetEGB
 from qfc import QFC
 

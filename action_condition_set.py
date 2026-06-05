@@ -60,7 +60,7 @@ Arguments = dict[str, Any]
 RequestFunction = Callable[[list[EntanglementProtocol], Arguments], EntanglementProtocol | None]
 ActionReturn = tuple[EntanglementProtocol, list[str | None], list[RequestFunction | None], list[dict[str, Any] | None]]
 
-TempNode = cast("Node", cast(object, None))
+# TempNode = cast("Node", cast(object, None))
 TempMemory = cast("Memory", cast(object, None))
 
 
@@ -186,7 +186,7 @@ def es_rule_action_A(memories_info: list[MemoryInfo], args: Arguments) -> Action
         kwargs["degradation"] = degradation
 
     memories = [info.memory for info in memories_info]
-    protocol = EntanglementSwappingA.create(TempNode, f"ESA.{memories[0].name}.{memories[1].name}",
+    protocol = EntanglementSwappingA(None, f"ESA.{memories[0].name}.{memories[1].name}",
                                             memories[0], memories[1], success_prob, **kwargs)
     dsts = [info.remote_node for info in memories_info]
     req_funcs: list[RequestFunction | None] = [es_match_func, es_match_func]
@@ -209,7 +209,7 @@ def es_rule_action_B(memories_info: list[MemoryInfo], _args: Arguments) -> Actio
     """
     memories = [info.memory for info in memories_info]
     memory = memories[0]
-    protocol = EntanglementSwappingB.create(TempNode, "ESB." + memory.name, memory)
+    protocol = EntanglementSwappingB(None, "ESB." + memory.name, memory)
     return protocol, [None], [None], [None]
 
 

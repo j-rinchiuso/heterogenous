@@ -12,7 +12,6 @@ NOTE: ADD MORE INFO HERE
 ####  ALSO COMMENTED OUT THE ATOM BRANCHING RATIOS, DEPUMPING LOSS, and LATE DECAY PROBABILITY WITHIN MEMORY
 
 from sequence.utils import log
-from encoding import yb_time_bin
 from copy import copy
 from yb_router_net_topo import YbRouterNetTopo
 from sequence.app.request_app import RequestApp
