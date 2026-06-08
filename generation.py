@@ -53,67 +53,6 @@ class HetEGA(EntanglementGenerationA):
         self.early_bin = [-1, -1]
         self.late_bin = [-1, -1]
 
-    # _plus_state = [sqrt(1/2), sqrt(1/2)]
-    # _flip_circuit = Circuit(1)
-    # _flip_circuit.x(0)
-    # _z_circuit = Circuit(1)
-    # _z_circuit.z(0)
-
-    # def __init__(self, owner: "Node", name: str, middle: str, other: str, memory: "Memory", encoding, loop: str = False, retrap_num: int = 128):
-    #     """Constructor for entanglement generation A class.
-
-    #     Args:
-    #         owner (Node): node to attach protocol to.
-    #         name (str): name of protocol instance.
-    #         middle (str): name of middle measurement node.
-    #         other (str): name of other node.
-    #         memory (Memory): memory to entangle.
-    #     """
-
-        # super().__init__(owner, name)
-        # self.middle: str = middle
-        # self.remote_node_name: str = other
-        # self.remote_protocol_name: str = None
-
-        # # memory info
-        # self.memory: Memory = memory
-        # self.remote_memo_id: str = ""  # memory index used by corresponding protocol on other node
-        
-        # self.original_memory_efficiency = self.owner.original_mem_eff
-
-        # # network and hardware info
-        # self.fidelity: float = memory.raw_fidelity
-        # self.qc_delay: int = 0
-        # self.expected_time: int = -1   # expected time for middle BSM node to receive the photon
-
-        # # memory internal info
-        # self.ent_round = 0  # keep track of current stage of protocol
-        # self.psi_sign = -1
-        # self.last_res = [0,-1]  # keep track of bsm measurements to distinguish Psi+ and Psi-
-
-        # self.scheduled_events = []
-
-        # # misc
-        # self.primary: bool = False  # one end node is the "primary" that initiates negotiation
-
-        # self._qstate_key: int = self.memory.qstate_key
-
-        # self.encoding = encoding
-        # self.encoding_type = self.encoding['name']
-        # self.photon_bin_separation = self.encoding['bin_separation']
-        
-        # self.loop = loop # this is true if we want to continue gunning for entanglement
-        # # self.attempts = 0
-
-        # # self.atom_lost = False
-        # self.retrap_num = retrap_num
-        # self.detector_resolution = None
-        
-        # self.early_click_types = [] # list of booleans determining whether early clicks were signals or not
-        # self.early_detectors = [] # list of detectors clicked in early time bin
-
-        # self.late_click_types = [] # list of booleans determining whether late clicks were signals or not
-        # self.late_detectors = [] # list of detectors clicked in late time bin
 
         self.detector_resolution = None
         
@@ -149,29 +88,6 @@ class HetEGA(EntanglementGenerationA):
         # to avoid start after remove protocol
         if self not in self.owner.protocols:
             return
-        
-        # if self.owner.attempts == 1:
-        #     self.memory.efficiency = self.original_memory_efficiency
-        #     self.owner.atom_lost = False
-
-        # # update memory, and if necessary start negotiations for round
-        # if self.update_memory() and self.primary:
-        #     self.qc_delay = self.owner.qchannels[self.middle].delay
-        #     frequency = self.memory.frequency
-        #     message = EntanglementGenerationMessage(GenerationMsgType.NEGOTIATE, self.remote_protocol_name,
-        #                                             qc_delay=self.qc_delay, frequency=frequency)
-        #     self.memory
-        #     if self.owner.attempts == 1:
-        #         send = Process(self.owner, 'send_message', [self.remote_node_name, message])
-        #         send_event = Event(self.owner.timeline.now() + self.encoding['retrap_time'], send)
-        #         self.owner.timeline.schedule(send_event)
-        #         self.scheduled_events.append(send_event)
-        #     else:
-        #         # send NEGOTIATE message
-        #         self.owner.send_message(self.remote_node_name, message)
-            
-        # if self.owner.attempts == self.retrap_num:
-        #     self.owner.attempts = 0
 
         # update memory, and if necessary start negotiations for round
         if self.update_memory() and self.primary:
@@ -297,19 +213,6 @@ class HetEGA(EntanglementGenerationA):
         self.owner.timeline.schedule(event)
         self.scheduled_events.append(event)
 
-        # if self.ent_round == 1:
-        #     self.memory.update_state(self._plus_state)
-        # else:
-        #     raise ValueError('Entanglement protocol isn\'t single-heralded as desired.')
-        
-        # if (not self.owner.atom_lost):
-        #     prob_atom_lost = .9708
-        #     if self.owner.generator.random() > prob_atom_lost:
-        #         log.logger.info('Atom on ' + self.owner.name + ' lost in sequence attempt ' + str(self.owner.attempts))
-        #         self.memory.efficiency = 0
-        #         self.owner.atom_lost = True
-
-        # self.memory.excite(self.encoding_type, self.middle)
 
     def received_message(self, src: str, msg: HetEntanglementGenerationMessage) -> None:
         """Method to receive messages.
@@ -494,32 +397,6 @@ class HetEGA(EntanglementGenerationA):
         self.memory.entangled_memory["memo_id"] = self.remote_memo_id
         self.memory.fidelity = self.memory.raw_fidelity
 
-        # self.update_resource_manager(self.memory, MemoryInfo.ENTANGLED)
-
-        # if self.primary:
-        #     result, basis = self.memory.measure()
-        #     rm1 = self.owner.timeline.get_entity_by_name('node1').resource_manager
-        #     rm2 = self.owner.timeline.get_entity_by_name('node2').resource_manager
-        #     rm1.fid_measurement(result, basis)
-        #     rm2.fid_measurement(result, basis)
-          
-
-        # a = 0
-        # for event in self.owner.timeline.events:
-        #     if event.process.activation == 'add_dark_count':
-        #         a += 1
-        #     if event.process.activation != 'update_memory':
-        #         self.owner.timeline.remove_event(event)
-        
-        # real_events = 0
-        # for event in self.owner.timeline.events:
-        #     if (not event._is_removed):
-        #         real_events +=1
-
-        # I don't think that this means anything
-        # if real_events == 1:
-        #     if a != 2:
-        #         log.logger.warning('Dark count occured at ' + self.owner.name + '.')
         for event in self.scheduled_events:
             if event.process.activation == 'lose_atom' and event.time > (self.owner.timeline.now() + self.memory.measurement_time):
                 self.owner.timeline.remove_event(event)
