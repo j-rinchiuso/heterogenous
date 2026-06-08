@@ -12,7 +12,6 @@ NOTE: ADD MORE INFO HERE
 ####  ALSO COMMENTED OUT THE ATOM BRANCHING RATIOS, DEPUMPING LOSS, and LATE DECAY PROBABILITY WITHIN MEMORY
 
 from sequence.utils import log
-from encoding import yb_time_bin
 from copy import copy
 from yb_router_net_topo import YbRouterNetTopo
 from sequence.app.request_app import RequestApp
@@ -87,8 +86,8 @@ def main():
     # log_filename = f'tmp/data/qfc_eff/qfc_eff={qfc_eff}.log'
     # log_filename = f'tmp/data/uw_eff/uw_eff={uW_efficiency}.log'
     # log_filename = f'tmp/data/uw_noise/uw_noise={uW_noise}.log'
-    log_filename = f'tmp/data/ideal_coherence/coherence={transmon_coherence}_{n}.log'
-    # log_filename = 'tmp/checking_het.log'
+    # log_filename = f'tmp/data/ideal_coherence/coherence={transmon_coherence}_{n}.log'
+    log_filename = 'tmp/checking_het.log'
     # log_filename = 'tmp/big_net_checking_500us_real.log'
     log.set_logger(__name__, tl, log_filename)
     log.set_logger_level('WARNING')

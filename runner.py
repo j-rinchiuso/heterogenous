@@ -165,33 +165,33 @@ while len(tasks) > 0 or len(ps) > 0:
 #         ps = new_ps
 
 # # NOTE VARYING: photon collection efficiency
-# tasks = []
+tasks = []
 
-# command = ['python3', 'main_yb_yb_EG_sim.py']
+command = ['python3', 'main_yb_yb_EG_sim.py']
 
-# for i in range(7):
-#     args = []
-#     args.append('-pce')
-#     x = 0.1*(i+1)
-#     args.append(str(x))
-#     tasks.append(command+args)
+for i in range(7):
+    args = []
+    args.append('-pce')
+    x = 0.1*(i+1)
+    args.append(str(x))
+    tasks.append(command+args)
 
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
+parallel = 10
+ps = []
+while len(tasks) > 0 or len(ps) > 0:
+    if len(ps) < parallel and len(tasks) > 0:
+        task = tasks.pop(0)
+        print(task, f'{len(tasks)} still in queue')
+        ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
+    else:
+        time.sleep(0.05)
+        new_ps = []
+        for p in ps:
+            if p.poll() is None:
+                new_ps.append(p)
+            else:
+                get_output(p)
+        ps = new_ps
 
 
 # # NOTE VARYING: QFC_EFF

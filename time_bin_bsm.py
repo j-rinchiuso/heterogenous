@@ -22,7 +22,6 @@ from sequence.kernel.entity import Entity
 from sequence.kernel.event import Event
 from sequence.kernel.process import Process
 from sequence.kernel.quantum_manager import KET_STATE_FORMALISM, DENSITY_MATRIX_FORMALISM
-from encoding import *
 from sequence.utils import log
 from sequence.components.bsm import _set_state_with_fidelity
 from copy import copy

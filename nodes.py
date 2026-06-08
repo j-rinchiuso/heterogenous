@@ -4,39 +4,27 @@ This module provides definitions for various types of quantum network nodes.
 All node types inherit from the base Node type, which inherits from Entity.
 Node types can be used to collect all the necessary hardware and software for a network usage scenario.
 """
-import sys
-from math import inf
-from typing import TYPE_CHECKING, Any, List, Union
+from typing import TYPE_CHECKING, List
 
-import numpy as np
 
 if TYPE_CHECKING:
     from sequence.kernel.timeline import Timeline
     from sequence.message import Message
-    from sequence.protocol import StackProtocol
     from sequence.resource_management.memory_manager import MemoryInfo
     from sequence.network_management.reservation import Reservation
-    from sequence.components.optical_channel import ClassicalChannel, QuantumChannel
-    # from qchannels import QuantumChannel
+    from sequence.app.request_app import RequestApp
     from memory import Memory
     from photon import Photon
-    from sequence.app.request_app import RequestApp
 
-from sequence.kernel.entity import Entity, ClassicalEntity
-from memory import HetMemoryArray
-from time_bin_bsm import BSM, HetTimeBinBSM
-from sequence.components.light_source import LightSource
-from detector import Detector
-from sequence.qkd.BB84 import BB84
-from sequence.qkd.cascade import Cascade
-from sequence.resource_management.resource_manager import ResourceManager
-from network_manager import NewNetworkManager, NetworkManager
-from encoding import *
+from sequence.components.bsm import SingleAtomBSM, SingleHeraldedBSM
 from sequence.utils import log
-from sequence.components.bsm import SingleAtomBSM, SingleHeraldedBSM, PolarizationBSM
-from copy import copy
+from sequence.network_management.network_manager import NetworkManager
+from sequence.topology.node import Node
+
+from memory import HetMemoryArray
+from time_bin_bsm import HetTimeBinBSM
+from resource_manager import ResourceManager
 from generation import HetEGB
-from sequence.topology.node import Node, QuantumRouter
 from qfc import QFC
 
 ## THIS IS MEANT TO BE A REPLACEMENT NOT AND INHERITANCE OF BSMNode
@@ -220,7 +208,7 @@ class HetQR(Node):
             memo_arr_name (str): the name of the memory array.
         """
         resource_manager = ResourceManager(self, memo_arr_name)
-        network_manager = NewNetworkManager(self, memo_arr_name)
+        network_manager = NetworkManager.create(self, memo_arr_name)
         self.set_resource_manager(resource_manager)
         self.set_network_manager(network_manager)
 

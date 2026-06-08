@@ -6,7 +6,7 @@ from math import sqrt
 from sequence.kernel.process import Process
 from sequence.kernel.event import Event
 from math import e
-from memory import _set_state_with_fidelity
+# from memory import _set_state_with_fidelity
 
 class HetRequestApp(RequestApp):
 

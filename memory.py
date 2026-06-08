@@ -42,6 +42,8 @@ class HetMemoryArray(MemoryArray):
         name (str): label for memory array instance.
         timeline (Timeline): timeline for simulation.
         memories (List[Memory]): list of all memories.
+        memory_name_to_index (Dict[str, int]): dictionary mapping memory names to their index in the memories list.
+        memo_type (str): type of memories in the array (should be either 'Yb' or 'uW').
     """
 
     def __init__(self, name: str, timeline: "Timeline", memory_type: str, num_memories=10, 

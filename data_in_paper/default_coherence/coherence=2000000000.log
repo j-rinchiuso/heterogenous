@@ -1,0 +1,1053 @@
+0                    WARNING main_het_net_sim       Starting EG attempt at 0.
+533,725,562,000      WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+533,725,562,000      WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+616,078,937,000      WARNING generation             False positive entanglement heralded with sources 0,1.
+616,078,937,000      WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+616,078,937,000      WARNING generation             False positive entanglement heralded with sources 0,1.
+616,078,937,000      WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+616,123,937,000      WARNING apps                   Transmon decohered during round trip time.
+616,124,035,000      WARNING memory                 Incorrectly entangled state.
+616,124,035,000      WARNING memory                 Incorrectly entangled state.
+20,000,008,937,000   WARNING main_het_net_sim       Entanglement num 1 completed in 0.616124035 seconds.
+20,000,008,937,000   WARNING main_het_net_sim       Starting EG attempt at 20000008937000.
+20,033,734,499,500   WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+20,033,734,499,500   WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+20,035,259,562,000   WARNING generation             False positive entanglement heralded with sources 1,0.
+20,035,259,562,000   WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+20,035,259,562,000   WARNING generation             False positive entanglement heralded with sources 1,0.
+20,035,259,562,000   WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+20,035,304,562,000   WARNING apps                   Transmon decohered during round trip time.
+20,035,304,650,000   WARNING memory                 Incorrectly entangled state.
+20,035,304,650,000   WARNING memory                 Incorrectly entangled state.
+40,000,019,562,000   WARNING main_het_net_sim       Entanglement num 2 completed in 0.035295713 seconds.
+40,000,019,562,000   WARNING main_het_net_sim       Starting EG attempt at 40000019562000.
+40,061,196,249,500   WARNING generation             False positive entanglement heralded with sources 0,1.
+40,061,196,249,500   WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+40,061,196,249,500   WARNING generation             False positive entanglement heralded with sources 0,1.
+40,061,196,249,500   WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+40,605,423,062,000   WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+40,605,423,062,000   WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+40,605,468,062,000   WARNING apps                   Transmon decohered during round trip time.
+40,605,468,160,000   WARNING memory                 Incorrectly entangled state.
+40,605,468,160,000   WARNING memory                 Incorrectly entangled state.
+60,000,033,062,000   WARNING main_het_net_sim       Entanglement num 3 completed in 0.605448598 seconds.
+60,000,033,062,000   WARNING main_het_net_sim       Starting EG attempt at 60000033062000.
+60,709,140,812,000   WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+60,709,140,812,000   WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+60,741,167,124,500   WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+60,741,167,124,500   WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+60,741,212,124,500   WARNING apps                   Transmon decohered during round trip time.
+60,741,212,212,500   WARNING memory                 Incorrectly entangled state.
+60,741,212,212,500   WARNING memory                 Incorrectly entangled state.
+80,000,057,124,500   WARNING main_het_net_sim       Entanglement num 4 completed in 0.7411791504999999 seconds.
+80,000,057,124,500   WARNING main_het_net_sim       Starting EG attempt at 80000057124500.
+80,055,133,562,000   WARNING generation             False positive entanglement heralded with sources 0,1.
+80,055,133,562,000   WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+80,055,133,562,000   WARNING generation             False positive entanglement heralded with sources 0,1.
+80,055,133,562,000   WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+80,671,038,312,000   WARNING generation             False positive entanglement heralded with sources 1,0.
+80,671,038,312,000   WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+80,671,038,312,000   WARNING generation             False positive entanglement heralded with sources 1,0.
+80,671,038,312,000   WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+80,671,083,312,000   WARNING apps                   Transmon decohered during round trip time.
+80,671,083,410,000   WARNING memory                 Incorrectly entangled state.
+80,671,083,410,000   WARNING memory                 Incorrectly entangled state.
+100,000,068,312,000  WARNING main_het_net_sim       Entanglement num 5 completed in 0.6710262855 seconds.
+100,000,068,312,000  WARNING main_het_net_sim       Starting EG attempt at 100000068312000.
+100,026,168,562,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+100,026,168,562,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+100,035,318,937,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+100,035,318,937,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+100,035,363,937,000  WARNING apps                   Transmon decohered during round trip time.
+100,035,364,025,000  WARNING memory                 Incorrectly entangled state.
+100,035,364,025,000  WARNING memory                 Incorrectly entangled state.
+120,000,078,937,000  WARNING main_het_net_sim       Entanglement num 6 completed in 0.035295713 seconds.
+120,000,078,937,000  WARNING main_het_net_sim       Starting EG attempt at 120000078937000.
+120,026,179,187,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+120,026,179,187,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+120,669,535,062,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+120,669,535,062,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+120,669,580,062,000  WARNING apps                   Transmon decohered during round trip time.
+120,669,580,160,000  WARNING memory                 Incorrectly entangled state.
+120,669,580,160,000  WARNING memory                 Incorrectly entangled state.
+140,000,095,062,000  WARNING main_het_net_sim       Entanglement num 7 completed in 0.669501223 seconds.
+140,000,095,062,000  WARNING main_het_net_sim       Starting EG attempt at 140000095062000.
+140,062,796,812,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+140,062,796,812,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+140,068,897,062,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+140,068,897,062,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+140,068,897,062,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+140,068,897,062,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+140,068,942,062,000  WARNING apps                   Transmon decohered during round trip time.
+140,068,942,150,000  WARNING memory                 Incorrectly entangled state.
+140,068,942,150,000  WARNING memory                 Incorrectly entangled state.
+160,000,117,062,000  WARNING main_het_net_sim       Entanglement num 8 completed in 0.068847088 seconds.
+160,000,117,062,000  WARNING main_het_net_sim       Starting EG attempt at 160000117062000.
+160,038,417,812,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+160,038,417,812,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+160,660,422,812,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+160,660,422,812,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+160,660,467,812,000  WARNING apps                   Transmon decohered during round trip time.
+160,660,467,910,000  WARNING memory                 Incorrectly entangled state.
+160,660,467,910,000  WARNING memory                 Incorrectly entangled state.
+180,000,132,812,000  WARNING main_het_net_sim       Entanglement num 9 completed in 0.660350848 seconds.
+180,000,132,812,000  WARNING main_het_net_sim       Starting EG attempt at 180000132812000.
+180,021,657,874,500  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+180,021,657,874,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+180,703,140,312,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+180,703,140,312,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+180,703,185,312,000  WARNING apps                   Transmon decohered during round trip time.
+180,703,185,400,000  WARNING memory                 Incorrectly entangled state.
+180,703,185,400,000  WARNING memory                 Incorrectly entangled state.
+200,000,160,312,000  WARNING main_het_net_sim       Entanglement num 10 completed in 0.703052588 seconds.
+200,000,160,312,000  WARNING main_het_net_sim       Starting EG attempt at 200000160312000.
+200,026,260,562,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+200,026,260,562,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+200,026,260,562,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+200,026,260,562,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+200,026,260,562,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+200,026,260,562,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+200,026,305,660,000  WARNING memory                 Incorrectly entangled state.
+200,026,305,660,000  WARNING memory                 Incorrectly entangled state.
+220,000,170,562,000  WARNING main_het_net_sim       Entanglement num 11 completed in 0.026145348 seconds.
+220,000,170,562,000  WARNING main_het_net_sim       Starting EG attempt at 220000170562000.
+220,032,371,062,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+220,032,371,062,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+220,032,371,062,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+220,032,371,062,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+220,035,421,187,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+220,035,421,187,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+220,035,466,187,000  WARNING apps                   Transmon decohered during round trip time.
+220,035,466,275,000  WARNING memory                 Incorrectly entangled state.
+220,035,466,275,000  WARNING memory                 Incorrectly entangled state.
+240,000,181,187,000  WARNING main_het_net_sim       Entanglement num 12 completed in 0.035295713 seconds.
+240,000,181,187,000  WARNING main_het_net_sim       Starting EG attempt at 240000181187000.
+240,041,532,062,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+240,041,532,062,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+240,043,057,124,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+240,043,057,124,500  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+260,000,197,124,500  WARNING main_het_net_sim       Entanglement num 13 completed in 0.042921035499999996 seconds.
+260,000,197,124,500  WARNING main_het_net_sim       Starting EG attempt at 260000197124500.
+260,033,922,687,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+260,033,922,687,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+260,604,075,562,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+260,604,075,562,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+260,604,120,562,000  WARNING apps                   Transmon decohered during round trip time.
+260,604,120,650,000  WARNING memory                 Incorrectly entangled state.
+260,604,120,650,000  WARNING memory                 Incorrectly entangled state.
+280,000,215,562,000  WARNING main_het_net_sim       Entanglement num 14 completed in 0.6039235255 seconds.
+280,000,215,562,000  WARNING main_het_net_sim       Starting EG attempt at 280000215562000.
+280,023,265,687,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+280,023,265,687,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+280,023,265,687,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+280,023,265,687,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+300,000,235,687,000  WARNING main_het_net_sim       Entanglement num 15 completed in 0.023095222999999998 seconds.
+300,000,235,687,000  WARNING main_het_net_sim       Starting EG attempt at 300000235687000.
+300,030,911,124,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+300,030,911,124,500  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+300,640,715,624,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+300,640,715,624,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+300,640,760,624,500  WARNING apps                   Transmon decohered during round trip time.
+300,640,760,712,500  WARNING memory                 Incorrectly entangled state.
+300,640,760,712,500  WARNING memory                 Incorrectly entangled state.
+320,000,255,624,500  WARNING main_het_net_sim       Entanglement num 16 completed in 0.6405250255 seconds.
+320,000,255,624,500  WARNING main_het_net_sim       Starting EG attempt at 320000255624500.
+320,027,880,937,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+320,027,880,937,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+320,716,988,687,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+320,716,988,687,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+320,717,033,687,000  WARNING apps                   Transmon decohered during round trip time.
+320,717,033,785,000  WARNING memory                 Incorrectly entangled state.
+320,717,033,785,000  WARNING memory                 Incorrectly entangled state.
+340,000,268,687,000  WARNING main_het_net_sim       Entanglement num 17 completed in 0.7167781605 seconds.
+340,000,268,687,000  WARNING main_het_net_sim       Starting EG attempt at 340000268687000.
+340,151,424,062,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+340,151,424,062,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+340,151,424,062,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+340,151,424,062,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+340,160,574,437,000  WARNING generation             False positive entanglement heralded with sources 0,0.
+340,160,574,437,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+340,160,574,437,000  WARNING generation             False positive entanglement heralded with sources 0,0.
+340,160,574,437,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+340,160,619,437,000  WARNING apps                   Transmon decohered during round trip time.
+340,160,619,525,000  WARNING memory                 Incorrectly entangled state.
+340,160,619,525,000  WARNING memory                 Incorrectly entangled state.
+360,000,294,437,000  WARNING main_het_net_sim       Entanglement num 18 completed in 0.160350838 seconds.
+360,000,294,437,000  WARNING main_het_net_sim       Starting EG attempt at 360000294437000.
+360,021,819,499,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+360,021,819,499,500  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+360,021,819,499,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+360,021,819,499,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+360,569,096,437,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+360,569,096,437,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+360,569,141,437,000  WARNING apps                   Transmon decohered during round trip time.
+360,569,141,535,000  WARNING memory                 Incorrectly entangled state.
+360,569,141,535,000  WARNING memory                 Incorrectly entangled state.
+380,000,306,437,000  WARNING main_het_net_sim       Entanglement num 19 completed in 0.568847098 seconds.
+380,000,306,437,000  WARNING main_het_net_sim       Starting EG attempt at 380000306437000.
+380,091,984,374,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+380,091,984,374,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+380,091,984,374,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+380,091,984,374,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+380,566,058,312,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+380,566,058,312,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+380,566,103,312,000  WARNING apps                   Transmon decohered during round trip time.
+380,566,103,400,000  WARNING memory                 Incorrectly entangled state.
+380,566,103,400,000  WARNING memory                 Incorrectly entangled state.
+400,000,328,312,000  WARNING main_het_net_sim       Entanglement num 20 completed in 0.565796963 seconds.
+400,000,328,312,000  WARNING main_het_net_sim       Starting EG attempt at 400000328312000.
+400,035,578,937,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+400,035,578,937,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+400,648,433,562,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+400,648,433,562,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+400,648,478,562,000  WARNING apps                   Transmon decohered during round trip time.
+400,648,478,660,000  WARNING memory                 Incorrectly entangled state.
+400,648,478,660,000  WARNING memory                 Incorrectly entangled state.
+420,000,353,562,000  WARNING main_het_net_sim       Entanglement num 21 completed in 0.6481503479999999 seconds.
+420,000,353,562,000  WARNING main_het_net_sim       Starting EG attempt at 420000353562000.
+420,024,928,749,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+420,024,928,749,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+420,034,079,124,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+420,034,079,124,500  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+420,034,124,124,500  WARNING apps                   Transmon decohered during round trip time.
+420,034,124,212,500  WARNING memory                 Incorrectly entangled state.
+420,034,124,212,500  WARNING memory                 Incorrectly entangled state.
+440,000,369,124,500  WARNING main_het_net_sim       Entanglement num 22 completed in 0.0337706505 seconds.
+440,000,369,124,500  WARNING main_het_net_sim       Starting EG attempt at 440000369124500.
+440,024,944,312,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+440,024,944,312,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+440,038,669,874,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+440,038,669,874,500  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+440,038,714,874,500  WARNING apps                   Transmon decohered during round trip time.
+440,038,714,972,500  WARNING memory                 Incorrectly entangled state.
+440,038,714,972,500  WARNING memory                 Incorrectly entangled state.
+460,000,369,874,500  WARNING main_het_net_sim       Entanglement num 23 completed in 0.038345848 seconds.
+460,000,369,874,500  WARNING main_het_net_sim       Starting EG attempt at 460000369874500.
+460,027,995,187,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+460,027,995,187,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+461,351,308,437,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+461,351,308,437,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+461,351,353,437,000  WARNING apps                   Transmon decohered during round trip time.
+461,351,353,525,000  WARNING memory                 Incorrectly entangled state.
+461,351,353,525,000  WARNING memory                 Incorrectly entangled state.
+480,000,388,437,000  WARNING main_het_net_sim       Entanglement num 24 completed in 1.3509836505 seconds.
+480,000,388,437,000  WARNING main_het_net_sim       Starting EG attempt at 480000388437000.
+480,035,639,062,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+480,035,639,062,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+481,390,978,624,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+481,390,978,624,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+481,391,023,624,500  WARNING apps                   Transmon decohered during round trip time.
+481,391,023,722,500  WARNING memory                 Incorrectly entangled state.
+481,391,023,722,500  WARNING memory                 Incorrectly entangled state.
+500,000,398,624,500  WARNING main_het_net_sim       Entanglement num 25 completed in 1.3906352855 seconds.
+500,000,398,624,500  WARNING main_het_net_sim       Starting EG attempt at 500000398624500.
+500,021,923,687,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+500,021,923,687,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+500,084,451,249,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+500,084,451,249,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+500,084,451,249,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+500,084,451,249,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+500,084,496,249,500  WARNING apps                   Transmon decohered during round trip time.
+500,084,496,337,500  WARNING memory                 Incorrectly entangled state.
+500,084,496,337,500  WARNING memory                 Incorrectly entangled state.
+520,000,401,249,500  WARNING main_het_net_sim       Entanglement num 26 completed in 0.084097713 seconds.
+520,000,401,249,500  WARNING main_het_net_sim       Starting EG attempt at 520000401249500.
+520,043,277,187,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+520,043,277,187,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+520,119,530,312,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+520,119,530,312,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+520,119,530,312,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+520,119,530,312,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+520,119,575,312,000  WARNING apps                   Transmon decohered during round trip time.
+520,119,575,410,000  WARNING memory                 Incorrectly entangled state.
+520,119,575,410,000  WARNING memory                 Incorrectly entangled state.
+540,000,410,312,000  WARNING main_het_net_sim       Entanglement num 27 completed in 0.1191741605 seconds.
+540,000,410,312,000  WARNING main_het_net_sim       Starting EG attempt at 540000410312000.
+540,567,687,249,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+540,567,687,249,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+540,677,491,749,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+540,677,491,749,500  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+540,677,536,749,500  WARNING apps                   Transmon decohered during round trip time.
+540,677,536,837,500  WARNING memory                 Incorrectly entangled state.
+540,677,536,837,500  WARNING memory                 Incorrectly entangled state.
+560,000,431,749,500  WARNING main_het_net_sim       Entanglement num 28 completed in 0.6771265255 seconds.
+560,000,431,749,500  WARNING main_het_net_sim       Starting EG attempt at 560000431749500.
+560,153,112,187,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+560,153,112,187,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+560,153,112,187,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+560,153,112,187,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+560,703,439,249,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+560,703,439,249,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+560,703,484,249,500  WARNING apps                   Transmon decohered during round trip time.
+560,703,484,347,500  WARNING memory                 Incorrectly entangled state.
+560,703,484,347,500  WARNING memory                 Incorrectly entangled state.
+580,000,459,249,500  WARNING main_het_net_sim       Entanglement num 29 completed in 0.703052598 seconds.
+580,000,459,249,500  WARNING main_het_net_sim       Starting EG attempt at 580000459249500.
+580,119,588,312,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+580,119,588,312,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+580,119,588,312,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+580,119,588,312,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+580,579,936,687,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+580,579,936,687,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+580,579,936,687,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+580,579,936,687,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+580,579,981,687,000  WARNING apps                   Transmon decohered during round trip time.
+580,579,981,775,000  WARNING memory                 Incorrectly entangled state.
+580,579,981,775,000  WARNING memory                 Incorrectly entangled state.
+600,000,466,687,000  WARNING main_het_net_sim       Entanglement num 30 completed in 0.5795225254999999 seconds.
+600,000,466,687,000  WARNING main_het_net_sim       Starting EG attempt at 600000466687000.
+600,630,271,187,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+600,630,271,187,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+601,439,858,874,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+601,439,858,874,500  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+601,439,903,874,500  WARNING apps                   Transmon decohered during round trip time.
+601,439,903,972,500  WARNING memory                 Incorrectly entangled state.
+601,439,903,972,500  WARNING memory                 Incorrectly entangled state.
+620,000,468,874,500  WARNING main_het_net_sim       Entanglement num 31 completed in 1.4394372855 seconds.
+620,000,468,874,500  WARNING main_het_net_sim       Starting EG attempt at 620000468874500.
+620,075,371,124,500  WARNING generation             False positive entanglement heralded with sources 0,1.
+620,075,371,124,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+620,075,371,124,500  WARNING generation             False positive entanglement heralded with sources 0,1.
+620,075,371,124,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+620,686,700,687,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+620,686,700,687,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+620,686,745,687,000  WARNING apps                   Transmon decohered during round trip time.
+620,686,745,775,000  WARNING memory                 Incorrectly entangled state.
+620,686,745,775,000  WARNING memory                 Incorrectly entangled state.
+640,000,490,687,000  WARNING main_het_net_sim       Entanglement num 32 completed in 0.6862769005 seconds.
+640,000,490,687,000  WARNING main_het_net_sim       Starting EG attempt at 640000490687000.
+640,029,641,062,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+640,029,641,062,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+640,029,641,062,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+640,029,641,062,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+640,756,875,374,500  WARNING generation             False positive entanglement heralded with sources 0,1.
+640,756,875,374,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+640,756,875,374,500  WARNING generation             False positive entanglement heralded with sources 0,1.
+640,756,875,374,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+640,756,920,374,500  WARNING apps                   Transmon decohered during round trip time.
+640,756,920,472,500  WARNING memory                 Incorrectly entangled state.
+640,756,920,472,500  WARNING memory                 Incorrectly entangled state.
+660,000,495,374,500  WARNING main_het_net_sim       Entanglement num 33 completed in 0.7564297855 seconds.
+660,000,495,374,500  WARNING main_het_net_sim       Starting EG attempt at 660000495374500.
+660,058,621,937,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+660,058,621,937,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+660,058,621,937,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+660,058,621,937,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+660,063,197,124,500  WARNING generation             False positive entanglement heralded with sources 0,1.
+660,063,197,124,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+660,063,197,124,500  WARNING generation             False positive entanglement heralded with sources 0,1.
+660,063,197,124,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+660,063,242,124,500  WARNING apps                   Transmon decohered during round trip time.
+660,063,242,212,500  WARNING memory                 Incorrectly entangled state.
+660,063,242,212,500  WARNING memory                 Incorrectly entangled state.
+680,000,507,124,500  WARNING main_het_net_sim       Entanglement num 34 completed in 0.062746838 seconds.
+680,000,507,124,500  WARNING main_het_net_sim       Starting EG attempt at 680000507124500.
+680,025,082,312,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+680,025,082,312,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+680,025,082,312,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+680,025,082,312,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+680,052,533,437,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+680,052,533,437,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+680,052,533,437,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+680,052,533,437,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+680,052,578,437,000  WARNING apps                   Transmon decohered during round trip time.
+680,052,578,535,000  WARNING memory                 Incorrectly entangled state.
+680,052,578,535,000  WARNING memory                 Incorrectly entangled state.
+700,000,523,437,000  WARNING main_het_net_sim       Entanglement num 35 completed in 0.0520714105 seconds.
+700,000,523,437,000  WARNING main_het_net_sim       Starting EG attempt at 700000523437000.
+700,671,504,624,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+700,671,504,624,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+700,671,504,624,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+700,671,504,624,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+701,482,617,374,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+701,482,617,374,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+701,482,617,374,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+701,482,617,374,500  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+701,482,662,374,500  WARNING apps                   Transmon decohered during round trip time.
+701,482,662,462,500  WARNING memory                 Incorrectly entangled state.
+701,482,662,462,500  WARNING memory                 Incorrectly entangled state.
+720,000,537,374,500  WARNING main_het_net_sim       Entanglement num 36 completed in 1.4821390255 seconds.
+720,000,537,374,500  WARNING main_het_net_sim       Starting EG attempt at 720000537374500.
+720,029,687,749,500  WARNING generation             False positive entanglement heralded with sources 0,1.
+720,029,687,749,500  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+720,029,687,749,500  WARNING generation             False positive entanglement heralded with sources 0,1.
+720,029,687,749,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+721,276,747,874,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+721,276,747,874,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+721,276,792,874,500  WARNING apps                   Transmon decohered during round trip time.
+721,276,792,972,500  WARNING memory                 Incorrectly entangled state.
+721,276,792,972,500  WARNING memory                 Incorrectly entangled state.
+740,000,557,874,500  WARNING main_het_net_sim       Entanglement num 37 completed in 1.2762555979999999 seconds.
+740,000,557,874,500  WARNING main_het_net_sim       Starting EG attempt at 740000557874500.
+740,032,758,374,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+740,032,758,374,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+740,032,758,374,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+740,032,758,374,500  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+740,035,808,499,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+740,035,808,499,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+740,035,853,587,500  WARNING memory                 Incorrectly entangled state.
+740,035,853,587,500  WARNING memory                 Incorrectly entangled state.
+760,000,568,499,500  WARNING main_het_net_sim       Entanglement num 38 completed in 0.035295713 seconds.
+760,000,568,499,500  WARNING main_het_net_sim       Starting EG attempt at 760000568499500.
+760,051,069,749,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+760,051,069,749,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+760,051,069,749,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+760,051,069,749,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+760,755,428,124,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+760,755,428,124,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+760,755,428,124,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+760,755,428,124,500  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+760,755,473,124,500  WARNING apps                   Transmon decohered during round trip time.
+760,755,473,222,500  WARNING memory                 Incorrectly entangled state.
+760,755,473,222,500  WARNING memory                 Incorrectly entangled state.
+780,000,578,124,500  WARNING main_het_net_sim       Entanglement num 39 completed in 0.754904723 seconds.
+780,000,578,124,500  WARNING main_het_net_sim       Starting EG attempt at 780000578124500.
+780,122,757,312,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+780,122,757,312,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+780,122,757,312,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+780,122,757,312,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+780,558,704,687,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+780,558,704,687,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+780,558,749,687,000  WARNING apps                   Transmon decohered during round trip time.
+780,558,749,775,000  WARNING memory                 Incorrectly entangled state.
+780,558,749,775,000  WARNING memory                 Incorrectly entangled state.
+800,000,594,687,000  WARNING main_het_net_sim       Entanglement num 40 completed in 0.5581716505 seconds.
+800,000,594,687,000  WARNING main_het_net_sim       Starting EG attempt at 800000594687000.
+800,025,169,874,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+800,025,169,874,500  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+800,689,876,624,500  WARNING generation             False positive entanglement heralded with sources 0,1.
+800,689,876,624,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+800,689,876,624,500  WARNING generation             False positive entanglement heralded with sources 0,1.
+800,689,876,624,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+800,689,921,624,500  WARNING apps                   Transmon decohered during round trip time.
+800,689,921,722,500  WARNING memory                 Incorrectly entangled state.
+800,689,921,722,500  WARNING memory                 Incorrectly entangled state.
+820,000,606,624,500  WARNING main_het_net_sim       Entanglement num 41 completed in 0.6893270355 seconds.
+820,000,606,624,500  WARNING main_het_net_sim       Starting EG attempt at 820000606624500.
+820,705,139,187,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+820,705,139,187,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+820,705,139,187,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+820,705,139,187,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+821,400,347,187,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+821,400,347,187,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+821,400,347,187,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+821,400,347,187,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+821,400,392,187,000  WARNING apps                   Transmon decohered during round trip time.
+821,400,392,275,000  WARNING memory                 Incorrectly entangled state.
+821,400,392,275,000  WARNING memory                 Incorrectly entangled state.
+840,000,617,187,000  WARNING main_het_net_sim       Entanglement num 42 completed in 1.3997856505 seconds.
+840,000,617,187,000  WARNING main_het_net_sim       Starting EG attempt at 840000617187000.
+840,098,395,374,500  WARNING generation             False positive entanglement heralded with sources 0,1.
+840,098,395,374,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+840,098,395,374,500  WARNING generation             False positive entanglement heralded with sources 0,1.
+840,098,395,374,500  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+841,988,811,374,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+841,988,811,374,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+841,988,856,374,500  WARNING apps                   Transmon decohered during round trip time.
+841,988,856,472,500  WARNING memory                 Incorrectly entangled state.
+841,988,856,472,500  WARNING memory                 Incorrectly entangled state.
+860,000,631,374,500  WARNING main_het_net_sim       Entanglement num 43 completed in 1.9882392855 seconds.
+860,000,631,374,500  WARNING main_het_net_sim       Starting EG attempt at 860000631374500.
+860,023,681,499,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+860,023,681,499,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+860,613,660,187,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+860,613,660,187,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+860,613,660,187,000  WARNING generation             False positive entanglement heralded with sources 0,1.
+860,613,660,187,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+860,613,705,187,000  WARNING apps                   Transmon decohered during round trip time.
+860,613,705,275,000  WARNING memory                 Incorrectly entangled state.
+860,613,705,275,000  WARNING memory                 Incorrectly entangled state.
+880,000,650,187,000  WARNING main_het_net_sim       Entanglement num 44 completed in 0.6130739005 seconds.
+880,000,650,187,000  WARNING main_het_net_sim       Starting EG attempt at 880000650187000.
+880,040,475,999,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+880,040,475,999,500  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+880,728,058,687,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+880,728,058,687,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+880,728,058,687,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+880,728,058,687,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+880,728,103,687,000  WARNING apps                   Transmon decohered during round trip time.
+880,728,103,785,000  WARNING memory                 Incorrectly entangled state.
+880,728,103,785,000  WARNING memory                 Incorrectly entangled state.
+900,000,658,687,000  WARNING main_het_net_sim       Entanglement num 45 completed in 0.727453598 seconds.
+900,000,658,687,000  WARNING main_het_net_sim       Starting EG attempt at 900000658687000.
+900,025,233,874,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+900,025,233,874,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+900,035,909,312,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+900,035,909,312,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+900,035,954,312,000  WARNING apps                   Transmon decohered during round trip time.
+900,035,954,400,000  WARNING memory                 Incorrectly entangled state.
+900,035,954,400,000  WARNING memory                 Incorrectly entangled state.
+920,000,669,312,000  WARNING main_het_net_sim       Entanglement num 46 completed in 0.035295713 seconds.
+920,000,669,312,000  WARNING main_het_net_sim       Starting EG attempt at 920000669312000.
+920,035,919,937,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+920,035,919,937,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+920,035,919,937,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+920,035,919,937,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+920,035,919,937,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+920,035,919,937,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+920,035,965,035,000  WARNING memory                 Incorrectly entangled state.
+920,035,965,035,000  WARNING memory                 Incorrectly entangled state.
+940,000,679,937,000  WARNING main_het_net_sim       Entanglement num 47 completed in 0.035295723 seconds.
+940,000,679,937,000  WARNING main_het_net_sim       Starting EG attempt at 940000679937000.
+940,096,933,062,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+940,096,933,062,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+940,096,933,062,000  WARNING generation             False positive entanglement heralded with sources 1,0.
+940,096,933,062,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+940,677,761,374,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+940,677,761,374,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+940,677,806,374,500  WARNING apps                   Transmon decohered during round trip time.
+940,677,806,462,500  WARNING memory                 Incorrectly entangled state.
+940,677,806,462,500  WARNING memory                 Incorrectly entangled state.
+960,000,701,374,500  WARNING main_het_net_sim       Entanglement num 48 completed in 0.6771265255 seconds.
+960,000,701,374,500  WARNING main_het_net_sim       Starting EG attempt at 960000701374500.
+960,049,677,562,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+960,049,677,562,000  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+960,063,403,124,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+960,063,403,124,500  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+960,063,403,124,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+960,063,403,124,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+960,063,448,124,500  WARNING apps                   Transmon decohered during round trip time.
+960,063,448,222,500  WARNING memory                 Incorrectly entangled state.
+960,063,448,222,500  WARNING memory                 Incorrectly entangled state.
+980,000,713,124,500  WARNING main_het_net_sim       Entanglement num 49 completed in 0.062746848 seconds.
+980,000,713,124,500  WARNING main_het_net_sim       Starting EG attempt at 980000713124500.
+980,148,818,374,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+980,148,818,374,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+980,148,818,374,500  WARNING generation             False positive entanglement heralded with sources 1,0.
+980,148,818,374,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+981,247,947,437,000  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+981,247,947,437,000  WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+981,247,992,437,000  WARNING apps                   Transmon decohered during round trip time.
+981,247,992,525,000  WARNING memory                 Incorrectly entangled state.
+981,247,992,525,000  WARNING memory                 Incorrectly entangled state.
+1,000,000,737,437,000 WARNING main_het_net_sim       Entanglement num 50 completed in 1.2472794005 seconds.
+1,000,000,737,437,000 WARNING main_het_net_sim       Starting EG attempt at 1000000737437000.
+1,000,657,993,062,000 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,000,657,993,062,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,000,657,993,062,000 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,000,657,993,062,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,000,722,045,687,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,000,722,045,687,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,000,722,090,687,000 WARNING apps                   Transmon decohered during round trip time.
+1,000,722,090,785,000 WARNING memory                 Incorrectly entangled state.
+1,000,722,090,785,000 WARNING memory                 Incorrectly entangled state.
+1,020,000,765,687,000 WARNING main_het_net_sim       Entanglement num 51 completed in 0.721353348 seconds.
+1,020,000,765,687,000 WARNING main_het_net_sim       Starting EG attempt at 1020000765687000.
+1,020,036,016,312,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,020,036,016,312,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,020,036,016,312,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,020,036,016,312,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,020,740,374,687,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,020,740,374,687,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,020,740,419,687,000 WARNING apps                   Transmon decohered during round trip time.
+1,020,740,419,775,000 WARNING memory                 Incorrectly entangled state.
+1,020,740,419,775,000 WARNING memory                 Incorrectly entangled state.
+1,040,000,794,687,000 WARNING main_het_net_sim       Entanglement num 52 completed in 0.739654088 seconds.
+1,040,000,794,687,000 WARNING main_het_net_sim       Starting EG attempt at 1040000794687000.
+1,040,055,871,124,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,040,055,871,124,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,040,610,773,374,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,040,610,773,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,040,610,773,374,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,040,610,773,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,040,610,818,374,500 WARNING apps                   Transmon decohered during round trip time.
+1,040,610,818,472,500 WARNING memory                 Incorrectly entangled state.
+1,040,610,818,472,500 WARNING memory                 Incorrectly entangled state.
+1,060,000,823,374,500 WARNING main_het_net_sim       Entanglement num 53 completed in 0.6100237855 seconds.
+1,060,000,823,374,500 WARNING main_het_net_sim       Starting EG attempt at 1060000823374500.
+1,060,023,873,499,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,060,023,873,499,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,060,031,498,812,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,060,031,498,812,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,060,031,543,812,000 WARNING apps                   Transmon decohered during round trip time.
+1,060,031,543,900,000 WARNING memory                 Incorrectly entangled state.
+1,060,031,543,900,000 WARNING memory                 Incorrectly entangled state.
+1,080,000,848,812,000 WARNING main_het_net_sim       Entanglement num 54 completed in 0.030720525499999998 seconds.
+1,080,000,848,812,000 WARNING main_het_net_sim       Starting EG attempt at 1080000848812000.
+1,080,664,204,687,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,080,664,204,687,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,080,702,331,249,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,080,702,331,249,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,080,702,376,249,500 WARNING apps                   Transmon decohered during round trip time.
+1,080,702,376,347,500 WARNING memory                 Incorrectly entangled state.
+1,080,702,376,347,500 WARNING memory                 Incorrectly entangled state.
+1,100,000,851,249,500 WARNING main_het_net_sim       Entanglement num 55 completed in 0.7015275355 seconds.
+1,100,000,851,249,500 WARNING main_het_net_sim       Starting EG attempt at 1100000851249500.
+1,100,040,677,062,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,100,040,677,062,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,100,040,677,062,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,100,040,677,062,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,100,714,534,187,000 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,100,714,534,187,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,100,714,534,187,000 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,100,714,534,187,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,100,714,579,187,000 WARNING apps                   Transmon decohered during round trip time.
+1,100,714,579,275,000 WARNING memory                 Incorrectly entangled state.
+1,100,714,579,275,000 WARNING memory                 Incorrectly entangled state.
+1,120,000,874,187,000 WARNING main_het_net_sim       Entanglement num 56 completed in 0.7137280255 seconds.
+1,120,000,874,187,000 WARNING main_het_net_sim       Starting EG attempt at 1120000874187000.
+1,120,022,399,249,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,120,022,399,249,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,120,028,499,499,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,120,028,499,499,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,120,028,544,499,500 WARNING apps                   Transmon decohered during round trip time.
+1,120,028,544,597,500 WARNING memory                 Incorrectly entangled state.
+1,120,028,544,597,500 WARNING memory                 Incorrectly entangled state.
+1,140,000,879,499,500 WARNING main_het_net_sim       Entanglement num 57 completed in 0.0276704105 seconds.
+1,140,000,879,499,500 WARNING main_het_net_sim       Starting EG attempt at 1140000879499500.
+1,140,051,380,749,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,140,051,380,749,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,140,092,557,437,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,140,092,557,437,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,140,092,557,437,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,140,092,557,437,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,140,092,602,437,000 WARNING apps                   Transmon decohered during round trip time.
+1,140,092,602,525,000 WARNING memory                 Incorrectly entangled state.
+1,140,092,602,525,000 WARNING memory                 Incorrectly entangled state.
+1,160,000,887,437,000 WARNING main_het_net_sim       Entanglement num 58 completed in 0.0917230255 seconds.
+1,160,000,887,437,000 WARNING main_het_net_sim       Starting EG attempt at 1160000887437000.
+1,160,022,412,499,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,160,022,412,499,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,160,711,520,249,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,160,711,520,249,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,160,711,520,249,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,160,711,520,249,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,160,711,565,249,500 WARNING apps                   Transmon decohered during round trip time.
+1,160,711,565,347,500 WARNING memory                 Incorrectly entangled state.
+1,160,711,565,347,500 WARNING memory                 Incorrectly entangled state.
+1,180,000,890,249,500 WARNING main_het_net_sim       Entanglement num 59 completed in 0.7106779105 seconds.
+1,180,000,890,249,500 WARNING main_het_net_sim       Starting EG attempt at 1180000890249500.
+1,180,065,117,062,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,180,065,117,062,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,180,620,019,312,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,180,620,019,312,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,180,620,064,312,000 WARNING apps                   Transmon decohered during round trip time.
+1,180,620,064,400,000 WARNING memory                 Incorrectly entangled state.
+1,180,620,064,400,000 WARNING memory                 Incorrectly entangled state.
+1,200,000,919,312,000 WARNING main_het_net_sim       Entanglement num 60 completed in 0.6191741505 seconds.
+1,200,000,919,312,000 WARNING main_het_net_sim       Starting EG attempt at 1200000919312000.
+1,200,023,969,437,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,200,023,969,437,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,200,652,074,687,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,200,652,074,687,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,200,652,119,687,000 WARNING apps                   Transmon decohered during round trip time.
+1,200,652,119,785,000 WARNING memory                 Incorrectly entangled state.
+1,200,652,119,785,000 WARNING memory                 Incorrectly entangled state.
+1,220,000,934,687,000 WARNING main_het_net_sim       Entanglement num 61 completed in 0.651200473 seconds.
+1,220,000,934,687,000 WARNING main_het_net_sim       Starting EG attempt at 1220000934687000.
+1,220,025,509,874,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,220,025,509,874,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,220,110,913,374,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,220,110,913,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,220,110,913,374,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,220,110,913,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,220,110,958,374,500 WARNING apps                   Transmon decohered during round trip time.
+1,220,110,958,462,500 WARNING memory                 Incorrectly entangled state.
+1,220,110,958,462,500 WARNING memory                 Incorrectly entangled state.
+1,240,000,943,374,500 WARNING main_het_net_sim       Entanglement num 62 completed in 0.1100237755 seconds.
+1,240,000,943,374,500 WARNING main_het_net_sim       Starting EG attempt at 1240000943374500.
+1,240,027,043,624,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,240,027,043,624,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,240,062,120,062,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,240,062,120,062,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,240,062,120,062,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,240,062,120,062,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,240,062,165,062,000 WARNING apps                   Transmon decohered during round trip time.
+1,240,062,165,160,000 WARNING memory                 Incorrectly entangled state.
+1,240,062,165,160,000 WARNING memory                 Incorrectly entangled state.
+1,260,000,960,062,000 WARNING main_het_net_sim       Entanglement num 63 completed in 0.0612217855 seconds.
+1,260,000,960,062,000 WARNING main_het_net_sim       Starting EG attempt at 1260000960062000.
+1,260,022,485,124,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,260,022,485,124,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,260,022,485,124,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,260,022,485,124,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,260,043,835,999,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,260,043,835,999,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,260,043,880,999,500 WARNING apps                   Transmon decohered during round trip time.
+1,260,043,881,087,500 WARNING memory                 Incorrectly entangled state.
+1,260,043,881,087,500 WARNING memory                 Incorrectly entangled state.
+1,280,000,975,999,500 WARNING main_het_net_sim       Entanglement num 64 completed in 0.0429210255 seconds.
+1,280,000,975,999,500 WARNING main_het_net_sim       Starting EG attempt at 1280000975999500.
+1,280,043,851,937,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,280,043,851,937,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,280,043,851,937,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,280,043,851,937,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,280,656,706,562,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,280,656,706,562,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,280,656,751,562,000 WARNING apps                   Transmon decohered during round trip time.
+1,280,656,751,660,000 WARNING memory                 Incorrectly entangled state.
+1,280,656,751,660,000 WARNING memory                 Incorrectly entangled state.
+1,300,000,976,562,000 WARNING main_het_net_sim       Entanglement num 65 completed in 0.6557756605 seconds.
+1,300,000,976,562,000 WARNING main_het_net_sim       Starting EG attempt at 1300000976562000.
+1,300,562,153,249,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,300,562,153,249,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,300,717,709,624,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,300,717,709,624,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,300,717,709,624,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,300,717,709,624,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,300,717,754,624,500 WARNING apps                   Transmon decohered during round trip time.
+1,300,717,754,712,500 WARNING memory                 Incorrectly entangled state.
+1,300,717,754,712,500 WARNING memory                 Incorrectly entangled state.
+1,320,000,989,624,500 WARNING main_het_net_sim       Entanglement num 66 completed in 0.7167781504999999 seconds.
+1,320,000,989,624,500 WARNING main_het_net_sim       Starting EG attempt at 1320000989624500.
+1,320,025,564,812,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,320,025,564,812,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,320,697,896,874,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,320,697,896,874,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,320,697,941,874,500 WARNING apps                   Transmon decohered during round trip time.
+1,320,697,941,972,500 WARNING memory                 Incorrectly entangled state.
+1,320,697,941,972,500 WARNING memory                 Incorrectly entangled state.
+1,340,001,006,874,500 WARNING main_het_net_sim       Entanglement num 67 completed in 0.6969523479999999 seconds.
+1,340,001,006,874,500 WARNING main_het_net_sim       Starting EG attempt at 1340001006874500.
+1,340,024,056,999,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,340,024,056,999,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,340,024,056,999,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,340,024,056,999,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,340,074,384,062,000 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,340,074,384,062,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,340,074,384,062,000 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,340,074,384,062,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,340,074,429,062,000 WARNING apps                   Transmon decohered during round trip time.
+1,340,074,429,150,000 WARNING memory                 Incorrectly entangled state.
+1,340,074,429,150,000 WARNING memory                 Incorrectly entangled state.
+1,360,001,014,062,000 WARNING main_het_net_sim       Entanglement num 68 completed in 0.0734222755 seconds.
+1,360,001,014,062,000 WARNING main_het_net_sim       Starting EG attempt at 1360001014062000.
+1,360,022,539,124,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,360,022,539,124,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,360,022,539,124,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,360,022,539,124,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,360,110,992,749,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,360,110,992,749,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,360,110,992,749,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,360,110,992,749,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,360,111,037,749,500 WARNING apps                   Transmon decohered during round trip time.
+1,360,111,037,847,500 WARNING memory                 Incorrectly entangled state.
+1,360,111,037,847,500 WARNING memory                 Incorrectly entangled state.
+1,380,001,022,749,500 WARNING main_het_net_sim       Entanglement num 69 completed in 0.1100237855 seconds.
+1,380,001,022,749,500 WARNING main_het_net_sim       Starting EG attempt at 1380001022749500.
+1,380,714,705,687,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,380,714,705,687,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,381,345,861,062,000 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,381,345,861,062,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,381,345,861,062,000 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,381,345,861,062,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,381,345,906,062,000 WARNING apps                   Transmon decohered during round trip time.
+1,381,345,906,150,000 WARNING memory                 Incorrectly entangled state.
+1,381,345,906,150,000 WARNING memory                 Incorrectly entangled state.
+1,400,001,031,062,000 WARNING main_het_net_sim       Entanglement num 70 completed in 1.3448834004999999 seconds.
+1,400,001,031,062,000 WARNING main_het_net_sim       Starting EG attempt at 1400001031062000.
+1,400,037,806,749,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,400,037,806,749,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,401,338,244,062,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,401,338,244,062,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,401,338,289,062,000 WARNING apps                   Transmon decohered during round trip time.
+1,401,338,289,160,000 WARNING memory                 Incorrectly entangled state.
+1,401,338,289,160,000 WARNING memory                 Incorrectly entangled state.
+1,420,001,034,062,000 WARNING main_het_net_sim       Entanglement num 71 completed in 1.337258098 seconds.
+1,420,001,034,062,000 WARNING main_het_net_sim       Starting EG attempt at 1420001034062000.
+1,420,194,891,187,000 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,420,194,891,187,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,420,194,891,187,000 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,420,194,891,187,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,420,690,315,999,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,420,690,315,999,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,420,690,360,999,500 WARNING apps                   Transmon decohered during round trip time.
+1,420,690,361,087,500 WARNING memory                 Incorrectly entangled state.
+1,420,690,361,087,500 WARNING memory                 Incorrectly entangled state.
+1,440,001,045,999,500 WARNING main_het_net_sim       Entanglement num 72 completed in 0.6893270255 seconds.
+1,440,001,045,999,500 WARNING main_het_net_sim       Starting EG attempt at 1440001045999500.
+1,440,082,048,499,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,440,082,048,499,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,440,082,048,499,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,440,082,048,499,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,440,536,296,624,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,440,536,296,624,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,440,536,341,624,500 WARNING apps                   Transmon decohered during round trip time.
+1,440,536,341,722,500 WARNING memory                 Incorrectly entangled state.
+1,440,536,341,722,500 WARNING memory                 Incorrectly entangled state.
+1,460,001,046,624,500 WARNING main_het_net_sim       Entanglement num 73 completed in 0.535295723 seconds.
+1,460,001,046,624,500 WARNING main_het_net_sim       Starting EG attempt at 1460001046624500.
+1,460,022,571,687,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,460,022,571,687,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,460,022,571,687,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,460,022,571,687,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,460,042,397,499,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,460,042,397,499,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,460,042,442,499,500 WARNING apps                   Transmon decohered during round trip time.
+1,460,042,442,587,500 WARNING memory                 Incorrectly entangled state.
+1,460,042,442,587,500 WARNING memory                 Incorrectly entangled state.
+1,480,001,067,499,500 WARNING main_het_net_sim       Entanglement num 74 completed in 0.041395963 seconds.
+1,480,001,067,499,500 WARNING main_het_net_sim       Starting EG attempt at 1480001067499500.
+1,480,022,592,562,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,480,022,592,562,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,480,138,497,312,000 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,480,138,497,312,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,480,138,497,312,000 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,480,138,497,312,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,480,138,542,312,000 WARNING apps                   Transmon decohered during round trip time.
+1,480,138,542,410,000 WARNING memory                 Incorrectly entangled state.
+1,480,138,542,410,000 WARNING memory                 Incorrectly entangled state.
+1,500,001,077,312,000 WARNING main_het_net_sim       Entanglement num 75 completed in 0.1374749105 seconds.
+1,500,001,077,312,000 WARNING main_het_net_sim       Starting EG attempt at 1500001077312000.
+1,500,548,528,437,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,500,548,528,437,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,500,693,409,374,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,500,693,409,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,500,693,409,374,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,500,693,409,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,500,693,454,374,500 WARNING apps                   Transmon decohered during round trip time.
+1,500,693,454,462,500 WARNING memory                 Incorrectly entangled state.
+1,500,693,454,462,500 WARNING memory                 Incorrectly entangled state.
+1,520,001,079,374,500 WARNING main_het_net_sim       Entanglement num 76 completed in 0.6923771505 seconds.
+1,520,001,079,374,500 WARNING main_het_net_sim       Starting EG attempt at 1520001079374500.
+1,520,047,005,437,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,520,047,005,437,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,520,047,005,437,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,520,047,005,437,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,520,708,662,062,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,520,708,662,062,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,520,708,707,062,000 WARNING apps                   Transmon decohered during round trip time.
+1,520,708,707,160,000 WARNING memory                 Incorrectly entangled state.
+1,520,708,707,160,000 WARNING memory                 Incorrectly entangled state.
+1,540,001,092,062,000 WARNING main_het_net_sim       Entanglement num 77 completed in 0.7076277854999999 seconds.
+1,540,001,092,062,000 WARNING main_het_net_sim       Starting EG attempt at 1540001092062000.
+1,540,053,118,374,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,540,053,118,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,540,688,848,937,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,540,688,848,937,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,540,688,893,937,000 WARNING apps                   Transmon decohered during round trip time.
+1,540,688,894,025,000 WARNING memory                 Incorrectly entangled state.
+1,540,688,894,025,000 WARNING memory                 Incorrectly entangled state.
+1,560,001,108,937,000 WARNING main_het_net_sim       Entanglement num 78 completed in 0.687801963 seconds.
+1,560,001,108,937,000 WARNING main_het_net_sim       Starting EG attempt at 1560001108937000.
+1,560,030,259,312,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,560,030,259,312,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,560,071,435,999,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,560,071,435,999,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,560,071,480,999,500 WARNING apps                   Transmon decohered during round trip time.
+1,560,071,481,097,500 WARNING memory                 Incorrectly entangled state.
+1,560,071,481,097,500 WARNING memory                 Incorrectly entangled state.
+1,580,001,125,999,500 WARNING main_het_net_sim       Entanglement num 79 completed in 0.0703721605 seconds.
+1,580,001,125,999,500 WARNING main_het_net_sim       Starting EG attempt at 1580001125999500.
+1,580,031,801,437,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,580,031,801,437,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,580,877,990,624,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,580,877,990,624,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,580,877,990,624,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,580,877,990,624,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,580,878,035,624,500 WARNING apps                   Transmon decohered during round trip time.
+1,580,878,035,712,500 WARNING memory                 Incorrectly entangled state.
+1,580,878,035,712,500 WARNING memory                 Incorrectly entangled state.
+1,600,001,130,624,500 WARNING main_het_net_sim       Entanglement num 80 completed in 0.876909713 seconds.
+1,600,001,130,624,500 WARNING main_het_net_sim       Starting EG attempt at 1600001130624500.
+1,600,079,082,999,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,600,079,082,999,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,600,621,784,749,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,600,621,784,749,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,600,621,829,749,500 WARNING apps                   Transmon decohered during round trip time.
+1,600,621,829,847,500 WARNING memory                 Incorrectly entangled state.
+1,600,621,829,847,500 WARNING memory                 Incorrectly entangled state.
+1,620,001,154,749,500 WARNING main_het_net_sim       Entanglement num 81 completed in 0.620699223 seconds.
+1,620,001,154,749,500 WARNING main_het_net_sim       Starting EG attempt at 1620001154749500.
+1,620,573,006,874,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,620,573,006,874,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,620,687,386,562,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,620,687,386,562,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,620,687,431,562,000 WARNING apps                   Transmon decohered during round trip time.
+1,620,687,431,650,000 WARNING memory                 Incorrectly entangled state.
+1,620,687,431,650,000 WARNING memory                 Incorrectly entangled state.
+1,640,001,176,562,000 WARNING main_het_net_sim       Entanglement num 82 completed in 0.6862769005 seconds.
+1,640,001,176,562,000 WARNING main_het_net_sim       Starting EG attempt at 1640001176562000.
+1,640,025,751,749,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,640,025,751,749,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,640,670,632,687,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,640,670,632,687,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,640,670,677,687,000 WARNING apps                   Transmon decohered during round trip time.
+1,640,670,677,785,000 WARNING memory                 Incorrectly entangled state.
+1,640,670,677,785,000 WARNING memory                 Incorrectly entangled state.
+1,660,001,192,687,000 WARNING main_het_net_sim       Entanglement num 83 completed in 0.669501223 seconds.
+1,660,001,192,687,000 WARNING main_het_net_sim       Starting EG attempt at 1660001192687000.
+1,660,074,569,874,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,660,074,569,874,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,660,074,569,874,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,660,074,569,874,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,661,417,708,937,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,661,417,708,937,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,661,417,753,937,000 WARNING apps                   Transmon decohered during round trip time.
+1,661,417,754,025,000 WARNING memory                 Incorrectly entangled state.
+1,661,417,754,025,000 WARNING memory                 Incorrectly entangled state.
+1,680,001,208,937,000 WARNING main_het_net_sim       Entanglement num 84 completed in 1.416561338 seconds.
+1,680,001,208,937,000 WARNING main_het_net_sim       Starting EG attempt at 1680001208937000.
+1,680,083,736,499,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,680,083,736,499,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,680,676,765,312,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,680,676,765,312,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,680,676,810,312,000 WARNING apps                   Transmon decohered during round trip time.
+1,680,676,810,312,000 WARNING apps                   Transmon decohered during round trip time.
+1,680,676,810,410,000 WARNING memory                 Incorrectly entangled state.
+1,680,676,810,410,000 WARNING memory                 Incorrectly entangled state.
+1,700,001,235,312,000 WARNING main_het_net_sim       Entanglement num 85 completed in 0.675601473 seconds.
+1,700,001,235,312,000 WARNING main_het_net_sim       Starting EG attempt at 1700001235312000.
+1,700,027,335,562,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,700,027,335,562,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,700,650,865,624,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,700,650,865,624,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,700,650,910,624,500 WARNING apps                   Transmon decohered during round trip time.
+1,700,650,910,624,500 WARNING apps                   Transmon decohered during round trip time.
+1,700,650,910,712,500 WARNING memory                 Incorrectly entangled state.
+1,700,650,910,712,500 WARNING memory                 Incorrectly entangled state.
+1,720,001,255,624,500 WARNING main_het_net_sim       Entanglement num 86 completed in 0.6496754004999999 seconds.
+1,720,001,255,624,500 WARNING main_het_net_sim       Starting EG attempt at 1720001255624500.
+1,720,024,305,749,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,720,024,305,749,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,720,063,957,374,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,720,063,957,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,720,063,957,374,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,720,063,957,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,720,064,002,374,500 WARNING apps                   Transmon decohered during round trip time.
+1,720,064,002,472,500 WARNING memory                 Incorrectly entangled state.
+1,720,064,002,472,500 WARNING memory                 Incorrectly entangled state.
+1,740,001,267,374,500 WARNING main_het_net_sim       Entanglement num 87 completed in 0.062746848 seconds.
+1,740,001,267,374,500 WARNING main_het_net_sim       Starting EG attempt at 1740001267374500.
+1,740,663,098,187,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,740,663,098,187,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,740,710,375,124,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,740,710,375,124,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,740,710,420,124,500 WARNING apps                   Transmon decohered during round trip time.
+1,740,710,420,212,500 WARNING memory                 Incorrectly entangled state.
+1,740,710,420,212,500 WARNING memory                 Incorrectly entangled state.
+1,760,001,275,124,500 WARNING main_het_net_sim       Entanglement num 88 completed in 0.709152838 seconds.
+1,760,001,275,124,500 WARNING main_het_net_sim       Starting EG attempt at 1760001275124500.
+1,760,036,525,749,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,760,036,525,749,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,760,041,100,937,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,760,041,100,937,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,760,041,145,937,000 WARNING apps                   Transmon decohered during round trip time.
+1,760,041,146,035,000 WARNING memory                 Incorrectly entangled state.
+1,760,041,146,035,000 WARNING memory                 Incorrectly entangled state.
+1,780,001,300,937,000 WARNING main_het_net_sim       Entanglement num 89 completed in 0.0398709105 seconds.
+1,780,001,300,937,000 WARNING main_het_net_sim       Starting EG attempt at 1780001300937000.
+1,780,109,754,562,000 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,780,109,754,562,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,780,109,754,562,000 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,780,109,754,562,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,780,695,158,062,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,780,695,158,062,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,780,695,203,062,000 WARNING apps                   Transmon decohered during round trip time.
+1,780,695,203,150,000 WARNING memory                 Incorrectly entangled state.
+1,780,695,203,150,000 WARNING memory                 Incorrectly entangled state.
+1,800,001,328,062,000 WARNING main_het_net_sim       Entanglement num 90 completed in 0.693902213 seconds.
+1,800,001,328,062,000 WARNING main_het_net_sim       Starting EG attempt at 1800001328062000.
+1,800,048,779,187,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,800,048,779,187,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,800,048,779,187,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,800,048,779,187,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,800,614,356,874,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,800,614,356,874,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,800,614,356,874,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,800,614,356,874,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,800,614,401,874,500 WARNING apps                   Transmon decohered during round trip time.
+1,800,614,401,972,500 WARNING memory                 Incorrectly entangled state.
+1,800,614,401,972,500 WARNING memory                 Incorrectly entangled state.
+1,820,001,346,874,500 WARNING main_het_net_sim       Entanglement num 91 completed in 0.6130739105 seconds.
+1,820,001,346,874,500 WARNING main_het_net_sim       Starting EG attempt at 1820001346874500.
+1,820,022,871,937,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,820,022,871,937,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,820,678,428,312,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,820,678,428,312,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,820,678,473,312,000 WARNING apps                   Transmon decohered during round trip time.
+1,820,678,473,400,000 WARNING memory                 Incorrectly entangled state.
+1,820,678,473,400,000 WARNING memory                 Incorrectly entangled state.
+1,840,001,368,312,000 WARNING main_het_net_sim       Entanglement num 92 completed in 0.6771265255 seconds.
+1,840,001,368,312,000 WARNING main_het_net_sim       Starting EG attempt at 1840001368312000.
+1,840,083,895,874,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,840,083,895,874,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,840,083,895,874,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,840,083,895,874,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,840,169,299,374,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,840,169,299,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,840,169,299,374,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,840,169,299,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,840,169,344,374,500 WARNING apps                   Transmon decohered during round trip time.
+1,840,169,344,472,500 WARNING memory                 Incorrectly entangled state.
+1,840,169,344,472,500 WARNING memory                 Incorrectly entangled state.
+1,860,001,369,374,500 WARNING main_het_net_sim       Entanglement num 93 completed in 0.1679761605 seconds.
+1,860,001,369,374,500 WARNING main_het_net_sim       Starting EG attempt at 1860001369374500.
+1,860,571,696,437,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,860,571,696,437,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,860,673,875,624,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,860,673,875,624,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,860,673,920,624,500 WARNING apps                   Transmon decohered during round trip time.
+1,860,673,920,712,500 WARNING memory                 Incorrectly entangled state.
+1,860,673,920,712,500 WARNING memory                 Incorrectly entangled state.
+1,880,001,375,624,500 WARNING main_het_net_sim       Entanglement num 94 completed in 0.672551338 seconds.
+1,880,001,375,624,500 WARNING main_het_net_sim       Starting EG attempt at 1880001375624500.
+1,880,035,101,187,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,880,035,101,187,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,880,041,201,437,000 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,880,041,201,437,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,880,041,201,437,000 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,880,041,201,437,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,880,041,246,437,000 WARNING apps                   Transmon decohered during round trip time.
+1,880,041,246,437,000 WARNING apps                   Transmon decohered during round trip time.
+1,880,041,246,535,000 WARNING memory                 Incorrectly entangled state.
+1,880,041,246,535,000 WARNING memory                 Incorrectly entangled state.
+1,900,001,401,437,000 WARNING main_het_net_sim       Entanglement num 95 completed in 0.0398709105 seconds.
+1,900,001,401,437,000 WARNING main_het_net_sim       Starting EG attempt at 1900001401437000.
+1,900,033,601,937,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,900,033,601,937,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,900,033,601,937,000 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,900,033,601,937,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,900,035,126,999,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,900,035,126,999,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,900,035,172,087,500 WARNING memory                 Incorrectly entangled state.
+1,900,035,172,087,500 WARNING memory                 Incorrectly entangled state.
+1,920,001,416,999,500 WARNING main_het_net_sim       Entanglement num 96 completed in 0.0337706505 seconds.
+1,920,001,416,999,500 WARNING main_het_net_sim       Starting EG attempt at 1920001416999500.
+1,920,051,918,249,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,920,051,918,249,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,920,051,918,249,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,920,051,918,249,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,920,064,118,749,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,920,064,118,749,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,920,064,118,749,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,920,064,118,749,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,920,064,163,749,500 WARNING apps                   Transmon decohered during round trip time.
+1,920,064,163,847,500 WARNING memory                 Incorrectly entangled state.
+1,920,064,163,847,500 WARNING memory                 Incorrectly entangled state.
+1,940,001,428,749,500 WARNING main_het_net_sim       Entanglement num 97 completed in 0.062746848 seconds.
+1,940,001,428,749,500 WARNING main_het_net_sim       Starting EG attempt at 1940001428749500.
+1,940,029,054,062,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,940,029,054,062,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,940,109,882,374,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,940,109,882,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,940,109,882,374,500 WARNING generation             False positive entanglement heralded with sources 0,1.
+1,940,109,882,374,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,940,109,927,374,500 WARNING apps                   Transmon decohered during round trip time.
+1,940,109,927,462,500 WARNING memory                 Incorrectly entangled state.
+1,940,109,927,462,500 WARNING memory                 Incorrectly entangled state.
+1,960,001,442,374,500 WARNING main_het_net_sim       Entanglement num 98 completed in 0.108498713 seconds.
+1,960,001,442,374,500 WARNING main_het_net_sim       Starting EG attempt at 1960001442374500.
+1,960,035,167,937,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,960,035,167,937,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,960,529,067,687,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,960,529,067,687,000 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,960,529,112,687,000 WARNING apps                   Transmon decohered during round trip time.
+1,960,529,112,785,000 WARNING memory                 Incorrectly entangled state.
+1,960,529,112,785,000 WARNING memory                 Incorrectly entangled state.
+1,980,001,467,687,000 WARNING main_het_net_sim       Entanglement num 99 completed in 0.5276704105 seconds.
+1,980,001,467,687,000 WARNING main_het_net_sim       Starting EG attempt at 1980001467687000.
+1,980,036,718,312,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+1,980,036,718,312,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,980,102,295,999,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,980,102,295,999,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[1]
+1,980,102,295,999,500 WARNING generation             False positive entanglement heralded with sources 1,0.
+1,980,102,295,999,500 WARNING generation             router_2 successful entanglement of memory router_2.MemoryArray[0]
+1,980,102,340,999,500 WARNING apps                   Transmon decohered during round trip time.
+1,980,102,341,087,500 WARNING memory                 Incorrectly entangled state.
+1,980,102,341,087,500 WARNING memory                 Incorrectly entangled state.
+2,000,001,475,999,500 WARNING main_het_net_sim       Entanglement num 100 completed in 0.1008734005 seconds.
+2,000,001,475,999,500 WARNING main_het_net_sim       coherence:2000000000
+2,000,001,475,999,500 WARNING main_het_net_sim       After 100 entanglement attempts, calculated fidelity =0.06888448000000003
+2,000,001,475,999,500 WARNING main_het_net_sim       Average ent time is ~0.5282745529950001
+2,000,001,475,999,500 WARNING main_het_net_sim       100 entanglement pairs were generated after 5962 attempts.

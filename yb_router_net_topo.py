@@ -130,7 +130,7 @@ class YbRouterNetTopo(RouterNetTopo):
                     
                     next_hop = path[1]
                     # routing protocol locates at the bottom of the stack
-                    routing_protocol = src.network_manager.protocol_stack[0]  # guarantee that [0] is the routing protocol?
+                    routing_protocol = src.network_manager.get_routing_protocol()
                     routing_protocol.add_forwarding_rule(dst_name, next_hop)
                 except exception.NetworkXNoPath:
                     pass

@@ -9,7 +9,6 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from sequence.kernel.timeline import Timeline
 
-from encoding import polarization
 from sequence.components.photon import Photon
 
 
@@ -35,7 +34,7 @@ class HetPhoton(Photon):
         only_early (bool): whether this photon only has the early bin of a time bin encoding, due to decoherence during generation.
     """
 
-    def __init__(self, name: str, timeline: "Timeline", wavelength=0, location=None, encoding_type=polarization, quantum_state=None, use_qm=False):
+    def __init__(self, name: str, timeline: "Timeline", wavelength=0, location=None, encoding_type=None, quantum_state=None, use_qm=False):
         """Constructor for the photon class.
 
         Args:
@@ -43,7 +42,7 @@ class HetPhoton(Photon):
             timeline (Timeline): simulation timeline reference
             wavelength (int): wavelength of photon (in nm) (default 0).
             location (Entity): location of the photon (default None).
-            encoding_type (Dict[str, Any]): encoding type of photon (from encoding module) (default polarization).
+            encoding_type (Dict[str, Any]): encoding type of photon (from encoding module) (default None).
             quantum_state (Union[int, Tuple[complex]]):
                 reference key for quantum manager, or complex coefficients for photon's quantum state.
                 Default state is (1, 0).

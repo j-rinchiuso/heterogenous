@@ -1,0 +1,511 @@
+0                    WARNING main_yb_yb_EG_sim      Starting EG attempt at 0.
+143,738,948,249,500  WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+143,738,948,249,500  WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+10,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 1 completed in 143.7764585495 seconds.
+10,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 1 took 26372 attempts.
+10,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 10000000000000000.
+10,198,172,580,749,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+10,198,172,580,749,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+20,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 2 completed in 198.21009074949998 seconds.
+20,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 2 took 36492 attempts.
+20,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 20000000000000000.
+20,077,889,396,249,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+20,077,889,396,249,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+30,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 3 completed in 77.9269065495 seconds.
+30,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 3 took 14340 attempts.
+30,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 30000000000000000.
+30,233,603,787,749,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+30,233,603,787,749,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+40,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 4 completed in 233.64129774949998 seconds.
+40,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 4 took 43004 attempts.
+40,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 40000000000000000.
+40,077,875,670,687,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+40,077,875,670,687,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+50,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 5 completed in 77.913180987 seconds.
+50,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 5 took 14331 attempts.
+50,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 50000000000000000.
+50,002,090,373,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+50,002,090,373,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+60,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 6 completed in 2.1278833745 seconds.
+60,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 6 took 374 attempts.
+60,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 60000000000000000.
+60,127,276,615,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+60,127,276,615,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+70,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 7 completed in 127.31412567449999 seconds.
+70,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 7 took 23446 attempts.
+70,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 70000000000000000.
+70,012,518,493,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+70,012,518,493,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+80,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 8 completed in 12.5560033745 seconds.
+80,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 8 took 2294 attempts.
+80,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 80000000000000000.
+80,267,001,222,874,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+80,267,001,222,874,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+90,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 9 completed in 267.0387331745 seconds.
+90,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 9 took 49166 attempts.
+90,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 90000000000000000.
+90,272,515,609,937,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+90,272,515,609,937,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+100,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 10 completed in 272.553119937 seconds.
+100,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 10 took 50159 attempts.
+100,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 100000000000000000.
+100,188,419,842,937,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+100,188,419,842,937,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+110,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 11 completed in 188.457353237 seconds.
+110,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 11 took 34687 attempts.
+110,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 110000000000000000.
+110,080,691,579,124,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+110,080,691,579,124,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+120,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 12 completed in 80.72908912449999 seconds.
+120,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 12 took 14866 attempts.
+120,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 120000000000000000.
+120,590,218,040,624,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+120,590,218,040,624,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+130,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 13 completed in 590.2555509245 seconds.
+130,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 13 took 108650 attempts.
+130,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 130000000000000000.
+130,022,275,806,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+130,022,275,806,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+140,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 14 completed in 22.3133163745 seconds.
+140,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 14 took 4102 attempts.
+140,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 140000000000000000.
+140,032,687,150,687,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+140,032,687,150,687,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+150,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 15 completed in 32.724660987 seconds.
+150,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 15 took 6011 attempts.
+150,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 150000000000000000.
+150,005,660,967,249,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+150,005,660,967,249,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+160,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 16 completed in 5.6984772495 seconds.
+160,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 16 took 1076 attempts.
+160,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 160000000000000000.
+160,682,671,554,249,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+160,682,671,554,249,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+170,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 17 completed in 682.7090645495 seconds.
+170,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 17 took 125668 attempts.
+170,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 170000000000000000.
+170,525,557,596,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+170,525,557,596,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+180,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 18 completed in 525.5951063745 seconds.
+180,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 18 took 96742 attempts.
+180,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 180000000000000000.
+180,010,443,544,812,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+180,010,443,544,812,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+190,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 19 completed in 10.481055112 seconds.
+190,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 19 took 1917 attempts.
+190,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 190000000000000000.
+190,054,252,324,249,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+190,054,252,324,249,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+200,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 20 completed in 54.2898342495 seconds.
+200,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 20 took 9988 attempts.
+200,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 200000000000000000.
+200,013,236,577,312,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+200,013,236,577,312,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+210,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 21 completed in 13.274087611999999 seconds.
+210,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 21 took 2437 attempts.
+210,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 210000000000000000.
+210,118,202,309,874,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+210,118,202,309,874,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+220,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 22 completed in 118.2398198745 seconds.
+220,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 22 took 21758 attempts.
+220,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 220000000000000000.
+220,203,090,888,874,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+220,203,090,888,874,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+230,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 23 completed in 203.1283991745 seconds.
+230,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 23 took 37422 attempts.
+230,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 230000000000000000.
+230,281,563,989,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+230,281,563,989,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+240,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 24 completed in 281.6014993745 seconds.
+240,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 24 took 51830 attempts.
+240,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 240000000000000000.
+240,250,284,204,562,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+240,250,284,204,562,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+250,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 25 completed in 250.321714862 seconds.
+250,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 25 took 46073 attempts.
+250,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 250000000000000000.
+250,204,374,550,499,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+250,204,374,550,499,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+260,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 26 completed in 204.4120604995 seconds.
+260,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 26 took 37608 attempts.
+260,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 260000000000000000.
+260,175,227,666,624,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+260,175,227,666,624,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+270,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 27 completed in 175.2651769245 seconds.
+270,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 27 took 32266 attempts.
+270,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 270000000000000000.
+270,280,871,831,499,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+270,280,871,831,499,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+280,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 28 completed in 280.9093414995 seconds.
+280,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 28 took 51704 attempts.
+280,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 280000000000000000.
+280,024,372,105,812,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+280,024,372,105,812,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+290,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 29 completed in 24.409616112 seconds.
+290,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 29 took 4493 attempts.
+290,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 290000000000000000.
+290,108,452,622,187,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+290,108,452,622,187,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+300,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 30 completed in 108.490132187 seconds.
+300,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 30 took 19955 attempts.
+300,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 300000000000000000.
+300,102,194,225,124,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+300,102,194,225,124,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+310,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 31 completed in 102.2317354245 seconds.
+310,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 31 took 18802 attempts.
+310,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 310000000000000000.
+310,244,745,416,499,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+310,244,745,416,499,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+320,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 32 completed in 244.7829264995 seconds.
+320,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 32 took 45064 attempts.
+320,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 320000000000000000.
+320,075,831,223,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+320,075,831,223,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+330,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 33 completed in 75.86873367449999 seconds.
+330,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 33 took 13974 attempts.
+330,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 330000000000000000.
+330,102,865,032,124,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+330,102,865,032,124,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+340,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 34 completed in 102.9025421245 seconds.
+340,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 34 took 18914 attempts.
+340,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 340000000000000000.
+340,540,251,518,249,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+340,540,251,518,249,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+350,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 35 completed in 540.2890285495 seconds.
+350,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 35 took 99492 attempts.
+350,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 350000000000000000.
+350,013,178,624,937,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+350,013,178,624,937,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+360,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 36 completed in 13.216134937 seconds.
+360,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 36 took 2399 attempts.
+360,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 360000000000000000.
+360,048,718,111,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+360,048,718,111,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+370,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 37 completed in 48.7556216745 seconds.
+370,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 37 took 8982 attempts.
+370,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 370000000000000000.
+370,173,800,649,124,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+370,173,800,649,124,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+380,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 38 completed in 173.8381591245 seconds.
+380,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 38 took 31986 attempts.
+380,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 380000000000000000.
+380,109,170,706,124,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+380,109,170,706,124,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+390,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 39 completed in 109.2082164245 seconds.
+390,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 39 took 20098 attempts.
+390,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 390000000000000000.
+390,008,421,973,437,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+390,008,421,973,437,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+400,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 40 completed in 8.459483437 seconds.
+400,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 40 took 1575 attempts.
+400,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 400000000000000000.
+400,228,663,369,812,274 WARNING memory                 router_1.MemoryArray[0] atom lost through lifetime expiration!
+401,029,594,071,812,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+401,029,594,071,812,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+410,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 41 completed in 1029.631582112 seconds.
+410,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 41 took 189549 attempts.
+410,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 410000000000000000.
+410,280,838,280,124,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+410,280,838,280,124,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+420,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 42 completed in 280.8757901245 seconds.
+420,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 42 took 51682 attempts.
+420,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 420000000000000000.
+420,120,304,709,562,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+420,120,304,709,562,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+430,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 43 completed in 120.342219862 seconds.
+430,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 43 took 22153 attempts.
+430,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 430000000000000000.
+430,340,685,645,562,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+430,340,685,645,562,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+440,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 44 completed in 340.723155562 seconds.
+440,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 44 took 62729 attempts.
+440,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 440000000000000000.
+440,112,640,645,874,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+440,112,640,645,874,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+450,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 45 completed in 112.6781561745 seconds.
+450,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 45 took 20734 attempts.
+450,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 450000000000000000.
+450,564,499,919,812,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+450,564,499,919,812,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+460,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 46 completed in 564.537429812 seconds.
+460,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 46 took 103917 attempts.
+460,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 460000000000000000.
+460,126,602,758,249,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+460,126,602,758,249,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+470,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 47 completed in 126.6402685495 seconds.
+470,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 47 took 23332 attempts.
+470,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 470000000000000000.
+470,372,607,261,187,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+470,372,607,261,187,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+480,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 48 completed in 372.644771187 seconds.
+480,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 48 took 68579 attempts.
+480,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 480000000000000000.
+480,262,814,724,249,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+480,262,814,724,249,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+490,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 49 completed in 262.8522345495 seconds.
+490,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 49 took 48388 attempts.
+490,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 490000000000000000.
+490,170,388,661,749,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+490,170,388,661,749,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+500,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 50 completed in 170.42617174949999 seconds.
+500,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 50 took 31388 attempts.
+500,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 500000000000000000.
+500,006,933,953,437,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+500,006,933,953,437,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+510,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 51 completed in 6.971463737 seconds.
+510,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 51 took 1255 attempts.
+510,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 510000000000000000.
+510,032,729,852,437,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+510,032,729,852,437,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+520,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 52 completed in 32.767362437 seconds.
+520,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 52 took 6039 attempts.
+520,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 520000000000000000.
+520,285,710,836,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+520,285,710,836,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+530,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 53 completed in 285.7483466745 seconds.
+530,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 53 took 52582 attempts.
+530,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 530000000000000000.
+530,106,371,573,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+530,106,371,573,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+540,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 54 completed in 106.4090833745 seconds.
+540,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 54 took 19574 attempts.
+540,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 540000000000000000.
+540,027,181,913,999,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+540,027,181,913,999,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+550,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 55 completed in 27.219424299499998 seconds.
+550,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 55 took 5024 attempts.
+550,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 550000000000000000.
+550,025,033,762,437,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+550,025,033,762,437,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+560,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 56 completed in 25.071272437 seconds.
+560,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 56 took 4599 attempts.
+560,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 560000000000000000.
+560,207,873,466,437,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+560,207,873,466,437,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+570,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 57 completed in 207.910976737 seconds.
+570,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 57 took 38263 attempts.
+570,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 570000000000000000.
+570,349,022,041,312,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+570,349,022,041,312,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+580,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 58 completed in 349.059551312 seconds.
+580,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 58 took 64261 attempts.
+580,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 580000000000000000.
+580,044,491,961,124,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+580,044,491,961,124,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+590,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 59 completed in 44.5294714245 seconds.
+590,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 59 took 8178 attempts.
+590,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 590000000000000000.
+591,366,794,352,812,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+591,366,794,352,812,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+600,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 60 completed in 1366.831862812 seconds.
+600,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 60 took 251645 attempts.
+600,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 600000000000000000.
+600,052,166,700,249,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+600,052,166,700,249,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+610,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 61 completed in 52.2042105495 seconds.
+610,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 61 took 9604 attempts.
+610,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 610000000000000000.
+610,610,408,048,812,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+610,610,408,048,812,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+620,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 62 completed in 610.445558812 seconds.
+620,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 62 took 112381 attempts.
+620,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 620000000000000000.
+620,309,384,509,874,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+620,309,384,509,874,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+630,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 63 completed in 309.4220201745 seconds.
+630,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 63 took 56958 attempts.
+630,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 630000000000000000.
+630,052,868,008,499,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+630,052,868,008,499,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+640,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 64 completed in 52.9055184995 seconds.
+640,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 64 took 9736 attempts.
+640,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 640000000000000000.
+640,066,770,643,437,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+640,066,770,643,437,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+650,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 65 completed in 66.808153737 seconds.
+650,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 65 took 12295 attempts.
+650,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 650000000000000000.
+650,044,486,307,511,270 WARNING memory                 router_1.MemoryArray[0] atom lost through lifetime expiration!
+650,285,724,561,937,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+650,285,724,561,937,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+660,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 66 completed in 285.762071937 seconds.
+660,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 66 took 52591 attempts.
+660,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 660000000000000000.
+660,130,049,822,062,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+660,130,049,822,062,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+670,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 67 completed in 130.08733236199998 seconds.
+670,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 67 took 23953 attempts.
+670,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 670000000000000000.
+670,086,280,694,249,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+670,086,280,694,249,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+680,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 68 completed in 86.3182042495 seconds.
+680,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 68 took 15908 attempts.
+680,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 680000000000000000.
+680,273,851,123,687,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+680,273,851,123,687,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+690,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 69 completed in 273.888633987 seconds.
+690,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 69 took 50379 attempts.
+690,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 690000000000000000.
+690,056,331,709,218,555 WARNING memory                 router_1.MemoryArray[0] atom lost through lifetime expiration!
+690,105,741,943,062,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+690,105,741,943,062,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+700,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 70 completed in 105.779453062 seconds.
+700,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 70 took 19489 attempts.
+700,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 700000000000000000.
+700,134,891,877,062,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+700,134,891,877,062,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+710,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 71 completed in 134.929387362 seconds.
+710,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 71 took 24833 attempts.
+710,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 710000000000000000.
+710,205,080,433,937,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+710,205,080,433,937,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+720,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 72 completed in 205.117943937 seconds.
+720,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 72 took 37743 attempts.
+720,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 720000000000000000.
+720,330,967,984,187,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+720,330,967,984,187,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+730,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 73 completed in 331.005494487 seconds.
+730,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 73 took 60947 attempts.
+730,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 730000000000000000.
+730,002,762,705,437,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+730,002,762,705,437,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+740,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 74 completed in 2.800215437 seconds.
+740,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 74 took 487 attempts.
+740,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 740000000000000000.
+740,050,776,284,249,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+740,050,776,284,249,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+750,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 75 completed in 50.8137945495 seconds.
+750,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 75 took 9348 attempts.
+750,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 750000000000000000.
+750,235,730,588,437,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+750,235,730,588,437,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+760,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 76 completed in 235.768098437 seconds.
+760,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 76 took 43415 attempts.
+760,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 760000000000000000.
+760,237,723,183,624,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+760,237,723,183,624,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+770,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 77 completed in 237.7606939245 seconds.
+770,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 77 took 43738 attempts.
+770,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 770000000000000000.
+770,049,431,620,124,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+770,049,431,620,124,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+780,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 78 completed in 49.4691301245 seconds.
+780,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 78 took 9122 attempts.
+780,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 780000000000000000.
+780,030,642,703,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+780,030,642,703,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+790,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 79 completed in 30.6802136745 seconds.
+790,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 79 took 5654 attempts.
+790,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 790000000000000000.
+790,389,950,859,687,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+790,389,950,859,687,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+800,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 80 completed in 389.988369687 seconds.
+800,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 80 took 71755 attempts.
+800,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 800000000000000000.
+800,258,646,526,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+800,258,646,526,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+810,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 81 completed in 258.6840366745 seconds.
+810,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 81 took 47622 attempts.
+810,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 810000000000000000.
+810,213,441,230,687,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+810,213,441,230,687,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+820,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 82 completed in 213.478740687 seconds.
+820,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 82 took 39291 attempts.
+820,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 820000000000000000.
+820,000,707,684,367,455 WARNING memory                 router_1.MemoryArray[0] atom lost through lifetime expiration!
+820,010,448,119,999,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+820,010,448,119,999,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+830,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 83 completed in 10.4856302995 seconds.
+830,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 83 took 1920 attempts.
+830,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 830000000000000000.
+830,219,704,202,937,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+830,219,704,202,937,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+840,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 84 completed in 219.741712937 seconds.
+840,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 84 took 40447 attempts.
+840,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 840000000000000000.
+840,010,504,547,312,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+840,010,504,547,312,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+850,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 85 completed in 10.542057611999999 seconds.
+850,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 85 took 1957 attempts.
+850,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 850000000000000000.
+850,047,237,716,687,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+850,047,237,716,687,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+860,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 86 completed in 47.275226687 seconds.
+860,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 86 took 8667 attempts.
+860,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 860000000000000000.
+860,006,321,098,812,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+860,006,321,098,812,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+870,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 87 completed in 6.358609112 seconds.
+870,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 87 took 1181 attempts.
+870,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 870000000000000000.
+870,028,483,876,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+870,028,483,876,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+880,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 88 completed in 28.5213863745 seconds.
+880,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 88 took 5222 attempts.
+880,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 880000000000000000.
+880,191,211,350,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+880,191,211,350,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+890,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 89 completed in 191.2488606745 seconds.
+890,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 89 took 35206 attempts.
+890,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 890000000000000000.
+890,093,854,203,780,966 WARNING memory                 router_1.MemoryArray[0] atom lost through lifetime expiration!
+890,267,693,380,749,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+890,267,693,380,749,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+900,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 90 completed in 267.7308907495 seconds.
+900,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 90 took 49292 attempts.
+900,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 900000000000000000.
+900,021,548,572,062,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+900,021,548,572,062,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+910,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 91 completed in 21.586082362 seconds.
+910,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 91 took 3953 attempts.
+910,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 910000000000000000.
+910,063,270,178,242,254 WARNING memory                 router_1.MemoryArray[0] atom lost through lifetime expiration!
+910,090,386,364,562,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+910,090,386,364,562,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+920,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 92 completed in 90.423874562 seconds.
+920,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 92 took 16633 attempts.
+920,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 920000000000000000.
+920,017,410,875,437,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+920,017,410,875,437,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+930,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 93 completed in 17.448385737 seconds.
+930,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 93 took 3207 attempts.
+930,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 930000000000000000.
+930,260,715,374,687,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+930,260,715,374,687,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+940,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 94 completed in 260.752884687 seconds.
+940,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 94 took 47995 attempts.
+940,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 940000000000000000.
+940,138,366,391,999,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+940,138,366,391,999,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+950,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 95 completed in 138.4039022995 seconds.
+950,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 95 took 25472 attempts.
+950,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 950000000000000000.
+950,169,643,938,489,803 WARNING memory                 router_0.MemoryArray[0] atom lost through lifetime expiration!
+950,223,887,651,437,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+950,223,887,651,437,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+960,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 96 completed in 223.92516143699999 seconds.
+960,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 96 took 41223 attempts.
+960,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 960000000000000000.
+960,011,837,010,937,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+960,011,837,010,937,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+970,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 97 completed in 11.874521237 seconds.
+970,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 97 took 2175 attempts.
+970,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 970000000000000000.
+970,180,819,831,874,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+970,180,819,831,874,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+980,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 98 completed in 180.8573418745 seconds.
+980,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 98 took 33310 attempts.
+980,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 980000000000000000.
+980,100,765,682,562,000 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+980,100,765,682,562,000 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+990,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 99 completed in 100.803192862 seconds.
+990,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 99 took 18521 attempts.
+990,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Starting EG attempt at 990000000000000000.
+990,011,847,686,374,500 WARNING generation             router_0 successful entanglement of memory router_0.MemoryArray[0]
+990,011,847,686,374,500 WARNING generation             router_1 successful entanglement of memory router_1.MemoryArray[0]
+1,000,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 100 completed in 11.8851963745 seconds.
+1,000,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Entanglement num 100 took 2182 attempts.
+1,000,000,000,000,000,000 WARNING main_yb_yb_EG_sim      pce:0.05
+1,000,000,000,000,000,000 WARNING main_yb_yb_EG_sim      After 100 entanglement attempts, calculated fidelity =0.990025
+1,000,000,000,000,000,000 WARNING main_yb_yb_EG_sim      Average ent time is ~184.73768527449997
+1,000,000,000,000,000,000 WARNING main_yb_yb_EG_sim      100 entanglement pairs were generated after 3400200 attempts.

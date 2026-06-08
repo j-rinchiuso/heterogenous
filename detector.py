@@ -23,7 +23,6 @@ from sequence.components.circuit import Circuit
 from sequence.kernel.entity import Entity
 from sequence.kernel.event import Event
 from sequence.kernel.process import Process
-# from encoding import time_bin, fock
 from sequence.utils import log
 import gmpy2
 gmpy2.get_context().precision = 80  # 80 bits ~ 24 decimal digits ~ sufficient for 10,000 years of ps timing 
