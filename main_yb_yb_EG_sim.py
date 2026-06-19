@@ -91,6 +91,7 @@ def main():
     log.track_module('bsm')
     log.track_module('detector')
     log.track_module('memory')
+    log.track_module('apps') #for debugging purposes can remove later
     log.track_module('photon')
     log.track_module('custom_node')
     log.track_module('time_bin_bsm')
@@ -161,8 +162,8 @@ def main():
 
     readout_fidelity0 = node_init.get_components_by_type(MemoryArray)[0].memories[0].measurement_fidelity
     readout_fidelity1 = node_resp.get_components_by_type(MemoryArray)[0].memories[0].measurement_fidelity
-    fid = node_init.app.get_fidelity(readout_fidelity0*readout_fidelity1)
-
+    readout_fidelity_product = readout_fidelity0 * readout_fidelity1
+    fid = node_init.app.get_fidelity(readout_fidelity_product)
     # logging
     log.logger.warning(f'pce:{photon_collection_efficiency}')
     log.logger.warning(f'After {n} entanglement attempts, calculated fidelity ={fid}')

@@ -55,4 +55,5 @@ class HetPhoton(Photon):
         self.qfc_noise_count = 0                            # number of QFC noise photons in this mode
         self.transducer_noise_count = 0                     # number of transducer noise photons in this mode
         self.contains_signal: bool = True                   # if contains signal photon or not
-        self.only_early = False                             # true if decoheres during generation (in bin separation time)
+        self.only_early = False       
+                              # true if decoheres during generation (in bin separation time)

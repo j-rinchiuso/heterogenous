@@ -151,7 +151,12 @@ class HetRequestApp(RequestApp):
         # print(rhoZ_diff)
         # print(rhoZ_prod_same)
 
-        f = meas_fid * (rhoZ_diff + rhoX_same - rhoX_diff - 2*sqrt(rhoZ_prod_same))/2
+        raw_fidelity = (rhoZ_diff + rhoX_same - rhoX_diff - 2*sqrt(rhoZ_prod_same))/2
+        f = meas_fid * raw_fidelity
+        log.logger.warning(f'fidelity debug counts: {self.meas_results}')
+        log.logger.warning(f'fidelity debug x and z trials: X={X_trials}, Z={Z_trials}')
+        log.logger.warning(f'fidelity debug x and z terms: rhoZ_diff={rhoZ_diff}, rhoX_same={rhoX_same}, rhoX_diff={rhoX_diff}, rhoZ_prod_same={rhoZ_prod_same}')
+        log.logger.warning(f'fidelity debug result: raw={raw_fidelity}, readout_factor={meas_fid}, final={f}')
         return f
 
         

@@ -21,7 +21,7 @@ from photon import Photon
 from sequence.kernel.entity import Entity
 from sequence.kernel.event import Event
 from sequence.kernel.process import Process
-from sequence.kernel.quantum_manager import KET_STATE_FORMALISM, DENSITY_MATRIX_FORMALISM
+from sequence.constants import KET_VECTOR_FORMALISM, DENSITY_MATRIX_FORMALISM 
 from sequence.utils import log
 from sequence.components.bsm import _set_state_with_fidelity
 from copy import copy
@@ -149,7 +149,7 @@ class HetTimeBinBSM(BSM):
         # add QFC noise if needed
         if photon.qfc_noise_count == 0: # only signal in mode
             pass
-        elif photon.qfc_noise_count == 1: # noise photon in mode
+        elif photon.qfc_noise_count == 1: # noise photon in mode #NOTE LOOK AT LOGIC WE MAY WANT TO CHANGE THIS IN FUTURE
             self.owner.noise_to_detector += 1
             noise_bin = int(self.get_generator().choice([0,1])) # 0 for early, 1 for late
             noise_time = self.owner.timeline.now() + (noise_bin*self.bin_separation) + round(self.get_generator().random() * self.bin_width) # where within appropriate detection window noise is added

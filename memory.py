@@ -86,8 +86,10 @@ class HetMemoryArray(MemoryArray):
                 memory = Yb(memory_name, timeline, fidelity, frequency, efficiency, coherence_time, wavelength)
             elif memory_type == 'uW':
                 memory = uW(memory_name, timeline, fidelity, frequency, efficiency, coherence_time, wavelength)
+            elif memory_type == 'Rb':
+                memory = Rb(memory_name, timeline, fidelity, frequency, efficiency, coherence_time, wavelength)
             else:
-                raise ValueError('Heterogenous networks only accept Yb or uW memories currently.')
+                raise ValueError('Heterogenous networks only accept Yb, uW, or Rb memories currently.')
             memory.attach(self)
             self.memories.append(memory)
             memory.set_memory_array(self)
@@ -530,7 +532,7 @@ class uW(Memory):
     
     def transduce(self, photon: HetPhoton) -> HetPhoton:
         photon.wavelength = self.output_wavelength
-        photon.add_loss(1 - self.transducer_efficiency)
+        photon.add_loss(1 - self.transducer_efficiency) #format convert efficency
         noise_num = self.noise_to_num()
         photon.transducer_noise_count = noise_num
         return photon
@@ -592,4 +594,182 @@ class uW(Memory):
         #       1,X
 
         return result
+    
+    
+class RbStates(Enum):
+    LOADED = auto() #This is Safari version of having the atom loaded into the dipole trap 
+    PREPARED = auto() #This is like Safari version right before excite, meaning atom been cooled and optical pumped
+    LOST = auto() #Atom has fallen out of trap, must reload
 
+class Rb(Memory):
+    """Rb memory class.
+
+    This class models a single Rb atom memory, where the quantum state is stored in the hyperfine/magnetic sublevels of a single atom. 
+    This class follows the Rb atom-photon entanglement scheme described in Akbar Safari's note on estimating the rate and fidelity of a Rb quantum network.
+
+    """
+    _zero_ket = [1, 0]
+    _one_ket = [0, 1]
+    _plus_state = [sqrt(1/2), sqrt(1/2)]
+    _minus_state = [sqrt(1/2), -sqrt(1/2)] #not sure if all these neccesary but defined 
+
+
+    def __init__(self, name: str, timeline: "Timeline", fidelity: float, frequency: float,
+                 efficiency: float, coherence_time: float, wavelength: int):
+        
+        super().__init__(name, timeline, fidelity, frequency, efficiency, coherence_time, wavelength)
+
+        #General params 
+        self.wavelength = 780 
+        self.original_memory_efficiency = self.efficiency
+        self.time_after_excitement = None
+        self.atom_state = RbStates.LOADED
+        self.psi_sign = None
+        self.attempts = 0
+        self.emitted_photon_encoding = "polarization" #added this to use for conversion from encoding module of Sequence 
+        #self.sigma_emission_prob = 2 / 3 think we can remove this now from a simulation perspective
+        #self.pi_emission_prob = 1 / 3
+
+        #Cycle data based on the paper from Safari (NOTE may want to make these different because Safari gave ranges)
+        self.excitation_cycles = 0
+        #self.max_cycles_before_loss = 200 dont need anymore
+        self.image_interval = 20 
+        self.imaging_loss_prob = 0.095 #TODO ask about this believe this is good math is 1/200 lost
+        self.need_to_image = False
+        self.need_to_retrap = False
+        self.loaded_once = False #this is track inital loading and pay the loading time 
+
+        #Assumptions from Safari paper (NOTE similar to last block again some of these values are ranges but others were well defined in paper)
+        self.loading_time =10_000_000            #300_000_000_000 this is MOP load 300 millasec         #10_000_000  this is optimistic 10 microsec
+        self.cooling_time = 1_000_000_000 
+        self.optical_pumping_time = 50_000_000 
+        self.physical_excite_pulse_time = 20_000 # 20 ns single pulse; effective model below includes repeated pulses
+        self.generation_time = 1_000_000 
+        self.excite_pulse_time = self.generation_time
+        self.imaging_time = 5_000_000_000 
+
+        #Converter Params
+        self.converter_output_wavelength = 1389 #for Yb Conversion
+        self.converted_photon_encoding = "rb_time_bin"
+        self.eta1converter_efficiency = .99
+        self.eta2converter_efficiency =.98
+        self.converter_bin_width = 520_000 #this to match yb and transmon(need to look where this time comes into play)
+        self.converter_bin_separation = 2_800_000 #this is the 2.8 microsec seperation used in both microwave and Yb
+        self.converter_noise=.005 #noise photon probability for emission 
+
+        #EG Params
+        self.initialize_time = 0
+        self.cool_time = self.cooling_time
+        self.state_prep_time = self.optical_pumping_time
+        self.bin_width = self.converter_bin_width 
+        self.bin_separation = self.converter_bin_separation 
+        self.update_next_attempt_timing()
+
+        #Measurement
+        self.to_x_basis_time = 183_000 # check data gotten from paper
+        self.measurement_time = 160_000_000 # check data but pretty sure these valid 160 microsec
+        self.measurement_fidelity = 0.996 # TODO check data here with Caitao (email Wisco)
+
+    def update_next_attempt_timing(self): #adds imaging time evey 20 
+        self.initialize_time = 0
+        if (not self.loaded_once) or self.need_to_retrap or self.atom_state == RbStates.LOST:
+            self.initialize_time += self.loading_time
+        if self.need_to_image:
+            self.initialize_time += self.imaging_time
+
+    def initialize_cool_prep(self) -> int: #Based off Hayden Yb
+        prep_time = self.initialize_time + self.cool_time + self.state_prep_time
+
+        if self.need_to_image: #imaging now paid/done in initalize_time
+            self.need_to_image = False
+
+        if self.need_to_retrap or self.atom_state == RbStates.LOST:
+            self.need_to_retrap = False
+            self.atom_state = RbStates.LOADED
+            self.efficiency = self.original_memory_efficiency
+            self.excitation_cycles = 0
+            self.loaded_once = True
+        elif not self.loaded_once:
+            self.loaded_once = True
+
+        if self.efficiency != 0: #still usable not lost
+            self.update_state(self._plus_state) #copied this over from Hayden but not sure if this is right TODO check logic because in Safari inital state is f=1 mf=0 but potentially stay to use Hayden EG
+            self.atom_state = RbStates.PREPARED
+            log.logger.info('Rb atom ' + str(self.name) + ' successfully prepared in |+>.')
+
+        self.update_next_attempt_timing()
+        return prep_time
+
+    def format_converter(self, photon: HetPhoton) -> HetPhoton:
+        photon.wavelength = self.converter_output_wavelength
+        photon.encoding_type = {'name': self.converted_photon_encoding, 'keep_photon': True}
+
+        photon.add_loss(1 - self.eta1converter_efficiency) #two sources of loss eta 1 is loss from the freq conversion
+        photon.add_loss(1 - self.eta2converter_efficiency)# second source of loss eta 2 is from the format change 
+
+        if self.get_generator().random() < self.converter_noise: # noise photon added from the frequency conversion process
+            photon.qfc_noise_count = 1
+        
+        return photon
+
+
+    def excite(self, dst="") -> None: #again based off Hayden Yb excite method but with some changes to reflect Rb scheme
+
+        self.time_after_excitement = self.owner.timeline.now() + self.bin_separation #need to decide with converter if this is the time after excitment
+
+        if self.timeline.now() < self.next_excite_time:
+            return
+
+        if self.atom_state == RbStates.LOST: #cant excite lost
+            return
+
+        self.excitation_cycles += 1
+
+        rb_encoding = {'name': self.emitted_photon_encoding, 'keep_photon': True} #this is important line and different from Yb bc here we have the new paramatrize encoding 
+        photon = HetPhoton("", self.timeline, wavelength=self.wavelength, location=self.name,
+                           encoding_type=rb_encoding, quantum_state=self.qstate_key, use_qm=True) #copied the last portion here from Hayden need to look into more the quantum state part
+        photon.timeline = None
+        photon.is_null = True #ghost photon not normal independent photon state
+
+        if self.frequency > 0:
+            period = 1e12 / self.frequency
+            self.next_excite_time = self.timeline.now() + period
+
+        photon.add_loss(1 - self.efficiency)
+        photon = self.format_converter(photon)
+
+        if self.image_interval > 0 and self.excitation_cycles % self.image_interval == 0:
+            self.need_to_image = True
+            if self.get_generator().random() < self.imaging_loss_prob: #TODO remember ask about imagine prob
+                self.lose_atom() 
+
+        ##if self.excitation_cycles >= self.max_cycles_before_loss: #using the paper reset max 200 DONT DO the 200
+          ##  self.lose_atom()
+
+        self.update_next_attempt_timing()
+        self._receivers[0].get(photon, dst=dst)
+
+    def measure(self, other_qkey) -> float: 
+        key = self.qstate_key
+        keys = [key, other_qkey]
+        qm = self.timeline.quantum_manager
+
+        for k in keys:
+            if len(qm.states[k].state) != 4: #check two qubit state len 4
+                log.logger.warning('Incorrectly entangled state.')
+
+        if self.owner.app.basis == "X": #if want x basis measure rotate
+            qm.run_circuit(_H_circuit, keys).keys() 
+
+        meas = qm.run_circuit(_meas_circuit, keys, self.get_generator().random()) #measure both mem
+        result=[meas[key], meas[other_qkey]]
+        return result
+
+    def lose_atom(self):
+        if self.atom_state != RbStates.LOST:
+            log.logger.warning(f'{self.name} Rb atom lost from trap')
+            self.atom_state = RbStates.LOST
+            self.need_to_retrap = True
+            self.efficiency = 0
+            self.update_state(self._zero_ket)
+            self.update_next_attempt_timing()

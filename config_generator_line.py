@@ -24,6 +24,8 @@ from sequence.topology.topology import Topology
 from sequence.topology.router_net_topo import RouterNetTopo
 from sequence.constants import MILLISECOND
 
+from memory import Rb
+
 # example: python3 config_generator_line.py 5 10 1 0.0 1 -d config -o line_5.json -gf 0.99 -mf 0.99
 
 parser = argparse.ArgumentParser()
@@ -43,6 +45,11 @@ output_dict[Topology.ALL_TEMPLATES] = \
             {
                 "memo_type": "Yb",
                 "wavelength": "1389"
+            },
+        "Rb": 
+            {
+                "memo_type": "Rb",
+                "wavelength": "780"
             }
     }
 
