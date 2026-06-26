@@ -51,6 +51,10 @@ class QFC(Entity):
         # if photon.wavelength != self.input_wvln:
         #     raise ValueError(f'{self.name} consumes wavelength of {self.input_wvln} but received photon with wavelength of {photon.wavelength}.')
 
+        if photon.wavelength == self.output_wvln:
+            self.send_to_receiver(photon, conversion_attempted=False)
+            return
+
         # Yb atom decayed incorrectly
         if photon.wavelength != self.input_wvln:
             photon.contains_signal = False
@@ -62,7 +66,7 @@ class QFC(Entity):
 
 
 
-    def send_to_receiver(self, photon: Photon = None):
+    def send_to_receiver(self, photon: Photon = None, conversion_attempted: bool = True):
         """
         Method to send a photon to the recieving entity.
 
@@ -75,10 +79,11 @@ class QFC(Entity):
         # if self.timeline.quantum_manager.states[photon.quantum_state].state[0] != np.complex128(0.7071067811865476+0j):
         #     raise ValueError('Unprepared state is getting to QFC.')
 
-        self.owner.conversion_counter += 1
-        if self.get_generator().random() < self.noise: # noise photon added
+        if hasattr(self.owner, "conversion_counter"):
+            self.owner.conversion_counter += 1
+
+        if conversion_attempted and self.get_generator().random() < self.noise: # noise photon added
             photon.qfc_noise_count = 1
             self._receivers[0].get(photon)
         else: # no noise photon added
             self._receivers[0].get(photon)
-

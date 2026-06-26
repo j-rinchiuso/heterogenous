@@ -1,0 +1,145 @@
+{
+    "templates": {
+        "rb_rb_time_bin": {
+            "encoding_type": "het_time_bin"
+        },
+        "Rb": {
+            "memo_type": "Rb",
+            "wavelength": "780"
+        }
+    },
+    "nodes": [
+        {
+            "name": "router_0",
+            "type": "QuantumRouter",
+            "seed": 6874,
+            "memo_size": 10,
+            "template": "Rb"
+        },
+        {
+            "name": "router_1",
+            "type": "QuantumRouter",
+            "seed": 6875,
+            "memo_size": 10,
+            "template": "Rb"
+        },
+        {
+            "name": "router_2",
+            "type": "QuantumRouter",
+            "seed": 6876,
+            "memo_size": 10,
+            "template": "Rb"
+        },
+        {
+            "name": "BSM_0_1",
+            "type": "BSMNode",
+            "seed": 6874,
+            "template": "rb_rb_time_bin"
+        },
+        {
+            "name": "BSM_1_2",
+            "type": "BSMNode",
+            "seed": 6875,
+            "template": "rb_rb_time_bin"
+        }
+    ],
+    "qchannels": [
+        {
+            "source": "router_0",
+            "destination": "BSM_0_1",
+            "distance": 500.0,
+            "attenuation": 0.0002
+        },
+        {
+            "source": "router_1",
+            "destination": "BSM_0_1",
+            "distance": 500.0,
+            "attenuation": 0.0002
+        },
+        {
+            "source": "router_1",
+            "destination": "BSM_1_2",
+            "distance": 500.0,
+            "attenuation": 0.0002
+        },
+        {
+            "source": "router_2",
+            "destination": "BSM_1_2",
+            "distance": 500.0,
+            "attenuation": 0.0002
+        }
+    ],
+    "cchannels": [
+        {
+            "source": "BSM_0_1",
+            "destination": "router_0",
+            "distance": 500.0
+        },
+        {
+            "source": "router_0",
+            "destination": "BSM_0_1",
+            "distance": 500.0
+        },
+        {
+            "source": "BSM_0_1",
+            "destination": "router_1",
+            "distance": 500.0
+        },
+        {
+            "source": "router_1",
+            "destination": "BSM_0_1",
+            "distance": 500.0
+        },
+        {
+            "source": "BSM_1_2",
+            "destination": "router_1",
+            "distance": 500.0
+        },
+        {
+            "source": "router_1",
+            "destination": "BSM_1_2",
+            "distance": 500.0
+        },
+        {
+            "source": "BSM_1_2",
+            "destination": "router_2",
+            "distance": 500.0
+        },
+        {
+            "source": "router_2",
+            "destination": "BSM_1_2",
+            "distance": 500.0
+        },
+        {
+            "source": "router_0",
+            "destination": "router_1",
+            "delay": 1000000000
+        },
+        {
+            "source": "router_0",
+            "destination": "router_2",
+            "delay": 1000000000
+        },
+        {
+            "source": "router_1",
+            "destination": "router_0",
+            "delay": 1000000000
+        },
+        {
+            "source": "router_1",
+            "destination": "router_2",
+            "delay": 1000000000
+        },
+        {
+            "source": "router_2",
+            "destination": "router_0",
+            "delay": 1000000000
+        },
+        {
+            "source": "router_2",
+            "destination": "router_1",
+            "delay": 1000000000
+        }
+    ],
+    "formalism": "ket_vector"
+}

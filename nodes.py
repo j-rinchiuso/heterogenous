@@ -26,6 +26,7 @@ from time_bin_bsm import HetTimeBinBSM
 from resource_manager import ResourceManager
 from generation import HetEGB
 from qfc import QFC
+from amziConverter import AmziConverter
 
 ## THIS IS MEANT TO BE A REPLACEMENT NOT AND INHERITANCE OF BSMNode
 # TODO CHANGE THE __init__() to better match BSMNode (use component templates instead of encoding type)
@@ -73,11 +74,17 @@ class HetBSMNode(Node):
         
         first_qfc_name_index = other_nodes[0].find('_')
         second_qfc_name_index = other_nodes[1].find('_')
-        # add QFCs
+        # add format converters and QFCs
+        amzi0 = AmziConverter(name+'.AMZI'+other_nodes[0][first_qfc_name_index+1:], self.timeline)
+        amzi1 = AmziConverter(name+'.AMZI'+other_nodes[1][second_qfc_name_index+1:], self.timeline)
         qfc0 = QFC(name+'.QFC'+other_nodes[0][first_qfc_name_index+1:], self.timeline)
         qfc1 = QFC(name+'.QFC'+other_nodes[1][second_qfc_name_index+1:], self.timeline)
-        qfc0.add_receiver(bsm)
+        amzi0.add_receiver(qfc0)
+        amzi1.add_receiver(qfc1)
+        qfc0.add_receiver(bsm) #
         qfc1.add_receiver(bsm)
+        self.add_component(amzi0)#add amzi
+        self.add_component(amzi1)
         self.add_component(qfc0)
         self.add_component(qfc1)
 
@@ -94,11 +101,11 @@ class HetBSMNode(Node):
         self.eg = HetEGB(self, "{}_eg".format(name), other_nodes)
         bsm.attach(self.eg)
 
-    # overwrote this method so that photons go straight to correct QFCs
+    # overwrote this method so that photons go straight to correct converter chain
     def receive_qubit(self, src: str, photon) -> None:
         index = src.find('_')
-        qfc_name = self.name+'.QFC'+src[index+1:]
-        self.components[qfc_name].get(photon)
+        amzi_name = self.name+'.AMZI'+src[index+1:]
+        self.components[amzi_name].get(photon)
     
     # TODO figure out if this is duplicitous and an unecesssary change from the Node version
     def receive_message(self, src: str, msg: "Message") -> None:
@@ -170,6 +177,19 @@ class HetQR(Node):
         self.add_component(memory_array)
         memory_array.add_receiver(self)
 
+        self.router_side_conversion_enabled = self.memo_type == "Rb"
+        self.router_side_amzi_name = name + ".RouterAMZI"
+        self.router_side_qfc_name = name + ".RouterQFC"
+        self.conversion_counter = 0
+
+        if self.router_side_conversion_enabled:
+            router_amzi = AmziConverter(self.router_side_amzi_name, tl)
+            router_qfc = QFC(self.router_side_qfc_name, tl)
+            router_amzi.add_receiver(router_qfc)
+            router_qfc.add_receiver(self)
+            self.add_component(router_amzi)
+            self.add_component(router_qfc)
+
         # setup managers
         self.resource_manager = None
         self.network_manager = None
@@ -240,8 +260,20 @@ class HetQR(Node):
     def get(self, photon: "Photon", **kwargs):
         """Receives photon from last hardware element (in this case, quantum memory)."""
         dst = kwargs.get("dst", None)
+        if dst is None and hasattr(photon, "router_side_dst"):
+            dst = photon.router_side_dst
+            delattr(photon, "router_side_dst")
+            self.send_qubit(dst, photon)
+            return
+
         if dst is None:
             raise ValueError("Destination should be supplied for 'get' method on QuantumRouter")
+
+        if self.router_side_conversion_enabled:
+            photon.router_side_dst = dst
+            self.components[self.router_side_amzi_name].get(photon)
+            return
+
         self.send_qubit(dst, photon)
 
     def memory_expire(self, memory: "Memory") -> None:

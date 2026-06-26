@@ -700,17 +700,6 @@ class Rb(Memory):
         self.update_next_attempt_timing()
         return prep_time
 
-    def format_converter(self, photon: HetPhoton) -> HetPhoton:
-        photon.wavelength = self.converter_output_wavelength
-        photon.encoding_type = {'name': self.converted_photon_encoding, 'keep_photon': True}
-
-        photon.add_loss(1 - self.eta1converter_efficiency) #two sources of loss eta 1 is loss from the freq conversion
-        photon.add_loss(1 - self.eta2converter_efficiency)# second source of loss eta 2 is from the format change 
-
-        if self.get_generator().random() < self.converter_noise: # noise photon added from the frequency conversion process
-            photon.qfc_noise_count = 1
-        
-        return photon
 
 
     def excite(self, dst="") -> None: #again based off Hayden Yb excite method but with some changes to reflect Rb scheme
@@ -736,7 +725,6 @@ class Rb(Memory):
             self.next_excite_time = self.timeline.now() + period
 
         photon.add_loss(1 - self.efficiency)
-        photon = self.format_converter(photon)
 
         if self.image_interval > 0 and self.excitation_cycles % self.image_interval == 0:
             self.need_to_image = True

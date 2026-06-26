@@ -21,7 +21,11 @@ from photon import Photon
 from sequence.kernel.entity import Entity
 from sequence.kernel.event import Event
 from sequence.kernel.process import Process
-from sequence.constants import KET_VECTOR_FORMALISM, DENSITY_MATRIX_FORMALISM 
+from sequence.constants import DENSITY_MATRIX_FORMALISM
+try:
+    from sequence.constants import KET_VECTOR_FORMALISM
+except ImportError:
+    from sequence.constants import KET_STATE_FORMALISM as KET_VECTOR_FORMALISM
 from sequence.utils import log
 from sequence.components.bsm import _set_state_with_fidelity
 from copy import copy

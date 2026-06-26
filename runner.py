@@ -1,190 +1,77 @@
+"""Run Rb-Rb-Rb sweep experiments in parallel."""
+
+import os
 import time
-from subprocess import Popen, PIPE
+from subprocess import PIPE, Popen
+#NOTE heavily based off Caitao's runner he forwarded me. 
+
+PARALLEL = 9 #went down to 9 but believe 10 would still be fine
+COMMAND = ["python3", "main_rb_rb_rb_EG_sim.py"] #main command to run from our new Rb-Rb-Rb sim
+NUM_TRIALS = 1000 #1000 may have been ambitious took very long 
+
+COOLING_TIMES_PS = [
+    100_000_000,
+    500_000_000,
+    1_000_000_000,
+    2_000_000_000,
+    3_000_000_000,
+    4_000_000_000,
+    5_000_000_000,
+]
+PHOTON_COLLECTION_EFFICIENCIES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
+DETECTOR_EFFICIENCIES = [0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95]
+
+LOADING_10_US_PS = 10_000_000
+LOADING_300_MS_PS = 300_000_000_000
+
+
+def add_num_trials(args: list[str]) -> list[str]:
+    return args + ["-n", str(NUM_TRIALS)]
+
+
+def set_loading_time(args: list[str], loading_time: int) -> list[str]:
+    return args + ["-load", str(loading_time)]
+
+
+def set_cooling_time(args: list[str], cooling_time: int) -> list[str]:
+    return args + ["-cool", str(cooling_time)]
+
+
+def set_photon_collection_efficiency(args: list[str], pce: float) -> list[str]:
+    return args + ["-pce", str(pce)]
+
+
+def set_detector_efficiency(args: list[str], detector_efficiency: float) -> list[str]:
+    return args + ["-dtctor_eff", str(detector_efficiency)]
+
+
+def set_log_file(args: list[str], log_file: str) -> list[str]:
+    os.makedirs(os.path.dirname(log_file), exist_ok=True)
+    return args + ["-log", log_file]
+
 
 def get_output(p: Popen):
     stderr = p.stderr.readlines()
     if stderr:
         for line in stderr:
-            print(line)
+            print(line.decode().rstrip())
 
-# wavelengths = [556, 1389]
-# parameters = {1.0: 200, 0.5: 200, 0.25: 200}#, 0.1: 200, 0.05: 200, 0.025: 200}
-# tasks = []
-
-# command = ['python3', 'main_yb_yb_EG_sim.py']
-
-# for wl in wavelengths:
-#     for key in parameters.keys():
-#         args = []
-#         args.append('-eff')
-#         args.append(str(key))
-#         args.append('-n')
-#         args.append(str(parameters[key]))
-#         args.append('-wavelength')
-#         args.append(str(wl))
-#         tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
-
-# numlist = [10, 100, 1000, 10000, 100000]
-# # alternative runner for retrap
-# for element in numlist:
-#     args = []
-#     args.append('-eff')
-#     args.append(str(0.25))
-#     args.append('-n')
-#     args.append(str(100))
-#     # args.append('-retrap')
-#     # args.append(str(i+5))
-#     args.append('-darkc')
-#     args.append(str(element))
-#     tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
-
-'''
-# NOTE VARYING: QFC DARK COUNT
-tasks = []
-
-command = ['python3', 'main_yb_yb_EG_sim.py']
-
-for i in range(51):
-    args = []
-    args.append('-qfc_noise')
-    x = 0.01*(i)
-    args.append(str(x))
-    tasks.append(command+args)
-
-parallel = 10
-ps = []
-while len(tasks) > 0 or len(ps) > 0:
-    if len(ps) < parallel and len(tasks) > 0:
-        task = tasks.pop(0)
-        print(task, f'{len(tasks)} still in queue')
-        ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-    else:
-        time.sleep(0.05)
-        new_ps = []
-        for p in ps:
-            if p.poll() is None:
-                new_ps.append(p)
-            else:
-                get_output(p)
-        ps = new_ps
-'''
-        
-
-# # NOTE VARYING: RETRAP NUM
-# tasks = []
-
-# command = ['python3', 'main_yb_yb_EG_sim.py']
-
-# for i in range(50):
-#     args = []
-#     args.append('-reloadcount')
-#     x = 5*(i+1)
-#     args.append(str(x))
-#     tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
+    stdout = p.stdout.readlines()
+    if stdout:
+        for line in stdout:
+            print(line.decode().rstrip())
 
 
+def run_tasks(tasks: list[list[str]], parallel: int = PARALLEL): #makes Queue of our commands and starts new jobs while fewer than 9 running
+    ps = []
+    while len(tasks) > 0 or len(ps) > 0:
+        if len(ps) < parallel and len(tasks) > 0:
+            task = tasks.pop(0)
+            print(task, f"{len(tasks)} still in queue")
+            ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
+        else:
+            time.sleep(0.05)
 
-# # NOTE VARYING: BIN WIDTH
-# tasks = []
-
-# command = ['python3', 'main_yb_yb_EG_sim.py']
-
-# for i in range(25):
-#     args = []
-#     args.append('-bwidth')
-#     x = 200_000 + 40_000*(i)
-#     args.append(str(x))
-#     tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
-
-# # NOTE VARYING: photon collection efficiency
-tasks = []
-
-command = ['python3', 'main_yb_yb_EG_sim.py']
-
-for i in range(7):
-    args = []
-    args.append('-pce')
-    x = 0.1*(i+1)
-    args.append(str(x))
-    tasks.append(command+args)
-
-parallel = 10
-ps = []
-while len(tasks) > 0 or len(ps) > 0:
-    if len(ps) < parallel and len(tasks) > 0:
-        task = tasks.pop(0)
-        print(task, f'{len(tasks)} still in queue')
-        ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-    else:
-        time.sleep(0.05)
         new_ps = []
         for p in ps:
             if p.poll() is None:
@@ -194,558 +81,63 @@ while len(tasks) > 0 or len(ps) > 0:
         ps = new_ps
 
 
-# # NOTE VARYING: QFC_EFF
-# tasks = []
-
-# command = ['python3', 'main_yb_uW_EG_sim.py']
-
-# for i in range(21):
-#     args = []
-#     args.append('-qfc_eff')
-#     x = 0.2 + (0.04*i)
-#     args.append(str(x))
-#     tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
-
-
-# # NOTE VARYING: QFC_NOISE
-# tasks = []
-
-# command = ['python3', 'main_yb_uW_EG_sim.py']
-
-# for i in range(30):
-#     args = []
-#     args.append('-qfc_noise')
-#     x = 0.001 + 0.002*(i)
-#     args.append(str(x))
-#     tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
-
-# # # NOTE VARYING: uW_NOISE
-# tasks = []
-
-# command = ['python3', 'main_yb_uW_EG_sim.py']
-
-# for i in range(20):
-#     args = []
-#     args.append('-uw_noise')
-#     x = 0.005*(i+1)
-#     args.append(str(x))
-#     tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
-
-
-# # NOTE VARYING: uW efficiency
-# tasks = []
-
-# command = ['python3', 'main_yb_uW_EG_sim.py']
-
-# for i in range(20):
-#     args = []
-#     args.append('-uw_efficiency')
-#     x = 0.05*(i+1)
-#     args.append(str(x))
-#     tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
-
-# # NOTE VARYING: transmon coherence
-# tasks = []
-
-# command = ['python3', 'main_yb_uW_EG_sim.py']
-
-# for i in range(20):
-#     args = []
-#     args.append('-uw_coherence')
-#     x = 10_000_000 + 30_000_000*(i+1)
-#     args.append(str(x))
-#     tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
-
-
-
-# NOTE VARYING: coherence time linear network
-tasks = []
-
-command = ['python3', 'main_het_net_sim.py']
-
-multiplier = [25, 50, 100, 200, 400, 600, 800, 1000]
-
-for m in multiplier:
+def base_args(loading_time: int) -> list[str]:
     args = []
-    args.append('-uw_coherence')
-    x = 10_000_000*m
-    args.append(str(x))
-    tasks.append(command+args)
-
-parallel = 10
-ps = []
-while len(tasks) > 0 or len(ps) > 0:
-    if len(ps) < parallel and len(tasks) > 0:
-        task = tasks.pop(0)
-        print(task, f'{len(tasks)} still in queue')
-        ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-    else:
-        time.sleep(0.05)
-        new_ps = []
-        for p in ps:
-            if p.poll() is None:
-                new_ps.append(p)
-            else:
-                get_output(p)
-        ps = new_ps
-
-import time
-from subprocess import Popen, PIPE
-
-def get_output(p: Popen):
-    stderr = p.stderr.readlines()
-    if stderr:
-        for line in stderr:
-            print(line)
-
-# wavelengths = [556, 1389]
-# parameters = {1.0: 200, 0.5: 200, 0.25: 200}#, 0.1: 200, 0.05: 200, 0.025: 200}
-# tasks = []
-
-# command = ['python3', 'main_yb_yb_EG_sim.py']
-
-# for wl in wavelengths:
-#     for key in parameters.keys():
-#         args = []
-#         args.append('-eff')
-#         args.append(str(key))
-#         args.append('-n')
-#         args.append(str(parameters[key]))
-#         args.append('-wavelength')
-#         args.append(str(wl))
-#         tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
-
-# numlist = [10, 100, 1000, 10000, 100000]
-# # alternative runner for retrap
-# for element in numlist:
-#     args = []
-#     args.append('-eff')
-#     args.append(str(0.25))
-#     args.append('-n')
-#     args.append(str(100))
-#     # args.append('-retrap')
-#     # args.append(str(i+5))
-#     args.append('-darkc')
-#     args.append(str(element))
-#     tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
-
-'''
-# NOTE VARYING: QFC DARK COUNT
-tasks = []
-
-command = ['python3', 'main_yb_yb_EG_sim.py']
-
-for i in range(51):
-    args = []
-    args.append('-qfc_noise')
-    x = 0.01*(i)
-    args.append(str(x))
-    tasks.append(command+args)
-
-parallel = 10
-ps = []
-while len(tasks) > 0 or len(ps) > 0:
-    if len(ps) < parallel and len(tasks) > 0:
-        task = tasks.pop(0)
-        print(task, f'{len(tasks)} still in queue')
-        ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-    else:
-        time.sleep(0.05)
-        new_ps = []
-        for p in ps:
-            if p.poll() is None:
-                new_ps.append(p)
-            else:
-                get_output(p)
-        ps = new_ps
-'''
-        
-
-# # NOTE VARYING: RETRAP NUM
-# tasks = []
-
-# command = ['python3', 'main_yb_yb_EG_sim.py']
-
-# for i in range(50):
-#     args = []
-#     args.append('-reloadcount')
-#     x = 5*(i+1)
-#     args.append(str(x))
-#     tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
+    args = add_num_trials(args)
+    args = set_loading_time(args, loading_time)
+    return args
 
 
-
-# # NOTE VARYING: BIN WIDTH
-# tasks = []
-
-# command = ['python3', 'main_yb_yb_EG_sim.py']
-
-# for i in range(25):
-#     args = []
-#     args.append('-bwidth')
-#     x = 200_000 + 40_000*(i)
-#     args.append(str(x))
-#     tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
-
-# # NOTE VARYING: photon collection efficiency
-# tasks = []
-
-# command = ['python3', 'main_yb_yb_EG_sim.py']
-
-# for i in range(7):
-#     args = []
-#     args.append('-pce')
-#     x = 0.1*(i+1)
-#     args.append(str(x))
-#     tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
+def build_cooling_time_tasks(data_dir: str, loading_time: int) -> list[list[str]]:
+    tasks = []
+    for cooling_time in COOLING_TIMES_PS:
+        args = base_args(loading_time)
+        args = set_cooling_time(args, cooling_time)
+        args = set_log_file(
+            args,
+            f"{data_dir}/rb_cooling_time/cooling_time={cooling_time}.log",
+        )
+        tasks.append(COMMAND + args)
+    return tasks
 
 
-# # NOTE VARYING: QFC_EFF
-# tasks = []
-
-# command = ['python3', 'main_yb_uW_EG_sim.py']
-
-# for i in range(21):
-#     args = []
-#     args.append('-qfc_eff')
-#     x = 0.2 + (0.04*i)
-#     args.append(str(x))
-#     tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
+def build_photon_collection_efficiency_tasks(data_dir: str, loading_time: int) -> list[list[str]]:
+    tasks = []
+    for pce in PHOTON_COLLECTION_EFFICIENCIES:
+        args = base_args(loading_time)
+        args = set_photon_collection_efficiency(args, pce)
+        args = set_log_file(args, f"{data_dir}/rb_pce/pce={pce}.log")
+        tasks.append(COMMAND + args)
+    return tasks
 
 
-# # NOTE VARYING: QFC_NOISE
-# tasks = []
-
-# command = ['python3', 'main_yb_uW_EG_sim.py']
-
-# for i in range(30):
-#     args = []
-#     args.append('-qfc_noise')
-#     x = 0.001 + 0.002*(i)
-#     args.append(str(x))
-#     tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
-
-# # # NOTE VARYING: uW_NOISE
-# tasks = []
-
-# command = ['python3', 'main_yb_uW_EG_sim.py']
-
-# for i in range(20):
-#     args = []
-#     args.append('-uw_noise')
-#     x = 0.005*(i+1)
-#     args.append(str(x))
-#     tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
+def build_detector_efficiency_tasks(data_dir: str, loading_time: int) -> list[list[str]]:
+    tasks = []
+    for detector_efficiency in DETECTOR_EFFICIENCIES:
+        args = base_args(loading_time)
+        args = set_detector_efficiency(args, detector_efficiency)
+        args = set_log_file(
+            args,
+            f"{data_dir}/rb_detector_eff/detector_eff={detector_efficiency:.2f}.log",
+        )
+        tasks.append(COMMAND + args)
+    return tasks
 
 
-# # NOTE VARYING: uW efficiency
-# tasks = []
-
-# command = ['python3', 'main_yb_uW_EG_sim.py']
-
-# for i in range(20):
-#     args = []
-#     args.append('-uw_efficiency')
-#     x = 0.05*(i+1)
-#     args.append(str(x))
-#     tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
-
-# # NOTE VARYING: transmon coherence
-# tasks = []
-
-# command = ['python3', 'main_yb_uW_EG_sim.py']
-
-# for i in range(20):
-#     args = []
-#     args.append('-uw_coherence')
-#     x = 10_000_000 + 30_000_000*(i+1)
-#     args.append(str(x))
-#     tasks.append(command+args)
-
-# parallel = 10
-# ps = []
-# while len(tasks) > 0 or len(ps) > 0:
-#     if len(ps) < parallel and len(tasks) > 0:
-#         task = tasks.pop(0)
-#         print(task, f'{len(tasks)} still in queue')
-#         ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-#     else:
-#         time.sleep(0.05)
-#         new_ps = []
-#         for p in ps:
-#             if p.poll() is None:
-#                 new_ps.append(p)
-#             else:
-#                 get_output(p)
-#         ps = new_ps
+def build_rb_rb_rb_sweep_tasks(data_dir: str, loading_time: int) -> list[list[str]]:
+    tasks = []
+    tasks.extend(build_cooling_time_tasks(data_dir, loading_time))
+    tasks.extend(build_photon_collection_efficiency_tasks(data_dir, loading_time))
+    tasks.extend(build_detector_efficiency_tasks(data_dir, loading_time))
+    return tasks
 
 
+def main_rb_rb_rb_sweeps():
+    tasks = []
+    tasks.extend(build_rb_rb_rb_sweep_tasks("tmpRb3_run5", LOADING_10_US_PS))
+    tasks.extend(build_rb_rb_rb_sweep_tasks("tmpRb3_300ms_run5", LOADING_300_MS_PS))
+    run_tasks(tasks, parallel=PARALLEL)
 
-# NOTE VARYING: coherence time linear network
-tasks = []
 
-command = ['python3', 'main_het_net_sim.py']
-
-multiplier = [25, 50, 100, 200, 400, 600, 800, 1000]
-
-for m in multiplier:
-    args = []
-    args.append('-uw_coherence')
-    x = 10_000_000*m
-    args.append(str(x))
-    tasks.append(command+args)
-
-parallel = 10
-ps = []
-while len(tasks) > 0 or len(ps) > 0:
-    if len(ps) < parallel and len(tasks) > 0:
-        task = tasks.pop(0)
-        print(task, f'{len(tasks)} still in queue')
-        ps.append(Popen(task, stdout=PIPE, stderr=PIPE))
-    else:
-        time.sleep(0.05)
-        new_ps = []
-        for p in ps:
-            if p.poll() is None:
-                new_ps.append(p)
-            else:
-                get_output(p)
-        ps = new_ps
+if __name__ == "__main__":
+    main_rb_rb_rb_sweeps()

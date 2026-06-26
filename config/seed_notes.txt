@@ -1,0 +1,20 @@
+Notes to keep track of seeds 
+RUN 1
+-Output is tmpRb3 and tmpRb3_300ms
+-Seeds are router_0=0, router_1=1, router_2=2, bsm_0_1=0, bsm_1_2=1
+
+RUN 2
+-Output is tmpRb3_run2 and tmpRb3_300ms_run2
+-Seeds are router_0=50, router_1=51, router_2=52, bsm_0_1=50, bsm_1_2=51
+
+RUN 3
+-Output is tmpRb3_run3 and tmpRb3_300ms_run3
+-Seeds are router_0=105, router_1=106, router_2=107, bsm_0_1=105, bsm_1_2=106
+
+RUN 4
+-Output is tmpRb3_run4 and tmpRb3_300ms_run4
+-Seeds are router_0=1045, router_1=1046, router_2=1046, bsm_0_1=1045, bsm_1_2=1046
+
+RUN 5
+-Output is tmpRb3_run5 and tmpRb3_300ms_run5
+-Seeds are router_0=6874, router_1=6875, router_2=6876, bsm_0_1=6874, bsm_1_2=6875
