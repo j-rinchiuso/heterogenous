@@ -1,0 +1,84 @@
+{
+    "nodes": [
+        {
+            "name": "router_0",
+            "type": "QuantumRouter",
+            "template": "Er",
+            "seed": 0,
+            "memo_size": 1,
+            "group": 0
+        },
+        {
+            "name": "router_1",
+            "type": "QuantumRouter",
+            "template": "Er",
+            "seed": 1,
+            "memo_size": 1,
+            "group": 0
+        },
+        {
+            "name": "BSM_0_1",
+            "type": "BSMNode",
+            "template": "het_time_bin",
+            "seed": 0
+        }
+    ],
+    "qchannels": [
+        {
+            "name": "qchannel_0",
+            "source": "router_0",
+            "destination": "BSM_0_1",
+            "distance": 1000.0,
+            "attenuation": 0.0002
+        },
+        {
+            "name": "qchannel_1",
+            "source": "router_1",
+            "destination": "BSM_0_1",
+            "distance": 1000.0,
+            "attenuation": 0.0002
+        }
+    ],
+    "cchannels": [
+        {
+            "source": "BSM_0_1",
+            "destination": "router_0",
+            "distance": 1000.0
+        },
+        {
+            "source": "router_0",
+            "destination": "BSM_0_1",
+            "distance": 1000.0
+        },
+        {
+            "source": "BSM_0_1",
+            "destination": "router_1",
+            "distance": 1000.0
+        },
+        {
+            "source": "router_1",
+            "destination": "BSM_0_1",
+            "distance": 1000.0
+        },
+        {
+            "source": "router_0",
+            "destination": "router_1",
+            "distance": 1000.0
+        },
+        {
+            "source": "router_1",
+            "destination": "router_0",
+            "distance": 1000.0
+        }
+    ],
+    "templates": {
+        "het_time_bin": {
+            "encoding_type": "het_time_bin"
+        },
+        "Er": {
+            "memo_type": "Er",
+            "wavelength": "1532"
+        }
+    },
+    "is_parallel": false
+}

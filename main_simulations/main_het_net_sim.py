@@ -8,6 +8,12 @@ NOTE: ADD MORE INFO HERE
 
 '''
 
+
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 ### MAKE SURE TO KEEP CHANNEL ATTENUTATION IN JSON UPDATED
 ####  ALSO COMMENTED OUT THE ATOM BRANCHING RATIOS, DEPUMPING LOSS, and LATE DECAY PROBABILITY WITHIN MEMORY
 
@@ -35,7 +41,8 @@ def main():
     parser.add_argument('-qfc_noise', '--qfc_noise', type=float, default=0.0, help="Noise, in number of noise photons per signal photon, in our QFC.")
     parser.add_argument('-uw_noise', '--transducer_noise', type=float, default=0.0, help="Noise, in number of photons added to signal during MO transduction.")
     parser.add_argument('-uw_efficiency', '--transducer_efficiency', type=float, default=1.0, help= "Efficiency of uW node, aka probability signal gets converted.")
-    parser.add_argument('-uw_coherence', '--transmon_coherence_time', type=int, default=250_000_000, help= "T1 coherence time of transmon.")
+    parser.add_argument('-uw_coherence', '--transmon_coherence_time', type=int, default=6_000_000_000, help= "T1 coherence time of transmon.")
+    #parser.add_argument('-uw_coherence', '--transmon_coherence_time', type=int, default=250_000_000, help= "T1 coherence time of transmon.")
     # sim 6ms, and sim 0.25 ms
 
     # take all of our args and make variables of them
@@ -178,6 +185,7 @@ def main():
     readout_fidelity0 = node_init.get_components_by_type(MemoryArray)[0].memories[0].measurement_fidelity
     readout_fidelity1 = node_resp.get_components_by_type(MemoryArray)[0].memories[0].measurement_fidelity
     fid = node_init.app.get_fidelity(readout_fidelity0*readout_fidelity1)
+    opt_fidelity = node_init.app.get_fidelity()
 
     # NOTE NOTE NOTE this sim seems to go on until stop time even after swapping is done
 

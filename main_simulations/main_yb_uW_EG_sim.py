@@ -7,7 +7,10 @@ well as entanglement fidelity.
 NOTE: ADD MORE INFO HERE
 
 '''
+import sys
+from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 ### MAKE SURE TO KEEP CHANNEL ATTENUTATION IN JSON UPDATED
 ####  ALSO COMMENTED OUT THE ATOM BRANCHING RATIOS, DEPUMPING LOSS, and LATE DECAY PROBABILITY WITHIN MEMORY
 
@@ -25,7 +28,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-pce', '--photoncollectionefficiency', type=float, default=0.5, help='efficiency of photon collection into fiber')
     parser.add_argument('-ybwavelength', '--ybphotonwavelength', type=int, default=1389, help='wavelength of emmitted photons from Yb atom')
-    parser.add_argument('-n', '--numtrials', type=int, default=1000, help="number of entangled pairs we generated")
+    parser.add_argument('-n', '--numtrials', type=int, default=10000, help="number of entangled pairs we generated")
     parser.add_argument('-dtctor_dc', '--detectordarkcount', type=float, default=11.0, help="Dark count rate, in Hz, for the detector in the BSM.")
     parser.add_argument('-dtctor_eff', '--detectorefficiency', type=float, default=0.85, help="Efficiency for the detector in the BSM.") # default should be 0.85 according to Joaquin
     parser.add_argument('-bsm_wvln', '--bsm_operating_wavelength', type=int, default=746, help="Photon wavelength BSM ideally operates at.")
@@ -35,7 +38,7 @@ def main():
     parser.add_argument('-uw_efficiency', '--transducer_efficiency', type=float, default=0.6, help= "Efficiency of uW node, aka probability signal gets converted.")
     parser.add_argument('-uw_coherence', '--transmon_coherence_time', type=int, default=500_000_000, help= "T1 coherence time of transmon.")
 
-    # take all of our args and make variables of them
+    # take all of our args and make variables of them #500_000_000 .6
     args = parser.parse_args()
     photon_collection_efficiency = args.photoncollectionefficiency
     yb_wavelength = args.ybphotonwavelength
@@ -84,7 +87,7 @@ def main():
     # log_filename = f'tmp/data/uw_eff/uw_eff={uW_efficiency}.log'
     # log_filename = f'tmp/data/uw_noise/uw_noise={uW_noise}.log'
     # log_filename = f'tmp/data/coherence/coherence={transmon_coherence}.log'
-    log_filename = 'tmp/checking_het.log'
+    log_filename = 'tmp/yb_uW.log'
     log.set_logger(__name__, tl, log_filename)
     log.set_logger_level('WARNING')
     log.track_module('main_yb_uW_EG_sim')

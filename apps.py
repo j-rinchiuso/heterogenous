@@ -1,12 +1,16 @@
 from sequence.app.request_app import RequestApp
 from sequence.resource_management.memory_manager import MemoryInfo
-from sequence.components.memory import Memory
+from sequence.components.memory import Memory, MemoryArray
 from sequence.utils import log
 from math import sqrt
 from sequence.kernel.process import Process
 from sequence.kernel.event import Event
 from math import e
+from sequence.components.circuit import Circuit
 # from memory import _set_state_with_fidelity
+
+_Z_circuit = Circuit(1)
+_Z_circuit.z(0)
 
 class HetRequestApp(RequestApp):
 
@@ -78,6 +82,19 @@ class HetRequestApp(RequestApp):
                     # elif self.basis == "Z": 
                     #     info.memory.update_state(info.memory._zero_ket)
                     #     other_memory.update_state(other_memory._zero_ket)
+
+            elif self.node.memo_type == "Er":
+                time_since_generation = self.node.timeline.now() - info.memory.time_after_excitement
+                if self.basis == "X":
+                    readout_time = info.memory.measurement_time + info.memory.to_x_basis_time
+                else:
+                    readout_time = info.memory.measurement_time
+                time_since_generation += readout_time
+
+                decoherence_probability = 1-e**(-time_since_generation/info.memory.coherence_time)
+                if self.node.get_generator().random() < decoherence_probability: 
+                    info.memory.timeline.quantum_manager.run_circuit(_Z_circuit, [info.memory.qstate_key])
+                    log.logger.warning('Er ion decohered during post-generation storage.')
 
             reservation = self.memo_to_reservation[info.index]
             if info.remote_node == reservation.initiator and info.fidelity >= reservation.fidelity:
@@ -158,5 +175,77 @@ class HetRequestApp(RequestApp):
         log.logger.warning(f'fidelity debug x and z terms: rhoZ_diff={rhoZ_diff}, rhoX_same={rhoX_same}, rhoX_diff={rhoX_diff}, rhoZ_prod_same={rhoZ_prod_same}')
         log.logger.warning(f'fidelity debug result: raw={raw_fidelity}, readout_factor={meas_fid}, final={f}')
         return f
+
+
+    def get_fidelity_best_estimate(self, meas_fid):
+        # fidelity calculation derived from:
+        # https://static-content.springer.com/esm/art%3A10.1038%2Fnature12016/MediaObjects/41586_2013_BFnature12016_MOESM10_ESM.pdf
+        # which is in supplementary information of this paper:
+        # https://www.nature.com/articles/nature12016#Sec2
+
+        # told measurements in X and Z bases respectively
+        X_trials = sum(self.meas_results[f'X_{i}{i}'] for i in range(1,5))
+        Z_trials = sum(self.meas_results[f'Z_{i}{i}'] for i in range(1,5))
+
+        rhoX_diff = (self.meas_results[f'X_22']+self.meas_results[f'X_33'])/X_trials
+        rhoX_same = (self.meas_results[f'X_11']+self.meas_results[f'X_44'])/X_trials
+        rhoZ_diff = (self.meas_results[f'Z_22']+self.meas_results[f'Z_33'])/Z_trials # rho_22 + rho_33
+        rhoZ_prod_same = (self.meas_results[f'Z_11']/Z_trials)*(self.meas_results[f'Z_44']/Z_trials) # rho_11*rho_44
+
+        # print(rhoX_diff)
+        # print(rhoX_same)
+        # print(rhoZ_diff)
+        # print(rhoZ_prod_same)
+
+        raw_fidelity = (rhoZ_diff + rhoX_same - rhoX_diff)/2
+        f = meas_fid * raw_fidelity
+        log.logger.warning(f'fidelity debug counts: {self.meas_results}')
+        log.logger.warning(f'fidelity debug x and z trials: X={X_trials}, Z={Z_trials}')
+        log.logger.warning(f'fidelity debug x and z terms: rhoZ_diff={rhoZ_diff}, rhoX_same={rhoX_same}, rhoX_diff={rhoX_diff}, rhoZ_prod_same={rhoZ_prod_same}')
+        log.logger.warning(f'fidelity debug result: raw={raw_fidelity}, readout_factor={meas_fid}, final={f}')
+        return f
+
+class StopOnSuccessHetRequestApp(HetRequestApp):
+    """HetRequestApp variant for trial-based scripts.
+
+    This stops the timeline as soon as an end-to-end entanglement result is
+    measured, then frees the reservation path so the next trial can reuse the
+    same memory slots. Existing simulations can keep using HetRequestApp if
+    they want the older behavior.
+    """
+
+    def measure_and_save(self, memory, remote_memory_key):
+        super().measure_and_save(memory, remote_memory_key)
+        self.cleanup_reservations()
+        self.node.timeline.stop()
+
+    def cleanup_reservations(self):
+        reservations = list({reservation for reservation in self.memo_to_reservation.values()})
+
+        for reservation in reservations:
+            for node_name in reservation.path:
+                node = self.node.timeline.get_entity_by_name(node_name)
+                if node is None or not hasattr(node, "resource_manager"):
+                    continue
+
+                reserved_indices = [
+                    card.memory_index
+                    for card in node.network_manager.get_timecards()
+                    if reservation in card.reservations
+                ]
+
+                node.resource_manager.expire_rules_by_reservation(reservation)
+
+                for card in node.network_manager.get_timecards():
+                    card.remove(reservation)
+
+                if node.app is not None:
+                    for index, mapped_reservation in list(node.app.memo_to_reservation.items()):
+                        if mapped_reservation == reservation:
+                            node.app.memo_to_reservation.pop(index)
+
+                memory_array = node.get_components_by_type(MemoryArray)[0]
+                for index in reserved_indices:
+                    node.resource_manager.update(None, memory_array.memories[index], MemoryInfo.RAW)
 
         

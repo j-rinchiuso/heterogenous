@@ -1,9 +1,9 @@
 """Models for simuulation of memory components in a heterogenous quantum network. # NOTE HM done
 
-This model builds on SeQUeNCe's memory module, but adds an altered memory array class (HetMemoryArray), and two new memory class (Yb and uW).
+This model builds on SeQUeNCe's memory module, but adds an altered memory array class (HetMemoryArray), and new memory classes (Yb, uW, Rb, and Er).
 HetMemoryArray inhereits from MemoryArray with all the same functionality except enabling alternative types of memories.
 NOTE: If MemoryArray would allow component_templates or memo_type inputs, we wouldn't need a separate class for HetMemoryArray.
-Yb and uW both inherit from Memory, but have different parameters and methods to reflect their physical differences.
+The memory classes inherit from Memory, but have different parameters and methods to reflect their physical differences.
 
 """
 
@@ -26,6 +26,8 @@ _meas_circuit.measure(1)
 _H_circuit = Circuit(2)
 _H_circuit.h(0)
 _H_circuit.h(1)
+_Z_circuit = Circuit(1)
+_Z_circuit.z(0)
 
 _photon_meas_circuit = Circuit(1)
 _photon_meas_circuit.measure(0)
@@ -43,7 +45,7 @@ class HetMemoryArray(MemoryArray):
         timeline (Timeline): timeline for simulation.
         memories (List[Memory]): list of all memories.
         memory_name_to_index (Dict[str, int]): dictionary mapping memory names to their index in the memories list.
-        memo_type (str): type of memories in the array (should be either 'Yb' or 'uW').
+        memo_type (str): type of memories in the array (should be 'Yb', 'uW', 'Rb', or 'Er').
     """
 
     def __init__(self, name: str, timeline: "Timeline", memory_type: str, num_memories=10, 
@@ -54,7 +56,7 @@ class HetMemoryArray(MemoryArray):
         Args:
             name (str): name of the memory array instance.
             timeline (Timeline): simulation timeline.
-            memory_type (str): type of memories in the array (should be either 'Yb' or 'uW').
+            memory_type (str): type of memories in the array (should be 'Yb', 'uW', 'Rb', or 'Er').
             num_memories (int): number of memories in the array (default 10).
             fidelity (float): fidelity of memories (default 0.85).
             frequency (float): maximum frequency of excitation for memories (default 80e6).
@@ -88,8 +90,10 @@ class HetMemoryArray(MemoryArray):
                 memory = uW(memory_name, timeline, fidelity, frequency, efficiency, coherence_time, wavelength)
             elif memory_type == 'Rb':
                 memory = Rb(memory_name, timeline, fidelity, frequency, efficiency, coherence_time, wavelength)
+            elif memory_type == 'Er':
+                memory = Er(memory_name, timeline, fidelity, frequency, efficiency, coherence_time, wavelength)
             else:
-                raise ValueError('Heterogenous networks only accept Yb, uW, or Rb memories currently.')
+                raise ValueError('Heterogenous networks only accept Yb, uW, Rb, or Er memories currently.')
             memory.attach(self)
             self.memories.append(memory)
             memory.set_memory_array(self)
@@ -620,8 +624,8 @@ class Rb(Memory):
         super().__init__(name, timeline, fidelity, frequency, efficiency, coherence_time, wavelength)
 
         #General params 
-        self.wavelength = 780 
-        self.original_memory_efficiency = self.efficiency
+        self.wavelength = 780 #1
+        self.original_memory_efficiency = self.efficiency #2
         self.time_after_excitement = None
         self.atom_state = RbStates.LOADED
         self.psi_sign = None
@@ -633,29 +637,30 @@ class Rb(Memory):
         #Cycle data based on the paper from Safari (NOTE may want to make these different because Safari gave ranges)
         self.excitation_cycles = 0
         #self.max_cycles_before_loss = 200 dont need anymore
-        self.image_interval = 20 
-        self.imaging_loss_prob = 0.095 #TODO ask about this believe this is good math is 1/200 lost
+        self.image_interval = 20 #3
+        self.imaging_loss_prob = 0.095 #TODO ask about this believe this is good math is 1/200 lost #4
         self.need_to_image = False
         self.need_to_retrap = False
         self.loaded_once = False #this is track inital loading and pay the loading time 
 
         #Assumptions from Safari paper (NOTE similar to last block again some of these values are ranges but others were well defined in paper)
-        self.loading_time =10_000_000            #300_000_000_000 this is MOP load 300 millasec         #10_000_000  this is optimistic 10 microsec
-        self.cooling_time = 1_000_000_000 
-        self.optical_pumping_time = 50_000_000 
-        self.physical_excite_pulse_time = 20_000 # 20 ns single pulse; effective model below includes repeated pulses
-        self.generation_time = 1_000_000 
-        self.excite_pulse_time = self.generation_time
-        self.imaging_time = 5_000_000_000 
+        self.loading_time =10_000_000 #5            #300_000_000_000 this is MOP load 300 millasec         #10_000_000  this is optimistic 10 microsec
+        self.cooling_time = 1_000_000_000 #6
+        self.optical_pumping_time = 50_000_000 #7
+        self.physical_excite_pulse_time = 20_000 # 20 ns single pulse; effective model below includes repeated pulses #8
+        self.generation_time = 1_000_000 #9
+        self.imaging_time = 5_000_000_000 #10
 
         #Converter Params
-        self.converter_output_wavelength = 1389 #for Yb Conversion
+        self.converter_output_wavelength = 1389 #for Yb Conversion #1
         self.converted_photon_encoding = "rb_time_bin"
-        self.eta1converter_efficiency = .99
-        self.eta2converter_efficiency =.98
-        self.converter_bin_width = 520_000 #this to match yb and transmon(need to look where this time comes into play)
-        self.converter_bin_separation = 2_800_000 #this is the 2.8 microsec seperation used in both microwave and Yb
-        self.converter_noise=.005 #noise photon probability for emission 
+        self.eta1converter_efficiency = .99 #2
+        self.eta2converter_efficiency =.98 #3
+        self.converter_bin_width = 520_000 #this to match yb and transmon(need to look where this time comes into play) #4
+        self.converter_bin_separation = 2_800_000 #this is the 2.8 microsec seperation used in both microwave and Yb #5
+        self.converter_time = self.converter_bin_separation
+        self.excite_pulse_time = self.generation_time + self.converter_time
+        self.converter_noise=.005 #noise photon probability for emission #6
 
         #EG Params
         self.initialize_time = 0
@@ -666,11 +671,13 @@ class Rb(Memory):
         self.update_next_attempt_timing()
 
         #Measurement
-        self.to_x_basis_time = 183_000 # check data gotten from paper
-        self.measurement_time = 160_000_000 # check data but pretty sure these valid 160 microsec
-        self.measurement_fidelity = 0.996 # TODO check data here with Caitao (email Wisco)
+        self.to_x_basis_time = 183_000 # check data gotten from paper 11
+        self.measurement_time = 160_000_000 # check data but pretty sure these valid 160 microsec 12
+        self.measurement_fidelity = 0.996 # TODO check data here with Caitao (email Wisco) 13
 
     def update_next_attempt_timing(self): #adds imaging time evey 20 
+        self.converter_time = self.converter_bin_separation
+        self.excite_pulse_time = self.generation_time + self.converter_time
         self.initialize_time = 0
         if (not self.loaded_once) or self.need_to_retrap or self.atom_state == RbStates.LOST:
             self.initialize_time += self.loading_time
@@ -761,3 +768,133 @@ class Rb(Memory):
             self.efficiency = 0
             self.update_state(self._zero_ket)
             self.update_next_attempt_timing()
+
+
+class ErStates(Enum):
+    INITIALIZED = auto() # Er spin has been initialized before the spin-photon sequence
+    PREPARED = auto()    # Er spin has been prepared for time-bin spin-photon entanglement
+    LOST = auto()        # placeholder rn
+
+
+class Er(Memory):
+    """Er memory class.
+
+    This class models a single Er3+ ion memory in CaWO4 (the paper this the mateiral surrounding). I also use XY sequence to improve coherence and the nano silicon cavity
+    The emitted photon is directly time-bin encoded at telecom wavelength (1532nm).
+    """
+
+    _zero_ket = [1, 0]
+    _one_ket = [0, 1] #ket vec again list all not sure if neccesary
+    _plus_state = [sqrt(1/2), sqrt(1/2)]
+    _minus_state = [sqrt(1/2), -sqrt(1/2)]
+
+    def __init__(self, name: str, timeline: "Timeline", fidelity: float, frequency: float,
+                 efficiency: float, coherence_time: float, wavelength: int):
+
+        super().__init__(name, timeline, fidelity, frequency, efficiency, coherence_time, wavelength)
+
+        # gen params
+        self.wavelength = 1532
+        self.original_memory_efficiency = self.efficiency #NOTE EFFICENCY SHOULD BE 1 rn if we use our cavity and grating (since this basically PCE)
+        self.time_after_excitement = None
+        self.ion_state = ErStates.INITIALIZED
+        self.psi_sign = None
+        self.attempts = 0
+        self.emitted_photon_encoding = "er_time_bin"
+
+        #specific defice values from paper NOTE not all of these are currently used and need to decide how to implement some but just for storage
+        self.purcell_factor = 342 #not sure if needed but using for now
+        self.radiative_lifetime = 18_400_000 #average time the Er ion stays optically excited before spontaneouslt emit photon
+        self.spectral_diffusion_linewidth = 470_000 #right now just stored param not using but means how much ion's optical transtion freq wanders over time bc of noise
+        self.ground_spin_splitting = 10.7e9 #not used yet but seperation between two ground state spins may be good to list
+        self.excited_spin_splitting = 9.5e9 #not used yet but seperation between excited spin may be good to list
+        self.magnetic_field = 943.5 #not used yet but physically to split Er spin levels (directly impects ground spin and excited spin) may be good to list
+
+        # Spin-photon entanglement protocol timing
+        self.protocol_period = 75_500_000 # timing in appenxid G blocks 
+        self.initialization_time = 2 * self.protocol_period # two initialization cycles before photon generation NOTE we do not know padding used 
+        self.generation_time = 80_500_000 # protected XY-16 spin-photon generation sequence
+        self.bin_separation = 75_500_000 
+        self.bin_width = 1_900_000 
+
+        #appendix k values
+        self.cavity_extraction_efficiency = 0.24
+        self.grating_coupler_efficiency = 0.33
+
+        # Coherence values
+        self.xy16_coherence_time = 200_000_000 #improved method
+        self.toggle_decoherence_gen = False # not sure if we want to use this so easy toggle here
+        if coherence_time == -1: #default to this coherence time in constructor not infinity HAS COHERENCE
+            self.coherence_time = self.xy16_coherence_time
+        self.spin_coherence_factor = e ** (-self.generation_time / self.coherence_time) #prob decohere during generation 
+        self.phase_flip_probability = (1 - self.spin_coherence_factor) / 2
+
+        # EG Params
+        self.initialize_time = self.initialization_time
+        self.cool_time = 0
+        self.state_prep_time = 0
+        self.excite_pulse_time = self.generation_time
+
+
+        # Measurement
+        self.to_x_basis_time = 19_200 
+        self.measurement_time = 70_000_000 
+        self.measurement_fidelity = 0.972 #paper param 0.89 but says that 97.2 achievable with higher purcell factor
+
+    def get_source_efficiency(self) -> float:
+        # NOTE use 1 for selfefficency
+        return (self.efficiency
+                * self.cavity_extraction_efficiency
+                * self.grating_coupler_efficiency)
+
+    def initialize_cool_prep(self) -> int: #copied very sim
+        self.update_state(self._plus_state)
+        self.ion_state = ErStates.PREPARED
+        log.logger.info('Er ion ' + str(self.name) + ' successfully prepared in |+>.')
+        return self.initialize_time + self.cool_time + self.state_prep_time
+
+    def excite(self, dst="") -> None: #again very sim just needed to fix efficiency and add spin phase flip
+        self.time_after_excitement = self.owner.timeline.now() + self.generation_time
+
+        if self.timeline.now() < self.next_excite_time:
+            return
+
+        if self.ion_state == ErStates.LOST:
+            return
+
+        er_encoding = {'name': self.emitted_photon_encoding, 'keep_photon': True}
+        photon = HetPhoton("", self.timeline, wavelength=self.wavelength, location=self.name,
+                           encoding_type=er_encoding, quantum_state=self.qstate_key, use_qm=True)
+        photon.timeline = None
+        photon.is_null = True
+
+        if self.frequency > 0:
+            period = 1e12 / self.frequency
+            self.next_excite_time = self.timeline.now() + period
+
+        photon.add_loss(1 - self.get_source_efficiency())
+
+        if self.toggle_decoherence_gen: 
+            self.spin_coherence_factor = e ** (-self.generation_time / self.coherence_time)
+            self.phase_flip_probability = (1 - self.spin_coherence_factor) / 2
+            if self.owner.get_generator().random() < self.phase_flip_probability:
+                self.timeline.quantum_manager.run_circuit(_Z_circuit, [self.qstate_key]) #applt z phase flipe to Er memory quantum state. Corrupt phase and impact fidelity
+                log.logger.info(f'Er ion {self.name} experienced a spin phase flip during generation.')
+
+        self._receivers[0].get(photon, dst=dst)
+
+    def measure(self, other_qkey) -> float: #same copy and paste 
+        key = self.qstate_key
+        keys = [key, other_qkey]
+        qm = self.timeline.quantum_manager
+
+        for k in keys:
+            if len(qm.states[k].state) != 4:
+                log.logger.warning('Incorrectly entangled state.')
+
+        if self.owner.app.basis == "X":
+            qm.run_circuit(_H_circuit, keys).keys()
+
+        meas = qm.run_circuit(_meas_circuit, keys, self.get_generator().random())
+        result = [meas[key], meas[other_qkey]]
+        return result

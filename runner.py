@@ -1,4 +1,4 @@
-"""Run Rb-Rb-Rb sweep experiments in parallel."""
+"""Run sweep experiments in parallel."""
 
 import os
 import time
@@ -6,8 +6,13 @@ from subprocess import PIPE, Popen
 #NOTE heavily based off Caitao's runner he forwarded me. 
 
 PARALLEL = 9 #went down to 9 but believe 10 would still be fine
-COMMAND = ["python3", "main_rb_rb_rb_EG_sim.py"] #main command to run from our new Rb-Rb-Rb sim
-NUM_TRIALS = 1000 #1000 may have been ambitious took very long 
+
+# Old Rb-Rb-Rb sweep command. Keeping this here for reference, but the active
+# runner below now uses the four-node heterogeneous simulation.
+# COMMAND = ["python3", "main_rb_rb_rb_EG_sim.py"]
+
+COMMAND = ["python3", "main_simulations/main_het_net_four_node_sim.py"]
+NUM_TRIALS = 1000 # four-node heterogeneous chain is much heavier than Rb-Rb-Rb
 
 COOLING_TIMES_PS = [
     100_000_000,
@@ -20,6 +25,16 @@ COOLING_TIMES_PS = [
 ]
 PHOTON_COLLECTION_EFFICIENCIES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
 DETECTOR_EFFICIENCIES = [0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95]
+
+TRANSMON_COHERENCE_TIMES_PS = [
+    500_000_000,       # 0.5 ms
+    1_000_000_000,     # 1 ms
+    2_000_000_000,     # 2 ms
+    4_000_000_000,     # 4 ms
+    6_000_000_000,     # 6 ms
+    8_000_000_000,     # 8 ms
+    10_000_000_000,    # 10 ms
+]
 
 LOADING_10_US_PS = 10_000_000
 LOADING_300_MS_PS = 300_000_000_000
@@ -43,6 +58,10 @@ def set_photon_collection_efficiency(args: list[str], pce: float) -> list[str]:
 
 def set_detector_efficiency(args: list[str], detector_efficiency: float) -> list[str]:
     return args + ["-dtctor_eff", str(detector_efficiency)]
+
+
+def set_transmon_coherence(args: list[str], coherence_time: int) -> list[str]:
+    return args + ["-uw_coherence", str(coherence_time)]
 
 
 def set_log_file(args: list[str], log_file: str) -> list[str]:
@@ -139,5 +158,26 @@ def main_rb_rb_rb_sweeps():
     run_tasks(tasks, parallel=PARALLEL)
 
 
+def build_het_four_node_coherence_tasks(data_dir: str) -> list[list[str]]:
+    tasks = []
+    for coherence_time in TRANSMON_COHERENCE_TIMES_PS:
+        coherence_ms = coherence_time * 1e-9
+        args = []
+        args = add_num_trials(args)
+        args = set_transmon_coherence(args, coherence_time)
+        args = set_log_file(
+            args,
+            f"{data_dir}/uw_coherence/coherence_ms={coherence_ms:g}.log",
+        )
+        tasks.append(COMMAND + args)
+    return tasks
+
+
+def main_het_four_node_coherence_sweep():
+    tasks = build_het_four_node_coherence_tasks("tmpHet4")
+    run_tasks(tasks, parallel=PARALLEL)
+
+
 if __name__ == "__main__":
-    main_rb_rb_rb_sweeps()
+    # main_rb_rb_rb_sweeps()
+    main_het_four_node_coherence_sweep()

@@ -206,9 +206,11 @@ class HetEGA(EntanglementGenerationA):
         """
         
         process = Process(self.memory, "excite", [self.middle])
-        time = self.memory.initialize_cool_prep() + self.memory.excite_pulse_time
-        assert time == self.emit_delay, \
-        "Time to emission should equal memories emit delay, but doesn\'t {} {} {}".format(time, self.emit_delay, self.owner.timeline.now())
+        converter_time = getattr(self.memory, "converter_time", 0)
+        self.memory.initialize_cool_prep()
+        time = self.emit_delay - converter_time
+        assert time >= 0, \
+        "Time to photon creation should be non-negative, but got {} {}".format(time, self.owner.timeline.now())
         event = Event(self.owner.timeline.now() + time, process)
         self.owner.timeline.schedule(event)
         self.scheduled_events.append(event)
