@@ -204,7 +204,7 @@ def main():
     node_resp = routers[2]
 
     for i in range(args.numtrials):
-        basis = "Z" if i % 2 == 1 else "X"
+        basis = ["X", "Y", "Z"][i % 3]
         beginning = tl.now()
         starting_attempts_left = node_init.get_components_by_type(MemoryArray)[0].memories[0].attempts
         starting_attempts_mid = sum(mem.attempts for mem in node_mid.get_components_by_type(MemoryArray)[0].memories)
@@ -252,6 +252,7 @@ def main():
     readout_fidelity0 = node_init.get_components_by_type(MemoryArray)[0].memories[0].measurement_fidelity
     readout_fidelity1 = node_resp.get_components_by_type(MemoryArray)[0].memories[0].measurement_fidelity
     fid = node_init.app.get_fidelity(readout_fidelity0 * readout_fidelity1)
+    fid_precise = node_init.app.get_precise_fidelity(readout_fidelity0 * readout_fidelity1)
     total_attempts = sum(
         mem.attempts
         for node in routers
@@ -267,6 +268,7 @@ def main():
     log.logger.warning(f"cooling_time:{args.coolingtime}")
     log.logger.warning(f"cooling_time_ms:{args.coolingtime * 1e-9}")
     log.logger.warning(f"After {args.numtrials} successful uW-Rb-uW swapped entanglement attempts, calculated fidelity ={fid}")
+    log.logger.warning(f"After {args.numtrials} successful uW-Rb-uW swapped entanglement attempts, calculated precise fidelity ={fid_precise}")
     log.logger.warning(f"Average uW-Rb-uW swapped ent time is ~{total_time / args.numtrials}")
     log.logger.warning(
         f"{args.numtrials} end-to-end entanglement pairs were generated after {total_attempts} "
@@ -274,6 +276,7 @@ def main():
     )
 
     print(f"After {args.numtrials} successful uW-Rb-uW swapped entanglement attempts, calculated fidelity={fid}")
+    print(f"After {args.numtrials} successful uW-Rb-uW swapped entanglement attempts, calculated precise fidelity={fid_precise}")
     print(f"Average uW-Rb-uW swapped entanglement time: {total_time / args.numtrials} seconds")
     print(f"Log written to {args.logfile}")
 

@@ -20,7 +20,11 @@ class HetRequestApp(RequestApp):
 
     def __init__(self, node):
         self.basis = None
-        self.meas_results = {"X_11": 0, "X_22": 0, "X_33": 0, "X_44": 0, "Z_11": 0, "Z_22": 0, "Z_33": 0, "Z_44": 0}
+        self.meas_results = {
+            "X_11": 0, "X_22": 0, "X_33": 0, "X_44": 0,
+            "Y_11": 0, "Y_22": 0, "Y_33": 0, "Y_44": 0,
+            "Z_11": 0, "Z_22": 0, "Z_33": 0, "Z_44": 0,
+        }
         self.entanglement_time = None
         self.attempts = 0
         self.last_trap_time = 0
@@ -52,7 +56,7 @@ class HetRequestApp(RequestApp):
         
         time_to_measurement_results = self.node.timeline.now() + max(info.memory.measurement_time, other_memory.measurement_time) # current time + time it takes to measure
 
-        if self.basis == "X":
+        if self.basis in ("X", "Y"):
             to_x_basis_time = max(info.memory.to_x_basis_time, other_memory.to_x_basis_time)
             time_to_measurement_results +=  to_x_basis_time
 
@@ -63,7 +67,7 @@ class HetRequestApp(RequestApp):
 
             if self.node.memo_type == "uW":
                 time_since_excite = self.node.timeline.now() - info.memory.time_after_excitement
-                if self.basis == "X":
+                if self.basis in ("X", "Y"):
                     readout_time = info.memory.measurement_time + info.memory.to_x_basis_time
                 else:
                     readout_time = info.memory.measurement_time
@@ -85,16 +89,16 @@ class HetRequestApp(RequestApp):
 
             elif self.node.memo_type == "Er":
                 time_since_generation = self.node.timeline.now() - info.memory.time_after_excitement
-                if self.basis == "X":
+                if self.basis in ("X", "Y"):
                     readout_time = info.memory.measurement_time + info.memory.to_x_basis_time
                 else:
                     readout_time = info.memory.measurement_time
-                time_since_generation += readout_time
+                time_since_generation += (info.memory.bin_separation + readout_time)
 
                 decoherence_probability = 1-e**(-time_since_generation/info.memory.coherence_time)
                 if self.node.get_generator().random() < decoherence_probability: 
                     info.memory.timeline.quantum_manager.run_circuit(_Z_circuit, [info.memory.qstate_key])
-                    log.logger.warning('Er ion decohered during post-generation storage.')
+                    log.logger.warning('Er ion decohered during generation/storage/readout.')
 
             reservation = self.memo_to_reservation[info.index]
             if info.remote_node == reservation.initiator and info.fidelity >= reservation.fidelity:
@@ -119,10 +123,9 @@ class HetRequestApp(RequestApp):
         # measurement is length 2 list where each element is 0 (down) or 1 (up)
 
         # for PSI- we want to flip the sign of X_same and X_diff in our Fidelity formula
-        # to do that, I am just flipping X_same and X_diff right here as they have opposite signs in the formula
-        if memory.psi_sign == -1 and self.basis == "X":
-            if measurement[0] == 0:
-                measurement[0] = 1
+        if memory.psi_sign == -1 and self.basis in ("X", "Y"): #if psi minus and in x and y (looks same in Z)
+            if measurement[0] == 0: #flip first measudrment bit (0,0) to (1,0)
+                measurement[0] = 1 
             elif measurement[0] == 1:
                 measurement[0] = 0
             else:
@@ -176,6 +179,34 @@ class HetRequestApp(RequestApp):
         log.logger.warning(f'fidelity debug result: raw={raw_fidelity}, readout_factor={meas_fid}, final={f}')
         return f
 
+    def get_precise_fidelity(self, meas_fid):
+        #caitao paper in the slack
+        X_trials = sum(self.meas_results[f'X_{i}{i}'] for i in range(1,5))
+        Y_trials = sum(self.meas_results[f'Y_{i}{i}'] for i in range(1,5))
+        Z_trials = sum(self.meas_results[f'Z_{i}{i}'] for i in range(1,5))
+
+        if X_trials == 0 or Y_trials == 0 or Z_trials == 0:
+            raise ValueError(f'Precise fidelity requires X, Y, and Z trials; got X={X_trials}, Y={Y_trials}, Z={Z_trials}.')
+
+        xx_same = self.meas_results['X_11'] + self.meas_results['X_44']
+        xx_diff = self.meas_results['X_22'] + self.meas_results['X_33']
+        yy_same = self.meas_results['Y_11'] + self.meas_results['Y_44']
+        yy_diff = self.meas_results['Y_22'] + self.meas_results['Y_33']
+        zz_same = self.meas_results['Z_11'] + self.meas_results['Z_44']
+        zz_diff = self.meas_results['Z_22'] + self.meas_results['Z_33']
+
+        xx = (xx_same - xx_diff) / X_trials
+        yy = (yy_same - yy_diff) / Y_trials
+        zz = (zz_same - zz_diff) / Z_trials
+
+        raw_fidelity = (1 + xx + yy - zz) / 4
+        f = meas_fid * raw_fidelity #keep same debugging stuff
+        log.logger.warning(f'precise fidelity debug counts: {self.meas_results}')
+        log.logger.warning(f'precise fidelity debug trials: X={X_trials}, Y={Y_trials}, Z={Z_trials}')
+        log.logger.warning(f'precise fidelity debug correlators: XX={xx}, YY={yy}, ZZ={zz}')
+        log.logger.warning(f'precise fidelity debug result: raw={raw_fidelity}, readout_factor={meas_fid}, final={f}')
+        return f
+
 
     def get_fidelity_best_estimate(self, meas_fid):
         # fidelity calculation derived from:
@@ -204,48 +235,4 @@ class HetRequestApp(RequestApp):
         log.logger.warning(f'fidelity debug x and z terms: rhoZ_diff={rhoZ_diff}, rhoX_same={rhoX_same}, rhoX_diff={rhoX_diff}, rhoZ_prod_same={rhoZ_prod_same}')
         log.logger.warning(f'fidelity debug result: raw={raw_fidelity}, readout_factor={meas_fid}, final={f}')
         return f
-
-class StopOnSuccessHetRequestApp(HetRequestApp):
-    """HetRequestApp variant for trial-based scripts.
-
-    This stops the timeline as soon as an end-to-end entanglement result is
-    measured, then frees the reservation path so the next trial can reuse the
-    same memory slots. Existing simulations can keep using HetRequestApp if
-    they want the older behavior.
-    """
-
-    def measure_and_save(self, memory, remote_memory_key):
-        super().measure_and_save(memory, remote_memory_key)
-        self.cleanup_reservations()
-        self.node.timeline.stop()
-
-    def cleanup_reservations(self):
-        reservations = list({reservation for reservation in self.memo_to_reservation.values()})
-
-        for reservation in reservations:
-            for node_name in reservation.path:
-                node = self.node.timeline.get_entity_by_name(node_name)
-                if node is None or not hasattr(node, "resource_manager"):
-                    continue
-
-                reserved_indices = [
-                    card.memory_index
-                    for card in node.network_manager.get_timecards()
-                    if reservation in card.reservations
-                ]
-
-                node.resource_manager.expire_rules_by_reservation(reservation)
-
-                for card in node.network_manager.get_timecards():
-                    card.remove(reservation)
-
-                if node.app is not None:
-                    for index, mapped_reservation in list(node.app.memo_to_reservation.items()):
-                        if mapped_reservation == reservation:
-                            node.app.memo_to_reservation.pop(index)
-
-                memory_array = node.get_components_by_type(MemoryArray)[0]
-                for index in reserved_indices:
-                    node.resource_manager.update(None, memory_array.memories[index], MemoryInfo.RAW)
-
         

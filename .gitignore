@@ -8,10 +8,16 @@ trigger.py
 
 tmp/*
 
+tmpErEr/*
+
 .DS_Store
 
 .vscode
 
 *.log
+
+het_teleport_app.py
+het_transport_controller.py
+
 
 

@@ -1,13 +1,14 @@
 import argparse
 import sys
 from pathlib import Path
+from math import e
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from sequence.constants import MILLISECOND, SECOND
 from sequence.utils import log
 
-from apps import HetRequestApp
+from apps import HetRequestApp, StopOnSuccessHetRequestApp
 from memory import MemoryArray
 from yb_router_net_topo import YbRouterNetTopo
 ER_PHOTON_WAVELENGTH=1532
@@ -15,20 +16,22 @@ ER_PHOTON_WAVELENGTH=1532
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-pce", "--photoncollectionefficiency", type=float, default=1.0, help="extra Er source efficiency multiplier; keep at 1.0 unless adding loss beyond cavity/grating")
+    parser.add_argument("-pce", "--photoncollectionefficiency", type=float, default=0.0792, help="combined Er photon collection/source efficiency")
     parser.add_argument("-n", "--numtrials", type=int, default=1000, help="number of entangled pairs to generate")
-    parser.add_argument("-dtctor_dc", "--detectordarkcount", type=float, default=6.0, help="dark count rate in Hz for BSM detectors")
+    parser.add_argument("-dtctor_dc", "--detectordarkcount", type=float, default=11.0, help="dark count rate in Hz for BSM detectors")
     parser.add_argument("-dtctor_eff", "--detectorefficiency", type=float, default=0.85, help="BSM detector efficiency")
     parser.add_argument("-bsm_wvln", "--bsm_operating_wavelength", type=float, default=1532, help="photon wavelength used at the BSM")
     parser.add_argument("-qfc_eff", "--qfc_efficiency", type=float, default=1.0, help="efficiency of BSM-side QFCs; pass-through by default")
     parser.add_argument("-qfc_noise", "--qfc_noise", type=float, default=0.0, help="noise probability for BSM-side QFCs")
     parser.add_argument("-bwidth", "--binwidth", type=int, default=1_900_000, help="Er heralding time-bin width in ps")
-    parser.add_argument("-bsep", "--binseparation", type=int, default=75_500_000, help="Er early-late bin separation in ps")
+    parser.add_argument("-bsep", "--binseparation", type=int, default=5_000_000, help="Er early-late bin separation in ps")
+    parser.add_argument("-coh", "--coherencetime", type=int, default=23_000_000_000, help="Er spin coherence time in ps")
+    parser.add_argument("-config", "--configfile", type=str, default="config/linearErEr.json", help="Er-Er topology config file")
     parser.add_argument("-log", "--logfile", type=str, default="tmp/er_er.log", help="log file path")
 
     args = parser.parse_args()
 
-    network_topo = YbRouterNetTopo("config/linearErEr.json")
+    network_topo = YbRouterNetTopo(args.configfile)
     tl = network_topo.get_timeline()
     bsm_hardware_name = "HetTimeBinBSM"
 
@@ -64,7 +67,8 @@ def main():
     name_to_app = {}
 
     for node in network_topo.get_nodes_by_type(YbRouterNetTopo.QUANTUM_ROUTER):
-        name_to_app[node.name] = HetRequestApp(node)
+        name_to_app[node.name] = StopOnSuccessHetRequestApp(node)
+        # name_to_app[node.name] = HetRequestApp(node)
 
         if node.memo_type != "Er":
             raise ValueError(f"Only functional for Er memories, got {node.memo_type}.")
@@ -74,6 +78,10 @@ def main():
             mem.original_memory_efficiency = args.photoncollectionefficiency
             mem.bin_width = args.binwidth
             mem.bin_separation = args.binseparation
+            if args.coherencetime is not None:
+                mem.coherence_time = args.coherencetime
+                mem.spin_coherence_factor = e ** (-mem.spin_photon_generation_time / mem.coherence_time)
+                mem.phase_flip_probability = (1 - mem.spin_coherence_factor)
 
         memory = node.get_components_by_type(MemoryArray)[0].memories[0]
         for bsm_node_name in node.qchannels.keys():
@@ -127,6 +135,10 @@ def main():
 
 
 
+    log.logger.warning(f"pce:{args.photoncollectionefficiency}")
+    if args.coherencetime is not None:
+        log.logger.warning(f"coherence_time_ms:{args.coherencetime * 1e-9}")
+    log.logger.warning(f"config:{args.configfile}")
     log.logger.warning(f"After {args.numtrials} successful entanglement attempts, calculated fidelity ={fid}")
     log.logger.warning(f"Average ent time is ~{total_time / args.numtrials}")
     log.logger.warning(
