@@ -808,8 +808,8 @@ class Er(Memory):
         super().__init__(name, timeline, fidelity, frequency, efficiency, coherence_time, wavelength)
 
         # gen params
-        self.wavelength = 1532
-        self.efficiency = 0.24 * 0.33 # combined Er photon collection/source efficiency
+        self.wavelength = 1532 #1
+        self.efficiency = 0.24 * 0.33 # combined Er photon collection/source efficiency #2
         self.original_memory_efficiency = self.efficiency
         self.time_after_excitement = None
         self.ion_state = ErStates.INITIALIZED
@@ -826,17 +826,17 @@ class Er(Memory):
         self.magnetic_field = 943.5 #not used yet but physically to split Er spin levels (directly impects ground spin and excited spin) may be good to list
 
         # Spin-photon entanglement protocol timing
-        self.protocol_period = 75_500_000 # timing in appenxid G blocks 
-        self.initialization_time = 2 * self.protocol_period # two initialization cycles before photon generation NOTE we do not know padding used 
+        self.protocol_period = 75_500_000 # timing in appenxid G blocks #4
+        self.initialization_time = 2 * self.protocol_period #5 two initialization cycles before photon generation NOTE we do not know padding used 
         self.spin_photon_generation_time = 80_500_000 # protected XY-16 spin-photon generation sequence
-        self.bin_separation = 22_200_000#75_500_000 got 22.2 microsec grom the 7.4 radiative lifetime
-        self.bin_width = 1_900_000 
+        self.bin_separation = 22_200_000#75_500_000 got 22.2 microsec grom the 7.4 radiative lifetime #6
+        self.bin_width = 1_900_000  #7
 
         #appendix k values
         self.photon_collection_efficiency = self.efficiency
 
         # Coherence values
-        self.xy16_coherence_time = 23_000_000_000 # 200_000_000 improved method from original paper
+        self.xy16_coherence_time = 23_000_000_000 # 200_000_000 improved method from original paper #8
         self.toggle_decoherence_gen = False # generation time is included in the combined app-level decoherence check
         if coherence_time == -1: #default to this coherence time in constructor not infinity HAS COHERENCE
             self.coherence_time = self.xy16_coherence_time
@@ -847,14 +847,14 @@ class Er(Memory):
         self.initialize_time = self.initialization_time
         self.cool_time = 0
         self.state_prep_time = 0
-        self.excite_pulse_time = 219_000 #Mwgpi/2 and opticla b pulse
+        self.excite_pulse_time = 219_000 #Mwgpi/2 and opticla b pulse #9
     
 
 
         # Measurement
-        self.to_x_basis_time = 19_200 
-        self.measurement_time = 70_000_000 
-        self.measurement_fidelity = 0.972 #paper param 0.89 but says that 97.2 achievable with higher purcell factor
+        self.to_x_basis_time = 19_200 #10
+        self.measurement_time = 70_000_000 #11
+        self.measurement_fidelity = 0.972 #paper param 0.89 but says that 97.2 achievable with higher purcell factor #12
 
     def get_source_efficiency(self) -> float:
         return self.efficiency

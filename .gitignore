@@ -12,12 +12,7 @@ tmpErEr/*
 
 .DS_Store
 
-.vscode
+.vscode/*
 
 *.log
-
-het_teleport_app.py
-het_transport_controller.py
-
-
 

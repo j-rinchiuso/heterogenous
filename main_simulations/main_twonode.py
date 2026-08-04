@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from sequence.constants import MILLISECOND, SECOND
 from sequence.utils import log
 
-from apps import HetRequestApp, StopOnSuccessHetRequestApp
+from apps import HetRequestApp
 from memory import MemoryArray
 from yb_router_net_topo import YbRouterNetTopo
 
@@ -334,7 +334,7 @@ def main():
     log.set_logger_level("DEBUG")
     for module in (
         "main_twonode",
-        "timeline"
+        #"timeline"
        # "generation",
         #"bsm",
         #"detector",
@@ -353,7 +353,6 @@ def main():
     routers = network_topo.get_nodes_by_type(YbRouterNetTopo.QUANTUM_ROUTER)
     for index, node in enumerate(routers):
         name_to_app[node.name] = HetRequestApp(node)
-        # name_to_app[node.name] = StopOnSuccessHetRequestApp(node)
         pce = args.photoncollectionefficiency
         if pce is None:
             pce = specs[index].default_pce
@@ -376,8 +375,8 @@ def main():
 
         app: HetRequestApp = name_to_app[node_init.name]
         start_time = beginning + delta
-        end_time = beginning + 10 * SECOND
-        print(f'{i}:beginning: {beginning}, start_time: {start_time}, end_time: {end_time}')
+        end_time = beginning + 100 * SECOND
+        #print(f'{i}:beginning: {beginning}, start_time: {start_time}, end_time: {end_time}')
         app.start(node_resp.name, start_time, end_time, 1, 0.1, basis)
 
         app.basis = basis

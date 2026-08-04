@@ -14,7 +14,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from sequence.constants import MILLISECOND, SECOND
 from sequence.utils import log
 
-from apps import StopOnSuccessHetRequestApp
+from apps import HetRequestApp
 from memory import MemoryArray
 from yb_router_net_topo import YbRouterNetTopo
 

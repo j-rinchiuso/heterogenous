@@ -7,7 +7,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": false,
-            "args": []
+            // "args": ["-n1", "yb", "-n2", "rb", "-n", "1000", "-log", "tmp/twonode_yb_rb.log"]
         }
     ]
 }

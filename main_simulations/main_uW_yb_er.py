@@ -79,7 +79,6 @@ def configure_router_nodes(
     name_to_app = {}
 
     for node in network_topo.get_nodes_by_type(YbRouterNetTopo.QUANTUM_ROUTER):
-        #name_to_app[node.name] = StopOnSuccessHetRequestApp(node)
         name_to_app[node.name] = HetRequestApp(node)
         
 
@@ -129,7 +128,7 @@ def main():
     parser.add_argument("-ybwavelength", "--ybphotonwavelength", type=int, default=1389, help="Yb emitted photon wavelength")
     parser.add_argument("-er_wvln", "--erphotonwavelength", type=int, default=1532, help="Er emitted photon wavelength")
     parser.add_argument("-bsm_wvln", "--bsm_operating_wavelength", type=int, default=746, help="photon wavelength used at both BSMs")
-    parser.add_argument("-qfc_eff", "--qfc_efficiency", type=float, default=1.0, help="BSM-side QFC efficiency")
+    parser.add_argument("-qfc_eff", "--qfc_efficiency", type=float, default=0.99, help="BSM-side QFC efficiency")
     parser.add_argument("-qfc_noise", "--qfc_noise", type=float, default=0.005, help="BSM-side QFC noise probability")
     parser.add_argument("-dtctor_dc", "--detectordarkcount", type=float, default=11.0, help="detector dark count rate in Hz")
     parser.add_argument("-dtctor_eff", "--detectorefficiency", type=float, default=0.85, help="BSM detector efficiency")

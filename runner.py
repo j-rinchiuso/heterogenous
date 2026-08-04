@@ -6,21 +6,20 @@ import sys
 import time
 from pathlib import Path
 from subprocess import PIPE, Popen
-#NOTE heavily based off Caitao's runner he forwarded me. 
+#NOTE  based off Caitao's runner he forwarded me. 
 
-PARALLEL = 9 #went down to 9 but believe 10 would still be fine
+PARALLEL = 28 #went down to 9 but believe 10 would still be fine
 
-# Old Rb-Rb-Rb sweep command. Keeping this here for reference, but the active
-# runner below now uses the four-node heterogeneous simulation.
+
 # COMMAND = ["python3", "main_rb_rb_rb_EG_sim.py"]
 
 COMMAND = [sys.executable, "main_simulations/main_het_net_four_node_sim.py"]
 TWONODE_COMMAND = [sys.executable, "main_simulations/main_twonode.py"]
-UW_YB_ER_COMMAND = [sys.executable, "main_simulations/main_uW_yb_er_EG_sim.py"]
+UW_YB_ER_COMMAND = [sys.executable, "main_simulations/main_uW_yb_er.py"]
 NUM_TRIALS = 1000 # four-node heterogeneous chain is much heavier than Rb-Rb-Rb
 TWONODE_NUM_TRIALS = 12000
 HET_FOUR_NODE_NUM_TRIALS = 200
-UW_YB_ER_GRID_NUM_TRIALS = 5000
+UW_YB_ER_GRID_NUM_TRIALS = 1200
 
 COOLING_TIMES_PS = [
     100_000_000,
@@ -46,7 +45,7 @@ TRANSMON_COHERENCE_TIMES_PS = [
 
 UW_YB_ER_GRID_OUTPUT_ROOT = Path("tmp_uW_Yb_Er_grid")
 UW_YB_ER_GRID_TRANSMON_COHERENCE_MS = [0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-UW_YB_ER_GRID_ER_COHERENCE_MS = [0.2, 0.5, 1, 2, 5, 10, 20, 30, 40, 50, 60, 70, 80, 100]
+UW_YB_ER_GRID_ER_COHERENCE_MS = [0.2, 0.5, 1, 2, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
 ER_COMMAND = [sys.executable, "main_simulations/main_er_er_EG_sim.py"]
 ER_OUTPUT_ROOT = Path("tmpErEr")
@@ -61,18 +60,7 @@ ER_COHERENCE_TIMES_MS = [0.2, 0.5, 1, 2, 5, 10, 20]
 ER_PHOTON_COLLECTION_EFFICIENCIES = [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
 ER_DISTANCES = [100, 200, 500, 1000, 2000, 5000, 10000]
 
-TWONODE_PAIRS = [
-    ("yb", "yb"),
-    ("yb", "rb"),
-    ("yb", "er"),
-    ("yb", "uw"),
-    ("rb", "rb"),
-    ("rb", "er"),
-    ("rb", "uw"),
-    ("er", "er"),
-    ("er", "uw"),
-    ("uw", "uw"),
-]
+TWONODE_PAIRS = [("yb", "yb"), ("yb", "rb"), ("yb", "er"), ("yb", "uw"), ("rb", "rb"), ("rb", "er"), ("rb", "uw"), ("er", "er"), ("er", "uw"), ("uw", "uw"),]
 
 LOADING_10_US_PS = 10_000_000
 LOADING_300_MS_PS = 300_000_000_000
@@ -401,10 +389,7 @@ def build_er_coherence_tasks_dark_count_zero() -> list[list[str]]:
         args = add_er_num_trials(args, ER_DARK_COUNT_ZERO_NUM_TRIALS)
         args += ["-dtctor_dc", "0"]
         args += ["-coh", str(er_ms_to_ps(coherence_ms))]
-        args = set_log_file(
-            args,
-            str(ER_OUTPUT_ROOT_DARK_COUNT_ZERO / "er_coherence_time" / f"coherence_ms={coherence_ms:g}.log"),
-        )
+        args = set_log_file( args, str(ER_OUTPUT_ROOT_DARK_COUNT_ZERO / "er_coherence_time" / f"coherence_ms={coherence_ms:g}.log"),)
         tasks.append(ER_COMMAND + args)
     return tasks
 
@@ -489,5 +474,5 @@ if __name__ == "__main__":
     # main_er_er_pce_distance_5000_sweeps()
     # main_er_er_dark_count_zero_sweeps()
     # main_er_er_distance_5000_run2_sweep()
-    # main_twonode_all_pairs()
+    #main_twonode_all_pairs()
     main_uW_yb_er_coherence_grid()
