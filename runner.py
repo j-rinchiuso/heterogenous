@@ -15,7 +15,7 @@ PARALLEL = 28 #went down to 9 but believe 10 would still be fine
 
 COMMAND = [sys.executable, "main_simulations/main_het_net_four_node_sim.py"]
 TWONODE_COMMAND = [sys.executable, "main_simulations/main_twonode.py"]
-UW_YB_ER_COMMAND = [sys.executable, "main_simulations/main_uW_yb_er.py"]
+UW_YB_ER_COMMAND = [sys.executable, "main_simulations/main_uW_yb_er MAIN.py"]
 NUM_TRIALS = 1000 # four-node heterogeneous chain is much heavier than Rb-Rb-Rb
 TWONODE_NUM_TRIALS = 12000
 HET_FOUR_NODE_NUM_TRIALS = 200
