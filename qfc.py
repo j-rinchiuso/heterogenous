@@ -2,7 +2,6 @@ from sequence.kernel.entity import Entity
 from sequence.kernel.timeline import Timeline
 from photon import Photon
 from sequence.utils import log
-import numpy as np
 
 
 class QFC(Entity):

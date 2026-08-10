@@ -138,11 +138,31 @@ class EntanglementSwappingA(EntanglementProtocol):
             memories (list[str]): the list of memories name used on other node.
         """
 
-        if node == self.left_memo.entangled_memory["node_id"]:
+        remote_memo = memories[0] if memories else None
+
+        if node == self.left_node and (remote_memo is None or remote_memo == self.left_remote_memo):
             self.left_protocol_name = protocol
-        elif node == self.right_memo.entangled_memory["node_id"]:
+          #  log.logger.debug(
+           #     f"{self.name} paired left protocol {protocol} with "
+           #     f"({node}, {remote_memo})"
+          # )
+        elif node == self.right_node and (remote_memo is None or remote_memo == self.right_remote_memo):
             self.right_protocol_name = protocol
+            #log.logger.debug(
+              #  f"{self.name} paired right protocol {protocol} with "
+             #   f"({node}, {remote_memo})"
+           # )
         else:
+            log.logger.warning(
+                f"Swap pair mismatch for {self.name}, incoming protocol={protocol}, "
+                f"node={node}, memories={memories}; "
+                f"expected left=({self.left_node}, {self.left_remote_memo}), "
+                f"right=({self.right_node}, {self.right_remote_memo}); "
+                f"current left=({self.left_memo.entangled_memory['node_id']}, "
+                f"{self.left_memo.entangled_memory['memo_id']}), "
+                f"current right=({self.right_memo.entangled_memory['node_id']}, "
+                f"{self.right_memo.entangled_memory['memo_id']})"
+)
             raise Exception(f"Cannot pair protocol {self.name} with {protocol}")
 
     def start(self) -> None:

@@ -49,6 +49,7 @@ from typing import TYPE_CHECKING, Any, Callable, cast
 
 from sequence.components.memory import Memory
 from sequence.entanglement_management.entanglement_protocol import EntanglementProtocol
+from sequence.utils import log
 from generation import HetEGA, EntanglementGenerationA
 from swapping import EntanglementSwappingA, EntanglementSwappingB
 
@@ -186,11 +187,21 @@ def es_rule_action_A(memories_info: list[MemoryInfo], args: Arguments) -> Action
         kwargs["degradation"] = degradation
 
     memories = [info.memory for info in memories_info]
-    protocol = EntanglementSwappingA(None, f"ESA.{memories[0].name}.{memories[1].name}",
+    unique_tag = memories[0].timeline.now()
+    protocol = EntanglementSwappingA(None, f"ESA.{memories[0].name}.{memories[1].name}.{unique_tag}",
                                             memories[0], memories[1], success_prob, **kwargs)
     dsts = [info.remote_node for info in memories_info]
     req_funcs: list[RequestFunction | None] = [es_match_func, es_match_func]
-    req_args = [{"target_memo": memories_info[0].remote_memo}, {"target_memo": memories_info[1].remote_memo}]
+    local_node = memories[0].name.split(".MemoryArray", 1)[0]
+    req_args = [
+        {"target_memo": memories_info[0].remote_memo, "remote_node": local_node, "remote_memo": memories[0].name},
+        {"target_memo": memories_info[1].remote_memo, "remote_node": local_node, "remote_memo": memories[1].name},
+    ]
+    log.logger.debug(
+        f"ESA created {protocol.name}: "
+        f"{memories[0].name}->({memories_info[0].remote_node}, {memories_info[0].remote_memo}), "
+        f"{memories[1].name}->({memories_info[1].remote_node}, {memories_info[1].remote_memo})"
+    )
     return protocol, dsts, req_funcs, req_args
 
 
@@ -209,7 +220,8 @@ def es_rule_action_B(memories_info: list[MemoryInfo], _args: Arguments) -> Actio
     """
     memories = [info.memory for info in memories_info]
     memory = memories[0]
-    protocol = EntanglementSwappingB(None, "ESB." + memory.name, memory)
+    unique_tag = memory.timeline.now()
+    protocol = EntanglementSwappingB(None, "ESB." + memory.name + f".{unique_tag}", memory)
     return protocol, [None], [None], [None]
 
 
@@ -232,30 +244,49 @@ def es_rule_condition_A(memory_info: MemoryInfo, memory_manager: MemoryManager, 
 
     # case 1: memory_info is the "left hand side" memory
     # the first memory is the "left hand side" memory during swapping
-    if (memory_info.state in ["ENTANGLED", "PURIFIED"]
-            and memory_info.index in memory_indices
-            and memory_info.remote_node == remote_left_node
-            and memory_info.fidelity >= fidelity):
+    if (memory_info.state in ["ENTANGLED", "PURIFIED"] and memory_info.index in memory_indices and memory_info.remote_node == remote_left_node and memory_info.fidelity >= fidelity):
+        if (memory_info.memory.entangled_memory["node_id"] != memory_info.remote_node or memory_info.memory.entangled_memory["memo_id"] != memory_info.remote_memo): #HARD CHECk new part here to cross check with actual live memory
+            log.logger.warning(
+                f"reject stale ESA left candidate {memory_info.memory.name}: "
+                f"info=({memory_info.remote_node}, {memory_info.remote_memo}), " #some logs incase this dosent work
+                f"memory=({memory_info.memory.entangled_memory['node_id']}, "
+                f"{memory_info.memory.entangled_memory['memo_id']})")
+            return []
         for memory_info_2 in memory_manager:
             # the second memory is the "right hand side" memory during swapping
-            if (memory_info_2.state in ["ENTANGLED", "PURIFIED"]
-                    and memory_info_2.index in memory_indices
-                    and memory_info_2.remote_node == remote_right_node
-                    and memory_info_2.fidelity >= fidelity):
+            if (memory_info_2.state in ["ENTANGLED", "PURIFIED"] and memory_info_2.index in memory_indices and memory_info_2.remote_node == remote_right_node and memory_info_2.fidelity >= fidelity):
+                if (memory_info_2.memory.entangled_memory["node_id"] != memory_info_2.remote_node or memory_info_2.memory.entangled_memory["memo_id"] != memory_info_2.remote_memo):#new part aswell here but for second memory
+                    log.logger.warning(
+                        f"reject stale ESA right candidate {memory_info_2.memory.name}: "
+                        f"info=({memory_info_2.remote_node}, {memory_info_2.remote_memo}), "
+                        f"memory=({memory_info_2.memory.entangled_memory['node_id']}, "
+                        f"{memory_info_2.memory.entangled_memory['memo_id']})")
+                    continue
                 return [memory_info, memory_info_2]
     
     # case 2: memory_info is the "right hand side" memory
     # the first memory is the "right hand side" memory during swapping
-    if (memory_info.state in ["ENTANGLED", "PURIFIED"]
-            and memory_info.index in memory_indices
-            and memory_info.remote_node == remote_right_node
-            and memory_info.fidelity >= fidelity):
+    if (memory_info.state in ["ENTANGLED", "PURIFIED"] and memory_info.index in memory_indices and memory_info.remote_node == remote_right_node and memory_info.fidelity >= fidelity):
+        if (memory_info.memory.entangled_memory["node_id"] != memory_info.remote_node or memory_info.memory.entangled_memory["memo_id"] != memory_info.remote_memo):
+            log.logger.warning(
+                f"Rejecting stale ESA right candidate {memory_info.memory.name}: "
+                f"info=({memory_info.remote_node}, {memory_info.remote_memo}), "
+                f"memory=({memory_info.memory.entangled_memory['node_id']}, "
+                f"{memory_info.memory.entangled_memory['memo_id']})"
+            )
+            return []
+        #THIS THE ERROR HERE THIS THE ONE CALLED
         for memory_info_2 in memory_manager:
             # the second memory is the "left hand side" memory during swapping
-            if (memory_info_2.state in ["ENTANGLED", "PURIFIED"]
-                    and memory_info_2.index in memory_indices
-                    and memory_info_2.remote_node == remote_left_node
-                    and memory_info_2.fidelity >= fidelity):
+            if (memory_info_2.state in ["ENTANGLED", "PURIFIED"] and memory_info_2.index in memory_indices and memory_info_2.remote_node == remote_left_node and memory_info_2.fidelity >= fidelity):
+                if (memory_info_2.memory.entangled_memory["node_id"] != memory_info_2.remote_node or memory_info_2.memory.entangled_memory["memo_id"] != memory_info_2.remote_memo):
+                    log.logger.warning(
+                        f"Rejecting stale ESA left candidate {memory_info_2.memory.name}: "
+                        f"info=({memory_info_2.remote_node}, {memory_info_2.remote_memo}), "
+                        f"memory=({memory_info_2.memory.entangled_memory['node_id']}, "
+                        f"{memory_info_2.memory.entangled_memory['memo_id']})"
+                    )
+                    continue
                 return [memory_info, memory_info_2]
     
     return []
@@ -325,7 +356,26 @@ def es_match_func(protocols: list[EntanglementProtocol], args: Arguments) -> Ent
         EntanglementSwappingB | None: the protocol to pair on the other node (or None if no protocol is selected).
     """
     target_memo = args["target_memo"]
+    remote_node = args.get("remote_node")
+    remote_memo = args.get("remote_memo")
     for protocol in protocols:
-        if isinstance(protocol, EntanglementSwappingB) and protocol.memory.name == target_memo:
-            return protocol
-    return None
+        if not isinstance(protocol, EntanglementSwappingB):
+            continue
+        if protocol.memory.name != target_memo:
+            continue
+        protocol_remote_node = protocol.memory.entangled_memory["node_id"] #new part aswell to check entanglment
+        protocol_remote_memo = protocol.memory.entangled_memory["memo_id"]
+
+        #Note these are all loggers to help for debugging 
+        if remote_node is not None and protocol_remote_node != remote_node:
+            log.logger.warning(f"reject stale ESB {protocol.name}: target_memo={target_memo}, "
+            f"expected remote node {remote_node}, got {protocol_remote_node}" )#not correct entangled  node with protocol to match
+            continue
+        if remote_memo is not None and protocol_remote_memo != remote_memo:
+            log.logger.warning(f"Rejecting stale ESB {protocol.name}: target_memo={target_memo}, "
+            f"expected remote memo {remote_memo}, got {protocol_remote_memo}")
+            continue
+        log.logger.debug(f"matched ESB {protocol.name}: target_memo={target_memo}, "
+        f"remote=({protocol_remote_node}, {protocol_remote_memo})")
+        return protocol
+    return None #new part return empty until correct

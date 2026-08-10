@@ -455,10 +455,12 @@ class Yb(Memory):
     def lose_atom(self):
         self.efficiency = 0
         qm = self.owner.timeline.quantum_manager
+        atom_lost = False
         if self.wavelength == 1389:
             if self.atom_state != Yb1389States.LOST:
                 log.logger.warning(f'{self.name} atom lost through lifetime expiration!')
                 self.atom_state = Yb1389States.LOST
+                atom_lost = True
                 if len(qm.states[self.qstate_key].keys) == 1:
                     self.update_state(self._zero_ket)
                 else: # entangled states
@@ -474,7 +476,11 @@ class Yb(Memory):
             if self.atom_state != Yb556States.LOST:
                 log.logger.warning(f'{self.name} atom lost through lifetime expiration!')
                 self.atom_state = Yb556States.LOST
+                atom_lost = True
                 self.update_state(self._zero_ket)
+
+        if atom_lost:
+            self.memory_array.owner.memory_expire(self)
 
 
 # model for uW chip which includes a transmon coupled to a resonator as as an on-chip tranducer
@@ -782,6 +788,7 @@ class Rb(Memory):
             self.efficiency = 0
             self.update_state(self._zero_ket)
             self.update_next_attempt_timing()
+            self.memory_array.owner.memory_expire(self)
 
 
 class ErStates(Enum):

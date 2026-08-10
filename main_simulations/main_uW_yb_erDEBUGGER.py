@@ -17,16 +17,8 @@ from memory import MemoryArray
 from yb_router_net_topo import YbRouterNetTopo
 
 
-def configure_bsm_nodes(
-        network_topo,
-        detector_efficiency,
-        detector_dark_count,
-        bsm_wavelength,
-        yb_wavelength,
-        er_wavelength,
-        uw_output_wavelength,
-        qfc_efficiency,
-        qfc_noise):
+def configure_bsm_nodes(network_topo, detector_efficiency, detector_dark_count, bsm_wavelength, 
+                        yb_wavelength, er_wavelength, uw_output_wavelength, qfc_efficiency, qfc_noise):
     bsm_hardware_name = "HetTimeBinBSM"
 
     bsm_qfc_wavelengths = {
@@ -62,18 +54,9 @@ def configure_bsm_nodes(
             qfc.noise = qfc_noise
 
 
-def configure_router_nodes(
-        network_topo,
-        yb_photon_collection_efficiency,
-        er_photon_collection_efficiency,
-        yb_wavelength,
-        er_bin_width,
-        er_bin_separation,
-        er_coherence_time,
-        transducer_efficiency,
-        transducer_noise,
-        transmon_coherence_time,
-        uw_output_wavelength):
+def configure_router_nodes(network_topo, yb_photon_collection_efficiency, er_photon_collection_efficiency, 
+                           yb_wavelength, er_bin_width, er_bin_separation, er_coherence_time, 
+                           transducer_efficiency, transducer_noise, transmon_coherence_time, uw_output_wavelength):
     tl = network_topo.get_timeline()
     bsm_hardware_name = "HetTimeBinBSM"
     name_to_app = {}
@@ -117,12 +100,22 @@ def configure_router_nodes(
 
     return name_to_app
 
+def set_seeds(network_topo, trail_id: int):
+    """Set seed for the router and BSM nodes
+    """
+    seed = (trail_id + 10) ** 2 
+    for node in network_topo.get_nodes_by_type(YbRouterNetTopo.QUANTUM_ROUTER):
+        node.set_seed(seed)
+        seed += 1
+    for bsm_node in network_topo.get_nodes_by_type(YbRouterNetTopo.BSM_NODE):
+        bsm_node.set_seed(seed)
+        seed += 1
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-n", "--numtrials", type=int, default=120, help="number of end-to-end entanglement pairs to generate")
+    parser.add_argument("-n", "--numtrials", type=int, default=1586, help="number of end-to-end entanglement pairs to generate")
     parser.add_argument("-config", "--configfile", type=str, default="config/line_3_uW_Yb_Er.json", help="network config file")
-    parser.add_argument("-log", "--logfile", type=str, default="tmp/uW_yb_er.log", help="log file path")
+    parser.add_argument("-log", "--logfile", type=str, default="tmp/uW_yb_er_debug4.log", help="log file path")
     parser.add_argument("-yb_pce", "--ybphotoncollectionefficiency", type=float, default=0.5, help="Yb photon collection efficiency")
     parser.add_argument("-er_pce", "--erphotoncollectionefficiency", type=float, default=0.0792, help="Er photon collection/source efficiency")
     parser.add_argument("-ybwavelength", "--ybphotonwavelength", type=int, default=1389, help="Yb emitted photon wavelength")
@@ -143,98 +136,103 @@ def main():
 
     args = parser.parse_args()
 
-    network_topo = YbRouterNetTopo(args.configfile)
-    tl = network_topo.get_timeline()
-
-    configure_bsm_nodes(
-        network_topo,
-        args.detectorefficiency,
-        args.detectordarkcount,
-        args.bsm_operating_wavelength,
-        args.ybphotonwavelength,
-        args.erphotonwavelength,
-        args.uw_output_wavelength,
-        args.qfc_efficiency,
-        args.qfc_noise,
-    )
-
-    log.set_logger(__name__, tl, args.logfile)
-    log.set_logger_level("WARNING")
-    for module in (
-        "main_uW_yb_er",
-        #"generation",
-        #"bsm",
-       # "detector",
-       # "memory",
-       # "photon",
-        #"custom_node",
-        #"time_bin_bsm",
-       # "optical_channel",
-       # "apps",
-        #"swapping",
-        #"qfc",
-    ):
-        log.track_module(module)
-
-    name_to_app = configure_router_nodes(
-        network_topo,
-        args.ybphotoncollectionefficiency,
-        args.erphotoncollectionefficiency,
-        args.ybphotonwavelength,
-        args.er_binwidth,
-        args.er_binseparation,
-        args.er_coherence_time,
-        args.transducer_efficiency,
-        args.transducer_noise,
-        args.transmon_coherence_time,
-        args.uw_output_wavelength,
-    )
-
-    delta = 20 * MILLISECOND
+    delta = 20 * MILLISECOND 
     total_time = 0
+    total_initiator_attempts = 0
+    meas_results = {
+        f"{basis}_{idx}": 0
+        for basis in ("X", "Y", "Z")
+        for idx in ("11", "22", "33", "44")
+    }
 
-    tl.init()
+    for i in range(1585, args.numtrials):
+        retry_count = 0
+        trial_complete = False
+        while not trial_complete:
+            # 1: create network topology and configure nodes
+            network_topo = YbRouterNetTopo(args.configfile)
+            configure_bsm_nodes(network_topo, args.detectorefficiency, args.detectordarkcount, 
+                                args.bsm_operating_wavelength, args.ybphotonwavelength, args.erphotonwavelength, 
+                                args.uw_output_wavelength, args.qfc_efficiency, args.qfc_noise)
+            
+            tl = network_topo.get_timeline()
 
-    routers = network_topo.get_nodes_by_type(YbRouterNetTopo.QUANTUM_ROUTER)
-    node_init = routers[0]
-    node_resp = routers[2]
+            log.set_logger(__name__, tl, args.logfile)
+            log.set_logger_level("WARNING")
+            # modules = ["main_uW_yb_er", "action_condition_set", "swapping", "resource_manager", "generation", "bsm", "detector", "memory", "photon", "custom_node", "time_bin_bsm", "optical_channel", "apps", "qfc"]
+            modules = ["main_uW_yb_erDEBUGGER"]
+            for module in modules:
+                log.track_module(module)
+            
+            name_to_app = configure_router_nodes(network_topo, args.ybphotoncollectionefficiency, 
+                                                args.erphotoncollectionefficiency, args.ybphotonwavelength, 
+                                                args.er_binwidth, args.er_binseparation, args.er_coherence_time, 
+                                                args.transducer_efficiency, args.transducer_noise, 
+                                                args.transmon_coherence_time, args.uw_output_wavelength)
+            set_seeds(network_topo, i + retry_count * args.numtrials)
+            
+            tl.init()
+            
+            # 2: start running
+            routers = network_topo.get_nodes_by_type(YbRouterNetTopo.QUANTUM_ROUTER)
+            node_init = routers[0]
+            node_resp = routers[2]
 
-    for i in range(args.numtrials):
-        basis = ["X", "Y", "Z"][i % 3]
-        beginning = tl.now()
-        starting_attempts = node_init.get_components_by_type(MemoryArray)[0].memories[0].attempts
-        node_init.app.entanglement_time = None
+            basis = ["X", "Y", "Z"][i % 3]
+            beginning = tl.now()
+            starting_attempts = node_init.get_components_by_type(MemoryArray)[0].memories[0].attempts
+            for node in routers:
+                node.app.entanglement_time = None
+                node.app.entanglement_failed_time = None
+                node.app.last_trap_time = beginning - node.app.time_in_trap
+            app: HetRequestApp = name_to_app[node_init.name]
+            start_time = beginning + delta
+            end_time = beginning + 25 * SECOND
+            #print(f'{i}:beginning: {beginning}, start_time: {start_time}, end_time: {end_time}')
+            app.start(node_resp.name, start_time, end_time, 1, 0.1, basis)
 
-        for node in routers:
-            node.app.last_trap_time = beginning - node.app.time_in_trap
+            app.basis = basis
 
-        app: HetRequestApp = name_to_app[node_init.name]
-        start_time = beginning + delta
-        end_time = beginning + 20 * SECOND
-        #print(f'{i}:beginning: {beginning}, start_time: {start_time}, end_time: {end_time}')
-        app.start(node_resp.name, start_time, end_time, 1, 0.1, basis)
+            log.logger.warning(f"Starting uW-Yb-Er EG attempt {i + 1} at {tl.time}.")
+            tl.run()
 
-        app.basis = basis
+            finishing_attempts = node_init.get_components_by_type(MemoryArray)[0].memories[0].attempts
+            traversed_attempts = finishing_attempts - starting_attempts
+            total_initiator_attempts += traversed_attempts
 
-        log.logger.warning(f"Starting uW-Yb-Er EG attempt {i + 1} at {tl.time}.")
-        tl.run()
+            failed_times = [node.app.entanglement_failed_time for node in routers
+                if node.app.entanglement_failed_time is not None]
 
-        if node_init.app.entanglement_time is None:
-            raise RuntimeError(f"End-to-end entanglement attempt {i + 1} did not complete.")
+            if node_init.app.entanglement_time is None:
+                if failed_times:
+                    failed_elapsed = (min(failed_times) - beginning) * 1e-12
+                    if failed_elapsed < 0:
+                        raise ValueError("neg failed entanglement time.")
+                    total_time += failed_elapsed
+                    retry_count += 1
+                    log.logger.warning( 
+                        f"End-to-end entanglement attempt {i + 1} failed after "
+                        f"{failed_elapsed} seconds; retrying same attempt."
+                    )
+                    continue
+                raise RuntimeError(f"End-to-end entanglement attempt {i + 1} did not complete.")
 
-        taken_time = node_init.app.entanglement_time - beginning
-        finishing_attempts = node_init.get_components_by_type(MemoryArray)[0].memories[0].attempts
-        traversed_attempts = finishing_attempts - starting_attempts
-        actual_time = taken_time * 1e-12
-        if actual_time < 0:
-            raise ValueError("Negative entanglement generation time.")
+            taken_time = node_init.app.entanglement_time - beginning
+            actual_time = taken_time * 1e-12
+            if actual_time < 0:
+                raise ValueError("negative actual time.")
 
-        #log.logger.warning(f"End-to-end entanglement num {i + 1} completed in {actual_time} seconds.")
-       #log.logger.warning(f"End-to-end entanglement num {i + 1} used {traversed_attempts} initiator attempts.")
-        total_time += actual_time
+            log.logger.warning(f"End-to-end entanglement num {i + 1} completed in {actual_time} seconds.")
+            log.logger.warning(f"End-to-end entanglement num {i + 1} used {traversed_attempts} initiator attempts.")
+            total_time += actual_time
+            for key in meas_results:
+                meas_results[key] += node_init.app.meas_results[key]
+            trial_complete = True
+
 
     readout_fidelity0 = node_init.get_components_by_type(MemoryArray)[0].memories[0].measurement_fidelity
     readout_fidelity1 = node_resp.get_components_by_type(MemoryArray)[0].memories[0].measurement_fidelity
+    node_init.app.meas_results = meas_results
     x_trials = sum(node_init.app.meas_results[f"X_{i}{i}"] for i in range(1, 5))
     y_trials = sum(node_init.app.meas_results[f"Y_{i}{i}"] for i in range(1, 5))
     z_trials = sum(node_init.app.meas_results[f"Z_{i}{i}"] for i in range(1, 5))
@@ -246,7 +244,7 @@ def main():
         fid_best_estimate = node_init.app.get_fidelity_best_estimate(readout_fidelity0 * readout_fidelity1)
     if x_trials > 0 and y_trials > 0 and z_trials > 0:
         fid_precise = node_init.app.get_precise_fidelity(readout_fidelity0 * readout_fidelity1)
-    attempts = node_init.get_components_by_type(MemoryArray)[0].memories[0].attempts
+    attempts = total_initiator_attempts
 
     #log.logger.warning(f"config:{args.configfile}")
     #log.logger.warning(f"bsm_operating_wavelength:{args.bsm_operating_wavelength}")

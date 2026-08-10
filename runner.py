@@ -19,7 +19,7 @@ UW_YB_ER_COMMAND = [sys.executable, "main_simulations/main_uW_yb_er.py"]
 NUM_TRIALS = 1000 # four-node heterogeneous chain is much heavier than Rb-Rb-Rb
 TWONODE_NUM_TRIALS = 12000
 HET_FOUR_NODE_NUM_TRIALS = 200
-UW_YB_ER_GRID_NUM_TRIALS = 1200
+UW_YB_ER_GRID_NUM_TRIALS = 1002
 
 COOLING_TIMES_PS = [
     100_000_000,

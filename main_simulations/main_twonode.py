@@ -1,5 +1,5 @@
 #NOTE EXAMPLE
-# python main_simulations/main_twonode.py -n1 yb -n2 rb -n 1000 -log tmp/twonode_yb_rb.log
+# python main_simulations/main_twonode.py -n1 yb -n2 er -n 1000 -log tmp/twonode_yb_er.log
 
 import argparse
 import json

@@ -339,11 +339,19 @@ class ResourceManager:
         for rule in self.rule_manager:
             memories_info = rule.is_valid(memo_info)
             if len(memories_info) > 0:
+                if protocol is None and state == MemoryInfo.RAW:
+                    log.logger.warning(
+                        f"{self.owner.name} RAW update for {memory.name} claimed by rule "
+                        f"{rule.action.__name__}: "
+                        f"{[(info.memory.name, info.state, info.remote_node, info.remote_memo) for info in memories_info]}"
+                    )
                 rule.do(memories_info)
                 for info in memories_info:
                     info.to_occupied()
                 return
 
+        if protocol is None and state == MemoryInfo.RAW:
+            log.logger.warning(f"{self.owner.name} RAW update for {memory.name} went idle.")
         self.owner.get_idle_memory(memo_info)  # no new rules apply to this memory, thus "idle"
 
     def get_memory_manager(self) -> MemoryManager:
@@ -447,16 +455,52 @@ class ResourceManager:
 
         elif msg.msg_type is ResourceManagerMsgType.RELEASE_MEMORY:
             target_id = msg.memory
-            for protocol in self.owner.protocols:
-                for memory in protocol.memories:
-                    if memory.name == target_id:
-                        protocol.release()
-                        return
+            for memory_info in self.memory_manager:
+                if memory_info.memory.name == target_id:
+                    self._clear_memory_without_rule_match(memory_info.memory, notify_remote=False)
+                    return
 
     def memory_expire(self, memory: Memory):
         """Method to receive memory expiration events."""
 
-        self.update(None, memory, "RAW")
+        info = self.memory_manager.get_info_by_memory(memory)
+        if info.state == MemoryInfo.ENTANGLED:
+            app = getattr(self.owner, "app", None)
+            if app is not None and hasattr(app, "mark_entanglement_failed"):
+                app.mark_entanglement_failed(memory.name)
+        #log.logger.warning(
+         #   f"{self.owner.name} memory_expire before {memory.name}: "
+         #   f"info=({info.state}, {info.remote_node}, {info.remote_memo}), "
+          #  f"memory=({memory.entangled_memory['node_id']}, {memory.entangled_memory['memo_id']})"
+      #  )
+        self._clear_memory_without_rule_match(memory, notify_remote=True)
+        info = self.memory_manager.get_info_by_memory(memory)
+        #log.logger.warning(
+        #    f"{self.owner.name} memory_expire after {memory.name}: "
+        #    f"info=({info.state}, {info.remote_node}, {info.remote_memo}), "
+        #    f"memory=({memory.entangled_memory['node_id']}, {memory.entangled_memory['memo_id']})"
+       # )
+
+    def _clear_memory_without_rule_match(self, memory: Memory, notify_remote: bool = True) -> None:
+        """Clear a dead memory"""
+
+        info = self.memory_manager.get_info_by_memory(memory)
+        remote_node = info.remote_node
+        remote_memo = info.remote_memo
+        if notify_remote and remote_node is not None and remote_memo is not None:
+            self.release_remote_memory(remote_node, remote_memo)
+        for protocol_list in (self.owner.protocols, self.waiting_protocols, self.pending_protocols):   # remove stale protocols using this memory so swapping cannot pair old state
+            for protocol in list(protocol_list):
+                if memory in getattr(protocol, "memories", []):
+                    protocol_list.remove(protocol)
+                    for protocol_memory in protocol.memories:
+                        protocol_memory.detach(protocol)
+                        protocol_memory.attach(protocol_memory.memory_array)
+                    if protocol.rule and protocol in protocol.rule.protocols:
+                        protocol.rule.protocols.remove(protocol)
+        self.memory_manager.update(memory, MemoryInfo.RAW)
+        info.to_raw()
+        self.owner.get_idle_memory(info)
 
     def release_remote_protocol(self, dst: str, protocol: str) -> None:
         """Method to release protocols from memories on distant nodes.

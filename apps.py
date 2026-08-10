@@ -26,6 +26,7 @@ class HetRequestApp(RequestApp):
             "Z_11": 0, "Z_22": 0, "Z_33": 0, "Z_44": 0,
         }
         self.entanglement_time = None
+        self.entanglement_failed_time = None
         self.attempts = 0
         self.last_trap_time = 0
         self.time_in_trap = 0
@@ -33,7 +34,17 @@ class HetRequestApp(RequestApp):
 
     def start(self, responder: str, start_t: int, end_t: int, memo_size: int, fidelity: float, basis: str):
         self.basis = basis
+        self.entanglement_time = None
+        self.entanglement_failed_time = None
         super().start(responder, start_t, end_t, memo_size, fidelity)
+
+    def mark_entanglement_failed(self, memory_name=None):
+        if self.entanglement_time is not None:
+            return
+        if self.entanglement_failed_time is None:
+            self.entanglement_failed_time = self.node.timeline.now()
+            #log.logger.warning(f"{self.node.name} entanglement attempt failed after {memory_name} was lost.")
+            self.node.timeline.stop() #stop current run
 
     def get_memory(self, info: MemoryInfo) -> None:
         """Method to receive entangled memories.
