@@ -21,29 +21,14 @@ TWONODE_NUM_TRIALS = 12000
 HET_FOUR_NODE_NUM_TRIALS = 200
 UW_YB_ER_GRID_NUM_TRIALS = 1002
 
-COOLING_TIMES_PS = [
-    100_000_000,
-    500_000_000,
-    1_000_000_000,
-    2_000_000_000,
-    3_000_000_000,
-    4_000_000_000,
-    5_000_000_000,
-]
+COOLING_TIMES_PS = [100_000_000, 500_000_000, 1_000_000_000, 2_000_000_000, 3_000_000_000, 4_000_000_000, 5_000_000_000,]
 PHOTON_COLLECTION_EFFICIENCIES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
 DETECTOR_EFFICIENCIES = [0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95]
 
-TRANSMON_COHERENCE_TIMES_PS = [
-    500_000_000,       # 0.5 ms
-    1_000_000_000,     # 1 ms
-    2_000_000_000,     # 2 ms
-    4_000_000_000,     # 4 ms
-    6_000_000_000,     # 6 ms
-    8_000_000_000,     # 8 ms
-    10_000_000_000,    # 10 ms
-]
+TRANSMON_COHERENCE_TIMES_PS = [500_000_000, 1_000_000_000, 2_000_000_000, 4_000_000_000, 6_000_000_000, 8_000_000_000, 10_000_000_000,]
 
 UW_YB_ER_GRID_OUTPUT_ROOT = Path("tmp_uW_Yb_Er_grid")
+UW_YB_ER_GRID_OPTIMISTIC_OUTPUT_ROOT = Path("tmp_mw_yb_er_grid_optimistic")
 UW_YB_ER_GRID_TRANSMON_COHERENCE_MS = [0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 UW_YB_ER_GRID_ER_COHERENCE_MS = [0.2, 0.5, 1, 2, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
@@ -248,19 +233,7 @@ def build_het_four_node_optimistic_tasks(data_dir: str) -> list[list[str]]:
         coherence_ms = coherence_time * 1e-9
         args = ["-n", str(HET_FOUR_NODE_NUM_TRIALS)]
         args = set_transmon_coherence(args, coherence_time)
-        args += [
-            "-pce", "1.0",
-            "-dtctor_eff", "1.0",
-            "-dtctor_dc", "0.0",
-            "-qfc_eff", "1.0",
-            "-qfc_noise", "0.0",
-            "-uw_efficiency", "1.0",
-            "-uw_noise", "0.0",
-            "-eta1", "1.0",
-            "-eta2", "1.0",
-            "-converter_noise", "0.0",
-            "-image_loss", "0.0",
-        ]
+        args += ["-pce", "1.0", "-dtctor_eff", "1.0", "-dtctor_dc", "0.0", "-qfc_eff", "1.0", "-qfc_noise", "0.0", "-uw_efficiency", "1.0", "-uw_noise", "0.0", "-eta1", "1.0", "-eta2", "1.0", "-converter_noise", "0.0", "-image_loss", "0.0",]
         args = set_log_file(
             args,
             f"{data_dir}/uw_coherence/coherence_ms={coherence_ms:g}.log",
@@ -299,6 +272,29 @@ def build_uW_yb_er_coherence_grid_tasks() -> list[list[str]]:
 
 def main_uW_yb_er_coherence_grid():
     tasks = build_uW_yb_er_coherence_grid_tasks()
+    run_tasks(tasks, parallel=PARALLEL)
+
+
+def build_uW_yb_er_optimistic_coherence_grid_tasks() -> list[list[str]]:
+    tasks = []
+    for uw_coherence_ms in UW_YB_ER_GRID_TRANSMON_COHERENCE_MS:
+        for er_coherence_ms in UW_YB_ER_GRID_ER_COHERENCE_MS:
+            args = ["-n", str(UW_YB_ER_GRID_NUM_TRIALS),  "-uw_coherence", str(er_ms_to_ps(uw_coherence_ms)),  "-er_coh", str(er_ms_to_ps(er_coherence_ms)), "-yb_pce", "1.0", "-er_pce", "1.0", "-qfc_eff", "1.0", "-qfc_noise", "0.0", "-dtctor_eff", "1.0", "-uw_efficiency", "1.0", "-uw_noise", "0.0",]
+            # Detector dark counts are default for now
+            args = set_log_file(
+                args,
+                str(
+                    UW_YB_ER_GRID_OPTIMISTIC_OUTPUT_ROOT
+                    / "coherence_grid"
+                    / f"uw_ms={uw_coherence_ms:g}_er_ms={er_coherence_ms:g}.log"
+                ),
+            )
+            tasks.append(UW_YB_ER_COMMAND + args)
+    return tasks
+
+
+def main_uW_yb_er_optimistic_coherence_grid():
+    tasks = build_uW_yb_er_optimistic_coherence_grid_tasks()
     run_tasks(tasks, parallel=PARALLEL)
 
 
@@ -475,4 +471,5 @@ if __name__ == "__main__":
     # main_er_er_dark_count_zero_sweeps()
     # main_er_er_distance_5000_run2_sweep()
     #main_twonode_all_pairs()
-    main_uW_yb_er_coherence_grid()
+    # main_uW_yb_er_coherence_grid()
+    main_uW_yb_er_optimistic_coherence_grid()

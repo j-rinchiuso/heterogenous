@@ -1,0 +1,127 @@
+"""Plot uW-Yb-Er coherence-grid fidelity as a heatmap."""
+
+from __future__ import annotations
+
+import argparse
+import re
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+UW_MS = [0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ER_MS = [0.2, 0.5, 1, 2, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+PRECISE_FIDELITY_PATTERN = re.compile(
+    r"calculated precise fidelity\s*=\s*([-+0-9.eE]+)"
+)
+
+LOG_NAME_RE = re.compile(r"[uU][wW]_ms=([0-9.]+)_er_ms=([0-9.]+)\.log$")
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Plot uW-Yb-Er coherence grid fidelity.")
+    parser.add_argument("--data-dir", type=Path, default=None, help="Directory containing uw_ms=..._er_ms=....log files.",)
+    parser.add_argument( "--output", type=Path, default=Path("tmp/uw_yb_er_fidelity_heatmap.png"), help="Output image path.",)
+    parser.add_argument( "--annotate", action="store_true", help="Write the fidelity value inside each heatmap cell.",)
+    return parser.parse_args()
+
+
+def discover_data_dir() -> Path:
+    candidates = [Path("tmp_uW_Yb_Er_grid"),]
+    for candidate in candidates:
+        if any(candidate.glob("*_ms=*_er_ms=*.log")):
+            return candidate
+
+    for candidate in Path(".").glob("**/coherence_grid"):
+        if any(candidate.glob("*_ms=*_er_ms=*.log")):
+            return candidate
+
+    raise FileNotFoundError(
+        "Could not find")
+
+
+def read_fidelity(log_file: Path) -> float:
+    value = None
+    for line in log_file.read_text(errors="ignore").splitlines():
+        match = PRECISE_FIDELITY_PATTERN.search(line)
+        if match:
+            value = float(match.group(1))
+    if value is None:
+        raise ValueError(f"Could not find precise fidelity in {log_file}")
+    return value
+
+
+def load_grid(data_dir: Path) -> np.ndarray:
+    grid = np.full((len(UW_MS), len(ER_MS)), np.nan)
+    uw_index = {value: index for index, value in enumerate(UW_MS)}
+    er_index = {value: index for index, value in enumerate(ER_MS)}
+
+    for log_file in data_dir.glob("*.log"):
+        match = LOG_NAME_RE.match(log_file.name)
+        if not match:
+            continue
+
+        uw_ms = float(match.group(1))
+        er_ms = float(match.group(2))
+        if uw_ms not in uw_index or er_ms not in er_index:
+            continue
+
+        grid[uw_index[uw_ms], er_index[er_ms]] = read_fidelity(log_file)
+
+    return grid
+
+
+def plot_heatmap(grid: np.ndarray, output: Path, annotate: bool) -> None:
+    fig, ax = plt.subplots(figsize=(13, 7))
+    masked_grid = np.ma.masked_invalid(grid)
+
+    cmap = plt.get_cmap("RdYlGn").copy()
+    cmap.set_bad(color="#eeeeee")
+    image = ax.imshow(masked_grid, cmap=cmap, vmin=0, vmax=1.0, aspect="auto", origin="lower")
+
+    ax.set_xticks(np.arange(len(ER_MS)))
+    ax.set_xticklabels([str(value) for value in ER_MS])
+    ax.set_yticks(np.arange(len(UW_MS)))
+    ax.set_yticklabels([str(value) for value in UW_MS])
+
+    ax.set_xlabel("Erbium Coherence Time (ms)")
+    ax.set_ylabel("Microwave Coherence Time (ms)")
+    ax.set_title("uW-Yb-Er Fidelity")
+
+    ax.set_xticks(np.arange(-0.5, len(ER_MS), 1), minor=True)
+    ax.set_yticks(np.arange(-0.5, len(UW_MS), 1), minor=True)
+    ax.grid(which="minor", color="white", linestyle="-", linewidth=1.2)
+    ax.tick_params(which="minor", bottom=False, left=False)
+
+    if annotate:
+        for row in range(grid.shape[0]):
+            for col in range(grid.shape[1]):
+                if not np.isnan(grid[row, col]):
+                    ax.text(col, row, f"{grid[row, col]:.2f}", ha="center", va="center", fontsize=8,)
+
+    cbar = fig.colorbar(image, ax=ax)
+    cbar.set_label("Fidelity")
+
+    fig.tight_layout()
+    output.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(output, dpi=300)
+    plt.close(fig)
+
+
+def main() -> None:
+    args = parse_args()
+    data_dir = args.data_dir or discover_data_dir()
+
+    grid = load_grid(data_dir)
+    missing = np.argwhere(np.isnan(grid))
+    if len(missing) > 0:
+        print(f"Warning: {len(missing)} grid cells are missing data.")
+
+    plot_heatmap(grid, args.output, args.annotate)
+    print(f"Saved {args.output}")
+
+
+if __name__ == "__main__":
+    main()
