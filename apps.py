@@ -2,6 +2,7 @@ from sequence.app.request_app import RequestApp
 from sequence.resource_management.memory_manager import MemoryInfo
 from sequence.components.memory import Memory, MemoryArray
 from sequence.utils import log
+from sequence.network_management.reservation import Reservation
 from math import sqrt
 from sequence.kernel.process import Process
 from sequence.kernel.event import Event
@@ -30,6 +31,7 @@ class HetRequestApp(RequestApp):
         self.attempts = 0
         self.last_trap_time = 0
         self.time_in_trap = 0
+        self.reservation_to_scheduled_event = {}  # reservation -> event for removing memo reservation map at the end time of the reservation
         super().__init__(node)
 
     def start(self, responder: str, start_t: int, end_t: int, memo_size: int, fidelity: float, basis: str):
@@ -38,13 +40,6 @@ class HetRequestApp(RequestApp):
         self.entanglement_failed_time = None
         super().start(responder, start_t, end_t, memo_size, fidelity)
 
-    def mark_entanglement_failed(self, memory_name=None):
-        if self.entanglement_time is not None:
-            return
-        if self.entanglement_failed_time is None:
-            self.entanglement_failed_time = self.node.timeline.now()
-            #log.logger.warning(f"{self.node.name} entanglement attempt failed after {memory_name} was lost.")
-            self.node.timeline.stop() #stop current run
 
     def get_memory(self, info: MemoryInfo) -> None:
         """Method to receive entangled memories.
@@ -112,12 +107,15 @@ class HetRequestApp(RequestApp):
                     log.logger.warning('Er ion decohered during generation/storage/readout.')
 
             reservation = self.memo_to_reservation[info.index]
-            if info.remote_node == reservation.initiator and info.fidelity >= reservation.fidelity:
-                pass
+            if info.remote_node == reservation.initiator and info.fidelity >= reservation.fidelity:   # the responder
+                self.node.resource_manager.expire_rules_by_reservation(reservation)
+                self.node.network_manager.remove_reservation_from_timecards(reservation)
+                self.remove_memo_reservation_map(info.index)
+                self.reservation_to_scheduled_event[reservation].set_invalid()
                 # process = Process(self.node.resource_manager, 'update', [None, info.memory, "RAW"])
                 # event = Event(time_to_measurement_results, process)
                 # self.node.timeline.schedule(event)
-            elif info.remote_node == reservation.responder and info.fidelity >= reservation.fidelity:
+            elif info.remote_node == reservation.responder and info.fidelity >= reservation.fidelity: # the initiator
                 self.memory_counter += 1
                 log.logger.info(f"Successfully generated entanglement. Counter is at {self.memory_counter}.")
                 remote_memory_key = other_memory.qstate_key
@@ -125,6 +123,13 @@ class HetRequestApp(RequestApp):
                 process = Process(self, 'measure_and_save', [info.memory, remote_memory_key])
                 event = Event(time_to_measurement_results, process)
                 self.node.timeline.schedule(event)
+
+                self.node.resource_manager.expire_rules_by_reservation(reservation)
+                self.node.network_manager.remove_reservation_from_timecards(reservation)
+                self.remove_memo_reservation_map(info.index)
+                self.reservation_to_scheduled_event[reservation].set_invalid()
+                self.send_expire_rules_message(reservation)
+
 
     def measure_and_save(self, memory, remote_memory_key):
 
@@ -247,3 +252,37 @@ class HetRequestApp(RequestApp):
         log.logger.warning(f'fidelity debug result: raw={raw_fidelity}, readout_factor={meas_fid}, final={f}')
         return f
         
+
+    def schedule_reservation(self, reservation: Reservation) -> None:
+        """Calling the `add_memo_reservation_map` and `remove_memo_reservation_map` methods at the 
+        reservation's start_time and end_time for all timecards (memory) involved in the reservation. 
+        
+        Called by the initiator and the responder when reservation is approved.
+
+        Args:
+            reservation (Reservation): reservation to schedule
+        """
+        if reservation.initiator == self.node.name:
+            self.path = reservation.path
+
+        for card in self.node.network_manager.get_timecards():
+            if reservation in card.reservations:
+                process = Process(self, "add_memo_reservation_map", [card.memory_index, reservation])
+                event = Event(reservation.start_time, process)
+                self.node.timeline.schedule(event)
+                process = Process(self, "remove_memo_reservation_map", [card.memory_index])
+                event = Event(reservation.end_time, process)
+                self.node.timeline.schedule(event)
+                self.reservation_to_scheduled_event[reservation] = event
+
+    def send_expire_rules_message(self, reservation: Reservation):
+        '''send the expire rule message to nodes other than the initiator and responder
+
+        Args:
+            reservation: the rules to expires is generated for this reservation
+        '''
+        path = reservation.path
+        if len(path) > 2:
+            for i in range(1, len(path) - 1):
+                node = path[i]
+                self.node.resource_manager.expire_remote_rules(node, reservation)

@@ -115,6 +115,7 @@ class HetEGA(EntanglementGenerationA):
                     event = Event(time, process)
                     self.owner.timeline.schedule(event)
                     self.scheduled_events.append(event)
+                    
                 
             bin_width = self.memory.bin_width
             bin_separation = self.memory.bin_separation

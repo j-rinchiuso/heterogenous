@@ -46,7 +46,7 @@ class ResourceManagerMsgType(Enum):
     RESPONSE = auto()
     RELEASE_PROTOCOL = auto()
     RELEASE_MEMORY = auto()
-
+    EARLY_EXPIRE = auto()
 
 class ResourceManagerMessage(Message):
     """Message for resource manager communication.
@@ -88,6 +88,8 @@ class ResourceManagerMessage(Message):
                 self.protocol = kwargs["protocol"]
             case ResourceManagerMsgType.RELEASE_MEMORY:
                 self.memory = kwargs["memory_id"]
+            case ResourceManagerMsgType.EARLY_EXPIRE:
+                self.reservation = kwargs["reservation"]
             case _:
                 raise Exception(f"ResourceManagerMessage gets unknown type of message: {str(self.msg_type)}")
 
@@ -103,6 +105,8 @@ class ResourceManagerMessage(Message):
                 base += f', release_protocol={self.protocol}'
             case ResourceManagerMsgType.RELEASE_MEMORY:
                 base += f', release_memory={self.memory}'
+            case ResourceManagerMsgType.EARLY_EXPIRE:
+                base += f', reservation={self.reservation}'
             case _:
                 raise Exception(f'ResourceManagerMessage got an unknown type of message: {str(self.msg_type)}')
         return base
@@ -455,52 +459,29 @@ class ResourceManager:
 
         elif msg.msg_type is ResourceManagerMsgType.RELEASE_MEMORY:
             target_id = msg.memory
-            for memory_info in self.memory_manager:
-                if memory_info.memory.name == target_id:
-                    self._clear_memory_without_rule_match(memory_info.memory, notify_remote=False)
-                    return
+            for protocol in self.owner.protocols:
+                for memory in protocol.memories:
+                    if memory.name == target_id:
+                        protocol.release()
+                        return
+            else:
+                memory = self.memory_manager.get_memory_by_name(target_id)
+                if memory is not None:
+                    self.memory_expire(memory)
+        
+
+
+        elif ResourceManagerMsgType.EARLY_EXPIRE:
+            self.expire_rules_by_reservation(msg.reservation)
+            self.owner.network_manager.remove_reservation_from_timecards(msg.reservation)
+
 
     def memory_expire(self, memory: Memory):
         """Method to receive memory expiration events."""
 
-        info = self.memory_manager.get_info_by_memory(memory)
-        if info.state == MemoryInfo.ENTANGLED:
-            app = getattr(self.owner, "app", None)
-            if app is not None and hasattr(app, "mark_entanglement_failed"):
-                app.mark_entanglement_failed(memory.name)
-        #log.logger.warning(
-         #   f"{self.owner.name} memory_expire before {memory.name}: "
-         #   f"info=({info.state}, {info.remote_node}, {info.remote_memo}), "
-          #  f"memory=({memory.entangled_memory['node_id']}, {memory.entangled_memory['memo_id']})"
-      #  )
-        self._clear_memory_without_rule_match(memory, notify_remote=True)
-        info = self.memory_manager.get_info_by_memory(memory)
-        #log.logger.warning(
-        #    f"{self.owner.name} memory_expire after {memory.name}: "
-        #    f"info=({info.state}, {info.remote_node}, {info.remote_memo}), "
-        #    f"memory=({memory.entangled_memory['node_id']}, {memory.entangled_memory['memo_id']})"
-       # )
+        self.update(None, memory, MemoryInfo.RAW)
 
-    def _clear_memory_without_rule_match(self, memory: Memory, notify_remote: bool = True) -> None:
-        """Clear a dead memory"""
 
-        info = self.memory_manager.get_info_by_memory(memory)
-        remote_node = info.remote_node
-        remote_memo = info.remote_memo
-        if notify_remote and remote_node is not None and remote_memo is not None:
-            self.release_remote_memory(remote_node, remote_memo)
-        for protocol_list in (self.owner.protocols, self.waiting_protocols, self.pending_protocols):   # remove stale protocols using this memory so swapping cannot pair old state
-            for protocol in list(protocol_list):
-                if memory in getattr(protocol, "memories", []):
-                    protocol_list.remove(protocol)
-                    for protocol_memory in protocol.memories:
-                        protocol_memory.detach(protocol)
-                        protocol_memory.attach(protocol_memory.memory_array)
-                    if protocol.rule and protocol in protocol.rule.protocols:
-                        protocol.rule.protocols.remove(protocol)
-        self.memory_manager.update(memory, MemoryInfo.RAW)
-        info.to_raw()
-        self.owner.get_idle_memory(info)
 
     def release_remote_protocol(self, dst: str, protocol: str) -> None:
         """Method to release protocols from memories on distant nodes.
@@ -550,3 +531,22 @@ class ResourceManager:
         
         for rule in rule_to_expire:
             self.expire(rule)
+
+    def expire_remote_rules(self, dst: str, reservation: Reservation) -> None:
+        """Expire rules (associated with the reservation) on distant nodes.
+
+        This is used when the request is finished before end_time. 
+        The rules associated with the request's reservation should be expired when the request is finished.
+        Otherwise the quantum network keeps generating entanglement till the end_time, which is not desired.
+
+        Typically, the initiator will call this method to expire the rules on the intermediate nodes.
+        Meanwhile, the initiator and responder will directly call self.expire_rules_by_reservation() 
+                   to expire the rules on their own node, since they are aware of the reservation is finished.
+
+        Args:
+            dst (str): name of destination node.
+            reservation (Reservation): the rules created by this reservation will expire
+        """
+        msg = ResourceManagerMessage(ResourceManagerMsgType.EARLY_EXPIRE, reservation=reservation, 
+                                     protocol="", node="", memories=[])
+        self.owner.send_message(dst, msg)

@@ -147,87 +147,84 @@ def main():
 
     for i in range(1585, args.numtrials):
         retry_count = 0
-        trial_complete = False
-        while not trial_complete:
-            # 1: create network topology and configure nodes
-            network_topo = YbRouterNetTopo(args.configfile)
-            configure_bsm_nodes(network_topo, args.detectorefficiency, args.detectordarkcount, 
+        # 1: create network topology and configure nodes
+        network_topo = YbRouterNetTopo(args.configfile)
+        configure_bsm_nodes(network_topo, args.detectorefficiency, args.detectordarkcount, 
                                 args.bsm_operating_wavelength, args.ybphotonwavelength, args.erphotonwavelength, 
                                 args.uw_output_wavelength, args.qfc_efficiency, args.qfc_noise)
             
-            tl = network_topo.get_timeline()
+        tl = network_topo.get_timeline()
 
-            log.set_logger(__name__, tl, args.logfile)
-            log.set_logger_level("WARNING")
-            # modules = ["main_uW_yb_er", "action_condition_set", "swapping", "resource_manager", "generation", "bsm", "detector", "memory", "photon", "custom_node", "time_bin_bsm", "optical_channel", "apps", "qfc"]
-            modules = ["main_uW_yb_erDEBUGGER"]
-            for module in modules:
-                log.track_module(module)
+        log.set_logger(__name__, tl, args.logfile)
+        log.set_logger_level("WARNING")
+        # modules = ["main_uW_yb_er", "action_condition_set", "swapping", "resource_manager", "generation", "bsm", "detector", "memory", "photon", "custom_node", "time_bin_bsm", "optical_channel", "apps", "qfc"]
+        modules = ["main_uW_yb_erDEBUGGER"]
+        for module in modules:
+            log.track_module(module)
             
-            name_to_app = configure_router_nodes(network_topo, args.ybphotoncollectionefficiency, 
-                                                args.erphotoncollectionefficiency, args.ybphotonwavelength, 
-                                                args.er_binwidth, args.er_binseparation, args.er_coherence_time, 
-                                                args.transducer_efficiency, args.transducer_noise, 
-                                                args.transmon_coherence_time, args.uw_output_wavelength)
-            set_seeds(network_topo, i + retry_count * args.numtrials)
-            
-            tl.init()
-            
-            # 2: start running
-            routers = network_topo.get_nodes_by_type(YbRouterNetTopo.QUANTUM_ROUTER)
-            node_init = routers[0]
-            node_resp = routers[2]
+        name_to_app = configure_router_nodes(network_topo, args.ybphotoncollectionefficiency, 
+                                            args.erphotoncollectionefficiency, args.ybphotonwavelength, 
+                                            args.er_binwidth, args.er_binseparation, args.er_coherence_time, 
+                                            args.transducer_efficiency, args.transducer_noise, 
+                                            args.transmon_coherence_time, args.uw_output_wavelength)
+        set_seeds(network_topo, i + retry_count * args.numtrials)
+        
+        tl.init()
+        
+        # 2: start running
+        routers = network_topo.get_nodes_by_type(YbRouterNetTopo.QUANTUM_ROUTER)
+        node_init = routers[0]
+        node_resp = routers[2]
 
-            basis = ["X", "Y", "Z"][i % 3]
-            beginning = tl.now()
-            starting_attempts = node_init.get_components_by_type(MemoryArray)[0].memories[0].attempts
-            for node in routers:
-                node.app.entanglement_time = None
-                node.app.entanglement_failed_time = None
-                node.app.last_trap_time = beginning - node.app.time_in_trap
-            app: HetRequestApp = name_to_app[node_init.name]
-            start_time = beginning + delta
-            end_time = beginning + 25 * SECOND
-            #print(f'{i}:beginning: {beginning}, start_time: {start_time}, end_time: {end_time}')
-            app.start(node_resp.name, start_time, end_time, 1, 0.1, basis)
+        basis = ["X", "Y", "Z"][i % 3]
+        beginning = tl.now()
+        starting_attempts = node_init.get_components_by_type(MemoryArray)[0].memories[0].attempts
+        for node in routers:
+            node.app.entanglement_time = None
+            node.app.entanglement_failed_time = None
+            node.app.last_trap_time = beginning - node.app.time_in_trap
+        app: HetRequestApp = name_to_app[node_init.name]
+        start_time = beginning + delta
+        end_time = beginning + 25 * SECOND
+        #print(f'{i}:beginning: {beginning}, start_time: {start_time}, end_time: {end_time}')
+        app.start(node_resp.name, start_time, end_time, 1, 0.1, basis)
 
-            app.basis = basis
+        app.basis = basis
 
-            log.logger.warning(f"Starting uW-Yb-Er EG attempt {i + 1} at {tl.time}.")
-            tl.run()
+        log.logger.warning(f"Starting uW-Yb-Er EG attempt {i + 1} at {tl.time}.")
+        tl.run()
 
-            finishing_attempts = node_init.get_components_by_type(MemoryArray)[0].memories[0].attempts
-            traversed_attempts = finishing_attempts - starting_attempts
-            total_initiator_attempts += traversed_attempts
+        finishing_attempts = node_init.get_components_by_type(MemoryArray)[0].memories[0].attempts
+        traversed_attempts = finishing_attempts - starting_attempts
+        total_initiator_attempts += traversed_attempts
 
-            failed_times = [node.app.entanglement_failed_time for node in routers
-                if node.app.entanglement_failed_time is not None]
+        failed_times = [node.app.entanglement_failed_time for node in routers
+            if node.app.entanglement_failed_time is not None]
 
-            if node_init.app.entanglement_time is None:
-                if failed_times:
-                    failed_elapsed = (min(failed_times) - beginning) * 1e-12
-                    if failed_elapsed < 0:
-                        raise ValueError("neg failed entanglement time.")
-                    total_time += failed_elapsed
-                    retry_count += 1
-                    log.logger.warning( 
-                        f"End-to-end entanglement attempt {i + 1} failed after "
-                        f"{failed_elapsed} seconds; retrying same attempt."
-                    )
-                    continue
-                raise RuntimeError(f"End-to-end entanglement attempt {i + 1} did not complete.")
+        if node_init.app.entanglement_time is None:
+            if failed_times:
+                failed_elapsed = (min(failed_times) - beginning) * 1e-12
+                if failed_elapsed < 0:
+                    raise ValueError("neg failed entanglement time.")
+                total_time += failed_elapsed
+                retry_count += 1
+                log.logger.warning( 
+                    f"End-to-end entanglement attempt {i + 1} failed after "
+                    f"{failed_elapsed} seconds; retrying same attempt."
+                )
+                continue
+            raise RuntimeError(f"End-to-end entanglement attempt {i + 1} did not complete.")
 
-            taken_time = node_init.app.entanglement_time - beginning
-            actual_time = taken_time * 1e-12
-            if actual_time < 0:
-                raise ValueError("negative actual time.")
+        taken_time = node_init.app.entanglement_time - beginning
+        actual_time = taken_time * 1e-12
+        if actual_time < 0:
+            raise ValueError("negative actual time.")
 
-            log.logger.warning(f"End-to-end entanglement num {i + 1} completed in {actual_time} seconds.")
-            log.logger.warning(f"End-to-end entanglement num {i + 1} used {traversed_attempts} initiator attempts.")
-            total_time += actual_time
-            for key in meas_results:
-                meas_results[key] += node_init.app.meas_results[key]
-            trial_complete = True
+        log.logger.warning(f"End-to-end entanglement num {i + 1} completed in {actual_time} seconds.")
+        log.logger.warning(f"End-to-end entanglement num {i + 1} used {traversed_attempts} initiator attempts.")
+        total_time += actual_time
+        for key in meas_results:
+            meas_results[key] += node_init.app.meas_results[key]
 
 
     readout_fidelity0 = node_init.get_components_by_type(MemoryArray)[0].memories[0].measurement_fidelity

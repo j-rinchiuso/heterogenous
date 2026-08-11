@@ -152,9 +152,7 @@ def main():
     node_init = routers[0]
     node_resp = routers[2]
 
-    i = 0
-    retry_count = 0
-    while i < args.numtrials:
+    for i in range(args.numtrials):
         basis = ["X", "Y", "Z"][i % 3]
         beginning = tl.now()
         starting_attempts = node_init.get_components_by_type(MemoryArray)[0].memories[0].attempts
@@ -171,23 +169,9 @@ def main():
 
         app.basis = basis
         log.logger.warning(f"Starting uW-Yb-Er EG attempt {i + 1} at {tl.time}.")
-        tl.stop_time = end_time
         tl.run()
 
-        failed_times = [node.app.entanglement_failed_time for node in routers
-                        if node.app.entanglement_failed_time is not None]
-
         if node_init.app.entanglement_time is None:
-            if failed_times:
-                failed_elapsed = (min(failed_times) - beginning) * 1e-12
-                if failed_elapsed < 0:
-                    raise ValueError("neg failed entanglement time.")
-                total_time += failed_elapsed
-                retry_count += 1
-                log.logger.warning( 
-                    f"End-to-end entanglement attempt {i + 1} failed after "
-                    f"{failed_elapsed} seconds; retrying same attempt.")
-                continue
             raise RuntimeError(f"End-to-end entanglement attempt {i + 1} did not complete.")
 
         taken_time = node_init.app.entanglement_time - beginning
@@ -201,7 +185,6 @@ def main():
         #log.logger.warning(f"End-to-end entanglement num {i + 1} completed in {actual_time} seconds.")
        # log.logger.warning(f"End-to-end entanglement num {i + 1} used {traversed_attempts} initiator attempts.")
         total_time += actual_time
-        i += 1
 
 
     readout_fidelity0 = node_init.get_components_by_type(MemoryArray)[0].memories[0].measurement_fidelity
@@ -221,7 +204,6 @@ def main():
 
     #log.logger.warning(f"config:{args.configfile}")
     #log.logger.warning(f"bsm_operating_wavelength:{args.bsm_operating_wavelength}")
-    log.logger.warning(f"Retried {retry_count} failed end-to-end attempts due to memory loss before swapping.")
     log.logger.warning(f"After {args.numtrials} successful end-to-end entanglement attempts, calculated fidelity={fid}")
     log.logger.warning(f"After {args.numtrials} successful end-to-end entanglement attempts, calculated best estimate fidelity={fid_best_estimate}")
     log.logger.warning(f"After {args.numtrials} successful end-to-end entanglement attempts, calculated precise fidelity={fid_precise}")
