@@ -164,7 +164,7 @@ def main():
 
         app: HetRequestApp = name_to_app[node_init.name]
         start_time = beginning + delta
-        end_time = beginning + 25 * SECOND
+        end_time = beginning + 100 * SECOND
         app.start(node_resp.name, start_time, end_time, 1, 0.1, basis)
 
         app.basis = basis

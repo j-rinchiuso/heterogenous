@@ -8,11 +8,13 @@ trigger.py
 
 tmp/*
 
+data_in_paper_ext/*
+
 tmpErEr/*
 
 .DS_Store
 
 .vscode/*
 
-*.log
+#*.log
 
