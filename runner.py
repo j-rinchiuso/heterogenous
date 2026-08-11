@@ -8,7 +8,7 @@ from pathlib import Path
 from subprocess import PIPE, Popen
 #NOTE  based off Caitao's runner he forwarded me. 
 
-PARALLEL = 28 #went down to 9 but believe 10 would still be fine
+PARALLEL = 35 #went down to 9 but believe 10 would still be fine
 
 
 # COMMAND = ["python3", "main_rb_rb_rb_EG_sim.py"]
