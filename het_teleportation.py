@@ -31,14 +31,12 @@ class HetTeleportMessage(Message):
         z_flip (int): MEASUREMENT_RESULT only, whether to apply Z correction (1 for yes, 0 for no).
     """
     def __init__(self, msg_type: HetTeleportMsgType, **kwargs):
-        # HetQR routes messages to a named protocol rather than a teleport_app receiver.
-        super().__init__(msg_type, kwargs['receiver'])
+        super().__init__(msg_type, 'teleport_app')
 
         if msg_type is HetTeleportMsgType.MEASUREMENT_RESULT:
             self.reservation = kwargs['reservation']
             self.bob_comm_memory_name = kwargs['bob_comm_memory_name']
             self.bob_data_memory_index = kwargs['bob_data_memory_index']
-            self.alice_protocol_name = kwargs['alice_protocol_name']
             self.x_flip = kwargs['x_flip']
             self.z_flip = kwargs['z_flip']
             self.string = f'type={HetTeleportMsgType.MEASUREMENT_RESULT}, bob_comm_memory={self.bob_comm_memory_name}, x_flip={self.x_flip}, z_flip={self.z_flip}, reservation={self.reservation}'
@@ -88,7 +86,7 @@ class HetTeleportProtocol(Protocol):
     _x_flip_circuit = Circuit(1)
     _x_flip_circuit.x(0)
 
-    # Heterogeneous extension: move the corrected state into Bob's data memory.
+    # Heterogeneous extension move the corrected state into Bob's data memory as discuss with Caitao. Teledata???
     _swap_circuit = Circuit(2)
     _swap_circuit.swap(0,1)
 
@@ -149,21 +147,11 @@ class HetTeleportProtocol(Protocol):
         """
         self.bob_comm_memory = memory
 
-    @staticmethod
-    def protocol_name(owner_name: str, remote_node_name: str, memory_name: str) -> str:
-        """Return the deterministic name required by HetQR message routing."""
-        return f"{owner_name}.HetTeleportProtocol.{remote_node_name}.{memory_name}"
-
-    def set_name_for_comm_memory(self):
-        """Set the routable protocol name once its local comm memory is known."""
-        memory_name = self.alice_comm_memory_name if self.alice else self.bob_comm_memory_name
-        self.name = self.protocol_name(self.owner.name, self.remote_node_name, memory_name)
-
     def alice_bell_measurement(self, reservation: Reservation):
         """ Perform Bell measurement on the entangled memory and send corrections to Bob.
         """
         comm_key = self.alice_comm_memory.qstate_key
-        data_memory = self.owner.app.get_data_memory(self.data_memory_index)
+        data_memory = self.owner.app.get_data_memory(self.data_memory_index) #slightly diff since we pass data memory array inital
         data_key = data_memory.qstate_key
         log.logger.debug(f"{self.name}: alice_bell_measure data_key={data_key}, comm_key={comm_key}")
         # Perform Bell measurement
@@ -172,8 +160,7 @@ class HetTeleportProtocol(Protocol):
         z, x = meas[data_key], meas[comm_key]
         log.logger.info(f"{self.name} bell measurement results: x={x}, z={z}, remote memory={self.bob_comm_memory_name}")
         # send classical corrections to Bob
-        receiver = self.protocol_name(self.remote_node_name, self.owner.name, self.bob_comm_memory_name)
-        msg = HetTeleportMessage(HetTeleportMsgType.MEASUREMENT_RESULT, receiver=receiver, bob_comm_memory_name=self.bob_comm_memory_name, bob_data_memory_index=self.bob_data_memory_index, alice_protocol_name=self.name, x_flip=x, z_flip=z, reservation=reservation)
+        msg = HetTeleportMessage(HetTeleportMsgType.MEASUREMENT_RESULT, bob_comm_memory_name=self.bob_comm_memory_name, bob_data_memory_index=self.bob_data_memory_index, x_flip=x, z_flip=z, reservation=reservation)
         self.owner.send_message(self.remote_node_name, msg)
 
     def received_message(self, src: str, msg: HetTeleportMessage):
@@ -185,8 +172,6 @@ class HetTeleportProtocol(Protocol):
         """
         if msg.msg_type == HetTeleportMsgType.MEASUREMENT_RESULT:
             self.bob_handle_correction(msg)
-        elif msg.msg_type == HetTeleportMsgType.ACK:
-            self.owner.app.alice_protocol_complete(self, msg.reservation)
         else:
             log.logger.warning(f"{self.name}: received unknown message type {msg.type} from {src}")
 
@@ -214,19 +199,18 @@ class HetTeleportProtocol(Protocol):
         data_memory = self.owner.app.get_data_memory(msg.bob_data_memory_index)
         bob_data_memory_key = data_memory.qstate_key
         if bob_comm_memory_key == bob_data_memory_key:
-            raise ValueError("Data and communication memories must be different qubits")
+            raise ValueError("Data and communication memories need to be different qubits")
         rnd = self.owner.get_generator().random()
         self.owner.timeline.quantum_manager.run_circuit(HetTeleportProtocol._swap_circuit, [bob_comm_memory_key, bob_data_memory_key], rnd)
 
         self.owner.app.teleport_complete(bob_data_memory_key)
-        self.owner.app.bob_protocol_complete(self, msg)
 
-    def bob_acknowledge_complete(self, msg: HetTeleportMessage):
+    def bob_acknowledge_complete(self, reservation: Reservation):
         """Acknowledge the completion of the teleportation process.
 
         Args:
-            msg (HetTeleportMessage): Alice's measurement-result message.
+            reservation (Reservation): The reservation object associated with the teleportation.
         """
-        ack = HetTeleportMessage(HetTeleportMsgType.ACK, receiver=msg.alice_protocol_name, bob_comm_memory_name=self.bob_comm_memory_name, reservation=msg.reservation)
-        self.owner.send_message(self.remote_node_name, ack)
+        msg = HetTeleportMessage(HetTeleportMsgType.ACK, bob_comm_memory_name=self.bob_comm_memory_name, reservation=reservation)
+        self.owner.send_message(self.remote_node_name, msg)
         log.logger.debug(f"{self.name}: sent ACK to {self.remote_node_name}")

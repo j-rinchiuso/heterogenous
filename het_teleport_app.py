@@ -10,7 +10,7 @@ from sequence.resource_management.memory_manager import MemoryInfo
 from sequence.kernel.process import Process
 from sequence.kernel.event import Event
 
-from het_teleportation import HetTeleportProtocol, HetTeleportMessage
+from het_teleportation import HetTeleportMsgType, HetTeleportProtocol, HetTeleportMessage
 
 
 class HetTeleportApp(RequestApp):
@@ -28,13 +28,14 @@ class HetTeleportApp(RequestApp):
     def __init__(self, node, data_memory_array=None): #accepts a data memory array bc heterogenous
         super().__init__(node)
         self.name = f"{self.node.name}.HetTeleportApp"
+        node.teleport_app = self   # register ourselves so incoming HetTeleportMessage lands here:
         self.data_memory_array = self._resolve_data_memory_array(data_memory_array)
         self.results = []          # where we’ll collect Bob’s teleported state
         self.teleport_protocols: list[HetTeleportProtocol] = [] # a list of teleport protocol instances
         log.logger.debug(f"{self.name}: initialized")
 
     def start(self, responder: str, start_t: int, end_t: int, memory_size: int, fidelity: float, data_memory_index: int, bob_data_memory_index: int = 0):
-        """Start the teleportation process. #same as org
+        """Start the teleportation process.
 
         NOTE: only teleport one data memory qubit
 
@@ -45,7 +46,7 @@ class HetTeleportApp(RequestApp):
             memory_size (int): Size of the memory used for the teleportation.
             fidelity (float): Target fidelity of the teleportation.
             data_memory_index (int): Index of the data qubit to be teleported.
-            bob_data_memory_index (int): Index of Bob's destination data qubit.
+            bob_data_memory_index (int): Index of Bob's destination data qubit. #for the telegate (3 teleports plus a swap)
         """
         log.logger.debug(f"{self.name}: start() → responder={responder}, data_memory_index={data_memory_index}")
 
@@ -87,9 +88,7 @@ class HetTeleportApp(RequestApp):
                         # this node is Alice
                         teleport_protocol.set_alice_comm_memory_name(info.memory.name)
                         teleport_protocol.set_alice_comm_memory(info.memory)
-                        teleport_protocol.set_bob_comm_memory_name(info.remote_memo) #neccesary bc HetQr recieve_message routes messages to named protocols unlike sequence routes through node.teleport_app
-                        teleport_protocol.set_name_for_comm_memory() # required by HetQR protocol routing
-                        self._register_protocol(teleport_protocol)    # required by HetQR protocol routing
+                        teleport_protocol.set_bob_comm_memory_name(info.remote_memo)
                         reservation = self.memo_to_reservation[info.index]
                         # Let Bob first execute EntanglementGenerationA._entanglement_succeed(), then let Alice do the Bell measurement
                         time_now = self.node.timeline.now()
@@ -104,9 +103,37 @@ class HetTeleportApp(RequestApp):
                     teleport_protocol.set_bob_comm_memory_name(info.memory.name)
                     teleport_protocol.set_bob_comm_memory(info.memory)
                     teleport_protocol.set_alice_comm_memory_name(info.remote_memo)
-                    teleport_protocol.set_name_for_comm_memory() # required by HetQR protocol routing
                     self.teleport_protocols.append(teleport_protocol)
-                    self._register_protocol(teleport_protocol)   # required by HetQR protocol routing
+
+    def received_message(self, src: str, msg: HetTeleportMessage):
+        """Handle incoming teleport messages.
+
+        Args:
+            src (str): Source node name.
+            msg (HetTeleportMessage): The teleport message received.
+        """
+        log.logger.debug(f"{self.name} received_message from {src}: {msg}")
+        if msg.msg_type is HetTeleportMsgType.MEASUREMENT_RESULT:  # Bob receives measurement result from Alice
+            for teleport_protocol in self.teleport_protocols:   # find the correct teleport protocol on Bob's side
+                if src == teleport_protocol.remote_node_name and msg.bob_comm_memory_name == teleport_protocol.bob_comm_memory_name:
+                    teleport_protocol.received_message(src, msg)
+                    self.node.resource_manager.expire_rules_by_reservation(msg.reservation)                    # early release of resources
+                    self.node.resource_manager.update(None, teleport_protocol.bob_comm_memory, MemoryInfo.RAW) # release the bob comm memory
+                    teleport_protocol.bob_acknowledge_complete(msg.reservation)
+                    self.teleport_protocols.remove(teleport_protocol)  # remove the protocol instance, it's lifecycle is complete
+                    break
+            else:
+                log.logger.warning(f"{self.name}: received_message: no matching teleport protocol for msg={msg} from {src}")
+
+        elif msg.msg_type is HetTeleportMsgType.ACK:              # Alice receives acknowledgment from Bob
+            for teleport_protocol in self.teleport_protocols:  # find the correct teleport protocol on Alice's side
+                if src == teleport_protocol.remote_node_name and msg.bob_comm_memory_name == teleport_protocol.bob_comm_memory_name:
+                    self.node.resource_manager.expire_rules_by_reservation(msg.reservation)                      # expire the rules
+                    self.node.resource_manager.update(None, teleport_protocol.alice_comm_memory, MemoryInfo.RAW) # release the alice comm memory
+                    self.teleport_protocols.remove(teleport_protocol)  # remove the protocol instance, it's lifecycle is complete
+                    break
+            else:
+                log.logger.warning(f"{self.name}: received_message: no matching teleport protocol for msg={msg} from {src}")
 
     def teleport_complete(self, data_memory_key: int):
         """Called by HetTeleportProtocol once Bob's qubit is corrected and swapped. data_memory_key holds the teleported |ψ⟩.
@@ -119,19 +146,6 @@ class HetTeleportApp(RequestApp):
         log.logger.info(f"{self.name}: teleport done, state={psi}")
         self.results.append((self.node.timeline.now(), psi)) # append result (timestamp, state) state after both teleport and swap
 
-    def bob_protocol_complete(self, teleport_protocol: HetTeleportProtocol, msg: HetTeleportMessage):
-        """Release Bob's communication memory after correction and SWAP."""
-        self.node.resource_manager.expire_rules_by_reservation(msg.reservation)                    # early release of resources
-        self.node.resource_manager.update(None, teleport_protocol.bob_comm_memory, MemoryInfo.RAW) # release the bob comm memory
-        teleport_protocol.bob_acknowledge_complete(msg)
-        self._remove_protocol(teleport_protocol)  # remove the protocol instance, it's lifecycle is complete
-
-    def alice_protocol_complete(self, teleport_protocol: HetTeleportProtocol, reservation):
-        """Release Alice's communication memory after Bob acknowledges completion."""
-        self.node.resource_manager.expire_rules_by_reservation(reservation)                      # expire the rules
-        self.node.resource_manager.update(None, teleport_protocol.alice_comm_memory, MemoryInfo.RAW) # release the alice comm memory
-        self._remove_protocol(teleport_protocol)  # remove the protocol instance, it's lifecycle is complete
-
     def get_data_memory(self, data_memory_index: int):
         """Return the selected memory from this node's data memory array."""
         try:
@@ -139,26 +153,13 @@ class HetTeleportApp(RequestApp):
         except (IndexError, KeyError, TypeError) as exc:
             raise IndexError(f"Invalid data-memory index {data_memory_index} on {self.node.name}") from exc
 
-    def _register_protocol(self, teleport_protocol: HetTeleportProtocol):
-        """Register a protocol for HetQR's named-protocol message routing."""
-        if not any(protocol.name == teleport_protocol.name for protocol in self.node.protocols):
-            self.node.protocols.append(teleport_protocol)
-
-    def _remove_protocol(self, teleport_protocol: HetTeleportProtocol):
-        """Remove a completed protocol from the app and node."""
-        if teleport_protocol in self.teleport_protocols:
-            self.teleport_protocols.remove(teleport_protocol)
-        if teleport_protocol in self.node.protocols:
-            self.node.protocols.remove(teleport_protocol)
-
     def _resolve_data_memory_array(self, data_memory_array):
-        """Resolve an explicitly supplied array or the node's standard data array."""
+        """Resolve an explicitly supplied array or the node's standard data array. SUppport three formats"""
         if data_memory_array is not None:
             if isinstance(data_memory_array, str):
                 return self.node.get_component_by_name(data_memory_array)
             return data_memory_array
-
         data_memo_arr_name = getattr(self.node, "data_memo_arr_name", None)
         if not data_memo_arr_name:
             raise ValueError("Pass data_memory_array when the node has no data_memo_arr_name")
-        return self.node.get_component_by_name(data_memo_arr_name)
+        return self.node.get_component_by_name(data_memo_arr_name) #dont think this will use. DQC

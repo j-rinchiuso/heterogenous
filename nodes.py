@@ -196,6 +196,7 @@ class HetQR(Node):
         self.init_managers(self.memo_arr_name)
         self.map_to_middle_node = {}
         self.app = None
+        self.teleport_app = None
         self.data_memo_arr_name = None
 
     def receive_message(self, src: str, msg: "Message") -> None:
@@ -211,6 +212,8 @@ class HetQR(Node):
             self.network_manager.received_message(src, msg)
         elif msg.receiver == "resource_manager":
             self.resource_manager.received_message(src, msg)
+        elif msg.receiver == "teleport_app":
+            self.teleport_app.received_message(src, msg)
         else:
             if msg.receiver is None:  # the msg sent by EntanglementGenerationB doesn't have a receiver (EGA & EGB not paired)
                 matching = [p for p in self.protocols if type(p) == msg.protocol_type]

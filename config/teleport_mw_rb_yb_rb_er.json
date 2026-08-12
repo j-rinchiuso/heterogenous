@@ -1,0 +1,149 @@
+{
+    "templates": {
+        "het_time_bin": {
+            "encoding_type": "het_time_bin"
+        },
+        "Rb": {
+            "memo_type": "Rb",
+            "wavelength": "780"
+        },
+        "Yb1389": {
+            "memo_type": "Yb",
+            "wavelength": "1389"
+        }
+    },
+    "nodes": [
+        {
+            "name": "alice",
+            "type": "QuantumRouter",
+            "seed": 0,
+            "memo_size": 10,
+            "template": "Rb"
+        },
+        {
+            "name": "core_yb",
+            "type": "QuantumRouter",
+            "seed": 1,
+            "memo_size": 10,
+            "template": "Yb1389"
+        },
+        {
+            "name": "bob",
+            "type": "QuantumRouter",
+            "seed": 2,
+            "memo_size": 10,
+            "template": "Rb"
+        },
+        {
+            "name": "BSM_alice_core",
+            "type": "BSMNode",
+            "seed": 0,
+            "template": "het_time_bin"
+        },
+        {
+            "name": "BSM_core_bob",
+            "type": "BSMNode",
+            "seed": 1,
+            "template": "het_time_bin"
+        }
+    ],
+    "qchannels": [
+        {
+            "source": "alice",
+            "destination": "BSM_alice_core",
+            "distance": 1000.0,
+            "attenuation": 0.0003
+        },
+        {
+            "source": "core_yb",
+            "destination": "BSM_alice_core",
+            "distance": 1000.0,
+            "attenuation": 0.0003
+        },
+        {
+            "source": "core_yb",
+            "destination": "BSM_core_bob",
+            "distance": 1000.0,
+            "attenuation": 0.0003
+        },
+        {
+            "source": "bob",
+            "destination": "BSM_core_bob",
+            "distance": 1000.0,
+            "attenuation": 0.0003
+        }
+    ],
+    "cchannels": [
+        {
+            "source": "BSM_alice_core",
+            "destination": "alice",
+            "distance": 1000.0
+        },
+        {
+            "source": "alice",
+            "destination": "BSM_alice_core",
+            "distance": 1000.0
+        },
+        {
+            "source": "BSM_alice_core",
+            "destination": "core_yb",
+            "distance": 1000.0
+        },
+        {
+            "source": "core_yb",
+            "destination": "BSM_alice_core",
+            "distance": 1000.0
+        },
+        {
+            "source": "BSM_core_bob",
+            "destination": "core_yb",
+            "distance": 1000.0
+        },
+        {
+            "source": "core_yb",
+            "destination": "BSM_core_bob",
+            "distance": 1000.0
+        },
+        {
+            "source": "BSM_core_bob",
+            "destination": "bob",
+            "distance": 1000.0
+        },
+        {
+            "source": "bob",
+            "destination": "BSM_core_bob",
+            "distance": 1000.0
+        },
+        {
+            "source": "alice",
+            "destination": "core_yb",
+            "distance": 2000.0
+        },
+        {
+            "source": "core_yb",
+            "destination": "alice",
+            "distance": 2000.0
+        },
+        {
+            "source": "core_yb",
+            "destination": "bob",
+            "distance": 2000.0
+        },
+        {
+            "source": "bob",
+            "destination": "core_yb",
+            "distance": 2000.0
+        },
+        {
+            "source": "alice",
+            "destination": "bob",
+            "distance": 4000.0
+        },
+        {
+            "source": "bob",
+            "destination": "alice",
+            "distance": 4000.0
+        }
+    ],
+    "formalism": "ket_vector"
+}
