@@ -15,11 +15,11 @@ PARALLEL = 35 #went down to 9 but believe 10 would still be fine
 
 COMMAND = [sys.executable, "main_simulations/main_het_net_four_node_sim.py"]
 TWONODE_COMMAND = [sys.executable, "main_simulations/main_twonode.py"]
-UW_YB_ER_COMMAND = [sys.executable, "main_simulations/main_uW_yb_er MAIN.py"]
+UW_YB_ER_COMMAND = [sys.executable, "main_simulations/main_uW_yb_er_MAIN.py"]
 NUM_TRIALS = 1000 # four-node heterogeneous chain is much heavier than Rb-Rb-Rb
 TWONODE_NUM_TRIALS = 12000
 HET_FOUR_NODE_NUM_TRIALS = 200
-UW_YB_ER_GRID_NUM_TRIALS = 10002
+UW_YB_ER_GRID_NUM_TRIALS = 3000
 
 COOLING_TIMES_PS = [100_000_000, 500_000_000, 1_000_000_000, 2_000_000_000, 3_000_000_000, 4_000_000_000, 5_000_000_000,]
 PHOTON_COLLECTION_EFFICIENCIES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]

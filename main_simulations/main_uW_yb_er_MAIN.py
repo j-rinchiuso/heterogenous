@@ -132,7 +132,7 @@ def main():
 
     log.set_logger(__name__, tl, args.logfile)
     log.set_logger_level("WARNING")
-    modules = ["main_uW_yb_er_MAIN", "apps"]
+    modules = ["main_uW_yb_er_MAIN"]
     for module in modules:
         log.track_module(module)
     
