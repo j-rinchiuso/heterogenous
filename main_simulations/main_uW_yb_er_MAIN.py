@@ -113,8 +113,7 @@ def main():
     parser.add_argument("-qfc_noise", "--qfc_noise", type=float, default=0.005, help="BSM-side QFC noise probability")
     parser.add_argument("-dtctor_dc", "--detectordarkcount", type=float, default=11.0, help="detector dark count rate in Hz")
     parser.add_argument("-dtctor_eff", "--detectorefficiency", type=float, default=0.85, help="BSM detector efficiency")
-    parser.add_argument("-uw_output_wvln", "--uw_output_wavelength", type=int, default=1550, 
-                        help="uW transducer optical output wavelength before BSM-side QFC")
+    parser.add_argument("-uw_output_wvln", "--uw_output_wavelength", type=int, default=1550, help="uW transducer optical output wavelength before BSM-side QFC")
     parser.add_argument("-uw_noise", "--transducer_noise", type=float, default=0.047, help="transmon transducer noise")
     parser.add_argument("-uw_efficiency", "--transducer_efficiency", type=float, default=0.6, help="transmon transducer efficiency")
     parser.add_argument("-uw_coherence", "--transmon_coherence_time", type=int, default=500_000_000, help="transmon coherence time in ps")
@@ -133,7 +132,7 @@ def main():
 
     log.set_logger(__name__, tl, args.logfile)
     log.set_logger_level("WARNING")
-    modules = ["main_uW_yb_er MAIN"]
+    modules = ["main_uW_yb_er_MAIN", "apps"]
     for module in modules:
         log.track_module(module)
     

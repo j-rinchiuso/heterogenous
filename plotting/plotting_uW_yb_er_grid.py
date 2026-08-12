@@ -79,7 +79,7 @@ def plot_heatmap(grid: np.ndarray, output: Path, annotate: bool) -> None:
 
     cmap = plt.get_cmap("RdYlGn").copy()
     cmap.set_bad(color="#eeeeee")
-    image = ax.imshow(masked_grid, cmap=cmap, vmin=0, vmax=1.0, aspect="auto", origin="lower")
+    image = ax.imshow(masked_grid, cmap=cmap, vmin=0, vmax=0.1, aspect="auto", origin="lower")
 
     ax.set_xticks(np.arange(len(ER_MS)))
     ax.set_xticklabels([str(value) for value in ER_MS])
