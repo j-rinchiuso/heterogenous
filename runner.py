@@ -19,7 +19,7 @@ UW_YB_ER_COMMAND = [sys.executable, "main_simulations/main_uW_yb_er MAIN.py"]
 NUM_TRIALS = 1000 # four-node heterogeneous chain is much heavier than Rb-Rb-Rb
 TWONODE_NUM_TRIALS = 12000
 HET_FOUR_NODE_NUM_TRIALS = 200
-UW_YB_ER_GRID_NUM_TRIALS = 1002
+UW_YB_ER_GRID_NUM_TRIALS = 10002
 
 COOLING_TIMES_PS = [100_000_000, 500_000_000, 1_000_000_000, 2_000_000_000, 3_000_000_000, 4_000_000_000, 5_000_000_000,]
 PHOTON_COLLECTION_EFFICIENCIES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
@@ -471,5 +471,5 @@ if __name__ == "__main__":
     # main_er_er_dark_count_zero_sweeps()
     # main_er_er_distance_5000_run2_sweep()
     #main_twonode_all_pairs()
-    # main_uW_yb_er_coherence_grid()
-    main_uW_yb_er_optimistic_coherence_grid()
+    main_uW_yb_er_coherence_grid()
+    #main_uW_yb_er_optimistic_coherence_grid()
