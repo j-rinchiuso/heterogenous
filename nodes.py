@@ -180,6 +180,8 @@ class HetQR(Node):
         self.router_side_conversion_enabled = self.memo_type == "Rb"
         self.router_side_amzi_name = name + ".RouterAMZI"
         self.router_side_qfc_name = name + ".RouterQFC"
+        self.directional_conversion_enabled = False
+        self.directional_converter_names = {} #for rb in center with different wavelength conversions
         self.conversion_counter = 0
 
         if self.router_side_conversion_enabled:
@@ -261,6 +263,39 @@ class HetQR(Node):
         """
         self.map_to_middle_node[router_name] = bsm_name
 
+    def enable_directional_conversion(self, destinations: dict[str, dict]) -> None:
+        """Create one router-side AMZI/QFC chain for each destination BSM. Used for Rb as repeater with left and right diff"""
+
+        self.directional_conversion_enabled = True
+
+        for dst, params in destinations.items():
+            suffix = dst.replace(".", "_")
+            amzi_name = f"{self.name}.RouterAMZI.{suffix}"
+            qfc_name = f"{self.name}.RouterQFC.{suffix}"
+            amzi = AmziConverter(amzi_name, self.timeline)
+            qfc = QFC(qfc_name, self.timeline)
+
+            amzi.enabled = True
+            amzi.efficiency = params["amzi_efficiency"]
+            amzi.bin_width = params["bin_width"]
+            amzi.bin_separation = params["bin_separation"]
+            amzi.conversion_time = params["bin_separation"]
+            amzi.input_encoding = "polarization"
+            amzi.output_encoding = "rb_time_bin"
+
+            qfc.input_wvln = params["input_wavelength"]
+            qfc.output_wvln = params["output_wavelength"]
+            qfc.efficiency = params["qfc_efficiency"]
+            qfc.noise = params["qfc_noise"]
+
+            amzi.add_receiver(qfc)
+            qfc.add_receiver(self)
+
+            self.add_component(amzi)
+            self.add_component(qfc)
+
+            self.directional_converter_names[dst] = amzi_name
+
     def get(self, photon: "Photon", **kwargs):
         """Receives photon from last hardware element (in this case, quantum memory)."""
         dst = kwargs.get("dst", None)
@@ -275,7 +310,15 @@ class HetQR(Node):
 
         if self.router_side_conversion_enabled:
             photon.router_side_dst = dst
-            self.components[self.router_side_amzi_name].get(photon)
+
+            if self.directional_conversion_enabled:
+                if dst not in self.directional_converter_names:
+                    raise ValueError(f"No directional converter configured on {self.name} for {dst}")
+                amzi_name = self.directional_converter_names[dst]
+            else:
+                amzi_name = self.router_side_amzi_name
+
+            self.components[amzi_name].get(photon)
             return
 
         self.send_qubit(dst, photon)

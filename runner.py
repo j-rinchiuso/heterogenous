@@ -16,10 +16,14 @@ PARALLEL = 35 #went down to 9 but believe 10 would still be fine
 COMMAND = [sys.executable, "main_simulations/main_het_net_four_node_sim.py"]
 TWONODE_COMMAND = [sys.executable, "main_simulations/main_twonode.py"]
 UW_YB_ER_COMMAND = [sys.executable, "main_simulations/main_uW_yb_er_MAIN.py"]
+UW_RB_ER_COMMAND = [sys.executable, "main_simulations/main_uW_rb_er_MAIN.py"]
 NUM_TRIALS = 1000 # four-node heterogeneous chain is much heavier than Rb-Rb-Rb
 TWONODE_NUM_TRIALS = 12000
 HET_FOUR_NODE_NUM_TRIALS = 200
 UW_YB_ER_GRID_NUM_TRIALS = 3000
+UW_RB_ER_GRID_NUM_TRIALS = 3000
+UW_RB_ER_OPTIMISTIC_GRID_NUM_TRIALS = 1002
+UW_RB_ER_EFFICIENCY_GRID_NUM_TRIALS = 1002
 
 COOLING_TIMES_PS = [100_000_000, 500_000_000, 1_000_000_000, 2_000_000_000, 3_000_000_000, 4_000_000_000, 5_000_000_000,]
 PHOTON_COLLECTION_EFFICIENCIES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
@@ -30,6 +34,9 @@ TRANSMON_COHERENCE_TIMES_PS = [500_000_000, 1_000_000_000, 2_000_000_000, 4_000_
 UW_YB_ER_GRID_OUTPUT_ROOT = Path("tmp_uW_Yb_Er_grid")
 UW_YB_ER_GRID_OPTIMISTIC_OUTPUT_ROOT = Path("tmp_mw_yb_er_grid_optimistic")
 UW_YB_ER_EFFICIENCY_GRID_OUTPUT_ROOT = Path("tmp_mw_yb_er_efficiency_grid")
+UW_RB_ER_GRID_OUTPUT_ROOT = Path("tmp_mw_rb_er_grid")
+UW_RB_ER_GRID_OPTIMISTIC_OUTPUT_ROOT = Path("tmp_mw_rb_er_grid_optimistic")
+UW_RB_ER_EFFICIENCY_GRID_OUTPUT_ROOT = Path("tmp_mw_rb_er_efficiency_grid")
 UW_YB_ER_GRID_TRANSMON_COHERENCE_MS = [0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 UW_YB_ER_GRID_ER_COHERENCE_MS = [0.2, 0.5, 1, 2, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 UW_YB_ER_GRID_EFFICIENCIES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
@@ -327,6 +334,80 @@ def main_uW_yb_er_efficiency_grid():
     run_tasks(tasks, parallel=PARALLEL)
 
 
+def build_uW_rb_er_coherence_grid_tasks() -> list[list[str]]:
+    tasks = []
+    for uw_coherence_ms in UW_YB_ER_GRID_TRANSMON_COHERENCE_MS:
+        for er_coherence_ms in UW_YB_ER_GRID_ER_COHERENCE_MS:
+            args = ["-n", str(UW_RB_ER_GRID_NUM_TRIALS)]
+            args += ["-uw_coherence", str(er_ms_to_ps(uw_coherence_ms))]
+            args += ["-er_coh", str(er_ms_to_ps(er_coherence_ms))]
+            args = set_log_file(
+                args,
+                str(
+                    UW_RB_ER_GRID_OUTPUT_ROOT
+                    / "coherence_grid"
+                    / f"uw_ms={uw_coherence_ms:g}_er_ms={er_coherence_ms:g}.log"
+                ),
+            )
+            tasks.append(UW_RB_ER_COMMAND + args)
+    return tasks
+
+
+def main_uW_rb_er_coherence_grid():
+    tasks = build_uW_rb_er_coherence_grid_tasks()
+    run_tasks(tasks, parallel=PARALLEL)
+
+
+def build_uW_rb_er_optimistic_coherence_grid_tasks() -> list[list[str]]:
+    tasks = []
+    for uw_coherence_ms in UW_YB_ER_GRID_TRANSMON_COHERENCE_MS:
+        for er_coherence_ms in UW_YB_ER_GRID_ER_COHERENCE_MS:
+            args = ["-n", str(UW_RB_ER_OPTIMISTIC_GRID_NUM_TRIALS), "-uw_coherence", str(er_ms_to_ps(uw_coherence_ms)), "-er_coh", str(er_ms_to_ps(er_coherence_ms)), "-rb_pce", "1.0", "-er_pce", "1.0", "-eta1", "1.0", "-eta2", "1.0", "-converter_noise", "0.0", "-dtctor_eff", "1.0", "-uw_efficiency", "1.0", "-uw_noise", "0.0",]
+            # Detector dark counts are default for now
+            args = set_log_file(
+                args,
+                str(
+                    UW_RB_ER_GRID_OPTIMISTIC_OUTPUT_ROOT
+                    / "coherence_grid"
+                    / f"uw_ms={uw_coherence_ms:g}_er_ms={er_coherence_ms:g}.log"
+                ),
+            )
+            tasks.append(UW_RB_ER_COMMAND + args)
+    return tasks
+
+
+def main_uW_rb_er_optimistic_coherence_grid():
+    tasks = build_uW_rb_er_optimistic_coherence_grid_tasks()
+    run_tasks(tasks, parallel=PARALLEL)
+
+
+def build_uW_rb_er_efficiency_grid_tasks() -> list[list[str]]:
+    tasks = []
+    for uw_efficiency in UW_YB_ER_GRID_EFFICIENCIES:
+        for er_pce in UW_YB_ER_GRID_EFFICIENCIES:
+            args = [
+                "-n", str(UW_RB_ER_EFFICIENCY_GRID_NUM_TRIALS),
+                "-uw_efficiency", str(uw_efficiency),
+                "-er_pce", str(er_pce),
+            ]
+            # Coherence-time arguments are omitted to use the simulation defaults.
+            args = set_log_file(
+                args,
+                str(
+                    UW_RB_ER_EFFICIENCY_GRID_OUTPUT_ROOT
+                    / "efficiency_grid"
+                    / f"uw_eff={uw_efficiency:g}_er_pce={er_pce:g}.log"
+                ),
+            )
+            tasks.append(UW_RB_ER_COMMAND + args)
+    return tasks
+
+
+def main_uW_rb_er_efficiency_grid():
+    tasks = build_uW_rb_er_efficiency_grid_tasks()
+    run_tasks(tasks, parallel=PARALLEL)
+
+
 def make_er_distance_config(distance: int, output_root: Path = ER_OUTPUT_ROOT) -> Path:
     config_dir = output_root / "configs"
     config_dir.mkdir(parents=True, exist_ok=True)
@@ -502,4 +583,7 @@ if __name__ == "__main__":
     #main_twonode_all_pairs()
     #main_uW_yb_er_coherence_grid()
     #main_uW_yb_er_optimistic_coherence_grid()
-    main_uW_yb_er_efficiency_grid()
+    #main_uW_yb_er_efficiency_grid()
+    main_uW_rb_er_coherence_grid()
+    main_uW_rb_er_optimistic_coherence_grid()
+    main_uW_rb_er_efficiency_grid()

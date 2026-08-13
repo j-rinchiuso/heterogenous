@@ -29,6 +29,8 @@ class HetTeleportApp(RequestApp):
         super().__init__(node)
         self.name = f"{self.node.name}.HetTeleportApp"
         node.teleport_app = self   # register ourselves so incoming HetTeleportMessage lands here:
+        self.last_trap_time = 0# Required by repo heterogeneous EG
+        self.time_in_trap = 0# Required by repo heterogeneous EG
         self.data_memory_array = self._resolve_data_memory_array(data_memory_array)
         self.results = []          # where we’ll collect Bob’s teleported state
         self.teleport_protocols: list[HetTeleportProtocol] = [] # a list of teleport protocol instances
@@ -117,7 +119,13 @@ class HetTeleportApp(RequestApp):
             for teleport_protocol in self.teleport_protocols:   # find the correct teleport protocol on Bob's side
                 if src == teleport_protocol.remote_node_name and msg.bob_comm_memory_name == teleport_protocol.bob_comm_memory_name:
                     teleport_protocol.received_message(src, msg)
+                    # remove detector dark counts so we can finish simulation as we have succesfully teleported
+                    for event in self.node.timeline.events:
+                        if event.process.activation in ['add_dark_count', 'record_detection', 'lose_atom']:
+                            self.node.timeline.remove_event(event)
                     self.node.resource_manager.expire_rules_by_reservation(msg.reservation)                    # early release of resources
+                    for node_name in msg.reservation.path[1:-1]:
+                        self.node.resource_manager.expire_remote_rules(node_name, msg.reservation) #explire intermediate
                     self.node.resource_manager.update(None, teleport_protocol.bob_comm_memory, MemoryInfo.RAW) # release the bob comm memory
                     teleport_protocol.bob_acknowledge_complete(msg.reservation)
                     self.teleport_protocols.remove(teleport_protocol)  # remove the protocol instance, it's lifecycle is complete

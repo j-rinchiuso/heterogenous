@@ -277,6 +277,13 @@ def es_rule_condition_A(memory_info: MemoryInfo, memory_manager: MemoryManager, 
             return []
         #THIS THE ERROR HERE THIS THE ONE CALLED
         for memory_info_2 in memory_manager:
+            log.logger.warning(
+                f"ESA candidate: name={memory_info_2.memory.name}, "
+                f"state={memory_info_2.state}, index={memory_info_2.index}, "
+                f"remote={memory_info_2.remote_node}, fidelity={memory_info_2.fidelity}; "
+                f"expected_indices={memory_indices}, expected_left={remote_left_node}, "
+                f"required_fidelity={fidelity}"
+            )
             # the second memory is the "left hand side" memory during swapping
             if (memory_info_2.state in ["ENTANGLED", "PURIFIED"] and memory_info_2.index in memory_indices and memory_info_2.remote_node == remote_left_node and memory_info_2.fidelity >= fidelity):
                 if (memory_info_2.memory.entangled_memory["node_id"] != memory_info_2.remote_node or memory_info_2.memory.entangled_memory["memo_id"] != memory_info_2.remote_memo):
