@@ -1,0 +1,225 @@
+{
+    "templates": {
+        "het_time_bin": {
+            "encoding_type": "het_time_bin"
+        },
+        "Rb": {
+            "memo_type": "Rb",
+            "wavelength": "780"
+        },
+        "Yb1389": {
+            "memo_type": "Yb",
+            "wavelength": "1389"
+        }
+    },
+    "nodes": [
+        {
+            "name": "alice",
+            "type": "QuantumRouter",
+            "seed": 0,
+            "memo_size": 10,
+            "template": "Rb"
+        },
+        {
+            "name": "core_yb_1",
+            "type": "QuantumRouter",
+            "seed": 1,
+            "memo_size": 10,
+            "template": "Yb1389"
+        },
+        {
+            "name": "core_yb_2",
+            "type": "QuantumRouter",
+            "seed": 2,
+            "memo_size": 10,
+            "template": "Yb1389"
+        },
+        {
+            "name": "bob",
+            "type": "QuantumRouter",
+            "seed": 3,
+            "memo_size": 10,
+            "template": "Rb"
+        },
+        {
+            "name": "BSM_alice_core_yb_1",
+            "type": "BSMNode",
+            "seed": 0,
+            "template": "het_time_bin"
+        },
+        {
+            "name": "BSM_core_yb_1_core_yb_2",
+            "type": "BSMNode",
+            "seed": 1,
+            "template": "het_time_bin"
+        },
+        {
+            "name": "BSM_core_yb_2_bob",
+            "type": "BSMNode",
+            "seed": 2,
+            "template": "het_time_bin"
+        }
+    ],
+    "qchannels": [
+        {
+            "source": "alice",
+            "destination": "BSM_alice_core_yb_1",
+            "distance": 2500,
+            "attenuation": 0.0003
+        },
+        {
+            "source": "core_yb_1",
+            "destination": "BSM_alice_core_yb_1",
+            "distance": 2500,
+            "attenuation": 0.0003
+        },
+        {
+            "source": "core_yb_1",
+            "destination": "BSM_core_yb_1_core_yb_2",
+            "distance": 2500,
+            "attenuation": 0.0003
+        },
+        {
+            "source": "core_yb_2",
+            "destination": "BSM_core_yb_1_core_yb_2",
+            "distance": 2500,
+            "attenuation": 0.0003
+        },
+        {
+            "source": "core_yb_2",
+            "destination": "BSM_core_yb_2_bob",
+            "distance": 2500,
+            "attenuation": 0.0003
+        },
+        {
+            "source": "bob",
+            "destination": "BSM_core_yb_2_bob",
+            "distance": 2500,
+            "attenuation": 0.0003
+        }
+    ],
+    "cchannels": [
+        {
+            "source": "BSM_alice_core_yb_1",
+            "destination": "alice",
+            "distance": 2500
+        },
+        {
+            "source": "alice",
+            "destination": "BSM_alice_core_yb_1",
+            "distance": 2500
+        },
+        {
+            "source": "BSM_alice_core_yb_1",
+            "destination": "core_yb_1",
+            "distance": 2500
+        },
+        {
+            "source": "core_yb_1",
+            "destination": "BSM_alice_core_yb_1",
+            "distance": 2500
+        },
+        {
+            "source": "BSM_core_yb_1_core_yb_2",
+            "destination": "core_yb_1",
+            "distance": 2500
+        },
+        {
+            "source": "core_yb_1",
+            "destination": "BSM_core_yb_1_core_yb_2",
+            "distance": 2500
+        },
+        {
+            "source": "BSM_core_yb_1_core_yb_2",
+            "destination": "core_yb_2",
+            "distance": 2500
+        },
+        {
+            "source": "core_yb_2",
+            "destination": "BSM_core_yb_1_core_yb_2",
+            "distance": 2500
+        },
+        {
+            "source": "BSM_core_yb_2_bob",
+            "destination": "core_yb_2",
+            "distance": 2500
+        },
+        {
+            "source": "core_yb_2",
+            "destination": "BSM_core_yb_2_bob",
+            "distance": 2500
+        },
+        {
+            "source": "BSM_core_yb_2_bob",
+            "destination": "bob",
+            "distance": 2500
+        },
+        {
+            "source": "bob",
+            "destination": "BSM_core_yb_2_bob",
+            "distance": 2500
+        },
+        {
+            "source": "alice",
+            "destination": "core_yb_1",
+            "distance": 5000
+        },
+        {
+            "source": "alice",
+            "destination": "core_yb_2",
+            "distance": 10000
+        },
+        {
+            "source": "alice",
+            "destination": "bob",
+            "distance": 15000
+        },
+        {
+            "source": "core_yb_1",
+            "destination": "alice",
+            "distance": 5000
+        },
+        {
+            "source": "core_yb_1",
+            "destination": "core_yb_2",
+            "distance": 5000
+        },
+        {
+            "source": "core_yb_1",
+            "destination": "bob",
+            "distance": 10000
+        },
+        {
+            "source": "core_yb_2",
+            "destination": "alice",
+            "distance": 10000
+        },
+        {
+            "source": "core_yb_2",
+            "destination": "core_yb_1",
+            "distance": 5000
+        },
+        {
+            "source": "core_yb_2",
+            "destination": "bob",
+            "distance": 5000
+        },
+        {
+            "source": "bob",
+            "destination": "alice",
+            "distance": 15000
+        },
+        {
+            "source": "bob",
+            "destination": "core_yb_1",
+            "distance": 10000
+        },
+        {
+            "source": "bob",
+            "destination": "core_yb_2",
+            "distance": 5000
+        }
+    ],
+    "formalism": "ket_vector"
+}
+

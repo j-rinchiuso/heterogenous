@@ -1,4 +1,4 @@
-"""Plot the Mw-Yb-Er efficiency-grid entanglement rate as a heatmap."""
+"""Plot the Mw-Rb-Er efficiency-grid entanglement rate as a heatmap."""
 
 from __future__ import annotations
 
@@ -12,8 +12,10 @@ import numpy as np
 
 EFFICIENCIES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
 
-DEFAULT_DATA_DIR = Path("tmp_mw_yb_er_efficiency_grid/efficiency_grid")
-DEFAULT_OUTPUT = Path("tmp/mw_yb_er_efficiency_rate_heatmap.png")
+DEFAULT_DATA_DIR = Path("tmp_mw_rb_er_efficiency_grid/efficiency_grid")
+# DEFAULT_DATA_DIR = Path("tmp_mw_yb_er_efficiency_grid/efficiency_grid")
+DEFAULT_OUTPUT = Path("tmp/mw_rb_er_efficiency_rate_heatmap.png")
+# DEFAULT_OUTPUT = Path("tmp/mw_yb_er_efficiency_rate_heatmap.png")
 
 LOG_NAME_RE = re.compile(
     r"uw_eff=([0-9.]+)_er_pce=([0-9.]+)\.log$"
@@ -25,7 +27,7 @@ ENTANGLEMENT_TIME_PATTERN = re.compile(
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Plot the Mw-Yb-Er efficiency-grid entanglement rate."
+        description="Plot the Mw-Rb-Er efficiency-grid entanglement rate."
     )
     parser.add_argument(
         "--data-dir",
@@ -112,7 +114,7 @@ def plot_heatmap(grid: np.ndarray, output: Path, annotate: bool) -> None:
 
     ax.set_xlabel("Er Photon Collection Efficiency")
     ax.set_ylabel("Microwave Efficiency")
-    ax.set_title("Mw-Yb-Er Entanglement Rate")
+    ax.set_title("Mw-Rb-Er Entanglement Rate")
 
     ax.set_xticks(np.arange(-0.5, len(EFFICIENCIES), 1), minor=True)
     ax.set_yticks(np.arange(-0.5, len(EFFICIENCIES), 1), minor=True)

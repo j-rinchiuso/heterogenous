@@ -28,6 +28,8 @@ if TYPE_CHECKING:
     from sequence.topology.node import QuantumRouter
 
 from sequence.entanglement_management.entanglement_protocol import EntanglementProtocol
+from sequence.entanglement_management.generation.generation_base import EntanglementGenerationA
+from swapping import EntanglementSwappingA
 from sequence.message import Message
 from sequence.utils import log
 from sequence.resource_management.rule_manager import RuleManager, Rule, Arguments
@@ -436,17 +438,36 @@ class ResourceManager:
             if msg.is_approved:
                 protocol.set_others(msg.paired_protocol, msg.paired_node, msg.paired_memories)  # pairing (cost one round-trip-time)
                 if protocol.is_ready():
+                    if isinstance(protocol, EntanglementSwappingA) and not protocol.memories_are_valid():
+                        protocol.cancel()
+                        return
+
                     self.pending_protocols.remove(protocol)
                     self.owner.protocols.append(protocol)
                     protocol.owner = self.owner
                     protocol.start()
             else:
+                if isinstance(protocol, EntanglementSwappingA):
+                    if protocol.left_protocol_name is not None:
+                        self.release_remote_protocol(protocol.left_node, protocol.left_protocol_name)
+                    if protocol.right_protocol_name is not None:
+                        self.release_remote_protocol(protocol.right_node, protocol.right_protocol_name)
+
                 protocol.rule.protocols.remove(protocol)
                 for memory in protocol.memories:
                     memory.detach(protocol)
-                    memory.attach(memory.memory_array)
                     info = self.memory_manager.get_info_by_memory(memory)
-                    if info.remote_node is None:
+
+                    live_entanglement = (memory.fidelity > 0 and memory.entangled_memory["node_id"] is not None and memory.entangled_memory["memo_id"] is not None)
+                    if isinstance(protocol, EntanglementGenerationA) and live_entanglement:
+                        log.logger.warning(
+                            f"{self.owner.name} ignoring stale rejected generation response "
+                            f"for {protocol.name}; {memory.name} has newer entanglement with "
+                            f"{memory.entangled_memory}")
+                        continue
+
+                    memory.attach(memory.memory_array)
+                    if info.remote_node is None or info.remote_node == src:
                         self.update(None, memory, MemoryInfo.RAW)
                     else:
                         self.update(None, memory, MemoryInfo.ENTANGLED)

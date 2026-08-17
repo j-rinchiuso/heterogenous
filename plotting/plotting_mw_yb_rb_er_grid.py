@@ -1,4 +1,4 @@
-"""Plot uW-Yb-Er coherence-grid fidelity as a heatmap."""
+"""Plot uW-Rb-Er coherence-grid fidelity as a heatmap."""
 
 from __future__ import annotations
 
@@ -20,16 +20,22 @@ PRECISE_FIDELITY_PATTERN = re.compile(
 LOG_NAME_RE = re.compile(r"[uU][wW]_ms=([0-9.]+)_er_ms=([0-9.]+)\.log$")
 
 
+DEFAULT_DATA_DIR = Path("tmp_mw_rb_er_grid/coherence_grid")
+# DEFAULT_DATA_DIR = Path("tmp_uW_Yb_Er_grid/coherence_grid")
+DEFAULT_OUTPUT = Path("tmp/mw_rb_er_fidelity_heatmap.png")
+# DEFAULT_OUTPUT = Path("tmp/uw_yb_er_fidelity_heatmap.png")
+
+
 def parse_args():
-    parser = argparse.ArgumentParser(description="Plot uW-Yb-Er coherence grid fidelity.")
+    parser = argparse.ArgumentParser(description="Plot uW-Rb-Er coherence grid fidelity.")
     parser.add_argument("--data-dir", type=Path, default=None, help="Directory containing uw_ms=..._er_ms=....log files.",)
-    parser.add_argument( "--output", type=Path, default=Path("tmp/uw_yb_er_fidelity_heatmap.png"), help="Output image path.",)
+    parser.add_argument( "--output", type=Path, default=DEFAULT_OUTPUT, help="Output image path.",)
     parser.add_argument( "--annotate", action="store_true", help="Write the fidelity value inside each heatmap cell.",)
     return parser.parse_args()
 
 
 def discover_data_dir() -> Path:
-    candidates = [Path("tmp_uW_Yb_Er_grid"),]
+    candidates = [DEFAULT_DATA_DIR,]
     for candidate in candidates:
         if any(candidate.glob("*_ms=*_er_ms=*.log")):
             return candidate
@@ -88,7 +94,7 @@ def plot_heatmap(grid: np.ndarray, output: Path, annotate: bool) -> None:
 
     ax.set_xlabel("Erbium Coherence Time (ms)")
     ax.set_ylabel("Microwave Coherence Time (ms)")
-    ax.set_title("uW-Yb-Er Fidelity")
+    ax.set_title("uW-Rb-Er Fidelity")
 
     ax.set_xticks(np.arange(-0.5, len(ER_MS), 1), minor=True)
     ax.set_yticks(np.arange(-0.5, len(UW_MS), 1), minor=True)

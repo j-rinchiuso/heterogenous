@@ -80,32 +80,39 @@ class HetTeleportApp(RequestApp):
             info (MemoryInfo): Information about the memory state change.
         """
         log.logger.debug(f"{self.name}: get_memory, name={info.memory.name}, state={info.state}")
-        # once we see our entangled half, hand it to the protocol
-        if info.index in self.memo_to_reservation:
-            if info.state == "ENTANGLED":
+        if info.index in self.memo_to_reservation and info.state == "ENTANGLED":
+            reservation = self.memo_to_reservation[info.index]
+
+            if self.node.name == reservation.initiator:
                 for teleport_protocol in self.teleport_protocols:
                     this_node = info.memory.owner.name
                     remote_node = info.remote_node
-                    if this_node == teleport_protocol.owner.name and remote_node == teleport_protocol.remote_node_name and teleport_protocol.alice_comm_memory is None:
+                    if teleport_protocol.alice and this_node == teleport_protocol.owner.name and remote_node == teleport_protocol.remote_node_name and teleport_protocol.alice_comm_memory is None:
                         # this node is Alice
+                        # Correct |Psi-> to |Psi+> by applying Z to Alice's half.
+                        if info.memory.psi_sign == -1:
+                            rnd = self.node.get_generator().random() #dosent affect z applly but used by qm
+                            self.node.timeline.quantum_manager.run_circuit(HetTeleportProtocol._z_flip_circuit, [info.memory.qstate_key], rnd)
+                            info.memory.psi_sign = 1
+                            log.logger.info(f"{self.name}: corrected |Psi-> to |Psi+> on memory {info.memory.name}")
                         teleport_protocol.set_alice_comm_memory_name(info.memory.name)
                         teleport_protocol.set_alice_comm_memory(info.memory)
                         teleport_protocol.set_bob_comm_memory_name(info.remote_memo)
-                        reservation = self.memo_to_reservation[info.index]
                         # Let Bob first execute EntanglementGenerationA._entanglement_succeed(), then let Alice do the Bell measurement
                         time_now = self.node.timeline.now()
                         process = Process(teleport_protocol, 'alice_bell_measurement', [reservation])
                         priority = self.node.timeline.schedule_counter
                         event = Event(time_now, process, priority)
                         self.node.timeline.schedule(event)
-                        break # if no matching protocol found, go to else clause
-                else:
-                    # this node is Bob, create the new teleport protocol instance, then append to self.teleport_protocols
-                    teleport_protocol = HetTeleportProtocol(self.node, alice=False, remote_node_name=info.remote_node)
-                    teleport_protocol.set_bob_comm_memory_name(info.memory.name)
-                    teleport_protocol.set_bob_comm_memory(info.memory)
-                    teleport_protocol.set_alice_comm_memory_name(info.remote_memo)
-                    self.teleport_protocols.append(teleport_protocol)
+                        break
+
+            elif self.node.name == reservation.responder:
+                # this node is Bob, create the new teleport protocol instance, then append to self.teleport_protocols
+                teleport_protocol = HetTeleportProtocol(self.node, alice=False, remote_node_name=info.remote_node)
+                teleport_protocol.set_bob_comm_memory_name(info.memory.name)
+                teleport_protocol.set_bob_comm_memory(info.memory)
+                teleport_protocol.set_alice_comm_memory_name(info.remote_memo)
+                self.teleport_protocols.append(teleport_protocol)
 
     def received_message(self, src: str, msg: HetTeleportMessage):
         """Handle incoming teleport messages.

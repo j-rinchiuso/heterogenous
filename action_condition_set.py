@@ -87,7 +87,8 @@ def eg_rule_action_await(memories_info: list[MemoryInfo], args: Arguments) -> Ac
     index = args["index"]
     memo_type = args["memo_type"]
     if memo_type == "Yb" or memo_type == "uW" or memo_type == "Rb" or memo_type == "Er":
-        protocol = HetEGA(None, "EGTB." + memory.name, mid, path[index-1], memory)
+        unique_tag = memory.timeline.now()
+        protocol = HetEGA(None, f"EGTB.{memory.name}.{unique_tag}", mid, path[index-1], memory)
     else:
         raise NotImplementedError(f"Memory type {memo_type} not supported in entanglement generation.")
     return protocol, [None], [None], [None]
@@ -116,7 +117,8 @@ def eg_rule_action_request(memories_info: list[MemoryInfo], args: Arguments) -> 
     memory = memories[0]
     memo_type = args["memo_type"]
     if memo_type == "Yb" or memo_type == "uW" or memo_type == "Rb" or memo_type == "Er":
-        protocol = HetEGA(None, "EGTB" + "." + memory.name, mid, path[index+1], memory)
+        unique_tag = memory.timeline.now()
+        protocol = HetEGA(None, f"EGTB.{memory.name}.{unique_tag}", mid, path[index+1], memory)
     else:
         raise NotImplementedError(f"Memory type {memo_type} not supported in entanglement generation.")
     req_args = {"name": args["name"], "reservation": args["reservation"]}

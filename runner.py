@@ -8,7 +8,7 @@ from pathlib import Path
 from subprocess import PIPE, Popen
 #NOTE  based off Caitao's runner he forwarded me. 
 
-PARALLEL = 35 #went down to 9 but believe 10 would still be fine
+PARALLEL = 9 #went down to 9 but believe 10 would still be fine
 
 
 # COMMAND = ["python3", "main_rb_rb_rb_EG_sim.py"]
@@ -17,6 +17,7 @@ COMMAND = [sys.executable, "main_simulations/main_het_net_four_node_sim.py"]
 TWONODE_COMMAND = [sys.executable, "main_simulations/main_twonode.py"]
 UW_YB_ER_COMMAND = [sys.executable, "main_simulations/main_uW_yb_er_MAIN.py"]
 UW_RB_ER_COMMAND = [sys.executable, "main_simulations/main_uW_rb_er_MAIN.py"]
+HET_TELEPORT_COMMAND = [sys.executable, "main_simulations/main_het_teleport_mw_rb_yb_rb_er.py"]
 NUM_TRIALS = 1000 # four-node heterogeneous chain is much heavier than Rb-Rb-Rb
 TWONODE_NUM_TRIALS = 12000
 HET_FOUR_NODE_NUM_TRIALS = 200
@@ -24,6 +25,7 @@ UW_YB_ER_GRID_NUM_TRIALS = 3000
 UW_RB_ER_GRID_NUM_TRIALS = 3000
 UW_RB_ER_OPTIMISTIC_GRID_NUM_TRIALS = 1002
 UW_RB_ER_EFFICIENCY_GRID_NUM_TRIALS = 1002
+HET_TELEPORT_YB_VARIED_CHAIN_NUM_TRIALS = 3000
 
 COOLING_TIMES_PS = [100_000_000, 500_000_000, 1_000_000_000, 2_000_000_000, 3_000_000_000, 4_000_000_000, 5_000_000_000,]
 PHOTON_COLLECTION_EFFICIENCIES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
@@ -37,6 +39,7 @@ UW_YB_ER_EFFICIENCY_GRID_OUTPUT_ROOT = Path("tmp_mw_yb_er_efficiency_grid")
 UW_RB_ER_GRID_OUTPUT_ROOT = Path("tmp_mw_rb_er_grid")
 UW_RB_ER_GRID_OPTIMISTIC_OUTPUT_ROOT = Path("tmp_mw_rb_er_grid_optimistic")
 UW_RB_ER_EFFICIENCY_GRID_OUTPUT_ROOT = Path("tmp_mw_rb_er_efficiency_grid")
+HET_TELEPORT_YB_VARIED_CHAIN_OUTPUT_ROOT = Path("tmp_teleport_yb_varied_chain")
 UW_YB_ER_GRID_TRANSMON_COHERENCE_MS = [0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 UW_YB_ER_GRID_ER_COHERENCE_MS = [0.2, 0.5, 1, 2, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 UW_YB_ER_GRID_EFFICIENCIES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
@@ -55,6 +58,16 @@ ER_PHOTON_COLLECTION_EFFICIENCIES = [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.
 ER_DISTANCES = [100, 200, 500, 1000, 2000, 5000, 10000]
 
 TWONODE_PAIRS = [("yb", "yb"), ("yb", "rb"), ("yb", "er"), ("yb", "uw"), ("rb", "rb"), ("rb", "er"), ("rb", "uw"), ("er", "er"), ("er", "uw"), ("uw", "uw"),]
+
+HET_TELEPORT_YB_VARIED_CHAIN_CONFIGS = {
+    0: Path("config/teleport_mw_rb_rb_er.json"),
+    1: Path("config/teleport_mw_rb_yb_rb_er.json"),
+    2: Path("config/teleport_mw_rb_2yb_rb_er.json"),
+    3: Path("config/teleport_mw_rb_3yb_rb_er.json"),
+    4: Path("config/teleport_mw_rb_4yb_rb_er.json"),
+    5: Path("config/teleport_mw_rb_5yb_rb_er.json"),
+    6: Path("config/teleport_mw_rb_6yb_rb_er.json"),
+}
 
 LOADING_10_US_PS = 10_000_000
 LOADING_300_MS_PS = 300_000_000_000
@@ -408,6 +421,26 @@ def main_uW_rb_er_efficiency_grid():
     run_tasks(tasks, parallel=PARALLEL)
 
 
+def build_het_teleport_yb_varied_chain_tasks() -> list[list[str]]:
+    tasks = []
+    for number_of_yb_nodes, config_file in HET_TELEPORT_YB_VARIED_CHAIN_CONFIGS.items():
+        args = [
+            "-n", str(HET_TELEPORT_YB_VARIED_CHAIN_NUM_TRIALS),
+            "-config", str(config_file),
+        ]
+        args = set_log_file(
+            args,
+            str(HET_TELEPORT_YB_VARIED_CHAIN_OUTPUT_ROOT / f"yb_nodes={number_of_yb_nodes}.log"),
+        )
+        tasks.append(HET_TELEPORT_COMMAND + args)
+    return tasks
+
+
+def main_het_teleport_yb_varied_chain():
+    tasks = build_het_teleport_yb_varied_chain_tasks()
+    run_tasks(tasks, parallel=PARALLEL)
+
+
 def make_er_distance_config(distance: int, output_root: Path = ER_OUTPUT_ROOT) -> Path:
     config_dir = output_root / "configs"
     config_dir.mkdir(parents=True, exist_ok=True)
@@ -584,6 +617,7 @@ if __name__ == "__main__":
     #main_uW_yb_er_coherence_grid()
     #main_uW_yb_er_optimistic_coherence_grid()
     #main_uW_yb_er_efficiency_grid()
-    main_uW_rb_er_coherence_grid()
-    main_uW_rb_er_optimistic_coherence_grid()
-    main_uW_rb_er_efficiency_grid()
+    #main_uW_rb_er_coherence_grid()
+    #main_uW_rb_er_optimistic_coherence_grid()
+    #main_uW_rb_er_efficiency_grid()
+    main_het_teleport_yb_varied_chain()

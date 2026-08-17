@@ -129,6 +129,33 @@ class EntanglementSwappingA(EntanglementProtocol):
 
         return (self.left_protocol_name is not None) and (self.right_protocol_name is not None)
 
+    def memories_are_valid(self) -> bool:
+        """Return whether both memories still hold the pairs captured at creation. This is more of a check to ensure we won't call cancel"""
+
+        return (self.left_memo.fidelity > 0 and self.right_memo.fidelity > 0 and self.left_memo.entangled_memory["node_id"] == self.left_node and self.left_memo.entangled_memory["memo_id"] == self.left_remote_memo
+            and self.right_memo.entangled_memory["node_id"] == self.right_node and self.right_memo.entangled_memory["memo_id"] == self.right_remote_memo)
+
+    def cancel(self) -> None:
+        """Cancel a stale pending swap and release its local and remote protocols. This happened when memory loset while classical communication messaging happening"""
+        resource_manager = self.owner.resource_manager
+
+        if self.left_protocol_name is not None:
+            resource_manager.release_remote_protocol(
+                self.left_node, self.left_protocol_name)
+        if self.right_protocol_name is not None:
+            resource_manager.release_remote_protocol(
+                self.right_node, self.right_protocol_name)
+        if self in resource_manager.pending_protocols:
+            resource_manager.pending_protocols.remove(self)
+        if self.rule and self in self.rule.protocols:
+            self.rule.protocols.remove(self)
+        for memory in self.memories:
+            memory.detach(self)
+            memory.attach(memory.memory_array)
+        for memory in self.memories:
+            live_entanglement = (memory.fidelity > 0 and memory.entangled_memory["node_id"] is not None and memory.entangled_memory["memo_id"] is not None)
+            resource_manager.update(None, memory, MemoryInfo.ENTANGLED if live_entanglement else MemoryInfo.RAW,)
+
     def set_others(self, protocol: str, node: str, memories: list[str]) -> None:
         """Method to set other entanglement protocol instance.
 

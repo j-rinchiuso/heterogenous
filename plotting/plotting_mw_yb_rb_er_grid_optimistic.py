@@ -1,4 +1,4 @@
-"""Plot the optimistic microwave-Yb-Er coherence-grid precise fidelity."""
+"""Plot the optimistic microwave-Rb-Er coherence-grid precise fidelity."""
 
 from __future__ import annotations
 
@@ -13,8 +13,10 @@ import numpy as np
 MW_MS = [0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ER_MS = [0.2, 0.5, 1, 2, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
-DEFAULT_DATA_DIR = Path("tmp_mw_yb_er_grid_optimistic/coherence_grid")
-DEFAULT_OUTPUT = Path("tmp/mw_yb_er_optimistic_fidelity_heatmap.png")
+DEFAULT_DATA_DIR = Path("tmp_mw_rb_er_grid_optimistic/coherence_grid")
+# DEFAULT_DATA_DIR = Path("tmp_mw_yb_er_grid_optimistic/coherence_grid")
+DEFAULT_OUTPUT = Path("tmp/mw_rb_er_optimistic_fidelity_heatmap.png")
+# DEFAULT_OUTPUT = Path("tmp/mw_yb_er_optimistic_fidelity_heatmap.png")
 
 PRECISE_FIDELITY_PATTERN = re.compile(
     r"calculated precise fidelity\s*=\s*([-+0-9.eE]+)"
@@ -24,7 +26,7 @@ LOG_NAME_RE = re.compile(r"[uU][wW]_ms=([0-9.]+)_er_ms=([0-9.]+)\.log$")
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Plot the optimistic microwave-Yb-Er precise-fidelity grid."
+        description="Plot the optimistic microwave-Rb-Er precise-fidelity grid."
     )
     parser.add_argument(
         "--data-dir",
@@ -101,7 +103,7 @@ def plot_heatmap(grid: np.ndarray, output: Path, annotate: bool) -> None:
     ax.set_yticklabels([str(value) for value in MW_MS])
     ax.set_xlabel("Erbium Coherence Time (ms)")
     ax.set_ylabel("Microwave Coherence Time (ms)")
-    ax.set_title("Optimistic uW-Yb-Er Fidelity")
+    ax.set_title("Optimistic uW-Rb-Er Fidelity")
 
     ax.set_xticks(np.arange(-0.5, len(ER_MS), 1), minor=True)
     ax.set_yticks(np.arange(-0.5, len(MW_MS), 1), minor=True)
