@@ -34,6 +34,7 @@ class HetTeleportApp(RequestApp):
         self.data_memory_array = self._resolve_data_memory_array(data_memory_array)
         self.results = []          # where we’ll collect Bob’s teleported state
         self.teleport_protocols: list[HetTeleportProtocol] = [] # a list of teleport protocol instances
+        self.dark_count_detectors = set()
         log.logger.debug(f"{self.name}: initialized")
 
     def start(self, responder: str, start_t: int, end_t: int, memory_size: int, fidelity: float, data_memory_index: int, bob_data_memory_index: int = 0):
@@ -127,9 +128,7 @@ class HetTeleportApp(RequestApp):
                 if src == teleport_protocol.remote_node_name and msg.bob_comm_memory_name == teleport_protocol.bob_comm_memory_name:
                     teleport_protocol.received_message(src, msg)
                     # remove detector dark counts so we can finish simulation as we have succesfully teleported
-                    for event in self.node.timeline.events:
-                        if event.process.activation in ['add_dark_count', 'record_detection', 'lose_atom']:
-                            self.node.timeline.remove_event(event)
+                    self.stop_teleport_dark_counts()
                     self.node.resource_manager.expire_rules_by_reservation(msg.reservation)                    # early release of resources
                     for node_name in msg.reservation.path[1:-1]:
                         self.node.resource_manager.expire_remote_rules(node_name, msg.reservation) #explire intermediate
@@ -160,6 +159,22 @@ class HetTeleportApp(RequestApp):
         psi = my_qubit.state # get qubit state
         log.logger.info(f"{self.name}: teleport done, state={psi}")
         self.results.append((self.node.timeline.now(), psi)) # append result (timestamp, state) state after both teleport and swap
+
+    def stop_teleport_dark_counts(self):
+        """Remove recurring detector dark-count events after this teleport trial"""
+        for event in list(self.node.timeline.events):
+            process = event.process
+            if process.activation == "add_dark_count":
+                self.dark_count_detectors.add(process.owner)
+                self.node.timeline.remove_event(event)
+            elif (process.activation == "record_detection" and not process.activation_args and not process.activation_kwargs):
+                self.node.timeline.remove_event(event)
+
+    def start_teleport_dark_counts(self):
+        """Restart dark counts for the next independent teleport trial."""
+        for detector in self.dark_count_detectors:
+            if detector.dark_count > 0:
+                detector.add_dark_count()
 
     def get_data_memory(self, data_memory_index: int):
         """Return the selected memory from this node's data memory array."""

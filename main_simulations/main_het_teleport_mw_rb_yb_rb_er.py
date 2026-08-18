@@ -24,7 +24,6 @@ from yb_router_net_topo import YbRouterNetTopo
 DEFAULT_CONFIG = "config/teleport_mw_rb_rb_er.json"
 
 
-#sometimes Er and Rb  stored inside one joint state after SWAP (ket 0) 
 def states_match(input_state, final_state, data_memory_key: int):
     """Directly compare the saved input state with Bob's final Er state. The one difference here is that we extend the inital state (multiply by ket 0 based on position of Er) instead of cleaning final vector"""
     if len(final_state.keys) == 1:
@@ -43,7 +42,7 @@ def states_match(input_state, final_state, data_memory_key: int):
 def parse_args():
     parser = argparse.ArgumentParser(description="Teleport Mw data to Er over an Rb-(Yb-chain)-Rb communication network.")
     parser.add_argument("-config", "--configfile", type=str, default=DEFAULT_CONFIG, help="Rb-(Yb-chain)-Rb network configuration file.")
-    parser.add_argument("-n", "--numtrials", type=int, default=1000, help="number of teleportation trials")
+    parser.add_argument("-n", "--numtrials", type=int, default=102, help="number of teleportation trials")
     parser.add_argument("-log", "--logfile", type=str, default=None, help="log file path")
     parser.add_argument("-pce", "--photoncollectionefficiency", type=float, default=0.5)
     parser.add_argument("-dtctor_dc", "--detectordarkcount", type=float, default=11.0) 
@@ -175,6 +174,8 @@ def main():
     request_window = 60 * SECOND
 
     for trial in range(args.numtrials):
+        if trial > 0:
+            alice_app.start_teleport_dark_counts() #add dark count every trial
         input_state = random_state()
         alice_data_array[0].update_state(input_state)
         bob_data_array[0].update_state([complex(1), complex(0)])
@@ -186,6 +187,7 @@ def main():
         alice_app.start(responder=bob.name, start_t=beginning + delta, end_t=beginning + request_window, memory_size=1, fidelity=0.1, data_memory_index=0, bob_data_memory_index=0,)
         log.logger.warning(f"Starting Mw-to-Er teleportation trial {trial + 1} at {beginning}.")
         timeline.run()
+        alice_app.stop_teleport_dark_counts()
 
         teleport_completed = len(bob_app.results) > results_before
         direct_match = False
