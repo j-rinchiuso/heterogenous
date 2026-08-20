@@ -824,7 +824,7 @@ class Er(Memory):
 
         # gen params
         self.wavelength = 1532 #1
-        self.efficiency = 0.24 * 0.33 # combined Er photon collection/source efficiency #2
+        self.efficiency = 0.24 * 0.33 # combined Er photon collection/source efficiency #2 and #3 from the coupler and grapler eff
         self.original_memory_efficiency = self.efficiency
         self.time_after_excitement = None
         self.ion_state = ErStates.INITIALIZED
@@ -832,7 +832,7 @@ class Er(Memory):
         self.attempts = 0
         self.emitted_photon_encoding = "er_time_bin"
 
-        #specific defice values from paper NOTE not all of these are currently used and need to decide how to implement some but just for storage
+        #specific defice values from paper NOTE not all of these are currently not used but just for storage (reflected in other efficiencies and loss)
         self.purcell_factor = 342 #not sure if needed but using for now
         self.radiative_lifetime = 7_400_000 #average time the Er ion stays optically excited before spontaneouslt emit photon
         self.spectral_diffusion_linewidth = 470_000 #right now just stored param not using but means how much ion's optical transtion freq wanders over time bc of noise
@@ -843,15 +843,15 @@ class Er(Memory):
         # Spin-photon entanglement protocol timing
         self.protocol_period = 75_500_000 # timing in appenxid G blocks #4
         self.initialization_time = 2 * self.protocol_period #5 two initialization cycles before photon generation NOTE we do not know padding used 
-        self.spin_photon_generation_time = 80_500_000 # protected XY-16 spin-photon generation sequence
-        self.bin_separation = 22_200_000#75_500_000 got 22.2 microsec grom the 7.4 radiative lifetime #6
-        self.bin_width = 1_900_000  #7
+        self.spin_photon_generation_time = 80_500_000 # protected XY-16 spin-photon generation sequence #6
+        self.bin_separation = 22_200_000#75_500_000 got 22.2 microsec grom the 7.4 radiative lifetime #7
+        self.bin_width = 1_900_000  #8
 
         #appendix k values
         self.photon_collection_efficiency = self.efficiency
 
         # Coherence values
-        self.xy16_coherence_time = 23_000_000_000 # 200_000_000 improved method from original paper #8
+        self.xy16_coherence_time = 23_000_000_000 # 200_000_000 improved method from original paper #9
         self.toggle_decoherence_gen = False # generation time is included in the combined app-level decoherence check
         if coherence_time == -1: #default to this coherence time in constructor not infinity HAS COHERENCE
             self.coherence_time = self.xy16_coherence_time
@@ -862,14 +862,14 @@ class Er(Memory):
         self.initialize_time = self.initialization_time
         self.cool_time = 0
         self.state_prep_time = 0
-        self.excite_pulse_time = 219_000 #Mwgpi/2 and opticla b pulse #9
+        self.excite_pulse_time = 219_000 #Mwgpi/2 and opticla b pulse #10
     
 
 
         # Measurement
-        self.to_x_basis_time = 19_200 #10
-        self.measurement_time = 70_000_000 #11
-        self.measurement_fidelity = 0.972 #paper param 0.89 but says that 97.2 achievable with higher purcell factor #12
+        self.to_x_basis_time = 19_200 #11
+        self.measurement_time = 70_000_000 #12
+        self.measurement_fidelity = 0.972 #paper param 0.89 but says that 97.2 achievable with higher purcell factor #13
 
     def get_source_efficiency(self) -> float:
         return self.efficiency

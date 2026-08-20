@@ -1,6 +1,6 @@
 
 #python main_simulations/main_het_teleport_mw_rb_yb_rb_er.py \
- # -config config/teleport_mw_rb_6yb_rb_er.json \
+ # -config config/teleport_mw_rb_7yb_rb_er.json \
   #-n 1000
 from __future__ import annotations
 
@@ -21,7 +21,8 @@ from yb_router_net_topo import YbRouterNetTopo
 
 
 #DEFAULT_CONFIG = "config/teleport_mw_rb_yb_rb_er.json"
-DEFAULT_CONFIG = "config/teleport_mw_rb_rb_er.json"
+#DEFAULT_CONFIG = "config/teleport_mw_rb_rb_er.json"
+DEFAULT_CONFIG = "config/teleport_mw_rb_7yb_rb_er.json"
 
 
 def states_match(input_state, final_state, data_memory_key: int):
@@ -43,6 +44,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Teleport Mw data to Er over an Rb-(Yb-chain)-Rb communication network.")
     parser.add_argument("-config", "--configfile", type=str, default=DEFAULT_CONFIG, help="Rb-(Yb-chain)-Rb network configuration file.")
     parser.add_argument("-n", "--numtrials", type=int, default=102, help="number of teleportation trials")
+    parser.add_argument("-seed", "--seed", type=int, default=None, help="base random seed for the teleport simulation")
     parser.add_argument("-log", "--logfile", type=str, default=None, help="log file path")
     parser.add_argument("-pce", "--photoncollectionefficiency", type=float, default=0.5)
     parser.add_argument("-dtctor_dc", "--detectordarkcount", type=float, default=11.0) 
@@ -136,13 +138,18 @@ def main():
     network_topo = YbRouterNetTopo(args.configfile)
     timeline = network_topo.get_timeline()
     routers = network_topo.get_nodes_by_type(YbRouterNetTopo.QUANTUM_ROUTER)
+    if args.seed is not None:
+        timeline.seed(args.seed)
+        seeded_nodes = routers + network_topo.get_nodes_by_type(YbRouterNetTopo.BSM_NODE)
+        for seed_offset, node in enumerate(seeded_nodes):
+            node.set_seed(args.seed + seed_offset)
     alice = timeline.get_entity_by_name("alice")
     bob = timeline.get_entity_by_name("bob")
     if alice is None or bob is None:
         raise ValueError("Config must define alice and bob routers")
     core_yb_nodes = [node for node in routers if node not in (alice, bob)]
-    if not 0 <= len(core_yb_nodes) <= 6:
-        raise ValueError("Communication architecture must contain between zero and six core Yb routers")
+    if not 0 <= len(core_yb_nodes) <= 7:
+        raise ValueError("Communication architecture must contain between zero and seven core Yb routers")
     if alice.memo_type != "Rb" or bob.memo_type != "Rb" or any(node.memo_type != "Yb" for node in core_yb_nodes):
         raise ValueError("Communication architecture must be Rb-(Yb-chain)-Rb for this sim (check to make sure its that and comm network working)")
     default_telecom_wavelength = 1389 if core_yb_nodes else 1550
@@ -207,8 +214,7 @@ def main():
             # unmatched app-level protocol objects before the next trial.
             alice_app.teleport_protocols.clear()
             bob_app.teleport_protocols.clear()
-        log.logger.warning(
-            f"Mw-to-Er teleportation trial {trial + 1} "
+        log.logger.warning(f"Mw-to-Er teleportation trial {trial + 1} "
             f"{'succeeded' if succeeded else 'failed'} "
             f"(completed={teleport_completed}, direct match={direct_match}, "
             f"latency={latency / SECOND if latency is not None else None} seconds).")
@@ -219,16 +225,13 @@ def main():
     gate_fidelity = 0.95
     operation_fidelity = rb_measurement_fidelity * mw_measurement_fidelity * gate_fidelity
     adjusted_teleport_fidelity = raw_teleport_fidelity * operation_fidelity
-    direct_summary = (
-        f"Raw teleport fidelity by direct comparison: {directly_matching_teleports}/{args.numtrials} "
+    direct_summary = (f"Raw teleport fidelity by direct comparison: {directly_matching_teleports}/{args.numtrials} "
         f"({100 * raw_teleport_fidelity:.2f}%)")
-    adjusted_fidelity_summary = (
-        f"Teleport fidelity after Rb measurement, Mw measurement, and gate losses: "
+    adjusted_fidelity_summary = (f"Teleport fidelity after Rb measurement, Mw measurement, and gate losses: "
         f"{100 * adjusted_teleport_fidelity:.2f}% "
         f"(operation fidelity factor={operation_fidelity:.7f})")
     average_latency = total_latency / completed_teleports if completed_teleports > 0 else None
-    latency_summary = (
-        f"Average teleport latency: {average_latency / SECOND:.9f} seconds "
+    latency_summary = (f"Average teleport latency: {average_latency / SECOND:.9f} seconds "
         f"over {completed_teleports} completed trials"
         if average_latency is not None else
         "Average teleport latency: unavailable (0 completed trials)")

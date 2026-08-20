@@ -25,7 +25,10 @@ UW_YB_ER_GRID_NUM_TRIALS = 3000
 UW_RB_ER_GRID_NUM_TRIALS = 3000
 UW_RB_ER_OPTIMISTIC_GRID_NUM_TRIALS = 1002
 UW_RB_ER_EFFICIENCY_GRID_NUM_TRIALS = 1002
-HET_TELEPORT_YB_VARIED_CHAIN_NUM_TRIALS = 3000
+HET_TELEPORT_YB_VARIED_CHAIN_NUM_TRIALS = 3000 #set to 500 and run 20 times Vary seed
+HET_TELEPORT_7YB_SPLIT_NUM_TRIALS = 500
+HET_TELEPORT_7YB_SPLIT_RUNS = 20
+HET_TELEPORT_7YB_BASE_SEED = 7000
 
 COOLING_TIMES_PS = [100_000_000, 500_000_000, 1_000_000_000, 2_000_000_000, 3_000_000_000, 4_000_000_000, 5_000_000_000,]
 PHOTON_COLLECTION_EFFICIENCIES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
@@ -40,6 +43,7 @@ UW_RB_ER_GRID_OUTPUT_ROOT = Path("tmp_mw_rb_er_grid")
 UW_RB_ER_GRID_OPTIMISTIC_OUTPUT_ROOT = Path("tmp_mw_rb_er_grid_optimistic")
 UW_RB_ER_EFFICIENCY_GRID_OUTPUT_ROOT = Path("tmp_mw_rb_er_efficiency_grid")
 HET_TELEPORT_YB_VARIED_CHAIN_OUTPUT_ROOT = Path("tmp_teleport_yb_varied_chain")
+HET_TELEPORT_7YB_SPLIT_OUTPUT_ROOT = Path("tmp_teleport_7yb_split")
 UW_YB_ER_GRID_TRANSMON_COHERENCE_MS = [0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 UW_YB_ER_GRID_ER_COHERENCE_MS = [0.2, 0.5, 1, 2, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 UW_YB_ER_GRID_EFFICIENCIES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
@@ -441,6 +445,29 @@ def main_het_teleport_yb_varied_chain():
     run_tasks(tasks, parallel=PARALLEL)
 
 
+def build_het_teleport_7yb_split_tasks() -> list[list[str]]:
+    tasks = []
+    config_file = Path("config/teleport_mw_rb_7yb_rb_er.json")
+    for run_index in range(HET_TELEPORT_7YB_SPLIT_RUNS):
+        seed = HET_TELEPORT_7YB_BASE_SEED + run_index
+        args = [
+            "-n", str(HET_TELEPORT_7YB_SPLIT_NUM_TRIALS),
+            "-config", str(config_file),
+            "-seed", str(seed),
+        ]
+        args = set_log_file(
+            args,
+            str(HET_TELEPORT_7YB_SPLIT_OUTPUT_ROOT / f"run={run_index:02d}_seed={seed}.log"),
+        )
+        tasks.append(HET_TELEPORT_COMMAND + args)
+    return tasks
+
+
+def main_het_teleport_7yb_split():
+    tasks = build_het_teleport_7yb_split_tasks()
+    run_tasks(tasks, parallel=PARALLEL)
+
+
 def make_er_distance_config(distance: int, output_root: Path = ER_OUTPUT_ROOT) -> Path:
     config_dir = output_root / "configs"
     config_dir.mkdir(parents=True, exist_ok=True)
@@ -620,4 +647,5 @@ if __name__ == "__main__":
     #main_uW_rb_er_coherence_grid()
     #main_uW_rb_er_optimistic_coherence_grid()
     #main_uW_rb_er_efficiency_grid()
-    main_het_teleport_yb_varied_chain()
+    #main_het_teleport_yb_varied_chain()
+    main_het_teleport_7yb_split()
