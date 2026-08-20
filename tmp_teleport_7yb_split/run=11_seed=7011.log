@@ -1,0 +1,1003 @@
+0                    WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 1 at 0.
+60,000,000,000,000   WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 1 succeeded (completed=True, direct match=True, latency=3.3288373745 seconds).
+60,000,000,000,000   WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 2 at 60000000000000.
+120,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 2 succeeded (completed=True, direct match=True, latency=2.893700562 seconds).
+120,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 3 at 120000000000000.
+180,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 3 failed (completed=True, direct match=False, latency=6.9366567495 seconds).
+180,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 4 at 180000000000000.
+240,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 4 failed (completed=True, direct match=False, latency=5.663645812 seconds).
+240,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 5 at 240000000000000.
+300,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 5 succeeded (completed=True, direct match=True, latency=3.433361562 seconds).
+300,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 6 at 300000000000000.
+360,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 6 failed (completed=True, direct match=False, latency=2.821037062 seconds).
+360,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 7 at 360000000000000.
+420,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 7 succeeded (completed=True, direct match=True, latency=8.393580062 seconds).
+420,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 8 at 420000000000000.
+480,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 8 succeeded (completed=True, direct match=True, latency=8.4513023745 seconds).
+480,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 9 at 480000000000000.
+540,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 9 succeeded (completed=True, direct match=True, latency=3.561286687 seconds).
+540,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 10 at 540000000000000.
+600,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 10 succeeded (completed=True, direct match=True, latency=7.0365007495 seconds).
+600,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 11 at 600000000000000.
+660,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 11 succeeded (completed=True, direct match=True, latency=6.257074562 seconds).
+660,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 12 at 660000000000000.
+720,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 12 failed (completed=True, direct match=False, latency=4.207932562 seconds).
+720,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 13 at 720000000000000.
+780,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 13 succeeded (completed=True, direct match=True, latency=7.7016923745 seconds).
+780,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 14 at 780000000000000.
+840,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 14 succeeded (completed=True, direct match=True, latency=12.6837517495 seconds).
+840,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 15 at 840000000000000.
+900,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 15 succeeded (completed=True, direct match=True, latency=5.610428687 seconds).
+900,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 16 at 900000000000000.
+960,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 16 failed (completed=True, direct match=False, latency=9.768595062 seconds).
+960,000,000,000,000  WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 17 at 960000000000000.
+1,020,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 17 succeeded (completed=True, direct match=True, latency=10.530085562 seconds).
+1,020,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 18 at 1020000000000000.
+1,080,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 18 failed (completed=True, direct match=False, latency=7.7609747495 seconds).
+1,080,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 19 at 1080000000000000.
+1,140,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 19 succeeded (completed=True, direct match=True, latency=9.7757953745 seconds).
+1,140,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 20 at 1140000000000000.
+1,200,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 20 succeeded (completed=True, direct match=True, latency=16.7915886245 seconds).
+1,200,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 21 at 1200000000000000.
+1,260,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 21 succeeded (completed=True, direct match=True, latency=12.644750187 seconds).
+1,260,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 22 at 1260000000000000.
+1,320,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 22 succeeded (completed=True, direct match=True, latency=7.0425659995 seconds).
+1,320,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 23 at 1320000000000000.
+1,380,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 23 succeeded (completed=True, direct match=True, latency=14.6985723745 seconds).
+1,380,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 24 at 1380000000000000.
+1,440,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 24 failed (completed=True, direct match=False, latency=11.2160829995 seconds).
+1,440,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 25 at 1440000000000000.
+1,500,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 25 succeeded (completed=True, direct match=True, latency=4.9559824995 seconds).
+1,500,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 26 at 1500000000000000.
+1,560,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 26 succeeded (completed=True, direct match=True, latency=5.6213491245 seconds).
+1,560,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 27 at 1560000000000000.
+1,620,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 27 succeeded (completed=True, direct match=True, latency=4.9091806245 seconds).
+1,620,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 28 at 1620000000000000.
+1,680,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 28 succeeded (completed=True, direct match=True, latency=2.814796812 seconds).
+1,680,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 29 at 1680000000000000.
+1,740,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 29 failed (completed=True, direct match=False, latency=10.424001312 seconds).
+1,740,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 30 at 1740000000000000.
+1,800,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 30 failed (completed=True, direct match=False, latency=7.793911062 seconds).
+1,800,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 31 at 1800000000000000.
+1,860,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 31 succeeded (completed=True, direct match=True, latency=2.8194769995 seconds).
+1,860,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 32 at 1860000000000000.
+1,920,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 32 failed (completed=True, direct match=False, latency=2.1710930495 seconds).
+1,920,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 33 at 1920000000000000.
+1,980,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 33 succeeded (completed=True, direct match=True, latency=22.3889001245 seconds).
+1,980,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 34 at 1980000000000000.
+2,040,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 34 succeeded (completed=True, direct match=True, latency=8.406060562 seconds).
+2,040,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 35 at 2040000000000000.
+2,100,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 35 succeeded (completed=True, direct match=True, latency=15.4513024995 seconds).
+2,100,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 36 at 2100000000000000.
+2,160,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 36 failed (completed=True, direct match=False, latency=14.053991437 seconds).
+2,160,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 37 at 2160000000000000.
+2,220,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 37 succeeded (completed=True, direct match=True, latency=6.275795312 seconds).
+2,220,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 38 at 2220000000000000.
+2,280,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 38 succeeded (completed=True, direct match=True, latency=3.5222851245 seconds).
+2,280,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 39 at 2280000000000000.
+2,340,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 39 succeeded (completed=True, direct match=True, latency=4.9653428745 seconds).
+2,340,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 40 at 2340000000000000.
+2,400,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 40 failed (completed=True, direct match=False, latency=8.440728062 seconds).
+2,400,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 41 at 2400000000000000.
+2,460,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 41 succeeded (completed=True, direct match=True, latency=4.9091806245 seconds).
+2,460,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 42 at 2460000000000000.
+2,520,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 42 succeeded (completed=True, direct match=True, latency=7.653330437 seconds).
+2,520,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 43 at 2520000000000000.
+2,580,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 43 failed (completed=True, direct match=False, latency=15.400324687 seconds).
+2,580,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 44 at 2580000000000000.
+2,640,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 44 succeeded (completed=True, direct match=True, latency=8.4013803745 seconds).
+2,640,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 45 at 2640000000000000.
+2,700,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 45 failed (completed=True, direct match=False, latency=4.229773437 seconds).
+2,700,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 46 at 2700000000000000.
+2,760,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 46 succeeded (completed=True, direct match=True, latency=2.7726751245 seconds).
+2,760,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 47 at 2760000000000000.
+2,820,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 47 failed (completed=True, direct match=False, latency=10.5443011245 seconds).
+2,820,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 48 at 2820000000000000.
+2,880,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 48 succeeded (completed=True, direct match=True, latency=5.622909187 seconds).
+2,880,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 49 at 2880000000000000.
+2,940,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 49 succeeded (completed=True, direct match=True, latency=5.6275893745 seconds).
+2,940,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 50 at 2940000000000000.
+3,000,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 50 succeeded (completed=True, direct match=True, latency=4.879539437 seconds).
+3,000,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 51 at 3000000000000000.
+3,060,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 51 succeeded (completed=True, direct match=True, latency=4.9216611245 seconds).
+3,060,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 52 at 3060000000000000.
+3,120,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 52 succeeded (completed=True, direct match=True, latency=5.5932679995 seconds).
+3,120,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 53 at 3120000000000000.
+3,180,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 53 failed (completed=True, direct match=False, latency=12.648045312 seconds).
+3,180,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 54 at 3180000000000000.
+3,240,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 54 succeeded (completed=True, direct match=True, latency=7.6923319995 seconds).
+3,240,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 55 at 3240000000000000.
+3,300,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 55 succeeded (completed=True, direct match=True, latency=13.9990593745 seconds).
+3,300,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 56 at 3300000000000000.
+3,360,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 56 failed (completed=True, direct match=False, latency=4.920101062 seconds).
+3,360,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 57 at 3360000000000000.
+3,420,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 57 succeeded (completed=True, direct match=True, latency=3.5254052495 seconds).
+3,420,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 58 at 3420000000000000.
+3,480,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 58 succeeded (completed=True, direct match=True, latency=14.028525562 seconds).
+3,480,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 59 at 3480000000000000.
+3,540,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 59 succeeded (completed=True, direct match=True, latency=15.4452431245 seconds).
+3,540,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 60 at 3540000000000000.
+3,600,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 60 failed (completed=True, direct match=False, latency=14.013099937 seconds).
+3,600,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 61 at 3600000000000000.
+3,660,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 61 succeeded (completed=True, direct match=True, latency=4.948357187 seconds).
+3,660,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 62 at 3660000000000000.
+3,720,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 62 failed (completed=True, direct match=False, latency=7.7112277495 seconds).
+3,720,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 63 at 3720000000000000.
+3,780,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 63 succeeded (completed=True, direct match=True, latency=4.2126127495 seconds).
+3,780,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 64 at 3780000000000000.
+3,840,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 64 succeeded (completed=True, direct match=True, latency=7.0020043745 seconds).
+3,840,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 65 at 3840000000000000.
+3,900,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 65 succeeded (completed=True, direct match=True, latency=16.115534062 seconds).
+3,900,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 66 at 3900000000000000.
+3,960,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 66 succeeded (completed=True, direct match=True, latency=6.297636187 seconds).
+3,960,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 67 at 3960000000000000.
+4,020,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 67 succeeded (completed=True, direct match=True, latency=4.133049562 seconds).
+4,020,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 68 at 4020000000000000.
+4,080,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 68 succeeded (completed=True, direct match=True, latency=3.5472461245 seconds).
+4,080,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 69 at 4080000000000000.
+4,140,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 69 failed (completed=True, direct match=False, latency=4.2157328745 seconds).
+4,140,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 70 at 4140000000000000.
+4,200,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 70 failed (completed=True, direct match=False, latency=7.031645562 seconds).
+4,200,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 71 at 4200000000000000.
+4,260,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 71 failed (completed=True, direct match=False, latency=10.5068596245 seconds).
+4,260,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 72 at 4260000000000000.
+4,320,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 72 succeeded (completed=True, direct match=True, latency=9.718073062 seconds).
+4,320,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 73 at 4320000000000000.
+4,380,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 73 succeeded (completed=True, direct match=True, latency=2.8225971245 seconds).
+4,380,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 74 at 4380000000000000.
+4,440,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 74 succeeded (completed=True, direct match=True, latency=14.740869062 seconds).
+4,440,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 75 at 4440000000000000.
+4,500,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 75 succeeded (completed=True, direct match=True, latency=17.2946912495 seconds).
+4,500,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 76 at 4500000000000000.
+4,560,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 76 failed (completed=True, direct match=False, latency=22.188156937 seconds).
+4,560,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 77 at 4560000000000000.
+4,620,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 77 failed (completed=True, direct match=False, latency=4.8592586245 seconds).
+4,620,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 78 at 4620000000000000.
+4,680,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 78 succeeded (completed=True, direct match=True, latency=13.0216802495 seconds).
+4,680,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 79 at 4680000000000000.
+4,740,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 79 failed (completed=True, direct match=False, latency=5.6369497495 seconds).
+4,740,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 80 at 4740000000000000.
+4,800,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 80 succeeded (completed=True, direct match=True, latency=2.805436437 seconds).
+4,800,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 81 at 4800000000000000.
+4,860,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 81 succeeded (completed=True, direct match=True, latency=17.539145437 seconds).
+4,860,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 82 at 4860000000000000.
+4,920,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 82 succeeded (completed=True, direct match=True, latency=4.2094926245 seconds).
+4,920,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 83 at 4920000000000000.
+4,980,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 83 succeeded (completed=True, direct match=True, latency=0.7328934995 seconds).
+4,980,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 84 at 4980000000000000.
+5,040,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 84 succeeded (completed=True, direct match=True, latency=15.4762634995 seconds).
+5,040,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 85 at 5040000000000000.
+5,100,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 85 succeeded (completed=True, direct match=True, latency=8.3982602495 seconds).
+5,100,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 86 at 5100000000000000.
+5,160,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 86 failed (completed=True, direct match=False, latency=9.7789154995 seconds).
+5,160,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 87 at 5160000000000000.
+5,220,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 87 succeeded (completed=True, direct match=True, latency=2.7789153745 seconds).
+5,220,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 88 at 5220000000000000.
+5,280,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 88 succeeded (completed=True, direct match=True, latency=3.5160448745 seconds).
+5,280,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 89 at 5280000000000000.
+5,340,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 89 succeeded (completed=True, direct match=True, latency=2.861773687 seconds).
+5,340,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 90 at 5340000000000000.
+5,400,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 90 succeeded (completed=True, direct match=True, latency=8.406060562 seconds).
+5,400,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 91 at 5400000000000000.
+5,460,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 91 succeeded (completed=True, direct match=True, latency=20.9631934995 seconds).
+5,460,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 92 at 5460000000000000.
+5,520,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 92 failed (completed=True, direct match=False, latency=4.201692312 seconds).
+5,520,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 93 at 5520000000000000.
+5,580,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 93 succeeded (completed=True, direct match=True, latency=3.458322562 seconds).
+5,580,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 94 at 5580000000000000.
+5,640,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 94 succeeded (completed=True, direct match=True, latency=8.4169809995 seconds).
+5,640,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 95 at 5640000000000000.
+5,700,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 95 failed (completed=True, direct match=False, latency=5.710272687 seconds).
+5,700,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 96 at 5700000000000000.
+5,760,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 96 failed (completed=True, direct match=False, latency=3.517604937 seconds).
+5,760,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 97 at 5760000000000000.
+5,820,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 97 succeeded (completed=True, direct match=True, latency=7.0425659995 seconds).
+5,820,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 98 at 5820000000000000.
+5,880,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 98 succeeded (completed=True, direct match=True, latency=12.597948312 seconds).
+5,880,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 99 at 5880000000000000.
+5,940,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 99 succeeded (completed=True, direct match=True, latency=9.824332312 seconds).
+5,940,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 100 at 5940000000000000.
+6,000,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 100 failed (completed=True, direct match=False, latency=7.7143478745 seconds).
+6,000,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 101 at 6000000000000000.
+6,060,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 101 failed (completed=True, direct match=False, latency=7.1051434995 seconds).
+6,060,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 102 at 6060000000000000.
+6,120,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 102 succeeded (completed=True, direct match=True, latency=10.5316456245 seconds).
+6,120,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 103 at 6120000000000000.
+6,180,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 103 failed (completed=True, direct match=False, latency=7.7500984995 seconds).
+6,180,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 104 at 6180000000000000.
+6,240,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 104 failed (completed=True, direct match=False, latency=8.4556627245 seconds).
+6,240,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 105 at 6240000000000000.
+6,300,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 105 failed (completed=True, direct match=False, latency=7.0271403745 seconds).
+6,300,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 106 at 6300000000000000.
+6,360,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 106 succeeded (completed=True, direct match=True, latency=18.926341562 seconds).
+6,360,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 107 at 6360000000000000.
+6,420,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 107 succeeded (completed=True, direct match=True, latency=12.5936931245 seconds).
+6,420,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 108 at 6420000000000000.
+6,480,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 108 succeeded (completed=True, direct match=True, latency=5.5932679995 seconds).
+6,480,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 109 at 6480000000000000.
+6,540,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 109 failed (completed=True, direct match=False, latency=8.3642793745 seconds).
+6,540,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 110 at 6540000000000000.
+6,600,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 110 succeeded (completed=True, direct match=True, latency=2.802316312 seconds).
+6,600,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 111 at 6600000000000000.
+6,660,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 111 succeeded (completed=True, direct match=True, latency=7.7048124995 seconds).
+6,660,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 112 at 6660000000000000.
+6,720,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 112 succeeded (completed=True, direct match=True, latency=10.5102297495 seconds).
+6,720,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 113 at 6720000000000000.
+6,780,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 113 succeeded (completed=True, direct match=True, latency=5.629149437 seconds).
+6,780,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 114 at 6780000000000000.
+6,840,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 114 succeeded (completed=True, direct match=True, latency=4.932581562 seconds).
+6,840,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 115 at 6840000000000000.
+6,900,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 115 succeeded (completed=True, direct match=True, latency=9.802316437 seconds).
+6,900,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 116 at 6900000000000000.
+6,960,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 116 succeeded (completed=True, direct match=True, latency=4.8842196245 seconds).
+6,960,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 117 at 6960000000000000.
+7,020,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 117 succeeded (completed=True, direct match=True, latency=4.1502102495 seconds).
+7,020,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 118 at 7020000000000000.
+7,080,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 118 succeeded (completed=True, direct match=True, latency=6.235408687 seconds).
+7,080,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 119 at 7080000000000000.
+7,140,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 119 failed (completed=True, direct match=False, latency=1.5322399495 seconds).
+7,140,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 120 at 7140000000000000.
+7,200,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 120 succeeded (completed=True, direct match=True, latency=6.2590596245 seconds).
+7,200,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 121 at 7200000000000000.
+7,260,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 121 succeeded (completed=True, direct match=True, latency=1.418540937 seconds).
+7,260,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 122 at 7260000000000000.
+7,320,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 122 succeeded (completed=True, direct match=True, latency=5.616668937 seconds).
+7,320,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 123 at 7320000000000000.
+7,380,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 123 succeeded (completed=True, direct match=True, latency=6.3210371245 seconds).
+7,380,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 124 at 7380000000000000.
+7,440,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 124 succeeded (completed=True, direct match=True, latency=11.217293062 seconds).
+7,440,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 125 at 7440000000000000.
+7,500,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 125 succeeded (completed=True, direct match=True, latency=4.2157328745 seconds).
+7,500,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 126 at 7500000000000000.
+7,560,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 126 failed (completed=True, direct match=False, latency=2.833517562 seconds).
+7,560,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 127 at 7560000000000000.
+7,620,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 127 succeeded (completed=True, direct match=True, latency=6.9583226245 seconds).
+7,620,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 128 at 7620000000000000.
+7,680,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 128 succeeded (completed=True, direct match=True, latency=7.736203062 seconds).
+7,680,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 129 at 7680000000000000.
+7,740,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 129 succeeded (completed=True, direct match=True, latency=3.498884187 seconds).
+7,740,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 130 at 7740000000000000.
+7,800,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 130 succeeded (completed=True, direct match=True, latency=14.8046566245 seconds).
+7,800,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 131 at 7800000000000000.
+7,860,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 131 failed (completed=True, direct match=False, latency=6.3335176245 seconds).
+7,860,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 132 at 7860000000000000.
+7,920,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 132 succeeded (completed=True, direct match=True, latency=18.217293187 seconds).
+7,920,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 133 at 7920000000000000.
+7,980,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 133 failed (completed=True, direct match=False, latency=5.639109812 seconds).
+7,980,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 134 at 7980000000000000.
+8,040,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 134 failed (completed=True, direct match=False, latency=12.594828187 seconds).
+8,040,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 135 at 8040000000000000.
+8,100,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 135 succeeded (completed=True, direct match=True, latency=14.684531812 seconds).
+8,100,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 136 at 8100000000000000.
+8,160,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 136 succeeded (completed=True, direct match=True, latency=10.4475772495 seconds).
+8,160,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 137 at 8160000000000000.
+8,220,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 137 succeeded (completed=True, direct match=True, latency=8.478248437 seconds).
+8,220,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 138 at 8220000000000000.
+8,280,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 138 succeeded (completed=True, direct match=True, latency=10.523845312 seconds).
+8,280,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 139 at 8280000000000000.
+8,340,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 139 failed (completed=True, direct match=False, latency=13.288275937 seconds).
+8,340,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 140 at 8340000000000000.
+8,400,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 140 succeeded (completed=True, direct match=True, latency=8.499664312 seconds).
+8,400,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 141 at 8400000000000000.
+8,460,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 141 succeeded (completed=True, direct match=True, latency=11.2032524995 seconds).
+8,460,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 142 at 8460000000000000.
+8,520,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 142 succeeded (completed=True, direct match=True, latency=5.6650308745 seconds).
+8,520,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 143 at 8520000000000000.
+8,580,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 143 succeeded (completed=True, direct match=True, latency=18.6100738745 seconds).
+8,580,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 144 at 8580000000000000.
+8,640,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 144 failed (completed=True, direct match=False, latency=2.901851662 seconds).
+8,640,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 145 at 8640000000000000.
+8,700,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 145 succeeded (completed=True, direct match=True, latency=10.4848437495 seconds).
+8,700,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 146 at 8700000000000000.
+8,760,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 146 succeeded (completed=True, direct match=True, latency=4.289055812 seconds).
+8,760,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 147 at 8760000000000000.
+8,820,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 147 succeeded (completed=True, direct match=True, latency=9.0948281245 seconds).
+8,820,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 148 at 8820000000000000.
+8,880,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 148 failed (completed=True, direct match=False, latency=7.728388437 seconds).
+8,880,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 149 at 8880000000000000.
+8,940,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 149 succeeded (completed=True, direct match=True, latency=2.792955937 seconds).
+8,940,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 150 at 8940000000000000.
+9,000,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 150 succeeded (completed=True, direct match=True, latency=2.849293187 seconds).
+9,000,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 151 at 9000000000000000.
+9,060,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 151 succeeded (completed=True, direct match=True, latency=11.857698687 seconds).
+9,060,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 152 at 9060000000000000.
+9,120,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 152 succeeded (completed=True, direct match=True, latency=9.824157312 seconds).
+9,120,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 153 at 9120000000000000.
+9,180,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 153 failed (completed=True, direct match=False, latency=4.932581562 seconds).
+9,180,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 154 at 9180000000000000.
+9,240,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 154 succeeded (completed=True, direct match=True, latency=2.099508187 seconds).
+9,240,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 155 at 9240000000000000.
+9,300,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 155 succeeded (completed=True, direct match=True, latency=4.9279013745 seconds).
+9,300,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 156 at 9300000000000000.
+9,360,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 156 succeeded (completed=True, direct match=True, latency=7.700307312 seconds).
+9,360,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 157 at 9360000000000000.
+9,420,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 157 succeeded (completed=True, direct match=True, latency=7.718853062 seconds).
+9,420,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 158 at 9420000000000000.
+9,480,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 158 succeeded (completed=True, direct match=True, latency=6.319477062 seconds).
+9,480,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 159 at 9480000000000000.
+9,540,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 159 succeeded (completed=True, direct match=True, latency=14.028525562 seconds).
+9,540,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 160 at 9540000000000000.
+9,600,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 160 succeeded (completed=True, direct match=True, latency=8.424781312 seconds).
+9,600,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 161 at 9600000000000000.
+9,660,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 161 succeeded (completed=True, direct match=True, latency=3.545686062 seconds).
+9,660,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 162 at 9660000000000000.
+9,720,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 162 failed (completed=True, direct match=False, latency=13.328837562 seconds).
+9,720,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 163 at 9720000000000000.
+9,780,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 163 failed (completed=True, direct match=False, latency=7.712612812 seconds).
+9,780,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 164 at 9780000000000000.
+9,840,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 164 succeeded (completed=True, direct match=True, latency=7.009804687 seconds).
+9,840,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 165 at 9840000000000000.
+9,900,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 165 succeeded (completed=True, direct match=True, latency=4.904675437 seconds).
+9,900,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 166 at 9900000000000000.
+9,960,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 166 succeeded (completed=True, direct match=True, latency=6.3303974995 seconds).
+9,960,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 167 at 9960000000000000.
+10,020,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 167 failed (completed=True, direct match=False, latency=5.620659537 seconds).
+10,020,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 168 at 10020000000000000.
+10,080,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 168 succeeded (completed=True, direct match=True, latency=4.1814114995 seconds).
+10,080,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 169 at 10080000000000000.
+10,140,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 169 succeeded (completed=True, direct match=True, latency=8.4731432495 seconds).
+10,140,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 170 at 10140000000000000.
+10,200,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 170 succeeded (completed=True, direct match=True, latency=5.5870277495 seconds).
+10,200,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 171 at 10200000000000000.
+10,260,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 171 succeeded (completed=True, direct match=True, latency=6.941161937 seconds).
+10,260,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 172 at 10260000000000000.
+10,320,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 172 succeeded (completed=True, direct match=True, latency=9.7695551245 seconds).
+10,320,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 173 at 10320000000000000.
+10,380,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 173 succeeded (completed=True, direct match=True, latency=28.4277217495 seconds).
+10,380,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 174 at 10380000000000000.
+10,440,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 174 succeeded (completed=True, direct match=True, latency=2.811676687 seconds).
+10,440,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 175 at 10440000000000000.
+10,500,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 175 succeeded (completed=True, direct match=True, latency=5.6121637495 seconds).
+10,500,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 176 at 10500000000000000.
+10,560,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 176 succeeded (completed=True, direct match=True, latency=18.236013937 seconds).
+10,560,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 177 at 10560000000000000.
+10,620,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 177 succeeded (completed=True, direct match=True, latency=7.703252437 seconds).
+10,620,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 178 at 10620000000000000.
+10,680,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 178 succeeded (completed=True, direct match=True, latency=2.7508342495 seconds).
+10,680,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 179 at 10680000000000000.
+10,740,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 179 succeeded (completed=True, direct match=True, latency=7.7391338745 seconds).
+10,740,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 180 at 10740000000000000.
+10,800,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 180 failed (completed=True, direct match=False, latency=13.316357062 seconds).
+10,800,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 181 at 10800000000000000.
+10,860,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 181 succeeded (completed=True, direct match=True, latency=2.1291493745 seconds).
+10,860,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 182 at 10860000000000000.
+10,920,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 182 succeeded (completed=True, direct match=True, latency=11.916981062 seconds).
+10,920,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 183 at 10920000000000000.
+10,980,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 183 succeeded (completed=True, direct match=True, latency=2.864718812 seconds).
+10,980,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 184 at 10980000000000000.
+11,040,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 184 failed (completed=True, direct match=False, latency=11.8812746245 seconds).
+11,040,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 185 at 11040000000000000.
+11,100,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 185 succeeded (completed=True, direct match=True, latency=5.582347562 seconds).
+11,100,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 186 at 11100000000000000.
+11,160,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 186 succeeded (completed=True, direct match=True, latency=12.6088687495 seconds).
+11,160,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 187 at 11160000000000000.
+11,220,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 187 succeeded (completed=True, direct match=True, latency=7.0082446245 seconds).
+11,220,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 188 at 11220000000000000.
+11,280,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 188 succeeded (completed=True, direct match=True, latency=8.4357017495 seconds).
+11,280,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 189 at 11280000000000000.
+11,340,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 189 succeeded (completed=True, direct match=True, latency=7.009804687 seconds).
+11,340,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 190 at 11340000000000000.
+11,400,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 190 failed (completed=True, direct match=False, latency=4.220413062 seconds).
+11,400,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 191 at 11400000000000000.
+11,460,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 191 succeeded (completed=True, direct match=True, latency=3.5066844995 seconds).
+11,460,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 192 at 11460000000000000.
+11,520,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 192 succeeded (completed=True, direct match=True, latency=6.3241572495 seconds).
+11,520,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 193 at 11520000000000000.
+11,580,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 193 failed (completed=True, direct match=False, latency=11.926341437 seconds).
+11,580,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 194 at 11580000000000000.
+11,640,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 194 failed (completed=True, direct match=False, latency=7.013099812 seconds).
+11,640,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 195 at 11640000000000000.
+11,700,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 195 failed (completed=True, direct match=False, latency=2.833517562 seconds).
+11,700,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 196 at 11700000000000000.
+11,760,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 196 failed (completed=True, direct match=False, latency=4.9466221245 seconds).
+11,760,000,000,000,000 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 197 at 11760000000000000.
+11,828,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 197 succeeded (completed=True, direct match=True, latency=13.3210372495 seconds).
+11,828,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 198 at 11828030274016847.
+11,888,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 198 succeeded (completed=True, direct match=True, latency=13.973923382653 seconds).
+11,888,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 199 at 11888030274016847.
+11,948,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 199 failed (completed=True, direct match=False, latency=14.711227882653 seconds).
+11,948,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 200 at 11948030274016847.
+12,008,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 200 succeeded (completed=True, direct match=True, latency=11.923221320153 seconds).
+12,008,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 201 at 12008030274016847.
+12,068,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 201 succeeded (completed=True, direct match=True, latency=6.347558195153 seconds).
+12,068,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 202 at 12068030274016847.
+12,128,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 202 succeeded (completed=True, direct match=True, latency=7.023845257653 seconds).
+12,128,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 203 at 12128030274016847.
+12,188,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 203 succeeded (completed=True, direct match=True, latency=21.036326007653 seconds).
+12,188,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 204 at 12188030274016847.
+12,248,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 204 succeeded (completed=True, direct match=True, latency=4.870179070153 seconds).
+12,248,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 205 at 12248030274016847.
+12,308,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 205 succeeded (completed=True, direct match=True, latency=5.654110445153 seconds).
+12,308,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 206 at 12308030274016847.
+12,368,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 206 failed (completed=True, direct match=False, latency=9.782210632653 seconds).
+12,368,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 207 at 12368030274016847.
+12,428,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 207 succeeded (completed=True, direct match=True, latency=4.956157507653 seconds).
+12,428,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 208 at 12428030274016847.
+12,488,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 208 succeeded (completed=True, direct match=True, latency=7.037885820153 seconds).
+12,488,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 209 at 12488030274016847.
+12,548,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 209 succeeded (completed=True, direct match=True, latency=2.856918507653 seconds).
+12,548,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 210 at 12548030274016847.
+12,608,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 210 failed (completed=True, direct match=False, latency=6.306996570153 seconds).
+12,608,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 211 at 12608030274016847.
+12,668,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 211 failed (completed=True, direct match=False, latency=11.230373570153 seconds).
+12,668,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 212 at 12668030274016847.
+12,728,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 212 succeeded (completed=True, direct match=True, latency=4.220413070153 seconds).
+12,728,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 213 at 12728030274016847.
+12,788,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 213 failed (completed=True, direct match=False, latency=12.588587945153 seconds).
+12,788,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 214 at 12788030274016847.
+12,848,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 214 failed (completed=True, direct match=False, latency=4.914035820153 seconds).
+12,848,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 215 at 12848030274016847.
+12,908,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 215 succeeded (completed=True, direct match=True, latency=11.884644757653 seconds).
+12,908,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 216 at 12908030274016847.
+12,968,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 216 succeeded (completed=True, direct match=True, latency=8.443502070153 seconds).
+12,968,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 217 at 12968030274016847.
+13,028,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 217 succeeded (completed=True, direct match=True, latency=5.608868632653 seconds).
+13,028,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 218 at 13028030274016847.
+13,088,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 218 succeeded (completed=True, direct match=True, latency=8.396700195153 seconds).
+13,088,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 219 at 13088030274016847.
+13,148,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 219 failed (completed=True, direct match=False, latency=5.723864845153 seconds).
+13,148,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 220 at 13148030274016847.
+13,208,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 220 succeeded (completed=True, direct match=True, latency=5.627589382653 seconds).
+13,208,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 221 at 13208030274016847.
+13,268,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 221 failed (completed=True, direct match=False, latency=7.027140382653 seconds).
+13,268,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 222 at 13268030274016847.
+13,328,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 222 succeeded (completed=True, direct match=True, latency=7.002004382653 seconds).
+13,328,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 223 at 13328030274016847.
+13,388,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 223 failed (completed=True, direct match=False, latency=9.107308632653 seconds).
+13,388,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 224 at 13388030274016847.
+13,448,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 224 succeeded (completed=True, direct match=True, latency=3.498884195153 seconds).
+13,448,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 225 at 13448030274016847.
+13,508,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 225 failed (completed=True, direct match=False, latency=9.814796945153 seconds).
+13,508,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 226 at 13508030274016847.
+13,568,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 226 succeeded (completed=True, direct match=True, latency=12.601068445153 seconds).
+13,568,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 227 at 13568030274016847.
+13,628,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 227 succeeded (completed=True, direct match=True, latency=4.190771882653 seconds).
+13,628,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 228 at 13628030274016847.
+13,688,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 228 failed (completed=True, direct match=False, latency=13.323197320153 seconds).
+13,688,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 229 at 13688030274016847.
+13,748,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 229 succeeded (completed=True, direct match=True, latency=4.237573757653 seconds).
+13,748,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 230 at 13748030274016847.
+13,808,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 230 failed (completed=True, direct match=False, latency=4.229773445153 seconds).
+13,808,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 231 at 13808030274016847.
+13,868,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 231 succeeded (completed=True, direct match=True, latency=9.689991945153 seconds).
+13,868,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 232 at 13868030274016847.
+13,928,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 232 succeeded (completed=True, direct match=True, latency=11.887339882653 seconds).
+13,928,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 233 at 13928030274016847.
+13,988,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 233 failed (completed=True, direct match=False, latency=9.130709570153 seconds).
+13,988,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 234 at 13988030274016847.
+14,048,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 234 succeeded (completed=True, direct match=True, latency=2.157230507653 seconds).
+14,048,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 235 at 14048030274016847.
+14,108,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 235 succeeded (completed=True, direct match=True, latency=4.892019945153 seconds).
+14,108,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 236 at 14108030274016847.
+14,168,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 236 failed (completed=True, direct match=False, latency=3.536325695153 seconds).
+14,168,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 237 at 14168030274016847.
+14,228,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 237 succeeded (completed=True, direct match=True, latency=11.217293070153 seconds).
+14,228,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 238 at 14228030274016847.
+14,288,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 238 succeeded (completed=True, direct match=True, latency=15.211652882653 seconds).
+14,288,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 239 at 14288030274016847.
+14,348,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 239 succeeded (completed=True, direct match=True, latency=10.535190757653 seconds).
+14,348,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 240 at 14348030274016847.
+14,408,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 240 failed (completed=True, direct match=False, latency=6.974523257653 seconds).
+14,408,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 241 at 14408030274016847.
+14,468,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 241 succeeded (completed=True, direct match=True, latency=9.083907695153 seconds).
+14,468,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 242 at 14468030274016847.
+14,528,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 242 succeeded (completed=True, direct match=True, latency=6.328837445153 seconds).
+14,528,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 243 at 14528030274016847.
+14,588,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 243 succeeded (completed=True, direct match=True, latency=2.775795257653 seconds).
+14,588,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 244 at 14588030274016847.
+14,648,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 244 succeeded (completed=True, direct match=True, latency=3.519165007653 seconds).
+14,648,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 245 at 14648030274016847.
+14,708,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 245 failed (completed=True, direct match=False, latency=3.530085445153 seconds).
+14,708,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 246 at 14708030274016847.
+14,768,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 246 succeeded (completed=True, direct match=True, latency=18.925206507653 seconds).
+14,768,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 247 at 14768030274016847.
+14,828,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 247 failed (completed=True, direct match=False, latency=8.423821257653 seconds).
+14,828,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 248 at 14828030274016847.
+14,888,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 248 succeeded (completed=True, direct match=True, latency=11.221973257653 seconds).
+14,888,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 249 at 14888030274016847.
+14,948,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 249 succeeded (completed=True, direct match=True, latency=4.215732882653 seconds).
+14,948,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 250 at 14948030274016847.
+15,008,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 250 succeeded (completed=True, direct match=True, latency=6.311676757653 seconds).
+15,008,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 251 at 15008030274016847.
+15,068,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 251 succeeded (completed=True, direct match=True, latency=6.272675195153 seconds).
+15,068,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 252 at 15068030274016847.
+15,128,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 252 succeeded (completed=True, direct match=True, latency=4.923221195153 seconds).
+15,128,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 253 at 15128030274016847.
+15,188,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 253 succeeded (completed=True, direct match=True, latency=5.018385007653 seconds).
+15,188,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 254 at 15188030274016847.
+15,248,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 254 failed (completed=True, direct match=False, latency=10.421056195153 seconds).
+15,248,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 255 at 15248030274016847.
+15,308,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 255 succeeded (completed=True, direct match=True, latency=7.017605007653 seconds).
+15,308,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 256 at 15308030274016847.
+15,368,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 256 succeeded (completed=True, direct match=True, latency=4.212612757653 seconds).
+15,368,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 257 at 15368030274016847.
+15,428,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 257 succeeded (completed=True, direct match=True, latency=5.604188445153 seconds).
+15,428,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 258 at 15428030274016847.
+15,488,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 258 failed (completed=True, direct match=False, latency=7.038060820153 seconds).
+15,488,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 259 at 15488030274016847.
+15,548,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 259 succeeded (completed=True, direct match=True, latency=6.969243070153 seconds).
+15,548,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 260 at 15548030274016847.
+15,608,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 260 failed (completed=True, direct match=False, latency=9.108868695153 seconds).
+15,608,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 261 at 15608030274016847.
+15,668,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 261 succeeded (completed=True, direct match=True, latency=3.519165007653 seconds).
+15,668,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 262 at 15668030274016847.
+15,728,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 262 succeeded (completed=True, direct match=True, latency=7.012924820153 seconds).
+15,728,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 263 at 15728030274016847.
+15,788,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 263 succeeded (completed=True, direct match=True, latency=2.878759382653 seconds).
+15,788,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 264 at 15788030274016847.
+15,848,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 264 succeeded (completed=True, direct match=True, latency=3.464562820153 seconds).
+15,848,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 265 at 15848030274016847.
+15,908,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 265 failed (completed=True, direct match=False, latency=7.801536382653 seconds).
+15,908,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 266 at 15908030274016847.
+15,968,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 266 succeeded (completed=True, direct match=True, latency=14.045686257653 seconds).
+15,968,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 267 at 15968030274016847.
+16,028,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 267 succeeded (completed=True, direct match=True, latency=9.793556070153 seconds).
+16,028,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 268 at 16028030274016847.
+16,088,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 268 succeeded (completed=True, direct match=True, latency=7.005124507653 seconds).
+16,088,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 269 at 16088030274016847.
+16,148,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 269 failed (completed=True, direct match=False, latency=9.830747570153 seconds).
+16,148,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 270 at 16148030274016847.
+16,208,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 270 succeeded (completed=True, direct match=True, latency=4.229773445153 seconds).
+16,208,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 271 at 16208030274016847.
+16,268,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 271 succeeded (completed=True, direct match=True, latency=4.912300757653 seconds).
+16,268,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 272 at 16268030274016847.
+16,328,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 272 succeeded (completed=True, direct match=True, latency=14.647430445153 seconds).
+16,328,030,274,016,847 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 273 at 16328030274016847.
+16,389,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 273 succeeded (completed=True, direct match=True, latency=14.689212007653 seconds).
+16,389,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 274 at 16389985228105411.
+16,449,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 274 succeeded (completed=True, direct match=True, latency=6.343070506589 seconds).
+16,449,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 275 at 16449985228105411.
+16,509,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 275 succeeded (completed=True, direct match=True, latency=7.039445881589 seconds).
+16,509,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 276 at 16509985228105411.
+16,569,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 276 succeeded (completed=True, direct match=True, latency=13.305436631589 seconds).
+16,569,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 277 at 16569985228105411.
+16,629,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 277 succeeded (completed=True, direct match=True, latency=2.144750006589 seconds).
+16,629,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 278 at 16629985228105411.
+16,689,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 278 succeeded (completed=True, direct match=True, latency=4.220413069089 seconds).
+16,689,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 279 at 16689985228105411.
+16,749,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 279 succeeded (completed=True, direct match=True, latency=4.937261756589 seconds).
+16,749,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 280 at 16749985228105411.
+16,809,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 280 succeeded (completed=True, direct match=True, latency=3.511364694089 seconds).
+16,809,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 281 at 16809985228105411.
+16,869,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 281 succeeded (completed=True, direct match=True, latency=3.516044881589 seconds).
+16,869,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 282 at 16869985228105411.
+16,929,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 282 succeeded (completed=True, direct match=True, latency=4.913860819089 seconds).
+16,929,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 283 at 16929985228105411.
+16,989,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 283 succeeded (completed=True, direct match=True, latency=12.589012944089 seconds).
+16,989,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 284 at 16989985228105411.
+17,049,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 284 succeeded (completed=True, direct match=True, latency=9.110428756589 seconds).
+17,049,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 285 at 17049985228105411.
+17,109,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 285 succeeded (completed=True, direct match=True, latency=7.055046506589 seconds).
+17,109,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 286 at 17109985228105411.
+17,169,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 286 succeeded (completed=True, direct match=True, latency=16.780475694089 seconds).
+17,169,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 287 at 17169985228105411.
+17,229,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 287 failed (completed=True, direct match=False, latency=13.059546756589 seconds).
+17,229,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 288 at 17229985228105411.
+17,289,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 288 succeeded (completed=True, direct match=True, latency=5.618229006589 seconds).
+17,289,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 289 at 17289985228105411.
+17,349,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 289 succeeded (completed=True, direct match=True, latency=9.833517694089 seconds).
+17,349,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 290 at 17349985228105411.
+17,409,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 290 failed (completed=True, direct match=False, latency=6.224313256589 seconds).
+17,409,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 291 at 17409985228105411.
+17,469,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 291 failed (completed=True, direct match=False, latency=12.626029444089 seconds).
+17,469,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 292 at 17469985228105411.
+17,529,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 292 succeeded (completed=True, direct match=True, latency=4.275190256589 seconds).
+17,529,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 293 at 17529985228105411.
+17,589,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 293 succeeded (completed=True, direct match=True, latency=6.258634631589 seconds).
+17,589,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 294 at 17589985228105411.
+17,649,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 294 succeeded (completed=True, direct match=True, latency=6.235233694089 seconds).
+17,649,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 295 at 17649985228105411.
+17,709,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 295 succeeded (completed=True, direct match=True, latency=6.317917006589 seconds).
+17,709,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 296 at 17709985228105411.
+17,769,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 296 succeeded (completed=True, direct match=True, latency=6.975658319089 seconds).
+17,769,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 297 at 17769985228105411.
+17,829,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 297 failed (completed=True, direct match=False, latency=13.115709006589 seconds).
+17,829,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 298 at 17829985228105411.
+17,889,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 298 succeeded (completed=True, direct match=True, latency=4.008244569089 seconds).
+17,889,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 299 at 17889985228105411.
+17,949,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 299 succeeded (completed=True, direct match=True, latency=4.912300756589 seconds).
+17,949,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 300 at 17949985228105411.
+18,009,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 300 succeeded (completed=True, direct match=True, latency=4.236013694089 seconds).
+18,009,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 301 at 18009985228105411.
+18,069,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 301 succeeded (completed=True, direct match=True, latency=7.064406881589 seconds).
+18,069,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 302 at 18069985228105411.
+18,129,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 302 succeeded (completed=True, direct match=True, latency=10.550366381589 seconds).
+18,129,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 303 at 18129985228105411.
+18,189,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 303 succeeded (completed=True, direct match=True, latency=7.000444319089 seconds).
+18,189,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 304 at 18189985228105411.
+18,249,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 304 succeeded (completed=True, direct match=True, latency=10.525405381589 seconds).
+18,249,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 305 at 18249985228105411.
+18,309,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 305 succeeded (completed=True, direct match=True, latency=6.308556631589 seconds).
+18,309,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 306 at 18309985228105411.
+18,369,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 306 succeeded (completed=True, direct match=True, latency=9.158790694089 seconds).
+18,369,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 307 at 18369985228105411.
+18,429,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 307 succeeded (completed=True, direct match=True, latency=20.131134756589 seconds).
+18,429,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 308 at 18429985228105411.
+18,489,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 308 succeeded (completed=True, direct match=True, latency=7.034765694089 seconds).
+18,489,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 309 at 18489985228105411.
+18,549,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 309 failed (completed=True, direct match=False, latency=7.717468006589 seconds).
+18,549,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 310 at 18549985228105411.
+18,609,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 310 succeeded (completed=True, direct match=True, latency=9.791396006589 seconds).
+18,609,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 311 at 18609985228105411.
+18,669,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 311 succeeded (completed=True, direct match=True, latency=3.545686069089 seconds).
+18,669,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 312 at 18669985228105411.
+18,729,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 312 succeeded (completed=True, direct match=True, latency=8.451302381589 seconds).
+18,729,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 313 at 18729985228105411.
+18,789,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 313 failed (completed=True, direct match=False, latency=9.821037194089 seconds).
+18,789,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 314 at 18789985228105411.
+18,849,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 314 failed (completed=True, direct match=False, latency=5.001367731589 seconds).
+18,849,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 315 at 18849985228105411.
+18,909,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 315 succeeded (completed=True, direct match=True, latency=7.022285194089 seconds).
+18,909,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 316 at 18909985228105411.
+18,969,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 316 succeeded (completed=True, direct match=True, latency=2.136949694089 seconds).
+18,969,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 317 at 18969985228105411.
+19,029,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 317 failed (completed=True, direct match=False, latency=7.786110756589 seconds).
+19,029,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 318 at 19029985228105411.
+19,089,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 318 failed (completed=True, direct match=False, latency=3.505124444089 seconds).
+19,089,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 319 at 19089985228105411.
+19,149,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 319 succeeded (completed=True, direct match=True, latency=9.836637819089 seconds).
+19,149,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 320 at 19149985228105411.
+19,209,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 320 failed (completed=True, direct match=False, latency=12.582347694089 seconds).
+19,209,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 321 at 19209985228105411.
+19,269,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 321 failed (completed=True, direct match=False, latency=7.026965381589 seconds).
+19,269,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 322 at 19269985228105411.
+19,329,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 322 failed (completed=True, direct match=False, latency=7.779870506589 seconds).
+19,329,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 323 at 19329985228105411.
+19,389,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 323 failed (completed=True, direct match=False, latency=8.374859319089 seconds).
+19,389,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 324 at 19389985228105411.
+19,449,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 324 failed (completed=True, direct match=False, latency=1.962397694089 seconds).
+19,449,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 325 at 19449985228105411.
+19,509,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 325 succeeded (completed=True, direct match=True, latency=9.102628444089 seconds).
+19,509,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 326 at 19509985228105411.
+19,569,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 326 failed (completed=True, direct match=False, latency=7.650546069089 seconds).
+19,569,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 327 at 19569985228105411.
+19,629,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 327 succeeded (completed=True, direct match=True, latency=14.692332131589 seconds).
+19,629,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 328 at 19629985228105411.
+19,689,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 328 succeeded (completed=True, direct match=True, latency=4.906060506589 seconds).
+19,689,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 329 at 19689985228105411.
+19,749,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 329 failed (completed=True, direct match=False, latency=8.435701756589 seconds).
+19,749,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 330 at 19749985228105411.
+19,809,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 330 succeeded (completed=True, direct match=True, latency=6.317917006589 seconds).
+19,809,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 331 at 19809985228105411.
+19,869,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 331 failed (completed=True, direct match=False, latency=5.605748506589 seconds).
+19,869,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 332 at 19869985228105411.
+19,929,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 332 succeeded (completed=True, direct match=True, latency=7.017605006589 seconds).
+19,929,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 333 at 19929985228105411.
+19,989,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 333 succeeded (completed=True, direct match=True, latency=9.824157319089 seconds).
+19,989,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 334 at 19989985228105411.
+20,049,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 334 succeeded (completed=True, direct match=True, latency=5.572987194089 seconds).
+20,049,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 335 at 20049985228105411.
+20,109,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 335 succeeded (completed=True, direct match=True, latency=7.022438694089 seconds).
+20,109,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 336 at 20109985228105411.
+20,169,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 336 failed (completed=True, direct match=False, latency=8.381099569089 seconds).
+20,169,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 337 at 20169985228105411.
+20,229,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 337 failed (completed=True, direct match=False, latency=11.212612881589 seconds).
+20,229,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 338 at 20229985228105411.
+20,289,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 338 succeeded (completed=True, direct match=True, latency=1.265156219089 seconds).
+20,289,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 339 at 20289985228105411.
+20,349,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 339 succeeded (completed=True, direct match=True, latency=6.283595631589 seconds).
+20,349,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 340 at 20349985228105411.
+20,409,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 340 succeeded (completed=True, direct match=True, latency=9.046466194089 seconds).
+20,409,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 341 at 20409985228105411.
+20,469,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 341 failed (completed=True, direct match=False, latency=9.132269631589 seconds).
+20,469,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 342 at 20469985228105411.
+20,529,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 342 succeeded (completed=True, direct match=True, latency=11.976263444089 seconds).
+20,529,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 343 at 20529985228105411.
+20,589,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 343 succeeded (completed=True, direct match=True, latency=9.794516131589 seconds).
+20,589,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 344 at 20589985228105411.
+20,649,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 344 failed (completed=True, direct match=False, latency=10.427121444089 seconds).
+20,649,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 345 at 20649985228105411.
+20,709,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 345 succeeded (completed=True, direct match=True, latency=11.250054381589 seconds).
+20,709,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 346 at 20709985228105411.
+20,769,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 346 succeeded (completed=True, direct match=True, latency=4.228213381589 seconds).
+20,769,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 347 at 20769985228105411.
+20,829,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 347 succeeded (completed=True, direct match=True, latency=4.225093256589 seconds).
+20,829,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 348 at 20829985228105411.
+20,889,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 348 succeeded (completed=True, direct match=True, latency=4.190771881589 seconds).
+20,889,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 349 at 20889985228105411.
+20,949,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 349 succeeded (completed=True, direct match=True, latency=7.666235944089 seconds).
+20,949,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 350 at 20949985228105411.
+21,009,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 350 succeeded (completed=True, direct match=True, latency=4.906235506589 seconds).
+21,009,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 351 at 21009985228105411.
+21,069,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 351 succeeded (completed=True, direct match=True, latency=11.907620694089 seconds).
+21,069,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 352 at 21069985228105411.
+21,129,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 352 succeeded (completed=True, direct match=True, latency=6.317917006589 seconds).
+21,129,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 353 at 21129985228105411.
+21,189,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 353 succeeded (completed=True, direct match=True, latency=4.228213381589 seconds).
+21,189,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 354 at 21189985228105411.
+21,249,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 354 succeeded (completed=True, direct match=True, latency=2.071427069089 seconds).
+21,249,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 355 at 21249985228105411.
+21,309,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 355 succeeded (completed=True, direct match=True, latency=5.654110444089 seconds).
+21,309,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 356 at 21309985228105411.
+21,369,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 356 succeeded (completed=True, direct match=True, latency=13.241474069089 seconds).
+21,369,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 357 at 21369985228105411.
+21,429,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 357 failed (completed=True, direct match=False, latency=4.226653319089 seconds).
+21,429,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 358 at 21429985228105411.
+21,489,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 358 failed (completed=True, direct match=False, latency=6.243034006589 seconds).
+21,489,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 359 at 21489985228105411.
+21,549,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 359 failed (completed=True, direct match=False, latency=9.879096569089 seconds).
+21,549,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 360 at 21549985228105411.
+21,609,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 360 failed (completed=True, direct match=False, latency=7.005299506589 seconds).
+21,609,985,228,105,411 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 361 at 21609985228105411.
+21,674,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 361 succeeded (completed=True, direct match=True, latency=22.206547819089 seconds).
+21,674,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 362 at 21674187876403444.
+21,734,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 362 failed (completed=True, direct match=False, latency=10.618841196056 seconds).
+21,734,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 363 at 21734187876403444.
+21,794,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 363 succeeded (completed=True, direct match=True, latency=10.565967008556 seconds).
+21,794,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 364 at 21794187876403444.
+21,854,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 364 failed (completed=True, direct match=False, latency=7.017605008556 seconds).
+21,854,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 365 at 21854187876403444.
+21,914,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 365 failed (completed=True, direct match=False, latency=4.828057383556 seconds).
+21,914,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 366 at 21914187876403444.
+21,974,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 366 succeeded (completed=True, direct match=True, latency=8.395140133556 seconds).
+21,974,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 367 at 21974187876403444.
+22,034,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 367 succeeded (completed=True, direct match=True, latency=2.789835821056 seconds).
+22,034,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 368 at 22034187876403444.
+22,094,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 368 failed (completed=True, direct match=False, latency=7.734453696056 seconds).
+22,094,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 369 at 22094187876403444.
+22,154,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 369 succeeded (completed=True, direct match=True, latency=13.313236946056 seconds).
+22,154,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 370 at 22154187876403444.
+22,214,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 370 failed (completed=True, direct match=False, latency=11.910740821056 seconds).
+22,214,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 371 at 22214187876403444.
+22,274,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 371 failed (completed=True, direct match=False, latency=8.399820321056 seconds).
+22,274,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 372 at 22274187876403444.
+22,334,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 372 succeeded (completed=True, direct match=True, latency=5.621349133556 seconds).
+22,334,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 373 at 22334187876403444.
+22,394,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 373 failed (completed=True, direct match=False, latency=10.428681508556 seconds).
+22,394,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 374 at 22394187876403444.
+22,454,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 374 succeeded (completed=True, direct match=True, latency=7.720413133556 seconds).
+22,454,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 375 at 22454187876403444.
+22,514,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 375 failed (completed=True, direct match=False, latency=34.819652571056 seconds).
+22,514,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 376 at 22514187876403444.
+22,574,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 376 succeeded (completed=True, direct match=True, latency=5.630709508556 seconds).
+22,574,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 377 at 22574187876403444.
+22,634,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 377 failed (completed=True, direct match=False, latency=12.619964196056 seconds).
+22,634,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 378 at 22634187876403444.
+22,694,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 378 failed (completed=True, direct match=False, latency=6.338197821056 seconds).
+22,694,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 379 at 22694187876403444.
+22,754,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 379 succeeded (completed=True, direct match=True, latency=13.068732133556 seconds).
+22,754,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 380 at 22754187876403444.
+22,814,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 380 failed (completed=True, direct match=False, latency=11.133224696056 seconds).
+22,814,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 381 at 22814187876403444.
+22,874,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 381 succeeded (completed=True, direct match=True, latency=6.335077696056 seconds).
+22,874,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 382 at 22874187876403444.
+22,934,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 382 succeeded (completed=True, direct match=True, latency=3.573767196056 seconds).
+22,934,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 383 at 22934187876403444.
+22,994,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 383 succeeded (completed=True, direct match=True, latency=4.860818696056 seconds).
+22,994,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 384 at 22994187876403444.
+23,054,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 384 succeeded (completed=True, direct match=True, latency=10.518205071056 seconds).
+23,054,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 385 at 23054187876403444.
+23,114,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 385 succeeded (completed=True, direct match=True, latency=11.910740821056 seconds).
+23,114,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 386 at 23114187876403444.
+23,174,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 386 failed (completed=True, direct match=False, latency=1.410740633556 seconds).
+23,174,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 387 at 23174187876403444.
+23,234,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 387 succeeded (completed=True, direct match=True, latency=7.033205633556 seconds).
+23,234,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 388 at 23234187876403444.
+23,294,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 388 succeeded (completed=True, direct match=True, latency=11.895140196056 seconds).
+23,294,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 389 at 23294187876403444.
+23,354,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 389 succeeded (completed=True, direct match=True, latency=6.358478633556 seconds).
+23,354,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 390 at 23354187876403444.
+23,414,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 390 succeeded (completed=True, direct match=True, latency=9.060506758556 seconds).
+23,414,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 391 at 23414187876403444.
+23,474,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 391 failed (completed=True, direct match=False, latency=5.650990321056 seconds).
+23,474,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 392 at 23474187876403444.
+23,534,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 392 succeeded (completed=True, direct match=True, latency=4.236013696056 seconds).
+23,534,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 393 at 23534187876403444.
+23,594,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 393 succeeded (completed=True, direct match=True, latency=13.836812883556 seconds).
+23,594,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 394 at 23594187876403444.
+23,654,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 394 succeeded (completed=True, direct match=True, latency=2.090147821056 seconds).
+23,654,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 395 at 23654187876403444.
+23,714,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 395 succeeded (completed=True, direct match=True, latency=5.630709508556 seconds).
+23,714,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 396 at 23714187876403444.
+23,774,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 396 succeeded (completed=True, direct match=True, latency=4.220413071056 seconds).
+23,774,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 397 at 23774187876403444.
+23,834,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 397 succeeded (completed=True, direct match=True, latency=4.215732883556 seconds).
+23,834,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 398 at 23834187876403444.
+23,894,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 398 succeeded (completed=True, direct match=True, latency=4.904500446056 seconds).
+23,894,187,876,403,444 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 399 at 23894187876403444.
+23,965,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 399 succeeded (completed=True, direct match=True, latency=14.614754008556 seconds).
+23,965,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 400 at 23965378619570574.
+24,025,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 400 succeeded (completed=True, direct match=True, latency=6.267995003926 seconds).
+24,025,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 401 at 24025378619570574.
+24,085,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 401 succeeded (completed=True, direct match=True, latency=9.811676816426 seconds).
+24,085,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 402 at 24085378619570574.
+24,145,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 402 succeeded (completed=True, direct match=True, latency=4.926341316426 seconds).
+24,145,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 403 at 24145378619570574.
+24,205,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 403 succeeded (completed=True, direct match=True, latency=3.491083878926 seconds).
+24,205,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 404 at 24205378619570574.
+24,265,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 404 succeeded (completed=True, direct match=True, latency=9.122909253926 seconds).
+24,265,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 405 at 24265378619570574.
+24,325,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 405 succeeded (completed=True, direct match=True, latency=6.319652066426 seconds).
+24,325,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 406 at 24325378619570574.
+24,385,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 406 succeeded (completed=True, direct match=True, latency=11.201867441426 seconds).
+24,385,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 407 at 24385378619570574.
+24,445,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 407 succeeded (completed=True, direct match=True, latency=4.967077941426 seconds).
+24,445,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 408 at 24445378619570574.
+24,505,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 408 succeeded (completed=True, direct match=True, latency=5.593268003926 seconds).
+24,505,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 409 at 24505378619570574.
+24,565,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 409 succeeded (completed=True, direct match=True, latency=4.212612753926 seconds).
+24,565,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 410 at 24565378619570574.
+24,625,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 410 succeeded (completed=True, direct match=True, latency=4.187651753926 seconds).
+24,625,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 411 at 24625378619570574.
+24,685,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 411 succeeded (completed=True, direct match=True, latency=4.239133816426 seconds).
+24,685,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 412 at 24685378619570574.
+24,745,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 412 failed (completed=True, direct match=False, latency=10.492819066426 seconds).
+24,745,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 413 at 24745378619570574.
+24,805,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 413 succeeded (completed=True, direct match=True, latency=9.813236878926 seconds).
+24,805,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 414 at 24805378619570574.
+24,865,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 414 failed (completed=True, direct match=False, latency=13.994804191426 seconds).
+24,865,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 415 at 24865378619570574.
+24,925,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 415 succeeded (completed=True, direct match=True, latency=2.124469191426 seconds).
+24,925,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 416 at 24925378619570574.
+24,985,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 416 succeeded (completed=True, direct match=True, latency=10.511364816426 seconds).
+24,985,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 417 at 24985378619570574.
+25,045,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 417 succeeded (completed=True, direct match=True, latency=11.154890566426 seconds).
+25,045,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 418 at 25045378619570574.
+25,105,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 418 failed (completed=True, direct match=False, latency=3.509804628926 seconds).
+25,105,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 419 at 25105378619570574.
+25,165,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 419 succeeded (completed=True, direct match=True, latency=6.345998128926 seconds).
+25,165,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 420 at 25165378619570574.
+25,225,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 420 failed (completed=True, direct match=False, latency=7.058166628926 seconds).
+25,225,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 421 at 25225378619570574.
+25,285,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 421 failed (completed=True, direct match=False, latency=10.517605066426 seconds).
+25,285,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 422 at 25285378619570574.
+25,345,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 422 succeeded (completed=True, direct match=True, latency=13.308556753926 seconds).
+25,345,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 423 at 25345378619570574.
+25,405,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 423 succeeded (completed=True, direct match=True, latency=7.711052753926 seconds).
+25,405,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 424 at 25405378619570574.
+25,465,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 424 succeeded (completed=True, direct match=True, latency=11.923396316426 seconds).
+25,465,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 425 at 25465378619570574.
+25,525,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 425 succeeded (completed=True, direct match=True, latency=6.331957566426 seconds).
+25,525,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 426 at 25525378619570574.
+25,585,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 426 succeeded (completed=True, direct match=True, latency=4.901380316426 seconds).
+25,585,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 427 at 25585378619570574.
+25,645,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 427 failed (completed=True, direct match=False, latency=9.715127941426 seconds).
+25,645,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 428 at 25645378619570574.
+25,705,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 428 failed (completed=True, direct match=False, latency=4.980943503926 seconds).
+25,705,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 429 at 25705378619570574.
+25,765,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 429 succeeded (completed=True, direct match=True, latency=16.199404628926 seconds).
+25,765,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 430 at 25765378619570574.
+25,825,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 430 succeeded (completed=True, direct match=True, latency=5.624469253926 seconds).
+25,825,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 431 at 25825378619570574.
+25,885,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 431 succeeded (completed=True, direct match=True, latency=9.831957628926 seconds).
+25,885,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 432 at 25885378619570574.
+25,945,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 432 failed (completed=True, direct match=False, latency=11.239308941426 seconds).
+25,945,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 433 at 25945378619570574.
+26,005,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 433 succeeded (completed=True, direct match=True, latency=9.147870253926 seconds).
+26,005,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 434 at 26005378619570574.
+26,065,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 434 failed (completed=True, direct match=False, latency=10.441337003926 seconds).
+26,065,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 435 at 26065378619570574.
+26,125,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 435 succeeded (completed=True, direct match=True, latency=3.503564378926 seconds).
+26,125,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 436 at 26125378619570574.
+26,185,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 436 failed (completed=True, direct match=False, latency=4.918716003926 seconds).
+26,185,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 437 at 26185378619570574.
+26,245,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 437 succeeded (completed=True, direct match=True, latency=7.025405316426 seconds).
+26,245,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 438 at 26245378619570574.
+26,305,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 438 succeeded (completed=True, direct match=True, latency=4.221973128926 seconds).
+26,305,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 439 at 26305378619570574.
+26,365,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 439 failed (completed=True, direct match=False, latency=20.288876066426 seconds).
+26,365,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 440 at 26365378619570574.
+26,425,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 440 succeeded (completed=True, direct match=True, latency=15.408045753926 seconds).
+26,425,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 441 at 26425378619570574.
+26,485,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 441 succeeded (completed=True, direct match=True, latency=6.317917003926 seconds).
+26,485,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 442 at 26485378619570574.
+26,545,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 442 failed (completed=True, direct match=False, latency=7.828077753926 seconds).
+26,545,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 443 at 26545378619570574.
+26,605,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 443 succeeded (completed=True, direct match=True, latency=15.213037941426 seconds).
+26,605,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 444 at 26605378619570574.
+26,665,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 444 succeeded (completed=True, direct match=True, latency=9.116669003926 seconds).
+26,665,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 445 at 26665378619570574.
+26,725,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 445 failed (completed=True, direct match=False, latency=7.723533253926 seconds).
+26,725,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 446 at 26725378619570574.
+26,785,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 446 succeeded (completed=True, direct match=True, latency=6.366278941426 seconds).
+26,785,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 447 at 26785378619570574.
+26,845,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 447 failed (completed=True, direct match=False, latency=6.324332253926 seconds).
+26,845,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 448 at 26845378619570574.
+26,905,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 448 succeeded (completed=True, direct match=True, latency=5.587027753926 seconds).
+26,905,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 449 at 26905378619570574.
+26,965,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 449 succeeded (completed=True, direct match=True, latency=13.316357066426 seconds).
+26,965,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 450 at 26965378619570574.
+27,025,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 450 succeeded (completed=True, direct match=True, latency=4.229773441426 seconds).
+27,025,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 451 at 27025378619570574.
+27,085,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 451 succeeded (completed=True, direct match=True, latency=13.271715253926 seconds).
+27,085,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 452 at 27085378619570574.
+27,145,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 452 succeeded (completed=True, direct match=True, latency=3.514484816426 seconds).
+27,145,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 453 at 27145378619570574.
+27,205,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 453 succeeded (completed=True, direct match=True, latency=3.559726628926 seconds).
+27,205,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 454 at 27205378619570574.
+27,265,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 454 succeeded (completed=True, direct match=True, latency=5.615108878926 seconds).
+27,265,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 455 at 27265378619570574.
+27,325,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 455 succeeded (completed=True, direct match=True, latency=4.921661128926 seconds).
+27,325,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 456 at 27325378619570574.
+27,385,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 456 succeeded (completed=True, direct match=True, latency=6.289835878926 seconds).
+27,385,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 457 at 27385378619570574.
+27,445,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 457 succeeded (completed=True, direct match=True, latency=4.977823378926 seconds).
+27,445,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 458 at 27445378619570574.
+27,505,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 458 failed (completed=True, direct match=False, latency=5.540225878926 seconds).
+27,505,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 459 at 27505378619570574.
+27,565,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 459 succeeded (completed=True, direct match=True, latency=3.050025691426 seconds).
+27,565,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 460 at 27565378619570574.
+27,625,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 460 failed (completed=True, direct match=False, latency=5.579227441426 seconds).
+27,625,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 461 at 27625378619570574.
+27,685,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 461 succeeded (completed=True, direct match=True, latency=4.239133816426 seconds).
+27,685,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 462 at 27685378619570574.
+27,745,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 462 failed (completed=True, direct match=False, latency=11.870354191426 seconds).
+27,745,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 463 at 27745378619570574.
+27,805,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 463 failed (completed=True, direct match=False, latency=8.365498941426 seconds).
+27,805,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 464 at 27805378619570574.
+27,865,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 464 failed (completed=True, direct match=False, latency=7.720588128926 seconds).
+27,865,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 465 at 27865378619570574.
+27,925,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 465 failed (completed=True, direct match=False, latency=3.519165003926 seconds).
+27,925,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 466 at 27925378619570574.
+27,985,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 466 failed (completed=True, direct match=False, latency=11.226828441426 seconds).
+27,985,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 467 at 27985378619570574.
+28,045,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 467 failed (completed=True, direct match=False, latency=4.983144353926 seconds).
+28,045,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 468 at 28045378619570574.
+28,105,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 468 succeeded (completed=True, direct match=True, latency=5.562066753926 seconds).
+28,105,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 469 at 28105378619570574.
+28,165,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 469 succeeded (completed=True, direct match=True, latency=4.929461441426 seconds).
+28,165,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 470 at 28165378619570574.
+28,225,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 470 succeeded (completed=True, direct match=True, latency=9.149430316426 seconds).
+28,225,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 471 at 28225378619570574.
+28,285,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 471 succeeded (completed=True, direct match=True, latency=2.129149378926 seconds).
+28,285,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 472 at 28285378619570574.
+28,345,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 472 failed (completed=True, direct match=False, latency=7.689211878926 seconds).
+28,345,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 473 at 28345378619570574.
+28,405,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 473 succeeded (completed=True, direct match=True, latency=3.492643941426 seconds).
+28,405,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 474 at 28405378619570574.
+28,465,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 474 failed (completed=True, direct match=False, latency=9.806996628926 seconds).
+28,465,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 475 at 28465378619570574.
+28,525,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 475 succeeded (completed=True, direct match=True, latency=4.236013691426 seconds).
+28,525,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 476 at 28525378619570574.
+28,585,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 476 failed (completed=True, direct match=False, latency=7.603583441426 seconds).
+28,585,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 477 at 28585378619570574.
+28,645,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 477 failed (completed=True, direct match=False, latency=3.561286691426 seconds).
+28,645,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 478 at 28645378619570574.
+28,705,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 478 failed (completed=True, direct match=False, latency=9.084110691426 seconds).
+28,705,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 479 at 28705378619570574.
+28,765,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 479 failed (completed=True, direct match=False, latency=17.528700628926 seconds).
+28,765,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 480 at 28765378619570574.
+28,825,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 480 succeeded (completed=True, direct match=True, latency=4.237573753926 seconds).
+28,825,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 481 at 28825378619570574.
+28,885,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 481 failed (completed=True, direct match=False, latency=2.792955941426 seconds).
+28,885,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 482 at 28885378619570574.
+28,945,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 482 failed (completed=True, direct match=False, latency=24.190592191426 seconds).
+28,945,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 483 at 28945378619570574.
+29,005,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 483 succeeded (completed=True, direct match=True, latency=4.885779691426 seconds).
+29,005,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 484 at 29005378619570574.
+29,065,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 484 succeeded (completed=True, direct match=True, latency=22.414036128926 seconds).
+29,065,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 485 at 29065378619570574.
+29,125,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 485 failed (completed=True, direct match=False, latency=3.506684503926 seconds).
+29,125,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 486 at 29125378619570574.
+29,185,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 486 succeeded (completed=True, direct match=True, latency=13.112163878926 seconds).
+29,185,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 487 at 29185378619570574.
+29,245,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 487 succeeded (completed=True, direct match=True, latency=23.650030566426 seconds).
+29,245,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 488 at 29245378619570574.
+29,305,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 488 succeeded (completed=True, direct match=True, latency=13.302316503926 seconds).
+29,305,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 489 at 29305378619570574.
+29,365,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 489 succeeded (completed=True, direct match=True, latency=2.149430191426 seconds).
+29,365,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 490 at 29365378619570574.
+29,425,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 490 succeeded (completed=True, direct match=True, latency=7.036325753926 seconds).
+29,425,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 491 at 29425378619570574.
+29,485,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 491 succeeded (completed=True, direct match=True, latency=5.568307003926 seconds).
+29,485,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 492 at 29485378619570574.
+29,545,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 492 succeeded (completed=True, direct match=True, latency=7.034765691426 seconds).
+29,545,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 493 at 29545378619570574.
+29,605,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 493 failed (completed=True, direct match=False, latency=15.407620753926 seconds).
+29,605,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 494 at 29605378619570574.
+29,665,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 494 failed (completed=True, direct match=False, latency=9.799796316426 seconds).
+29,665,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 495 at 29665378619570574.
+29,725,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 495 succeeded (completed=True, direct match=True, latency=4.170491066426 seconds).
+29,725,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 496 at 29725378619570574.
+29,785,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 496 succeeded (completed=True, direct match=True, latency=6.355358503926 seconds).
+29,785,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 497 at 29785378619570574.
+29,845,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 497 succeeded (completed=True, direct match=True, latency=4.920101066426 seconds).
+29,845,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 498 at 29845378619570574.
+29,905,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 498 succeeded (completed=True, direct match=True, latency=11.254734566426 seconds).
+29,905,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 499 at 29905378619570574.
+29,965,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 499 failed (completed=True, direct match=False, latency=15.409180816426 seconds).
+29,965,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 500 at 29965378619570574.
+30,025,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 500 failed (completed=True, direct match=False, latency=14.001644378926 seconds).
+30,025,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Raw teleport fidelity by direct comparison: 351/500 (70.20%)
+30,025,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Teleport fidelity after Rb measurement, Mw measurement, and gate losses: 65.89% (operation fidelity factor=0.9386304)
+30,025,378,619,570,574 WARNING main_het_teleport_mw_rb_yb_rb_er Average teleport latency: 8.025557085 seconds over 500 completed trials
