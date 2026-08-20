@@ -140,11 +140,9 @@ class EntanglementSwappingA(EntanglementProtocol):
         resource_manager = self.owner.resource_manager
 
         if self.left_protocol_name is not None:
-            resource_manager.release_remote_protocol(
-                self.left_node, self.left_protocol_name)
+            resource_manager.release_remote_protocol(self.left_node, self.left_protocol_name)
         if self.right_protocol_name is not None:
-            resource_manager.release_remote_protocol(
-                self.right_node, self.right_protocol_name)
+            resource_manager.release_remote_protocol(self.right_node, self.right_protocol_name)
         if self in resource_manager.pending_protocols:
             resource_manager.pending_protocols.remove(self)
         if self.rule and self in self.rule.protocols:
