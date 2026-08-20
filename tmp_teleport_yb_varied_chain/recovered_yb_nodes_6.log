@@ -19995,3 +19995,6 @@
 749,890,833,407,737,817 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 9998 at 749890833407737817.
 749,965,833,407,737,817 WARNING main_het_teleport_mw_rb_yb_rb_er Mw-to-Er teleportation trial 9998 succeeded (completed=True, direct match=True, latency=1.416955874183 seconds).
 749,965,833,407,737,817 WARNING main_het_teleport_mw_rb_yb_rb_er Starting Mw-to-Er teleportation trial 9999 at 749965833407737817.
+
+
+Fidelity= 0.6141 Latenentcy=6.9715 s
