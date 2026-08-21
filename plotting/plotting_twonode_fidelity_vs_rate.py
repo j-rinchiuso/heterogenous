@@ -6,19 +6,11 @@ from matplotlib.ticker import FixedLocator, FuncFormatter
 from plotting_twonode import LABELS, MEMORIES, log_path, parse_log
 
 
-OUTPUT_FILE = Path("tmp/twonode_fidelity_vs_rate.png")
+OUTPUT_FILE = Path("tmp/twonode_fidelity_vs_rateNormalAxis.png")
 
 LABEL_OFFSETS = {
     ("yb", "yb"): (8, -2),
-    ("yb", "rb"): (8, 8),
-    ("yb", "er"): (8, 8),
-    ("yb", "uw"): (8, -14),
-    ("rb", "rb"): (8, -14),
-    ("rb", "er"): (8, 8),
-    ("rb", "uw"): (-8, 8),
-    ("er", "er"): (8, 8),
-    ("er", "uw"): (-8, -14),
-    ("uw", "uw"): (-8, 8),}
+    ("yb", "rb"): (8, -14),}
 
 
 def pair_label(first_memory: str, second_memory: str) -> str:
@@ -33,14 +25,16 @@ def make_plot() -> None:
             fidelity, rate = parse_log(log_path(first_memory, second_memory))
             axis.scatter(rate, fidelity, color="#17697f", edgecolor="black", s=85, zorder=3)
 
-            x_offset, y_offset = LABEL_OFFSETS[(first_memory, second_memory)]
+            x_offset, y_offset = LABEL_OFFSETS.get((first_memory, second_memory), (8, 8))
+            horizontal_alignment = "right" if (first_memory, second_memory) == ("yb", "rb") or x_offset < 0 else "left"
             axis.annotate(
                 pair_label(first_memory, second_memory),
-                (rate, fidelity), xytext=(x_offset, y_offset), textcoords="offset points", fontsize=11, ha="right" if x_offset < 0 else "left", va="top" if y_offset < 0 else "bottom",)
-    axis.set_xscale("log")
-    axis.set_xlim(0.1, 100)
-    axis.xaxis.set_major_locator(FixedLocator([0.1, 1, 10, 100]))
-    axis.xaxis.set_major_formatter(FuncFormatter(lambda value, position: f"{value:g}"))
+                (rate, fidelity), xytext=(x_offset, y_offset), textcoords="offset points", fontsize=11, ha=horizontal_alignment, va="top" if y_offset < 0 else "bottom",)
+   # axis.set_xscale("log")
+    #axis.set_xlim(0.1, 100)
+    axis.set_xlim(-1,40)
+   # axis.xaxis.set_major_locator(FixedLocator([0.1, 1, 10, 100]))
+   # axis.xaxis.set_major_formatter(FuncFormatter(lambda value, position: f"{value:g}"))
     axis.set_xlabel("Entanglement Rate (Hz)")
     axis.set_ylabel("Fidelity")
     axis.set_ylim(0.55, 1.01)

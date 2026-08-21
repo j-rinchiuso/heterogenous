@@ -93,7 +93,7 @@ class HetRequestApp(RequestApp):
                     #     info.memory.update_state(info.memory._zero_ket)
                     #     other_memory.update_state(other_memory._zero_ket)
 
-            elif self.node.memo_type == "Er":
+            elif self.node.memo_type in ("Yb", "Rb", "Er"):
                 time_since_generation = self.node.timeline.now() - info.memory.time_after_excitement
                 if self.basis in ("X", "Y"):
                     readout_time = info.memory.measurement_time + info.memory.to_x_basis_time
@@ -101,10 +101,16 @@ class HetRequestApp(RequestApp):
                     readout_time = info.memory.measurement_time
                 time_since_generation += (info.memory.bin_separation + readout_time)
 
-                decoherence_probability = 1-e**(-time_since_generation/info.memory.coherence_time)
-                if self.node.get_generator().random() < decoherence_probability: 
-                    info.memory.timeline.quantum_manager.run_circuit(_Z_circuit, [info.memory.qstate_key])
-                    log.logger.warning('Er ion decohered during generation/storage/readout.')
+                if self.node.memo_type == "Er":
+                    coherence_t2_time=info.memory.coherence_time
+                else:
+                    coherence_t2_time=info.memory.coherence_t2_time
+
+                if coherence_t2_time != float("inf"):
+                    decoherence_probability = 1-e**(-time_since_generation/coherence_t2_time)
+                    if self.node.get_generator().random() < decoherence_probability:
+                        info.memory.timeline.quantum_manager.run_circuit(_Z_circuit, [info.memory.qstate_key])
+                        log.logger.warning(f'{self.node.memo_type} memory decohered during generation/storage/readout.')
 
             reservation = self.memo_to_reservation[info.index]
             if info.remote_node == reservation.initiator and info.fidelity >= reservation.fidelity:   # the responder

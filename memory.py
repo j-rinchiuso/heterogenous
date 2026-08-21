@@ -206,6 +206,7 @@ class Yb(Memory):
         self.attempts = 0   # TODO, can we fold attempts from node and form memory into just one variable?
         self.retrap_num = None
         self.need_to_retrap = False
+        self.coherence_t2_time = float("inf")
 
         # ENTANGLEMENT GENERATION PARAMETERS PER STEP
 
@@ -655,6 +656,7 @@ class Rb(Memory):
         self.atom_state = RbStates.LOADED
         self.psi_sign = None
         self.attempts = 0
+        self.coherence_t2_time = float("inf")
         self.emitted_photon_encoding = "polarization" #added this to use for conversion from encoding module of Sequence 
         #self.sigma_emission_prob = 2 / 3 think we can remove this now from a simulation perspective
         #self.pi_emission_prob = 1 / 3
@@ -852,11 +854,8 @@ class Er(Memory):
 
         # Coherence values
         self.xy16_coherence_time = 23_000_000_000 # 200_000_000 improved method from original paper #9
-        self.toggle_decoherence_gen = False # generation time is included in the combined app-level decoherence check
         if coherence_time == -1: #default to this coherence time in constructor not infinity HAS COHERENCE
             self.coherence_time = self.xy16_coherence_time
-        self.spin_coherence_factor = e ** (-self.spin_photon_generation_time / self.coherence_time) #prob decohere during generation 
-        self.phase_flip_probability = (1 - self.spin_coherence_factor)
 
         # EG Params
         self.initialize_time = self.initialization_time
@@ -900,13 +899,6 @@ class Er(Memory):
             self.next_excite_time = self.timeline.now() + period
 
         photon.add_loss(1 - self.get_source_efficiency())
-
-        if self.toggle_decoherence_gen: 
-            self.spin_coherence_factor = e ** (-self.spin_photon_generation_time / self.coherence_time)
-            self.phase_flip_probability = (1 - self.spin_coherence_factor)
-            if self.owner.get_generator().random() < self.phase_flip_probability:
-                self.timeline.quantum_manager.run_circuit(_Z_circuit, [self.qstate_key]) #applt z phase flipe to Er memory quantum state. Corrupt phase and impact fidelity
-                log.logger.info(f'Er ion {self.name} experienced a spin phase flip during generation.')
 
         self._receivers[0].get(photon, dst=dst)
 
